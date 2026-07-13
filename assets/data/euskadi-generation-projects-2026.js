@@ -47,7 +47,7 @@ window.energyMapGenerationProjects={
       ]
     },
     {
-      id:'krabelin-solar',name:'FV Krabelin Solar',technology:'solar',mw:5,mwp:6.04,status:'prior-authorized',statusLabel:'Autorización administrativa previa',approvalDate:'6 de mayo de 2026',municipalities:['Ayala/Aiara'],coordinate:[-3.023887,43.085202],locationNote:'Coordenada oficial del centro de maniobra y medida, ETRS89/UTM 30N transformada a WGS84.',note:'La documentación publicada es un proyecto básico no válido para ejecución; no consta autorización de construcción.',sources:[
+      id:'krabelin-solar',name:'FV Krabelin Solar',technology:'solar',mw:4.6,mwp:6.04,status:'prior-authorized',statusLabel:'Autorización administrativa previa',approvalDate:'6 de mayo de 2026',municipalities:['Ayala/Aiara'],coordinate:[-3.023887,43.085202],locationNote:'Coordenada oficial del centro de maniobra y medida, ETRS89/UTM 30N transformada a WGS84.',note:'La documentación publicada es un proyecto básico no válido para ejecución; no consta autorización de construcción.',sources:[
         {label:'Gobierno Vasco · Krabelin Solar, AAP',url:'https://www.euskadi.eus/bopv2/datos/2026/05/2602038a.pdf'},
         {label:'Gobierno Vasco · Krabelin Solar, proyecto y ubicación',url:'https://www.euskadi.eus/contenidos/informacion/anuncio_solar_krabelin/es_def/adjuntos/PTAD-FV-KRABELIN-SOLAR-Separata-Ay-Ayala_visado.pdf'}
       ]
@@ -144,3 +144,4 @@ window.energyMapGenerationProjects={
     'Proyectos cuya planta queda fuera de Euskadi y solo evacúan por su territorio.'
   ]
 };
+
