@@ -12,7 +12,12 @@
       .source-disclosure[open] .source-disclosure-action::after{content:'Ocultar'}
       .source-disclosure[open] .source-disclosure-preview{display:none}
       .source-disclosure-body{padding:.15rem 0 .7rem}
-      .source-disclosure-body>.source{margin:0;white-space:normal}
+      .source-disclosure-body>.source,.source-disclosure-body>.method{margin:0;white-space:normal}
+      .method-disclosure .method::before{content:none}
+      .method-disclosure+.source-disclosure{margin-top:.425rem}
+      details.compare-row:has(>.source-disclosure:last-child){padding-bottom:.425rem}
+      .map-copy-grid>.method-disclosure{margin:0;padding:.62rem .8rem;background:var(--soft,#f7faf8);border-top:0;border-left:4px solid var(--norm,#9fae24);align-self:start}
+      .map-copy-grid>.method-disclosure .source-disclosure-body{padding-bottom:0}
     `;document.head.append(style);
   };
   const previewText=node=>node.textContent.replace(/^\s*(Fuentes?|Referencias?)\s*:\s*/i,'').replace(/\s+/g,' ').trim().slice(0,180);
@@ -22,11 +27,18 @@
     details.className='source-disclosure';title.className='source-disclosure-title';preview.className='source-disclosure-preview';action.className='source-disclosure-action';body.className='source-disclosure-body';
     title.textContent='Fuentes y referencias';preview.textContent=previewText(node);action.setAttribute('aria-hidden','true');summary.append(title,preview,action);node.before(details);body.append(node);details.append(summary,body);
   };
+  const wrapMethod=node=>{
+    if(!node||node.closest('.method-disclosure'))return;
+    const details=document.createElement('details'),summary=document.createElement('summary'),title=document.createElement('span'),preview=document.createElement('span'),action=document.createElement('span'),body=document.createElement('div');
+    details.className='source-disclosure method-disclosure';title.className='source-disclosure-title';preview.className='source-disclosure-preview';action.className='source-disclosure-action';body.className='source-disclosure-body';
+    title.textContent='Método';preview.textContent=node.textContent.replace(/\s+/g,' ').trim().slice(0,180);action.setAttribute('aria-hidden','true');summary.append(title,preview,action);node.before(details);body.append(node);details.append(summary,body);
+  };
   const splitChartNote=node=>{
     if(!node||node.dataset.sourcesSplit==='true')return;
     const match=node.innerHTML.match(/\s*(Fuentes?|Referencias?)\s*:\s*([\s\S]+)$/i);if(!match)return;
     const source=document.createElement('p');source.className='source';source.innerHTML=`<strong>${match[1]}:</strong> ${match[2]}`;node.innerHTML=node.innerHTML.slice(0,match.index).trim();node.dataset.sourcesSplit='true';node.after(source);wrapSource(source);if(!node.textContent.trim())node.hidden=true;
   };
-  const init=()=>{injectStyles();document.querySelectorAll('details.compare-row>p.source').forEach(wrapSource);document.querySelectorAll('.chapter .chart-note').forEach(splitChartNote)};
+  const init=()=>{injectStyles();document.querySelectorAll('details.compare-row p.method').forEach(wrapMethod);document.querySelectorAll('details.compare-row>p.source').forEach(wrapSource);document.querySelectorAll('.chapter .chart-note').forEach(splitChartNote)};
   if(document.readyState==='complete')init();else window.addEventListener('load',init,{once:true});
 })();
+
