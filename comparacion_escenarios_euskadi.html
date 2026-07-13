@@ -81,6 +81,32 @@
 .map-pts-potential-toggle{display:inline-flex;align-items:center;gap:.42rem;min-height:2.25rem;padding:.42rem .7rem;border:1px solid #725b12;border-radius:999px;color:#fff;background:#725b12;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}.map-pts-potential-toggle i,.map-network-legend .pts-potential{display:inline-block;width:.82rem;height:.82rem;border:1.3px solid #111;border-radius:50%;background-color:#f0c419;background-image:linear-gradient(#111 1px,transparent 1px),linear-gradient(90deg,#111 1px,transparent 1px);background-size:4px 4px}.map-pts-potential-toggle[aria-pressed="false"]{color:#746f5e;background:#f7f9f8;border-color:#c9c2a5}.map-pts-potential-toggle[aria-pressed="false"] i{filter:grayscale(1);opacity:.58}.map-pts-potential-toggle:focus-visible{outline:3px solid rgba(114,91,18,.25);outline-offset:2px}.map-network-legend .pts-potential{width:.72rem;height:.72rem}.pts-potential-marker{cursor:pointer;stroke:#fff;stroke-width:1.8;vector-effect:non-scaling-stroke;outline:none}.pts-potential-marker:hover,.pts-potential-marker:focus,.pts-potential-marker.is-selected{stroke:#111;stroke-width:3}.map-energy-share-pts-potential{overflow:hidden;cursor:pointer;background-color:var(--segment-color)!important;background-image:linear-gradient(rgba(17,17,17,.85) .7px,transparent .7px),linear-gradient(90deg,rgba(17,17,17,.85) .7px,transparent .7px)!important;background-size:5px 5px!important}.map-energy-share-pts-potential[data-pts-potential-technology="other"]{min-height:4px}.map-energy-share-pts-potential[hidden]{display:none!important}.map-energy-share-pts-potential:focus-visible{outline:2px solid rgba(0,55,45,.72);outline-offset:-2px}.map-energy-share-bar.is-electric-expanded:not(.is-technology-expanded) .map-energy-share-pts-potential .map-energy-share-segment-label{display:none}.map-energy-share-bar[data-expanded-technology="solar"] .map-energy-share-electric-stack>[data-pts-potential-technology="solar"],.map-energy-share-bar[data-expanded-technology="wind"] .map-energy-share-electric-stack>[data-pts-potential-technology="wind"],.map-energy-share-bar[data-expanded-technology="other"] .map-energy-share-electric-stack>[data-pts-potential-technology="other"]{display:flex}
 </style>
 <style>.brand-bar{display:none!important}</style>
+<style id="map-detail-fixed-layout">
+  /* La ficha derecha no cambia la altura del mapa al seleccionar otro elemento. */
+  .territory-map-layout{height:590px;min-height:590px;align-items:stretch;overflow:hidden}
+  .territory-map-layout>.map-detail{height:590px;min-height:590px;max-height:590px;overflow-y:auto;padding:.8rem .85rem;font-size:.72rem;line-height:1.3}
+  .territory-map-layout>.map-detail h4{font-size:.9rem;line-height:1.18;margin-bottom:.35rem}
+  .territory-map-layout>.map-detail .map-detail-lead{font-size:.72rem;line-height:1.28;margin:.1rem 0 .65rem}
+  .territory-map-layout>.map-detail dl{gap:.28rem .5rem;padding-top:.6rem;font-size:.7rem}
+  .territory-map-layout>.map-detail .map-data-note{margin:.7rem 0 0;padding:.55rem;font-size:.68rem;line-height:1.3}
+  .territory-map-layout>.map-detail .map-source-badge{margin-top:.55rem;font-size:.66rem;line-height:1.25}
+  .territory-map-layout>.map-detail .installation-photo{margin:.65rem 0 0}
+  .territory-map-layout>.map-detail .installation-photo img{height:145px}
+  .map-detail-more{display:block;width:100%;margin:.65rem 0 0;padding:.4rem .55rem;border:1px solid var(--border);border-radius:.25rem;color:var(--obs);background:#f7fbf9;font:inherit;font-size:.7rem;font-weight:700;cursor:pointer;text-align:left}
+  .map-detail-more:hover{background:#edf7f4}
+  .map-detail-more:focus-visible{outline:3px solid rgba(0,127,107,.25);outline-offset:2px}
+  .map-detail-modal[hidden]{display:none}
+  .map-detail-modal{position:fixed;inset:0;z-index:10050;display:grid;place-items:center;padding:1rem;background:rgba(24,63,55,.45)}
+  .map-detail-modal-card{width:min(680px,calc(100vw - 2rem));max-height:min(86vh,760px);overflow:auto;padding:1rem 1.1rem;background:#fff;border:1px solid var(--border);box-shadow:0 14px 45px rgba(24,63,55,.25)}
+  .map-detail-modal-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.6rem;padding-bottom:.55rem;border-bottom:1px solid var(--border)}
+  .map-detail-modal-head strong{font-size:.9rem;color:var(--ink)}
+  .map-detail-modal-close{border:1px solid var(--border);border-radius:.25rem;padding:.25rem .55rem;color:var(--ink);background:#f7fbf9;font:inherit;font-size:.72rem;font-weight:700;cursor:pointer}
+  .map-detail-modal-body{font-size:.76rem;line-height:1.4;color:var(--ink)}
+  .map-detail-modal-body .map-detail-more{display:none}
+  .map-detail-modal-body .installation-photo img{height:220px}
+  .territory-map-shell:fullscreen .territory-map-layout,.territory-map-shell:-webkit-full-screen .territory-map-layout,.territory-map-shell.is-map-maximized .territory-map-layout{height:auto;min-height:0}
+  .territory-map-shell:fullscreen .territory-map-layout>.map-detail,.territory-map-shell:-webkit-full-screen .territory-map-layout>.map-detail,.territory-map-shell.is-map-maximized .territory-map-layout>.map-detail{height:auto;min-height:0;max-height:none}
+</style>
 </head>
 <body>
 <header class="hero"><h1>Página test</h1><p>Esta página es una página para preparar contenidos y escenarios futuros.</p></header>
@@ -115,7 +141,7 @@
 <script src="assets/data/euskadi-electric-projects-2026.js?v=510221292a8d"></script>
 <script src="assets/data/euskadi-generation-projects-2026.js?v=55b421c4581e"></script>
 <script src="assets/data/euskadi-pts-potential-sites-2026.js?v=823272b5682c"></script>
-<script src="assets/energy-map.js?v=2dfa680aa910"></script>
+<script src="assets/energy-map.js?v=a2ea2c801e08"></script>
 
 <script>
 (()=>{
@@ -339,4 +365,3 @@ const renewableLineTitles=new Set(['Producción primaria renovable','Importació
 
 </body>
 </html>
-
