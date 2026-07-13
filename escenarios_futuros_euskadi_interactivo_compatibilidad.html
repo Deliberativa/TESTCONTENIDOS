@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escenarios futuros de transición energética en Euskadi</title>
+<style>
+:root {
+  --background:#ffffff; --foreground:#183f37; --muted:#eef7f3; --muted-foreground:#557169;
+  --primary:#009b7a; --primary-foreground:#ffffff; --accent:#eaf5d8; --accent-foreground:#164c3e;
+  --border:#cfe3dc; --viz-series-1:#2f6b9a; --viz-series-2:#7b5fa7;
+  --viz-series-3:#d39b32; --viz-series-4:#16856b;
+  --viz-series-5:#d97941; --viz-series-6:#4f5b62;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--background); color:var(--foreground); font-family:Arial,"Helvetica Neue",Helvetica,sans-serif; font-size:16px; line-height:1.55; }
+h1 { font-size:clamp(2.4rem,7vw,5.4rem); line-height:1.02; font-weight:500; }
+h2 { font-size:clamp(1.8rem,4vw,3rem); line-height:1.12; font-weight:500; }
+h3 { font-size:1.25rem; line-height:1.25; font-weight:500; }
+.text-small, small, figcaption { font-size:.86rem; }
+strong { font-size:1.7rem; }
+</style>
+</head>
+<body>
+<script>window.SCENARIO_MODE="tendential";</script>
+<main id="euskadi-sample" aria-label="Escenarios futuros de transición energética en Euskadi">
+  <header class="hero">
+    <p class="eyebrow">Asamblea ciudadana · Transición energética y cambio climático</p>
+    <h1>Escenarios futuros de transición energética en Euskadi</h1>
+    <p class="lead">Una exploración de futuros posibles del sistema energético vasco para comprender cómo podrían evolucionar la energía, la economía y el clima, y qué decisiones colectivas pueden orientar la transición.</p>
+  </header>
+
+  <div class="brand-bar" aria-label="Entidades impulsoras y colaboradoras">
+    <img class="institutional-logos" src="assets/logos-oficina-euskadiberria-gobierno-vasco.png" alt="Oficina Vasca de Transición Energética y Cambio Climático, EuskadiBerria y Gobierno Vasco">
+    <span class="brand-divider" aria-hidden="true"></span>
+    <img class="deliberativa-logo" src="assets/deliberativa-logo.png" alt="Deliberativa">
+  </div>
+
+  <nav class="scenario-nav" aria-label="Escenarios">
+    <a class="scenario-tab active" data-scenario="tendential" href="escenarios_futuros_euskadi_interactivo.html" hidden aria-hidden="true">01 · Escenario tendencial</a>
+    <a class="scenario-tab" data-scenario="normative" href="escenarios_futuros_euskadi_normativo.html" hidden aria-hidden="true">02 · Escenario normativo</a>
+    <a class="scenario-tab" href="comparacion_escenarios_euskadi.html">Comparativa de escenarios</a>
+    <a class="scenario-tab" href="modelo_coherencia_energetica.html">Modelo y metodología</a>
+  </nav>
+
+  <article>
+    <section class="intro-grid">
+      <div>
+        <p class="section-number">01</p>
+        <h2>Escenario tendencial</h2>
+      </div>
+      <p>Este escenario prolonga las dinámicas observadas en los últimos años. No describe un destino inevitable ni una previsión oficial: sirve como punto de comparación para preguntar qué ocurriría si no hubiera cambios estructurales relevantes.</p>
+    </section>
+
+    <section class="topic-accordion">
+      <button id="economic-toggle" class="topic-toggle" type="button" aria-expanded="false" aria-controls="economic-content">
+        <span><small>Bloque 02</small>Contexto económico</span>
+        <span class="topic-symbol" aria-hidden="true">+</span>
+      </button>
+      <div id="economic-content" class="topic-content indicator-group" hidden>
+
+    <div class="topic-introduction">
+      <p>La economía vasca ha atravesado una recuperación clara después de la caída provocada por la pandemia y ha continuado creciendo y creando empleo en los últimos años. En 2025, el PIB aumentó un 2,3 % y el empleo un 1,4 %. Las previsiones oficiales más recientes apuntan a que la expansión continuará, aunque a un ritmo más moderado: el Gobierno Vasco estima un crecimiento del PIB del 1,9 % en 2026 y del 1,7 % en 2027, junto con avances del empleo del 1,1 % y del 0,9 % y una reducción de la tasa de paro desde aproximadamente el 6,5 % hasta el 6,2 %. A corto plazo, el crecimiento se apoyaría principalmente en la demanda interna, el empleo y la recuperación del poder adquisitivo; al mismo tiempo, seguirá condicionado por la incertidumbre geopolítica y energética y por la exposición internacional de la industria vasca. Más allá de 2027 no existen previsiones oficiales equivalentes: las trayectorias hasta 2050 que se muestran a continuación son prolongaciones estadísticas para construir el escenario tendencial, no predicciones (Eustat, 2026; Gobierno Vasco, 2026; Orkestra, 2025).</p>
+    </div>
+
+    <section class="chapter">
+      <h2>Intensidad energética final</h2>
+      <p class="economic-rationale">La intensidad energética relaciona el consumo final de energía con el PIB real: indica cuánta energía necesita la economía para producir una misma cantidad de bienes y servicios. Se expresa como índice 2010 = 100 y mejora cuando disminuye. Entre 2004 y 2024, Euskadi consiguió aumentar claramente su producción económica y, al mismo tiempo, reducir su consumo final de energía. Este desacoplamiento absoluto es relevante porque, históricamente, el crecimiento económico solía venir acompañado de un mayor uso de energía. No significa que toda la transformación esté completada, pero sí refleja mejoras de eficiencia, cambios tecnológicos y estructurales y una menor energía necesaria por unidad de PIB (EVE, 2024, 2026; Eustat, 2025a).</p>
+
+      <div class="chart-block interactive-block">
+        <div class="chart-heading"><div><h3>Evolución de la intensidad energética final</h3><p>Índice 2010 = 100 · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Escenario</div></div>
+        <svg id="energy-intensity-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Evolución de la intensidad energética final de Euskadi hasta 2050"></svg>
+        <p id="energy-intensity-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar el consumo final, el PIB real y la intensidad de cada año.</p>
+        <p class="chart-note">Cálculo: consumo final energético dividido entre PIB real y normalizado para que 2010 sea igual a 100. Un valor menor indica que se necesita menos energía para producir una unidad de PIB. Fuentes: (EVE, 2026; Eustat, 2025a).</p>
+      </div>
+
+      <aside class="reading"><span>Lectura para la deliberación</span><p>La reducción de la intensidad es un logro de eficiencia y competitividad: permite que la actividad económica crezca sin exigir un aumento equivalente del consumo energético. El indicador no mide por sí solo las emisiones ni garantiza que toda la energía sea limpia, por lo que debe leerse junto con el mix energético y las emisiones.</p></aside>
+    </section>
+
+    <section class="chapter chapter-divider">
+      <h2>Población de Euskadi</h2>
+      <p class="economic-rationale">La población condiciona la demanda de vivienda, movilidad, servicios y energía, aunque su relación con el consumo no es proporcional: también influyen la estructura de los hogares, la actividad económica, la tecnología y la eficiencia. Entre 2004 y 2024, la población de Euskadi aumentó de 2,095 a 2,208 millones de habitantes (Eustat, 2025e).</p>
+
+      <div class="chart-block interactive-block">
+        <div class="chart-heading"><div><h3>Evolución de la población</h3><p>Habitantes a 1 de enero · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Regresión lineal</div></div>
+        <svg id="population-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Población observada de Euskadi y regresión lineal prolongada hasta 2050"></svg>
+        <p id="population-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar el dato observado y la recta de regresión.</p>
+        <p class="chart-note">La recta se ajusta por mínimos cuadrados a los 21 datos anuales de 2004–2024, se representa sobre todo el histórico y se prolonga hasta 2050. Es una estimación estadística propia, no la proyección demográfica oficial de Eustat. Fuente: (Eustat, 2025e).</p>
+      </div>
+
+      <aside class="reading"><span>Lectura para la deliberación</span><p>La prolongación lineal conduce a unos 2,33 millones de habitantes en 2050. Debe interpretarse como una referencia tendencial sencilla: no modeliza por separado nacimientos, defunciones ni migraciones y, por tanto, no sustituye las proyecciones demográficas oficiales.</p></aside>
+    </section>
+
+    <section class="chapter chapter-divider" hidden data-retained-indicator="pib-real">
+      <h2>Evolución del PIB real</h2>
+      <p class="economic-rationale">El PIB real de Euskadi ha aumentado porque su economía produce más bienes y servicios que antes, descontando el efecto de la inflación. Las principales causas han sido la modernización de la industria, el crecimiento de las exportaciones, la inversión en tecnología e innovación, la mejora de la formación de los trabajadores, el aumento de la productividad y el desarrollo de servicios avanzados (Eustat, 2025d; OCDE, 2011; Orkestra, 2025).</p>
+      <p class="economic-rationale"><strong>¿Qué significa el índice?</strong> El índice de volumen encadenado compara cuánto produce la economía descontando los cambios de precios. Se toma 2022 como referencia y se le asigna el valor 100. Por tanto, 105,7 puntos en 2024 significa que el volumen del PIB fue un 5,7 % mayor que en 2022; 79,1 puntos en 2004 significa que fue un 20,9 % menor. Los valores son puntos de índice: no representan euros ni una tasa anual de crecimiento (Eustat, 2025a).</p>
+
+      <div class="chart-block interactive-block">
+        <div class="chart-heading"><div><h3>PIB real de Euskadi</h3><p>Índice de volumen encadenado · 2022 = 100 · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div>
+        <svg id="gdp-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Evolución interactiva del PIB real de Euskadi y tendencia lineal hasta 2050"></svg>
+        <p id="gdp-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p>
+        <p class="chart-note">PIB real mediante índice de volumen encadenado. La recta se ajusta por mínimos cuadrados a todos los datos de 2014–2024, se representa sobre ese histórico y se prolonga hasta 2050 sin volver a anclarla en el último dato. Fuente: (Eustat, 2025a).</p>
+      </div>
+
+      <aside class="reading">
+        <span>Lectura para la deliberación</span>
+        <p>El crecimiento real del PIB amplía potencialmente la actividad económica, pero no informa por sí solo sobre bienestar, desigualdad, consumo energético o emisiones. El escenario tendencial debe leerse junto con la composición sectorial, el empleo y la intensidad energética.</p>
+      </aside>
+    </section>
+
+    <section class="chapter chapter-divider">
+      <h2>PIB real por habitante</h2>
+      <p class="economic-rationale">El PIB real por habitante divide la producción económica real entre la población residente. Permite distinguir si el crecimiento del PIB total se debe solamente a que hay más habitantes o si también aumenta la producción media por persona. Entre 2004 y 2024, el PIB real por habitante de Euskadi aumentó aproximadamente un 26,8 %, frente a un crecimiento poblacional del 5,4 % (Eustat, 2025a, 2025e).</p>
+
+      <div class="chart-block interactive-block">
+        <div class="chart-heading"><div><h3>PIB real por habitante</h3><p>Índice 2022 = 100 · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Trayectoria derivada</div></div>
+        <svg id="gdp-per-capita-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Evolución del PIB real por habitante de Euskadi y trayectoria derivada hasta 2050"></svg>
+        <p id="gdp-per-capita-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar el PIB real, la población y el valor por habitante.</p>
+        <p class="chart-note">Se calcula como PIB real dividido entre población y se normaliza con 2022 igual a 100. La trayectoria futura deriva de las regresiones del PIB real y de la población ya utilizadas en el modelo; no es una proyección independiente. Fuentes: (Eustat, 2025a, 2025e).</p>
+      </div>
+
+      <aside class="reading"><span>Lectura para la deliberación</span><p>El indicador muestra que la mayor parte del crecimiento económico observado no se explica solamente por el aumento de población. La prolongación estadística lo situaría cerca de 138 puntos en 2050, pero no representa por sí sola una mejora equivalente del bienestar o de su distribución.</p></aside>
+    </section>
+
+    <section class="chapter chapter-divider">
+      <h2>Distribución sectorial</h2>
+      <p class="economic-rationale">La distribución sectorial permite comparar qué actividades generan la producción económica de Euskadi y cuáles concentran el empleo. Analizar conjuntamente ambas dimensiones ayuda a observar los cambios de productividad, las capacidades profesionales y las necesidades energéticas de la estructura productiva. El avance de los servicios no implica necesariamente sustituir a la industria: una transición competitiva requiere transformar la base industrial y reforzar los servicios avanzados, tecnológicos y de conocimiento que la acompañan (Eustat, 2025b; INE, 2026; Orkestra, 2025).</p>
+
+      <div class="chart-block">
+        <div class="chart-heading">
+          <div>
+            <h3>Composición sectorial del PIB real</h3>
+            <p>Índice de volumen encadenado, 2022 = 100 · 2004–2050</p>
+          </div>
+          <div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div>
+        </div>
+        <svg class="pib-chart" viewBox="0 0 900 455" role="img" aria-labelledby="euskadi-chart-desc">
+          <desc id="euskadi-chart-desc">Evolución del PIB real de cada sector de Euskadi. La suma de las bandas reproduce el PIB real total hasta 2050.</desc>
+        </svg>
+        <p id="sector-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p>
+        <p class="chart-note">Cada banda se obtiene multiplicando el peso sectorial por el índice de PIB real total. Por eso, el borde superior reproduce exactamente la curva del PIB real y deja de ser una línea constante del 100 %. Fuentes: (Eustat, 2025a, 2025b).</p>
+      </div>
+
+      <aside class="reading">
+        <span>Lectura para la deliberación</span>
+        <p>La gráfica permite distinguir dos cambios simultáneos: cuánto crece el PIB real total y cómo se reparte ese crecimiento entre sectores. Aunque aumente el volumen real de producción industrial, su peso porcentual puede disminuir si los servicios crecen con mayor rapidez.</p>
+      </aside>
+
+      <p class="economic-rationale">La distribución sectorial del empleo mide cuántas personas ocupadas trabajan en la agricultura, la industria, la construcción y los servicios. Las bandas están expresadas en miles de personas y su suma —el borde superior— coincide con el empleo total de Euskadi. Así se puede diferenciar si un sector gana o pierde empleos y si, al mismo tiempo, cambia su peso relativo dentro de la economía (INE, 2026).</p>
+
+      <div class="chart-block interactive-block">
+        <div class="chart-heading"><div><h3>Distribución sectorial del empleo total</h3><p>Miles de personas ocupadas · 2011–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div>
+        <svg id="employment-interactive" class="interactive-chart" viewBox="0 0 900 455" role="img" aria-label="Personas ocupadas por sector en Euskadi y empleo total hasta 2050"></svg>
+        <p id="employment-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p>
+        <p class="chart-note">Cada banda muestra personas ocupadas. Su suma reproduce el empleo total: la senda prolonga la trayectoria observada entre 2014 y 2024 y después distribuye el total mediante las participaciones sectoriales. Fuente: (INE, 2026).</p>
+      </div>
+
+      <aside class="reading">
+        <span>Lectura para la deliberación</span>
+        <p>La gráfica permite ver simultáneamente la evolución del número total de personas ocupadas y su reparto sectorial. Un sector puede perder peso porcentual y, aun así, mantener o aumentar su número de empleos si crece suficientemente el empleo total.</p>
+      </aside>
+
+      <p class="economic-rationale">El sector servicios agrupa actividades muy diferentes. Para distinguirlas, el siguiente gráfico desglosa su VAB real entre comercio, hostelería y transporte; información y comunicaciones; finanzas y seguros; actividades inmobiliarias; actividades profesionales; administración pública, educación, sanidad y servicios sociales; y el resto de servicios. La suma de las bandas coincide con el VAB real total de los servicios (Eustat, 2025a).</p>
+
+      <div class="chart-block interactive-block">
+        <div class="chart-heading"><div><h3>PIB real de los subsectores de servicios</h3><p>Millones de euros de 2022 · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div>
+        <svg id="service-subsectors-interactive" class="interactive-chart" viewBox="0 0 900 480" role="img" aria-label="VAB real de los subsectores de servicios de Euskadi hasta 2050"></svg>
+        <p id="service-subsectors-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar el VAB real de cada subsector.</p>
+        <p class="chart-note">Datos A-10 de Eustat. Los índices de volumen encadenado se expresan en millones de euros de 2022 y se reescalan para cerrar con el total real de los servicios. La prolongación 2014–2024 no es una previsión oficial. Fuente: (Eustat, 2025a).</p>
+      </div>
+
+      <aside class="reading"><span>Lectura para la deliberación</span><p>El desglose permite observar qué tipos de servicios explican el crecimiento económico y diferenciar, por ejemplo, los servicios públicos y sociales, los profesionales y tecnológicos, las actividades inmobiliarias y el comercio, transporte y hostelería.</p></aside>
+    </section>
+
+    <section class="chapter chapter-divider">
+      <h2>Calidad del empleo</h2>
+      <p class="economic-rationale">La calidad del empleo no depende de una sola variable. La remuneración real por hora muestra si mejora el poder adquisitivo del trabajo una vez descontada la inflación, sin confundir los ingresos con las horas trabajadas. La tasa de desempleo indica qué proporción de la población activa quiere trabajar y no encuentra empleo. Consideradas conjuntamente, ambas variables permiten observar la capacidad del sistema económico para ofrecer trabajo y remunerarlo adecuadamente (Eustat, 2025c; Departamento de Economía, Trabajo y Empleo, 2026).</p>
+
+      <div class="chart-block interactive-block">
+        <div class="chart-heading"><div><h3>Remuneración neta real por hora</h3><p>Euros constantes de 2024 por hora · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div>
+        <svg id="wage-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Evolución interactiva de la remuneración neta real por hora en Euskadi y prolongación tendencial hasta 2050"></svg>
+        <p id="wage-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año con dato o estimación.</p>
+        <p class="chart-note">Datos observados de la Encuesta de Condiciones de Trabajo. La línea discontinua prolonga hasta 2050 la tendencia lineal de las seis observaciones publicadas entre 2004 y 2024; no es una previsión oficial. Fuente de los datos: (Departamento de Economía, Trabajo y Empleo, 2026).</p>
+      </div>
+
+      <aside class="reading">
+        <span>Lectura para la deliberación</span>
+        <p>La remuneración neta real por hora pasó de 13,01 euros en 2004 a 13,35 en 2024: un aumento acumulado de apenas el 2,6 %. La trayectoria ha sido irregular y el valor de 2024 se sitúa por debajo de los registrados en 2009 y 2020. La continuidad estadística de la tendencia apuntaría a una mejora lenta, pero su interpretación debe ser prudente porque la encuesta es cuatrienal y contiene pocas observaciones.</p>
+      </aside>
+
+      <div class="chart-block interactive-block quality-subchart">
+        <div class="chart-heading"><div><h3>Tasa de desempleo</h3><p>Porcentaje de la población activa de 16 a 74 años · 2011–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div>
+        <svg id="unemployment-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Evolución interactiva de la tasa de desempleo en Euskadi y prolongación tendencial hasta 2050"></svg>
+        <p id="unemployment-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p>
+        <p class="chart-note">La curva exponencial se obtiene mediante una regresión lineal del logaritmo de la tasa de desempleo sobre 2014–2024. Se representa sobre ese histórico y se prolonga hasta 2050 sin anclarla de nuevo en el dato de 2024. Fuente: (Eustat, 2025c).</p>
+      </div>
+
+      <aside class="reading">
+        <span>Lectura para la deliberación</span>
+        <p>La tasa de desempleo alcanzó el 16,1 % en 2014 y descendió hasta el 7,4 % en 2024. Una prolongación puramente matemática del ritmo reciente la situaría cerca del 1,0 % en 2050. Ese resultado debe interpretarse como la consecuencia extrema del escenario tendencial, no como una expectativa realista: cuando el desempleo se aproxima a niveles bajos intervienen límites estructurales, cambios demográficos y desajustes entre las capacidades disponibles y los empleos demandados.</p>
+      </aside>
+    </section>
+      </div>
+    </section>
+
+    <section class="topic-accordion">
+      <button id="energy-toggle" class="topic-toggle" type="button" aria-expanded="false" aria-controls="energy-content">
+        <span><small>Bloque 03</small>Sistema energético</span>
+        <span class="topic-symbol" aria-hidden="true">+</span>
+      </button>
+      <div id="energy-content" class="topic-content indicator-group" hidden>
+        <div class="topic-introduction">
+          <p>El sistema energético vasco se caracteriza por una elevada dependencia exterior, un peso todavía dominante de los combustibles fósiles y una producción renovable propia limitada. Desde 2004 se ha reducido el consumo final y ha aumentado la electricidad renovable disponible, pero una parte creciente procede de importaciones. Por ello, conviene distinguir el sistema energético completo del sistema eléctrico, y la producción renovable propia de la energía renovable importada: ambas contribuyen a reducir emisiones, pero tienen efectos distintos sobre la autonomía energética de Euskadi (EVE, 2026).</p>
+        </div>
+
+        <section class="chapter">
+          <h2>Mix energético</h2>
+          <p class="economic-rationale">El mix energético muestra el reparto del consumo final entre derivados del petróleo, gas natural, combustibles sólidos, energías derivadas, renovables directas y electricidad. La electricidad se desdobla entre renovable propia, renovable importada y resto no renovable; las renovables directas se distinguen entre propias y de origen exterior. Como el perímetro es el consumo final, la suma de todas las bandas coincide cada año con la gráfica de consumo final energético (EVE, 2026).</p>
+          <div class="chart-block interactive-block">
+            <div class="chart-heading"><div><h3>Composición del mix energético</h3><p>GWh del consumo final energético · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Escenario <span class="electric-outline-key"></span> Contorno negro = electricidad</div></div>
+            <svg id="energy-mix-interactive" class="interactive-chart" viewBox="0 0 900 455" role="img" aria-label="Evolución de la composición del mix energético de Euskadi y prolongación tendencial hasta 2050"></svg>
+            <p id="energy-mix-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p>
+            <p class="chart-note">El histórico utiliza los 21 balances anuales de EVE entre 2004 y 2024. La altura total representa el consumo final energético y cada área muestra la magnitud absoluta de una energía. La electricidad se divide con las series del mix eléctrico y las renovables directas se separan entre propias y de origen exterior mediante la convención común del modelo. Las diferencias de redondeo de hasta 2 GWh se reconcilian en la electricidad no renovable para que el balance cierre exactamente. Fuente: elaboración propia con datos de EVE (2026).</p>
+          </div>
+          <aside class="reading"><span>Lectura para la deliberación</span><p>En 2024, los derivados del petróleo representaban aproximadamente el 49,5 % del consumo final y el gas natural el 18,0 %. La renovable total —directa y eléctrica— alcanzaba el 18,75 %. La serie anual permite reconocer tanto la reducción del consumo total como las oscilaciones y sustituciones entre fuentes.</p></aside>
+        </section>
+
+        <section class="chapter chapter-divider">
+          <h2>Mix energético de las renovables directas no eléctricas</h2>
+          <p class="economic-rationale">Este indicador desglosa las renovables directas no eléctricas en los tres grupos que pueden reconstruirse homogéneamente con las publicaciones de EVE: combustibles renovables, biomasa y calor renovable —solar térmica, aerotermia y geotermia—. Se excluyen hidráulica, eólica y fotovoltaica porque se contabilizan en la generación eléctrica. La electricidad de las bombas de calor permanece en el mix eléctrico.</p>
+          <div class="chart-block interactive-block">
+            <div class="chart-heading"><div><h3>Mix energético de las renovables directas no eléctricas</h3><p>GWh de consumo renovable directo · 2015–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Escenario <span style="display:inline-block;width:1rem;height:1rem;border:1px solid #594f91;border-radius:2px;background-color:#756bb1;background-image:radial-gradient(#fff 1.2px,transparent 1.3px);background-size:6px 6px"></span> Punteado = producción propia o predominantemente propia en Euskadi</div></div>
+            <svg id="renewable-mix-interactive" class="interactive-chart" viewBox="0 0 900 455" role="img" aria-label="Composición por tecnologías del mix energético renovable de Euskadi"></svg>
+            <p id="renewable-mix-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p>
+            <p class="chart-note">Serie reconstruida para 2015–2024 con los informes anuales Euskadi Energía y los balances finales de EVE. Se excluyen las cuotas hidráulica y eólica antes de normalizar el desglose contra el total de renovables directas. EVE agrupa solar, aerotermia y geotermia, por lo que no se desagregan retrospectivamente. El informe de 2022 declara una actualización metodológica del indicador renovable. Fuentes: (EVE, 2016–2025).</p>
+          </div>
+          <aside class="reading"><span>Lectura para la deliberación</span><p>La biomasa y los biocarburantes concentran actualmente la mayor parte del aprovechamiento renovable. En el futuro, la composición puede diversificarse si aumentan la energía solar, la eólica, la aerotermia y la geotermia; el escenario normativo representa una transformación más rápida de esa estructura.</p></aside>
+        </section>
+
+        <section class="chapter chapter-divider">
+          <h2>Mix de la generación eléctrica renovable propia</h2>
+          <p class="economic-rationale">Este indicador desglosa la electricidad renovable generada dentro de Euskadi entre hidráulica, eólica, solar fotovoltaica y otras tecnologías eléctricas renovables, principalmente biomasa, biogás, residuos renovables y energía marina. La suma coincide con la generación eléctrica renovable propia del escenario.</p>
+          <div class="chart-block interactive-block">
+            <div class="chart-heading"><div><h3>Mix de la generación eléctrica renovable propia</h3><p>GWh · 2014–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Escenario</div></div>
+            <svg id="electric-renewable-mix-interactive" class="interactive-chart" viewBox="0 0 900 455" role="img" aria-label="Generación eléctrica renovable propia de Euskadi por tecnología"></svg>
+            <p id="electric-renewable-mix-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p>
+            <p class="chart-note">La serie 2020–2024 procede de Red Eléctrica y se escala al total de EVE para mantener el mismo perímetro. La senda normativa utiliza la 3E2030, el PTS de Energías Renovables y el objetivo agregado del Gobierno Vasco de marzo de 2026. Para la fotovoltaica se contrasta la productividad de Ekian; para eólica se aplican el objetivo de 733 MW, el potencial territorial del PTS y sus restricciones ambientales; para biomasa y otras se utilizan los objetivos de potencia del PTS. Los valores de 2050 son límites de modelización, no metas oficiales. Referencias completas al final. Fuentes: (EVE, 2016, 2025; Red Eléctrica, API REData; Gobierno Vasco, 2020, 2021, 2026).</p>
+          </div>
+          <aside class="reading"><span>Lectura para la deliberación</span><p>La senda normativa concentra el crecimiento en eólica y fotovoltaica, mientras la hidráulica mantiene un margen de expansión mucho menor. Las otras renovables eléctricas agrupan biomasa, biogás, residuos renovables y energía marina.</p></aside>
+        </section>
+
+        <section class="chapter chapter-divider">
+          <h2>Consumo final energético</h2>
+          <p class="economic-rationale">El consumo final reúne la energía utilizada directamente por la industria, el transporte, los hogares, los servicios y el sector primario. Su reducción puede reflejar mejoras de eficiencia, cambios estructurales de la economía o variaciones de actividad y no implica por sí sola una sustitución de combustibles fósiles por fuentes renovables (EVE, 2026).</p>
+          <div class="chart-block interactive-block"><div class="chart-heading"><div><h3>Consumo final energético</h3><p>GWh · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div><svg id="final-consumption-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Evolución del consumo final energético de Euskadi hasta 2050"></svg><p id="final-consumption-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p><p class="chart-note">La senda utiliza la pendiente estimada sobre 2014–2024, pero se inicia expresamente en el dato observado de 2024. Es una tendencia lineal anclada, no la recta de regresión completa ni una previsión oficial. Fuente: (EVE, 2026).</p></div>
+          <aside class="reading"><span>Lectura para la deliberación</span><p>El consumo final pasó de 64.812 GWh en 2004 a 53.178 GWh en 2024. La tendencia anclada en 2024 y construida con la pendiente estadística de 2014–2024 lo situaría alrededor de 40.100 GWh en 2050; no se impone ningún valor futuro al escenario tendencial.</p></aside>
+        </section>
+
+        <section class="chapter chapter-divider" hidden data-retained-indicator="produccion-primaria-renovable">
+          <h2>Producción primaria renovable</h2>
+          <p class="economic-rationale">La producción primaria renovable mide la energía renovable obtenida dentro de Euskadi antes de su transformación o consumo. Es el indicador más directamente relacionado con la capacidad propia de abastecimiento renovable y debe diferenciarse de la electricidad renovable importada (EVE, 2026).</p>
+          <div class="chart-block interactive-block"><div class="chart-heading"><div><h3>Producción primaria renovable propia</h3><p>GWh · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div><svg id="primary-renewable-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Evolución de la producción primaria renovable de Euskadi hasta 2050"></svg><p id="primary-renewable-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p><p class="chart-note">La senda utiliza la pendiente estimada sobre 2014–2024 y se inicia en el dato observado de 2024. Es una tendencia lineal anclada, no la recta de regresión completa ni una previsión oficial. Fuente: (EVE, 2026).</p></div>
+          <aside class="reading"><span>Lectura para la deliberación</span><p>La producción primaria renovable aumentó desde 4.095 GWh en 2004 hasta 6.748 GWh en 2024, con fuertes oscilaciones. La prolongación reciente alcanzaría unos 13.800 GWh en 2050, pero exige interpretar con cautela la variabilidad hidráulica, eólica y de la biomasa.</p></aside>
+        </section>
+
+        <section class="chapter chapter-divider" hidden data-retained-indicator="importacion-renovable">
+          <h2>Importación renovable</h2>
+          <p class="economic-rationale">La importación renovable estima la parte de la electricidad importada atribuible a fuentes renovables según la composición del mix eléctrico estatal. Aumenta la energía renovable disponible para el consumo vasco, aunque no representa generación ubicada en Euskadi (EVE, 2026).</p>
+          <div class="chart-block interactive-block"><div class="chart-heading"><div><h3>Electricidad renovable importada</h3><p>GWh · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div><svg id="imported-renewable-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Evolución de la electricidad renovable importada por Euskadi hasta 2050"></svg><p id="imported-renewable-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p><p class="chart-note">La estimación depende del peso renovable del mix estatal. La prolongación lineal utiliza 2014–2024 y se ancla en 2024; no es una previsión oficial. Fuente: (EVE, 2026).</p></div>
+          <aside class="reading"><span>Lectura para la deliberación</span><p>La importación renovable pasó de 2.086 GWh en 2004 a 5.197 GWh en 2024. Su variación anual es elevada y depende tanto del saldo importador vasco como de la generación renovable disponible en el conjunto del sistema eléctrico español.</p></aside>
+        </section>
+
+        <section class="chapter chapter-divider" hidden data-retained-indicator="renovable-total-disponible">
+          <h2>Renovable total disponible</h2>
+          <p class="economic-rationale">La renovable total disponible suma la electricidad renovable producida en Euskadi y la parte renovable de las importaciones eléctricas. Permite medir la disponibilidad conjunta, pero no debe utilizarse como sinónimo de producción propia ni de autoabastecimiento (EVE, 2026).</p>
+          <div class="chart-block interactive-block"><div class="chart-heading"><div><h3>Energía renovable total disponible</h3><p>GWh · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div><svg id="total-renewable-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Evolución de la energía renovable total disponible en Euskadi hasta 2050"></svg><p id="total-renewable-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p><p class="chart-note">Suma de renovables propias del mix eléctrico e importación eléctrica renovable. La prolongación lineal utiliza 2014–2024; no es una previsión oficial. Fuente: (EVE, 2026).</p></div>
+          <aside class="reading"><span>Lectura para la deliberación</span><p>El total renovable disponible aumentó de 2.965 GWh en 2004 a 6.361 GWh en 2024. Casi cuatro quintas partes del valor de 2024 procedían de importaciones renovables, lo que refuerza la descarbonización eléctrica más que la autonomía territorial.</p></aside>
+        </section>
+
+        <section class="chapter chapter-divider">
+          <h2>Renovables dentro del consumo final energético</h2>
+          <p class="economic-rationale">Este indicador expresa en GWh la parte renovable y no renovable del consumo final energético. Al representarlas apiladas, el borde superior equivale al consumo final total y permite observar simultáneamente su descenso y el aumento del peso renovable. El porcentaje exacto de cada año se conserva en la información interactiva (EVE, 2026).</p>
+          <div class="chart-block interactive-block"><div class="chart-heading"><div><h3>Renovables dentro del consumo final energético</h3><p>GWh · 2004–2050</p></div><div class="key"><span style="display:inline-block;width:1rem;height:.65rem;background:#7fbd32"></span> Renovables <span style="display:inline-block;width:1rem;height:.65rem;background:#555b60"></span> No renovables</div></div><svg id="renewable-available-interactive" class="interactive-chart" viewBox="0 0 900 430" role="img" aria-label="Magnitud de las energías renovables y no renovables dentro del consumo final de Euskadi hasta 2050"></svg><p id="renewable-available-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p><p class="chart-note">La altura total del área representa el consumo final energético en GWh. La parte verde muestra su magnitud renovable y la gris la no renovable. Por tanto, el borde superior reproduce la trayectoria descendente del consumo final. Fuente: (EVE, 2026).</p></div>
+          <aside class="reading"><span>Lectura para la deliberación</span><p>En 2024, aproximadamente 6.361 GWh de los 53.178 GWh consumidos eran renovables. En el futuro puede crecer la proporción renovable mientras disminuye el consumo total; por eso conviene observar conjuntamente el volumen en GWh y el porcentaje mostrado al pasar el cursor.</p></aside>
+        </section>
+      </div>
+    </section>
+
+    <section class="topic-accordion">
+      <button id="climate-toggle" class="topic-toggle" type="button" aria-expanded="false" aria-controls="climate-content">
+        <span><small>Bloque 01</small>Contexto climático</span>
+        <span class="topic-symbol" aria-hidden="true">+</span>
+      </button>
+      <div id="climate-content" class="topic-content indicator-group" hidden>
+        <div class="topic-introduction">
+          <p>El contexto climático combina dos dimensiones relacionadas: la temperatura permite observar la evolución del calentamiento, mientras que el balance de emisiones muestra la contribución de Euskadi a sus causas. Las emisiones brutas recogen lo que se libera a la atmósfera; las absorciones UTCUTS, el CO₂ retirado por bosques, suelos y otros usos de la tierra; y las emisiones netas son la diferencia entre ambas. La Ley 1/2024 exige reducir las emisiones un 45 % en 2030 respecto a 2005 y alcanzar la neutralidad climática, como máximo, en 2050, lo que significa llevar el balance neto a cero y no necesariamente eliminar todas las emisiones brutas (Ihobe, 2023; Gobierno Vasco, 2025b; Ley 1/2024).</p>
+        </div>
+
+        <section class="chapter">
+          <h2>Temperatura media anual en las tres capitales vascas</h2>
+          <p class="economic-rationale">La temperatura media anual varía de un año a otro, pero el histórico de largo plazo permite distinguir esa variabilidad del calentamiento sostenido. El indicador utiliza la media aritmética de Bilbao, Donostia / San Sebastián y Vitoria-Gasteiz; por tanto, representa tres puntos urbanos de referencia y no una media espacial de todo el territorio.</p>
+
+          <div class="chart-block interactive-block">
+            <div class="chart-heading"><div><h3>Temperatura media anual</h3><p>Media de las tres capitales vascas · °C · 1971–2100</p></div><div class="key"><span class="solid"></span> Reanálisis ERA5-Land <span class="soft"></span> Proyección regional Ihobe / EURO-CORDEX</div></div>
+            <svg id="temperature-interactive" class="interactive-chart" viewBox="0 0 900 440" role="img" aria-label="Temperatura media anual en Bilbao, Donostia San Sebastián y Vitoria-Gasteiz, histórico 1971 a 2025 y proyección climática del escenario hasta 2100"></svg>
+            <p id="temperature-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p>
+            <p class="chart-note">El tramo 1971–2025 procede de ERA5-Land. El dato completo de 2025, 14,46 °C, se incorpora mediante su anomalía respecto a 2024 para preservar la homogeneidad de la versión histórica ya utilizada. Desde 2025 se aplica la proyección regional de Ihobe/EURO-CORDEX correspondiente al escenario: RCP8.5 en el tendencial y RCP4.5 en el normativo. La media multimodelo se suaviza a 11 años y se enlaza con el dato observado de 2025. La diferencia supone que el mundo sigue una senda climática coherente con cada escenario; no significa que Euskadi determine por sí sola la temperatura regional. Fuentes: (Copernicus/ECMWF; Open-Meteo, 2026a; Ihobe; IPCC, 2021).</p>
+          </div>
+
+          <aside class="reading">
+            <span>Lectura para la deliberación</span>
+            <p>La diferencia entre escenarios todavía es moderada en 2050 y se vuelve mucho más visible a finales de siglo. Si el mundo mantiene un esfuerzo sostenido de mitigación, la trayectoria regional se estabiliza cerca de 15,2 °C en 2100; bajo una senda de emisiones altas, asciende hasta aproximadamente 17,1 °C.</p>
+          </aside>
+        </section>
+
+        <section class="chapter">
+          <h2>Emisiones brutas de gases de efecto invernadero</h2>
+          <p class="economic-rationale">Este indicador reúne en toneladas equivalentes de CO₂ los principales gases responsables del calentamiento global. Entre 2005 y 2024, las emisiones de Euskadi descendieron aproximadamente un 38 %, desde 25,5 hasta 15,8 millones de toneladas. Las reducciones recientes se explican especialmente por el descenso de las emisiones energéticas e industriales, mientras que el transporte continúa siendo uno de los sectores más difíciles de descarbonizar (Ihobe, 2025).</p>
+
+          <div class="chart-block interactive-block">
+            <div class="chart-heading"><div><h3>Emisiones brutas de gases de efecto invernadero</h3><p>Millones de toneladas de CO₂ equivalente · 2004–2050</p></div><div class="key"><span class="solid"></span> Observado <span class="soft"></span> Tendencia</div></div>
+            <svg id="emissions-interactive" class="interactive-chart" viewBox="0 0 900 440" role="img" aria-label="Evolución interactiva de las emisiones totales de gases de efecto invernadero de Euskadi y prolongación tendencial hasta 2050"></svg>
+            <p id="emissions-detail" class="chart-detail">Mueve el cursor sobre la gráfica para consultar un año.</p>
+            <p class="chart-note">Inventario oficial 2004–2023 y avance provisional para 2024. La línea horizontal representa 2,6 Mt CO₂-eq absorbidas por el sector UTCUTS en 2023, último dato oficial disponible. Cuando la curva de emisiones brutas toca esta línea, las emisiones liberadas y las absorciones se compensan: las emisiones netas son cero y se alcanza la neutralidad climática. Las absorciones son el CO₂ retirado de la atmósfera por bosques, suelos y otros usos de la tierra; mantenerlas constantes hasta 2050 es un supuesto de lectura, no una meta oficial. Fuente: (Gobierno Vasco, 2025a, 2025b).</p>
+          </div>
+
+          <aside class="reading">
+            <span>Lectura para la deliberación</span>
+            <p>Si continuara el ritmo de descenso de 2014–2024, las emisiones se situarían alrededor de 14,1 millones de toneladas en 2030, muy cerca del objetivo legal de reducción del 45 % respecto a 2005, pero todavía alcanzarían unos 9,7 millones en 2050. La tendencia observada, por tanto, no conduciría por sí sola a la neutralidad climática: serían necesarias reducciones adicionales y el refuerzo de las absorciones de carbono.</p>
+          </aside>
+        </section>
+
+      </div>
+    </section>
+
+    <section class="topic-accordion references-accordion">
+      <button id="references-toggle" class="topic-toggle" type="button" aria-expanded="false" aria-controls="references-content">
+        <span><small>Fuentes</small>Referencias</span>
+        <span class="topic-symbol" aria-hidden="true">+</span>
+      </button>
+      <div id="references-content" class="topic-content references-content" hidden>
+        <h3>Fuentes de los datos de las gráficas</h3>
+        <ol>
+          <li>Copernicus Climate Change Service / European Centre for Medium-Range Weather Forecasts. <em>ERA5-Land hourly data from 1950 to present.</em> Reanálisis utilizado para reconstruir la temperatura media diaria y anual de 1971–2025. <a href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land">Copernicus Climate Data Store</a>.</li>
+          <li>Open-Meteo. (2026a). <em>Historical Weather API.</em> Acceso homogéneo a ERA5-Land; serie consultada para Bilbao, Donostia / San Sebastián y Vitoria-Gasteiz. <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo</a>.</li>
+          <li>Ihobe–Sociedad Pública de Gestión Ambiental. <em>Escenarios climáticos en Euskadi y series de datos.</em> Proyecciones regionales RCP4.5 y RCP8.5 de temperatura anual, basadas en EURO-CORDEX, para los municipios de Bilbao, Donostia / San Sebastián y Vitoria-Gasteiz hasta 2100. <a href="https://escenariosklima.ihobe.eus/home">Ihobe</a>.</li>
+          <li>Intergovernmental Panel on Climate Change. (2021). <em>Climate Change 2021: The Physical Science Basis. Summary for Policymakers.</em> Referencia para interpretar la relación entre trayectorias globales de emisiones y calentamiento hasta 2100. <a href="https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/">IPCC</a>.</li>
+          <li>Eustat–Instituto Vasco de Estadística. (2025a, 19 de septiembre). <em>Producto interior bruto (PIB) de la C. A. de Euskadi (oferta) por territorio histórico, rama de actividad, tipo de dato y de medida, 1980–2024.</em> Índice de volumen encadenado, base 2022; 2024 provisional. <a href="https://www.eustat.eus/bankupx/pxweb/es/DB/-/PX_170112_cpib_pib_a_06.px/">Banco de datos de Eustat</a>.</li>
+          <li>Eustat–Instituto Vasco de Estadística. (2025e, 5 de diciembre). <em>Población de la C. A. de Euskadi por territorio histórico, zona de residencia y sexo, 2001/01/01–2025/01/01.</em> Censo de población y viviendas, estructura de la población. Serie utilizada: total de Euskadi, ambos sexos y total de zonas, datos a 1 de enero de 2004–2024. <a href="https://www.eustat.eus/bankupx/pxweb/es/DB/-/PX_010154_cepv1_ep04b.px/">Banco de datos de Eustat</a>.</li>
+          <li>Eustat–Instituto Vasco de Estadística. (2025b, 31 de octubre). <em>Valor añadido bruto de la C. A. de Euskadi por rama de actividad A-4 y territorio histórico (% sobre el VAB a precios básicos), 2000–2024.</em> <a href="https://www.eustat.eus/elementos/tbl0018913_c.html">Eustat</a>.</li>
+          <li>Instituto Nacional de Estadística. (2026, 25 de febrero). <em>Ocupados por sector económico, sexo y comunidad autónoma. Valores absolutos.</em> Media de los cuatro trimestres, Encuesta de Población Activa. Unidad: miles de personas. <a href="https://www.ine.es/jaxiT3/Tabla.htm?L=0&amp;t=4948">INEbase</a>.</li>
+          <li>Departamento de Economía, Trabajo y Empleo. (2026, 25 de febrero). <em>Remuneración neta media en el último mes cobrado de la población asalariada y asimilada de la C. A. de Euskadi, 1996–2024.</em> Encuesta de Condiciones de Trabajo. <a href="https://es.eustat.eus/elementos/tbl0018393_c.html">Eustat</a>.</li>
+          <li>Eustat–Instituto Vasco de Estadística. (2025c). <em>Tasa de paro de la población de 16 a 74 años de la C. A. de Euskadi y de los países de la Unión Europea, 2011–2024.</em> Encuesta de Población en Relación con la Actividad. <a href="https://es.eustat.eus/elementos/tbl0004241_c.html">Eustat</a>.</li>
+          <li>Gobierno Vasco. (2025a, 23 de septiembre). <em>Inventario de emisiones de gases de efecto invernadero de la C. A. de Euskadi, 1990–2023.</em> Conjunto de datos abiertos, operación estadística 090205. <a href="https://opendata.euskadi.eus/catalogo/-/estadistica/inventario-de-emisiones-de-gases-de-efecto-invernadero-de-la-c-a-de-euskadi-2023/">Open Data Euskadi</a>.</li>
+          <li>Gobierno Vasco. (2025b, 21 de octubre). <em>Avance del Inventario de Emisiones de Gases de Efecto Invernadero de Euskadi 2024.</em> <a href="https://www.irekia.euskadi.eus/es/news/105383-euskadi-reduce-sus-emisiones-desde-2005-consolida-senda-hacia-neutralidad-climatica">Irekia</a>.</li>
+          <li>Ihobe–Sociedad Pública de Gestión Ambiental. (2023). <em>Inventario de Emisiones de Gases de Efecto Invernadero del País Vasco 2021.</em> Incluye las absorciones del sector UTCUTS. <a href="https://www.euskadi.eus/contenidos/documentacion/inventarios_gei/es_pub/adjuntos/230628-GEI_2021_Resumen_CAS.pdf">Gobierno Vasco</a>.</li>
+          <li>Ente Vasco de la Energía. (2026). <em>Datos energéticos de Euskadi: balances energéticos, consumo interior bruto y mix energético, consumo final, intensidad energética, mix eléctrico y energías renovables.</em> EVE define la intensidad como consumo energético por unidad de PIB generado. Series interactivas elaboradas conforme a la metodología Eurostat. <a href="https://www.eve.eus/impulsamos-la-transicion/datos-energeticos/datos-energeticos-euskadi/">EVE</a>.</li>
+          <li>Ente Vasco de la Energía. (2023). <em>Euskadi Energía 2022.</em> Composición del aprovechamiento renovable por tecnologías. <a href="https://www.eve.eus/assets/media/Euskadi-Energia-2022V2.pdf">EVE</a>.</li>
+          <li>Ente Vasco de la Energía. (2024). <em>Euskadi Energía 2023.</em> Variación anual del aprovechamiento de biomasa, biocarburantes, hidráulica, eólica, solar, aerotermia y geotermia. <a href="https://www.eve.eus/assets/media/Euskadi-Energia-2023-cast.pdf">EVE</a>.</li>
+          <li>Gobierno Vasco. (2024). <em>Plan Territorial Sectorial de las Energías Renovables en Euskadi. Memoria de aprobación provisional.</em> Potencial neto de nueva producción: predominio de la eólica, seguida de la solar fotovoltaica; crecimiento limitado de la minihidráulica. <a href="https://www.euskadi.eus/contenidos/informacion/proceso_elaboracion_ptsere/es_def/adjuntos/PROVISIONAL-DOC-1-MEMORIA.pdf">Euskadi.eus</a>.</li>
+          <li>Ente Vasco de la Energía. (2026). <em>La biomasa en Euskadi.</em> Recursos forestales, residuos industriales y urbanos, biogás y usos térmicos y eléctricos. <a href="https://www.eve.eus/actuaciones/biomasa/">EVE</a>.</li>
+          <li>Instituto para la Diversificación y Ahorro de la Energía. (2026). <em>Biocarburantes.</em> Definiciones, materias primas y principales usos en el transporte. <a href="https://www.idae.es/tecnologias/energias-renovables/uso-termico/biocarburantes">IDAE</a>.</li>
+          <li>Instituto para la Diversificación y Ahorro de la Energía. (2023). <em>Guía para la incorporación de la bomba de calor en la rehabilitación de edificios.</em> La climatización representa aproximadamente el 49 % del consumo energético de los edificios. <a href="https://www.idae.es/en/node/32429">IDAE</a>.</li>
+          <li>Comisión Europea. (2026). <em>Heat pumps.</em> Las bombas de calor son aproximadamente entre tres y cinco veces más eficientes que las calderas de gas. <a href="https://energy.ec.europa.eu/topics/energy-efficiency/heat-pumps_en">Comisión Europea</a>.</li>
+          <li>World Economic Forum. (2024). <em>Industrial Electrification: Strategies and Policies for Europe.</em> Potencial técnico de electrificación directa del 60–90 % de la demanda energética industrial de la UE. <a href="https://reports.weforum.org/docs/WEF_Industrial_Electrification_2024.pdf">World Economic Forum</a>.</li>
+          <li>SPRI–Net-Zero Basque Industrial SuperCluster. (2023). <em>Roadmaps para la descarbonización de la industria vasca.</em> Hojas de ruta de siderurgia, papel, cemento, refino y fundición con electrificación, biogás, hidrógeno y combustibles sintéticos. <a href="https://www.spri.eus/archivos/2024/01/pdf/202311_nzbisc_en.pdf">SPRI</a>.</li>
+          <li>Eustat–Instituto Vasco de Estadística. (2026, 1 de abril). <em>Consumo final de energía de la C. A. de Euskadi por tipos de energía, 2000–2024.</em> Operación estadística 112332. <a href="https://www.eustat.eus/elementos/ele0000000/consumo-final-de-energia-de-la-ca-de-euskadi-por-tipos-de-energia-ktep/tbl0000066_c.html">Eustat</a>.</li>
+          <li>Ministerio para la Transición Ecológica y el Reto Demográfico. (2024). <em>Plan Nacional Integrado de Energía y Clima 2023–2030.</em> Objetivo del 81 % de generación eléctrica renovable en 2030. <a href="https://www.miteco.gob.es/es/energia/estrategia-normativa/pniec-23-30.html">MITECO</a>.</li>
+          <li>Ministerio para la Transición Ecológica y el Reto Demográfico. (2020). <em>Estrategia de Descarbonización a Largo Plazo 2050.</em> Escenario de neutralidad climática con un 97 % de renovables sobre el consumo final y más del 50 % de electrificación de la demanda final. <a href="https://www.miteco.gob.es/es/prensa/ultimas-noticias/2020/11/el_gobierno_apruebalaestrategiadedescarbonizacionalargoplazoquem.html">MITECO</a>.</li>
+          <li>Comisión Europea. (2023). <em>Reglamento ReFuelEU Aviation.</em> Cuota mínima de combustibles sostenibles de aviación del 70 % en 2050, incluida una subcuota del 35 % de combustibles sintéticos. <a href="https://transport.ec.europa.eu/transport-modes/air/environment/refueleu-aviation_en">Comisión Europea</a>.</li>
+          <li>Red Eléctrica. (2026, 11 de marzo). <em>El País Vasco incrementa un 14,3 % su producción eléctrica en 2025 y supera los 5.500 GWh.</em> Generación total y cuota renovable con autoconsumo incluido. <a href="https://www.ree.es/sites/default/files/07_SALA_PRENSA/Documentos/2026/np-pais-vasco.pdf">Red Eléctrica</a>.</li>
+          <li>Red Eléctrica. <em>API REData: generación eléctrica por tecnología y comunidad autónoma, País Vasco, 2020–2024.</em> Serie utilizada para hidráulica, eólica, fotovoltaica y otras renovables eléctricas. <a href="https://www.ree.es/es/datos/apidatos">Red Eléctrica</a>.</li>
+          <li>Ente Vasco de la Energía. (2025). <em>Euskadi Energía 2024.</em> Potencias instaladas: fotovoltaica, eólica, hidráulica, biomasa, geotermia y energía marina. <a href="https://www.eve.eus/assets/media/Euskadi-Energia-2024-cast.pdf">EVE</a>.</li>
+          <li>Gobierno Vasco. (2026). <em>Plan Territorial Sectorial de las Energías Renovables en Euskadi: memoria definitiva.</em> Potencial aproximado de 1.100 MW eólicos y 2.500 MW fotovoltaicos sobre suelo y estimación de 1.600 MW fotovoltaicos en cubiertas. <a href="https://www.euskadi.eus/contenidos/informacion/pts_fase_ap_defi/es_def/adjuntos/DEFINITIVA-DOC-I-MEMORIA.pdf">Euskadi.eus</a>.</li>
+          <li>Gobierno Vasco. (2026). <em>Evaluación ambiental estratégica del PTS de Energías Renovables.</em> Potencia instalada en 2024 y objetivos 2030: eólica terrestre 733 MW, marina 50 MW, fotovoltaica 293 MW, biomasa eléctrica 111 MW e hidráulica 183 MW. <a href="https://www.euskadi.eus/contenidos/informacion/pts_fase_ap_provi/es_def/adjuntos/PTS-RENOVABLES-EVALUACION-AMBIENTAL-ESTRATEGICA.pdf">Euskadi.eus</a>.</li>
+          <li>Gobierno Vasco. (2021). <em>Desarrollo de las energías eólica y fotovoltaica y su compatibilización con la conservación del patrimonio natural en la CAPV.</em> Referencia para las restricciones ambientales y territoriales. <a href="https://www.euskadi.eus/documentacion/2022/desarrollo-de-las-energias-eolica-y-fotovoltaica-y-su-compatibilizacion-con-la-conservacion-del-patrimonio-natural-en-la-capv/web01-a3enerpe/es/">Euskadi.eus</a>.</li>
+          <li>Gobierno Vasco. (2020, 20 de enero). <em>Ekian, la mayor planta solar de Euskadi, echa a andar.</em> 24 MW y producción anual estimada cercana a 40 GWh; referencia para convertir potencia fotovoltaica en generación. <a href="https://www.euskadi.eus/gobierno-vasco/-/noticia/2020/ekian-la-mayor-planta-solar-de-euskadi-echa-a-andar/">Euskadi.eus</a>.</li>
+        </ol>
+        <h3>Referencias para la interpretación</h3>
+        <ol>
+          <li>Eustat–Instituto Vasco de Estadística. (2025d, 14 de noviembre). <em>El gasto en I+D aumenta un 5,6 % y alcanza los 2.114 millones de euros en la C. A. de Euskadi.</em></li>
+          <li>Organización para la Cooperación y el Desarrollo Económicos. (2011). <em>OECD reviews of regional innovation: Basque Country, Spain 2011.</em> OECD Publishing. <a href="https://doi.org/10.1787/9789264097377-en">https://doi.org/10.1787/9789264097377-en</a></li>
+          <li>Orkestra–Instituto Vasco de Competitividad. (2025). <em>Informe de competitividad del País Vasco 2025: La conexión internacional, impulsora de la industria.</em> Universidad de Deusto.</li>
+          <li>Orkestra–Instituto Vasco de Competitividad. (2022). <em>Informe de competitividad del País Vasco 2022: Las bases de la competitividad en una época de incertidumbre.</em> Universidad de Deusto.</li>
+          <li>Eustat–Instituto Vasco de Estadística. (2026, 16 de enero). <em>PIB y empleo de la C. A. de Euskadi. Avance del cuarto trimestre y conjunto del año 2025.</em> <a href="https://es.eustat.eus/elementos/ele0025200/ti_pib-y-empleo-de-la-ca-de-euskadi-avance-del-cuarto-trimestre-y-conjunto-del-ano-2025-/not0025267_c.html">Eustat</a>.</li>
+          <li>Gobierno Vasco, Departamento de Economía, Trabajo y Empleo. (2026, 1 de julio). <em>La economía vasca mantiene una senda de crecimiento estable: previsiones macroeconómicas para 2026 y 2027.</em> <a href="https://www.euskadi.eus/gobierno-vasco/-/noticia/2026/mikel-torres-eleva-decima-crecimiento-del-pib-vasco-2027-economia-vasca-mantiene-senda-crecimiento-estable/">Euskadi.eus</a>.</li>
+          <li>País Vasco. (2024). <em>Ley 1/2024, de 8 de febrero, de Transición Energética y Cambio Climático.</em> <a href="https://www.euskadi.eus/eli/es-pv/l/2024/02/08/1/dof/spa/html/web01-ejeduki/es/">Euskadi.eus</a>.</li>
+          <li>Gobierno Vasco. (2016). <em>Estrategia Energética de Euskadi 2030 (3E2030).</em> Objetivos de eficiencia, renovables, autoabastecimiento, reducción del petróleo y potencia renovable instalada. <a href="https://www.euskadi.eus/informacion/estrategia-energetica-de-euskadi-2030/web01-a2ingkli/es/">Euskadi.eus</a>.</li>
+          <li>Gobierno Vasco. (2015). <em>Estrategia Vasca de Cambio Climático 2050 — Klima 2050.</em> Objetivos de reducción de emisiones y 40 % de renovables sobre consumo final en 2050. <a href="https://www.euskadi.eus/gobierno-vasco/-/plan-departamental/34-estrategia-de-cambio-climatico-2050-del-pais-vasco-klima-2050/">Euskadi.eus</a>.</li>
+          <li>Gobierno Vasco. (2026). <em>Plan Territorial Sectorial de las Energías Renovables en Euskadi.</em> Aprobación definitiva y objetivos de potencia renovable a 2030. <a href="https://www.euskadi.eus/pts-introduccion/web01-a3energi/es/">Euskadi.eus</a>.</li>
+          <li>Gobierno Vasco. (2026, 31 de marzo). <em>El Gobierno Vasco duplicará la generación eléctrica renovable con 80 millones de euros de coinversión hasta 2030.</em> Objetivo de elevar la generación eléctrica renovable propia del 7,9 % en 2024 al 15 % en 2030. <a href="https://www.euskadi.eus/gobierno-vasco/-/noticia/2026/el-gobierno-vasco-duplicara-generacion-electrica-renovable-80-millones-co-inversion-2030-consejo-gobierno-31-03-2026/">Euskadi.eus</a>.</li>
+          <li>Ihobe–Sociedad Pública de Gestión Ambiental. (2025, 17 de octubre). <em>Inventario de emisiones de Gases de Efecto Invernadero 2023 de Euskadi.</em> Gobierno Vasco. <a href="https://www.ihobe.eus/es/publicaciones/inventario-emisiones-gases-efecto-invernadero-2023-euskadi">Ihobe</a>.</li>
+          <li>Ente Vasco de la Energía. (2025, 20 de marzo). <em>Avance de datos energéticos 2024: la industria concentró el 53 % de toda la electricidad consumida en Euskadi.</em> <a href="https://www.eve.eus/noticias/noticias/la-industria-concentro-el-53-de-toda-la-electricidad-consumida-en-euskadi-en-2024/">EVE</a>.</li>
+        </ol>
+      </div>
+    </section>
+  </article>
+
+  <footer>Escenarios futuros · Documento de trabajo · 2026</footer>
+</main>
+
+<style>
+  #euskadi-sample { --ink: var(--foreground); --sub: var(--muted-foreground); width: 100%; color: var(--ink); }
+  #euskadi-sample .hero { position:relative; overflow:hidden; padding: 5.5rem clamp(1.25rem, 7vw, 6rem) 4.5rem; background:linear-gradient(112deg,#009b7a 0%,#23aa68 48%,#d3df20 100%); color: var(--primary-foreground); }
+  #euskadi-sample .hero::before { content:""; position:absolute; inset:-45% -10% auto 42%; height:190%; transform:rotate(18deg); background:repeating-linear-gradient(90deg,transparent 0 24px,rgba(255,255,255,.07) 25px 27px); pointer-events:none; }
+  #euskadi-sample .hero::after { content:""; position:absolute; right:clamp(1.25rem,6vw,5rem); bottom:2.1rem; width:8rem; height:.42rem; background:#fff; box-shadow:0 .75rem 0 rgba(255,255,255,.65),0 1.5rem 0 rgba(255,255,255,.35); pointer-events:none; }
+  #euskadi-sample .eyebrow, #euskadi-sample .kicker, #euskadi-sample .section-number { text-transform: uppercase; letter-spacing: .12em; font-weight: 500; }
+  #euskadi-sample .hero h1 { position:relative; margin: .65rem 0 1rem; max-width: 20ch; font-weight:700; letter-spacing:-.025em; }
+  #euskadi-sample .hero .eyebrow, #euskadi-sample .hero .lead { position:relative; }
+  #euskadi-sample .lead { max-width: 72ch; margin: 0; opacity: .9; }
+  #euskadi-sample .brand-bar { min-height:7.5rem; display:flex; align-items:center; justify-content:center; gap:clamp(1.5rem,4vw,3.5rem); padding:1.2rem clamp(1.25rem,6vw,4.5rem); background:#fff; border-bottom:1px solid var(--border); }
+  #euskadi-sample .institutional-logos { display:block; width:min(34rem,68vw); height:auto; }
+  #euskadi-sample .brand-divider { width:1px; height:3.2rem; background:var(--border); }
+  #euskadi-sample .deliberativa-logo { display:block; width:min(10.5rem,25vw); height:auto; }
+  #euskadi-sample .scenario-nav { display: flex; gap: 1.4rem; flex-wrap: wrap; padding: 1rem clamp(1.25rem, 6vw, 4.5rem); border-bottom: 1px solid var(--border); background:#f7faf8; color: var(--sub); }
+  #euskadi-sample .scenario-nav a { color:inherit; text-decoration:none; }
+  #euskadi-sample .scenario-nav .active { color: #007b65; font-weight: 700; border-bottom: 3px solid #cbdc24; padding-bottom: .35rem; }
+  #euskadi-sample article { max-width: 1040px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3.5rem); }
+  #euskadi-sample .intro-grid { display: grid; grid-template-columns: minmax(180px, .65fr) 1.4fr; gap: 2rem; padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
+  #euskadi-sample .section-number, #euskadi-sample .kicker { color: #009b7a; margin: 0 0 .5rem; font-weight:700; }
+  #euskadi-sample .intro-grid h2, #euskadi-sample .chapter h2 { margin: 0; }
+  #euskadi-sample .intro-grid > p { margin: 0; padding-top: 1.9rem; color: var(--sub); }
+  #euskadi-sample .chapter { padding: 3.5rem 0; }
+  #euskadi-sample .topic-accordion { margin:2.5rem 0 4rem; }
+  #euskadi-sample .topic-toggle { width:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.35rem 1.5rem; background:linear-gradient(90deg,#009b7a,#56b64f 72%,#cddd23); color:#fff; border:0; font:inherit; text-align:left; cursor:pointer; }
+  #euskadi-sample .topic-toggle > span:first-child { display:grid; gap:.15rem; font-size:1.5rem; font-weight:500; }
+  #euskadi-sample .topic-toggle small { color:rgba(255,255,255,.78); font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+  #euskadi-sample .topic-symbol { font-size:2rem; font-weight:400; }
+  #euskadi-sample .topic-content[hidden] { display:none; }
+  #euskadi-sample .topic-content { animation:topic-open .2s ease-out; }
+  #euskadi-sample .topic-introduction { padding:2rem 1.5rem .25rem; border:1px solid var(--border); border-top:0; background:#f7faf8; }
+  #euskadi-sample .topic-introduction p { max-width:78ch; margin:0 0 1.75rem; color:var(--sub); }
+  #euskadi-sample .indicator-item { border-bottom:1px solid var(--border); }
+  #euskadi-sample .indicator-toggle { width:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.15rem .25rem; border:0; border-left:5px solid transparent; background:transparent; color:var(--ink); font:inherit; text-align:left; cursor:pointer; }
+  #euskadi-sample .indicator-toggle:hover, #euskadi-sample .indicator-toggle[aria-expanded="true"] { border-left-color:#cbdc24; padding-left:1rem; background:linear-gradient(90deg,rgba(0,155,122,.08),transparent 70%); }
+  #euskadi-sample .indicator-toggle > span:first-child { font-size:1.15rem; font-weight:500; }
+  #euskadi-sample .indicator-symbol { font-size:1.5rem; }
+  #euskadi-sample .indicator-panel[hidden] { display:none; }
+  #euskadi-sample .indicator-panel { animation:topic-open .2s ease-out; }
+  #euskadi-sample .indicator-panel .chapter { padding-top:2.25rem; }
+  #euskadi-sample .references-accordion { margin-top:0; }
+  #euskadi-sample .references-content { padding:1.5rem 0 2.5rem; }
+  #euskadi-sample .references-content h3 { margin:1.75rem 0 .85rem; }
+  #euskadi-sample .references-content h3:first-child { margin-top:0; }
+  #euskadi-sample .references-content ol { margin:0; padding-left:1.5rem; display:grid; gap:1rem; }
+  #euskadi-sample .references-content a { color:#007b65; }
+  @keyframes topic-open { from { opacity:0; transform:translateY(-.4rem); } to { opacity:1; transform:translateY(0); } }
+  #euskadi-sample .chapter-divider { border-top: 1px solid var(--border); }
+  #euskadi-sample .chapter-lead { max-width: 68ch; color: var(--sub); }
+  #euskadi-sample .economic-rationale { max-width:72ch; margin:1rem 0 2.25rem; color:var(--sub); }
+  #euskadi-sample .viz-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); margin: 2.5rem 0; }
+  #euskadi-sample .viz-stats > div { background: var(--background); padding: 1.15rem; display: grid; gap: .25rem; }
+  #euskadi-sample .viz-stats span, #euskadi-sample .viz-stats small { color: var(--sub); }
+  #euskadi-sample .viz-stats strong { font-weight: 500; }
+  #euskadi-sample .chart-block { margin-top: 2.5rem; padding:1.5rem; border-top:5px solid #00a181; background:#fbfdfc; }
+  #euskadi-sample .quality-subchart { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border); }
+  #euskadi-sample .chart-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  #euskadi-sample .chart-heading h3, #euskadi-sample .chart-heading p { margin: 0; }
+  #euskadi-sample .chart-heading p, #euskadi-sample .key, #euskadi-sample .chart-note { color: var(--sub); }
+  #euskadi-sample .key { display: flex; align-items: center; gap: .45rem; }
+  #euskadi-sample .key span { width: 1.5rem; height: .7rem; display: inline-block; background: var(--viz-series-1); }
+  #euskadi-sample .key .soft { opacity: .38; margin-left: .7rem; }
+  #euskadi-sample .key .electric-outline-key { height: 0; background: transparent; border-top: 2.4px solid #000; margin-left: .7rem; }
+  #euskadi-sample .pib-chart { width: 100%; height: auto; display: block; margin-top: 1.25rem; }
+  #euskadi-sample .grid { stroke: var(--border); stroke-width: 1; }
+  #euskadi-sample .axis, #euskadi-sample .direct { fill: var(--ink); font: inherit; }
+  #euskadi-sample .muted { fill: var(--sub); }
+  #euskadi-sample .hist-services { fill: var(--viz-series-1); opacity: .82; }
+  #euskadi-sample .hist-industry { fill: var(--viz-series-2); opacity: .82; }
+  #euskadi-sample .hist-construction { fill: var(--viz-series-3); opacity: .82; }
+  #euskadi-sample .hist-agriculture { fill: var(--viz-series-4); opacity: .88; }
+  #euskadi-sample .proj-services { fill: var(--viz-series-1); opacity: .36; }
+  #euskadi-sample .proj-industry { fill: var(--viz-series-2); opacity: .36; }
+  #euskadi-sample .proj-construction { fill: var(--viz-series-3); opacity: .36; }
+  #euskadi-sample .proj-agriculture { fill: var(--viz-series-4); opacity: .42; }
+  #euskadi-sample .separator { fill: none; stroke: var(--background); stroke-width: 1.5; }
+  #euskadi-sample .cut { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 5 4; }
+  #euskadi-sample .chart-note { margin-top: .45rem; }
+  #euskadi-sample .document-figure { margin: 2.5rem 0 0; }
+  #euskadi-sample .document-figure img { width: 100%; height: auto; display: block; }
+  #euskadi-sample .document-figure figcaption { margin-top: .65rem; color: var(--sub); }
+  #euskadi-sample .interactive-chart { width:100%; height:auto; display:block; margin-top:1.25rem; }
+  #euskadi-sample .interactive-block { position:relative; }
+  #euskadi-sample .chart-detail { min-height:1.4em; margin:.45rem 0 0; color:var(--sub); }
+  #euskadi-sample .line-observed { fill:none; stroke:var(--viz-series-2); stroke-width:4; }
+  #euskadi-sample .line-projected { fill:none; stroke:var(--viz-series-1); stroke-width:4; stroke-dasharray:7 5; }
+  #euskadi-sample .area-observed { fill:var(--viz-series-2); opacity:.12; }
+  #euskadi-sample .area-projected { fill:var(--viz-series-1); opacity:.10; }
+  #euskadi-sample .focus-line { stroke:var(--ink); stroke-width:1; stroke-dasharray:3 3; pointer-events:none; }
+  #euskadi-sample .electric-outline { fill:none; stroke:#000; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; pointer-events:none; }
+  #euskadi-sample .target-guide { fill:var(--background); stroke:var(--viz-series-3); stroke-width:3; }
+  #euskadi-sample .target-label { fill:var(--ink); font:inherit; }
+  #euskadi-sample .hit-area { fill:transparent; cursor:crosshair; }
+  #euskadi-sample .reading { margin-top: 2.5rem; padding: 1.5rem 1.65rem; border-left:8px solid #cbdc24; background:linear-gradient(90deg,#e7f4ed,#f5f8dc); color: var(--accent-foreground); }
+  #euskadi-sample .reading span { font-weight: 500; }
+  #euskadi-sample .reading p { margin-bottom: 0; }
+  #euskadi-sample footer { border-top: 0; padding: 1.5rem clamp(1.25rem, 6vw, 4.5rem); color:#fff; background:linear-gradient(90deg,#009b7a,#cddd23); }
+  @media (max-width: 650px) {
+    #euskadi-sample .hero { padding-top:3.5rem; padding-bottom:3.5rem; }
+    #euskadi-sample .hero::after { display:none; }
+    #euskadi-sample .brand-bar { min-height:0; flex-direction:column; gap:.75rem; padding:1rem; }
+    #euskadi-sample .institutional-logos { width:min(32rem,94vw); }
+    #euskadi-sample .brand-divider { width:70%; height:1px; }
+    #euskadi-sample .deliberativa-logo { width:9rem; }
+    #euskadi-sample .intro-grid { grid-template-columns: 1fr; gap: 1rem; }
+    #euskadi-sample .intro-grid > p { padding-top: 0; }
+    #euskadi-sample .viz-stats { grid-template-columns: 1fr; }
+    #euskadi-sample .direct { display: none; }
+  }
+</style>
+
+<script>
+(() => {
+  const mode=window.SCENARIO_MODE||"tendential",normative=mode==="normative";
+  const economicAccordion=document.getElementById("economic-toggle").closest(".topic-accordion"),referencesAccordion=document.getElementById("references-toggle").closest(".topic-accordion");
+  referencesAccordion.parentNode.insertBefore(economicAccordion,referencesAccordion);
+  const energyContent=document.getElementById("energy-content"),energySections=[...energyContent.querySelectorAll(":scope > section.chapter")],renewableSection=energySections.find(s=>s.querySelector("h2")?.textContent.includes("Renovables dentro del consumo final energético")),firstEnergySection=energySections[0];
+  const finalConsumptionSection=energySections.find(s=>s.querySelector("h2")?.textContent.includes("Consumo final energético")),mixSection=energySections.find(s=>s.querySelector("h2")?.textContent==="Mix energético"),renewableMixSection=energySections.find(s=>s.querySelector("h2")?.textContent==="Mix energético de las renovables directas no eléctricas");
+  energyContent.insertBefore(finalConsumptionSection,energyContent.querySelector(":scope > section.chapter"));
+  finalConsumptionSection.after(renewableSection);
+  renewableSection.after(mixSection);
+  mixSection.after(renewableMixSection);
+  document.querySelectorAll(".scenario-tab").forEach(tab=>tab.classList.toggle("active",tab.dataset.scenario===mode));
+  document.querySelectorAll(".topic-toggle").forEach(toggle=>{const content=document.getElementById(toggle.getAttribute("aria-controls")),symbol=toggle.querySelector(".topic-symbol");toggle.addEventListener("click",()=>{const open=toggle.getAttribute("aria-expanded")==="true";toggle.setAttribute("aria-expanded",String(!open));content.hidden=open;symbol.textContent=open?"+":"−";});});
+  const economic=document.getElementById("economic-toggle").closest(".topic-accordion"),climate=document.getElementById("climate-toggle").closest(".topic-accordion");economic.before(climate);
+  if(normative){
+    const intro=document.querySelector(".intro-grid");
+    intro.querySelector(".section-number").textContent="02";
+    intro.querySelector("h2").textContent="Escenario normativo";
+    intro.querySelector(":scope > p").textContent="Este escenario representa qué ocurriría si se cumplieran íntegramente las leyes, estrategias y planes vigentes del Gobierno Vasco en materia de transición energética y cambio climático. Las trayectorias conectan los datos de 2024 con los objetivos oficiales de 2030 y 2050. Cuando una variable no tiene una meta cuantitativa, se conserva la evolución tendencial como supuesto neutral y se indica expresamente.";
+    document.querySelector("#economic-content .topic-introduction p").textContent="La legislación vasca vincula la transición energética con la competitividad, la modernización industrial, el empleo digno y la reducción de desigualdades, pero no fija metas cuantitativas para el PIB, la estructura sectorial, los salarios o el desempleo. Por ello, el escenario normativo mantiene para estos indicadores las prolongaciones del escenario tendencial: sirven como contexto económico común y no deben interpretarse como efectos calculados de las políticas climáticas (Ley 1/2024; Orkestra, 2025).";
+    document.querySelector("#climate-content .topic-introduction p").textContent="El escenario normativo aplica la reducción mínima del 45 % en 2030 respecto a 2005 y representa la neutralidad climática de 2050 como un balance neto. La Ley 1/2024 no cuantifica por separado las emisiones brutas residuales ni las absorciones necesarias en 2050; por ello, su reparto se identifica expresamente como supuesto de modelización (Ley 1/2024).";
+    document.querySelector("#energy-content .topic-introduction p").textContent="El escenario normativo combina los objetivos vigentes: ahorro del consumo final del 12 % en 2030 y del 37 % en 2050 respecto a 2021; al menos un 32 % de renovables sobre el consumo final en 2030; las metas de producción y potencia renovable de la Estrategia Energética 3E2030 y del Plan Territorial Sectorial; y la orientación de electrificación y abandono del petróleo hacia 2050. Las magnitudes sin objetivo directo se derivan de forma coherente de estas metas y se identifican como supuestos de modelización (Ley 1/2024; Gobierno Vasco, 2016, 2026).";
+    const neutralNote="No existe una meta cuantitativa oficial para este indicador. En el escenario normativo se conserva la trayectoria tendencial como contexto común; no representa un impacto atribuido al cumplimiento de las políticas.";
+    ["population-interactive","gdp-interactive","gdp-per-capita-interactive","employment-interactive","wage-interactive","unemployment-interactive"].forEach(id=>document.getElementById(id).closest(".chart-block").querySelector(".chart-note").textContent=neutralNote);
+    document.querySelector(".pib-chart").closest(".chart-block").querySelector(".chart-note").textContent=neutralNote;
+    const update=(id,note,reading)=>{const chapter=document.getElementById(id).closest(".chapter");chapter.querySelector(".chart-note").textContent=note;if(reading)chapter.querySelector(".reading p").textContent=reading;};
+    update("emissions-interactive","Trayectoria de emisiones brutas: 14,0 Mt CO₂-eq en 2030 —objetivo oficial del 45 % menos que en 2005— y descenso posterior hasta 2,6 Mt en 2050. La línea horizontal representa las absorciones UTCUTS de 2023: CO₂ retirado por bosques, suelos y otros usos de la tierra. Mantener 2,6 Mt hasta 2050 y hacer que la senda bruta la interseque es un supuesto de balance, no una meta cuantificada por la Ley 1/2024.","La senda normativa reduce las emisiones brutas hasta igualarlas con las absorciones supuestas en 2050. Así, el balance neto llega a cero sin presentar erróneamente las emisiones brutas como inexistentes.");
+    update("final-consumption-interactive","Trayectoria de cumplimiento calculada sobre 57.221 GWh en 2021: 50.354 GWh en 2030 y 36.049 GWh en 2050. Fuente del objetivo: (Ley 1/2024, art. 21).","El consumo final debería situarse en unos 50.354 GWh en 2030 y 36.049 GWh en 2050. La electrificación puede aumentar ciertos consumos eléctricos mientras reduce el consumo energético total por su mayor eficiencia.");
+    update("primary-renewable-interactive","La senda alcanza en 2030 los 966.000 tep de aprovechamiento renovable previstos por la 3E2030 —aproximadamente 11.235 GWh—. Entre 2030 y 2050 se enlaza con la meta de renovables sobre consumo final; este tramo es una hipótesis de escenario. Fuentes: (Gobierno Vasco, 2016; Ley 1/2024).","La producción primaria renovable crece con rapidez hasta 2030 para acompañar la potencia prevista en el PTS. Después continúa aumentando de forma más gradual; el valor de 2050 es una hipótesis coherente, no una meta oficial de producción propia.");
+    update("imported-renewable-interactive","Entre 2024 y 2030, la importación renovable se calcula como cierre del balance eléctrico y aumenta desde 5.197 hasta 10.767 GWh. Entre 2030 y 2050 continúa creciendo con una tasa porcentual compuesta positiva hasta 13.901 GWh, evitando el descenso artificial que producía el límite de importación al final de la senda. En todo momento permanece por debajo de la electricidad importada total. No existe un objetivo oficial específico de importación. Fuentes de las metas relacionadas: (Ley 1/2024; Gobierno Vasco, 2026).","La senda refleja un aumento continuo de la electricidad renovable importada. La menor previsión de generación propia se cubre desde la red exterior y, desde 2030, la importación renovable mantiene un crecimiento compuesto positivo hasta 2050.");
+    update("total-renewable-interactive","Suma coherente de renovables directas no eléctricas, electricidad renovable propia e importada. El dato de 2024 se corrige a 9.971 GWh porque el valor anterior omitía 3.610 GWh de renovables directas. En 2030 la cuota resultante es aproximadamente 35,0 %, superior al mínimo legal del 32 %. Fuentes: (EVE, 2026; Ley 1/2024; MITECO, 2020).","La disponibilidad renovable crece sin obligar a reducir las renovables directas: supera el mínimo legal en 2030 y alcanza unos 34.968 GWh en 2050.");
+    update("renewable-available-interactive","La altura total representa la senda de consumo final exigida por la Ley 1/2024. Dentro de ella, la parte renovable alcanza el mínimo legal del 32 % en 2030 y el 97 % en 2050; el cursor muestra también esos porcentajes. El valor de 2050 es un supuesto de modelización alineado con la Estrategia de Descarbonización a Largo Plazo. Fuentes: (Ley 1/2024; MITECO, 2020; EVE, 2026).","Cambia porque el escenario normativo debe ser compatible con la neutralidad climática. La antigua referencia del 40 % dejaría más de 21.000 GWh no renovables. Con el 97 % quedan unos 1.081 GWh: se supone que en 2050 ya no hay carbón y que el remanente se reparte por igual entre gas natural y petróleo, unos 541 GWh de cada uno. Su combustión produciría aproximadamente 0,25 Mt CO₂; las cerca de 2,35 Mt CO₂-eq restantes hasta las 2,6 Mt residuales procederían de agricultura, procesos industriales, residuos y otros gases. Es una hipótesis de modelización, no una meta oficial por combustible.");
+    const renewableMixChapter=document.getElementById("renewable-mix-interactive").closest(".chapter");renewableMixChapter.querySelector(".chart-note").textContent="La aerotermia y geotermia se calculan ahora desde la demanda de climatización. Residencial y servicios sumaron 9.846 GWh en 2024; el 49 % se asigna a calefacción y refrigeración y se reduce un 35 % por rehabilitación, quedando 3.136 GWh en 2050. Si las bombas de calor cubren el 85 % con SPF 3,5, aportan 1.904 GWh de calor ambiental renovable y consumen 762 GWh eléctricos, contabilizados en el mix eléctrico. Los combustibles renovables cierran el balance en 10.109 GWh, de los que aproximadamente 8.943 GWh corresponden al transporte. Fuentes: (EVE, 2026; IDAE, 2023; Comisión Europea, 2026; MITECO, 2020).";renewableMixChapter.querySelector(".reading p").textContent="La energía ambiental captada por una bomba de calor no es toda la energía térmica entregada: se descuenta la electricidad consumida por el equipo para evitar la doble contabilización.";
+    const totalHeading=document.getElementById("total-renewable-interactive").closest(".chart-block").querySelector("h3");totalHeading.textContent="Energía renovable total necesaria";
+    const mixChapter=document.getElementById("energy-mix-interactive").closest(".chapter");mixChapter.querySelector(".chart-note").textContent="La composición debe calcularse sobre el mismo perímetro del consumo final para cerrar con las cuotas de electrificación y renovables. En 2050: 18.745 GWh de electricidad, 16.223 GWh de renovables directas no eléctricas y 1.081 GWh fósiles. Consulte la pestaña Modelo y metodología.";mixChapter.querySelector(".reading p").textContent="Las bandas del mix dejan de ser supuestos independientes y pasan a derivarse del balance anual común.";
+  }
+})();
+
+(() => {
+  const svg=document.getElementById("electric-renewable-mix-interactive");if(!svg)return;const ns="http://www.w3.org/2000/svg",add=(parent,tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;parent.appendChild(e);return e},fmt=(n,d=0)=>n.toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d}),hist=[[2014,433.6,344.9,29.9,259.5],[2020,374.2,348.2,65.6,277.2],[2021,387.6,295.3,62.8,383.4],[2022,295.6,324.5,64.7,385.9],[2023,268.8,298.3,62.3,333.5],[2024,450.6,305.8,81.7,325.83]],recent=hist.filter(d=>d[0]>=2020),target=[450.6,1323,350,520.0102],target2050=[450.6,2500,1244,650],normative=window.SCENARIO_MODE==="normative",totalHist=[[2015,1081.05],[2016,991.7],[2017,993.69],[2018,1230.31],[2019,1108.31],[2020,1065.19],[2021,1129.14],[2022,1070.68],[2023,962.86],[2024,1163.93]],slope=a=>{const mx=a.reduce((s,d)=>s+d[0],0)/a.length,my=a.reduce((s,d)=>s+d[1],0)/a.length;return a.reduce((s,d)=>s+(d[0]-mx)*(d[1]-my),0)/a.reduce((s,d)=>s+(d[0]-mx)**2,0)},totalSlope=slope(totalHist),proj=[];
+  for(let yr=2024;yr<=2050;yr++){if(normative){proj.push([yr,...target.map((v,i)=>yr<=2030?hist.at(-1)[i+1]+(v-hist.at(-1)[i+1])*(yr-2024)/6:v+(target2050[i]-v)*(yr-2030)/20)]);continue}const raw=[1,2,3,4].map(i=>{const s=slope(recent.map(d=>[d[0],d[i]]));return Math.max(0,hist.at(-1)[i]+s*(yr-2024))}),sum=raw.reduce((a,b)=>a+b,0),total=Math.max(0,1163.93+totalSlope*(yr-2024));proj.push([yr,...raw.map(v=>v*total/sum)])}
+  const all=[...hist.slice(0,-1),...proj],series=[{n:"Hidráulica",i:1,c:"#247ba0"},{n:"Eólica",i:2,c:"#9edcf0"},{n:"Solar fotovoltaica",i:3,c:"#f2c94c"},{n:"Otras renovables eléctricas",i:4,c:"#8f6aa8"}],detail=document.getElementById("electric-renewable-mix-detail"),W=900,H=455,m={l:62,r:225,t:18,b:40},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2014)/36*pw,y=v=>m.t+ph-v/12000*ph,defs=add(svg,"defs");series.forEach((s,i)=>{const p=add(defs,"pattern",{id:`electric-tech-own-${i}`,patternUnits:"userSpaceOnUse",width:8,height:8});add(p,"rect",{width:8,height:8,fill:s.c});add(p,"circle",{cx:3,cy:3,r:1.05,fill:"rgba(24,63,55,.78)"});s.fill=`url(#electric-tech-own-${i})`});[0,3000,6000,9000,12000].forEach(v=>{add(svg,"line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add(svg,"text",{x:m.l-8,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},fmt(v))});[2014,2020,2024,2030,2040,2050].forEach(v=>add(svg,"text",{x:x(v),y:H-12,"text-anchor":"middle",class:"axis muted text-small"},v));let lower=all.map(()=>0);const bounds=series.map(s=>{const upper=all.map((d,i)=>lower[i]+d[s.i]);let p=`M ${x(all[0][0])} ${y(upper[0])}`;for(let i=1;i<all.length;i++)p+=` L ${x(all[i][0])} ${y(upper[i])}`;for(let i=all.length-1;i>=0;i--)p+=` L ${x(all[i][0])} ${y(lower[i])}`;p+=" Z";add(svg,"path",{d:p,fill:s.fill,opacity:.86});const b={s,lower:[...lower],upper:[...upper]};lower=upper;return b});add(svg,"line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});bounds.forEach(b=>{const mid=(b.lower.at(-1)+b.upper.at(-1))/2;add(svg,"text",{x:m.l+pw+12,y:y(mid),class:"direct text-small"},`${b.s.n} ${fmt(proj.at(-1)[b.s.i])} GWh`)});const focus=add(svg,"line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add(svg,"rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2014,Math.min(2050,Math.round(2014+(sx-m.l)/pw*36))),d=all.reduce((a,b)=>Math.abs(b[0]-yr)<Math.abs(a[0]-yr)?b:a),total=d.slice(1).reduce((a,b)=>a+b,0);focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(d[0]));focus.setAttribute("x2",x(d[0]));detail.textContent=`${d[0]} · Total ${fmt(total)} GWh · `+series.map(s=>`${s.n} ${fmt(d[s.i])} GWh (${fmt(100*d[s.i]/total,1)} %)`).join(" · ")});hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const svg=document.getElementById("temperature-interactive");if(!svg)return;
+  const ns="http://www.w3.org/2000/svg",add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e},fmt=v=>v.toFixed(1).replace(".",","),hist=[[1971,12.119],[1972,11.572],[1973,12.161],[1974,12.118],[1975,12.242],[1976,12.223],[1977,12.299],[1978,12.226],[1979,12.405],[1980,12.074],[1981,12.82],[1982,13.097],[1983,13.037],[1984,12.131],[1985,12.592],[1986,12.382],[1987,13.049],[1988,13.022],[1989,13.901],[1990,13.574],[1991,12.596],[1992,12.635],[1993,12.597],[1994,13.432],[1995,13.601],[1996,12.7],[1997,14.002],[1998,13.091],[1999,13.073],[2000,13.253],[2001,13.193],[2002,13.308],[2003,13.967],[2004,13.047],[2005,13.002],[2006,13.927],[2007,12.85],[2008,12.864],[2009,13.146],[2010,12.444],[2011,13.901],[2012,13.098],[2013,12.923],[2014,13.913],[2015,13.613],[2016,13.584],[2017,13.666],[2018,13.627],[2019,13.686],[2020,14.208],[2021,13.294],[2022,14.665],[2023,14.624],[2024,14.084]],norm=[[2024,14.084],[2025,14.098],[2026,14.149],[2027,14.167],[2028,14.202],[2029,14.238],[2030,14.31],[2031,14.315],[2032,14.322],[2033,14.398],[2034,14.476],[2035,14.48],[2036,14.524],[2037,14.574],[2038,14.59],[2039,14.583],[2040,14.596],[2041,14.6],[2042,14.627],[2043,14.648],[2044,14.611],[2045,14.564],[2046,14.617],[2047,14.591],[2048,14.578],[2049,14.579],[2050,14.677],[2051,14.683],[2052,14.703],[2053,14.714],[2054,14.701],[2055,14.71],[2056,14.747],[2057,14.797],[2058,14.843],[2059,14.82],[2060,14.874],[2061,14.831],[2062,14.875],[2063,14.857],[2064,14.888],[2065,14.937],[2066,14.99],[2067,14.999],[2068,14.956],[2069,14.989],[2070,15.049],[2071,15.012],[2072,15.014],[2073,15.025],[2074,15.1],[2075,15.115],[2076,15.147],[2077,15.115],[2078,15.145],[2079,15.141],[2080,15.107],[2081,15.116],[2082,15.179],[2083,15.18],[2084,15.167],[2085,15.134],[2086,15.126],[2087,15.117],[2088,15.154],[2089,15.147],[2090,15.158],[2091,15.159],[2092,15.153],[2093,15.126],[2094,15.129],[2095,15.217],[2096,15.246],[2097,15.261],[2098,15.256],[2099,15.25],[2100,15.246]],trend=[[2024,14.084],[2025,14.092],[2026,14.105],[2027,14.144],[2028,14.156],[2029,14.214],[2030,14.27],[2031,14.255],[2032,14.255],[2033,14.288],[2034,14.29],[2035,14.366],[2036,14.377],[2037,14.429],[2038,14.465],[2039,14.503],[2040,14.53],[2041,14.571],[2042,14.604],[2043,14.629],[2044,14.63],[2045,14.721],[2046,14.758],[2047,14.807],[2048,14.843],[2049,14.88],[2050,14.919],[2051,15.007],[2052,15.06],[2053,15.134],[2054,15.225],[2055,15.299],[2056,15.302],[2057,15.317],[2058,15.384],[2059,15.427],[2060,15.465],[2061,15.51],[2062,15.532],[2063,15.574],[2064,15.659],[2065,15.71],[2066,15.707],[2067,15.734],[2068,15.815],[2069,15.828],[2070,15.905],[2071,15.967],[2072,16.028],[2073,16.035],[2074,16.099],[2075,16.125],[2076,16.141],[2077,16.235],[2078,16.325],[2079,16.345],[2080,16.423],[2081,16.493],[2082,16.549],[2083,16.637],[2084,16.728],[2085,16.746],[2086,16.805],[2087,16.865],[2088,16.949],[2089,16.974],[2090,17.039],[2091,17.042],[2092,17.062],[2093,17.068],[2094,17.1],[2095,17.11],[2096,17.157],[2097,17.144],[2098,17.156],[2099,17.104],[2100,17.142]],proj=window.SCENARIO_MODE==="normative"?norm:trend,W=900,H=440,m={l:58,r:95,t:18,b:42},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-1971)/129*pw,y=v=>m.t+ph-(v-11)/7*ph,path=a=>a.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[1])}`).join(" "),detail=document.getElementById("temperature-detail");
+  hist.push([2025,14.455]);
+  const projectionAnchor=window.SCENARIO_MODE==="normative"?14.098:14.092,adjustedProjection=proj.filter(d=>d[0]>=2025).map(d=>[d[0],14.455+d[1]-projectionAnchor]);proj.splice(0,proj.length,...adjustedProjection);
+  [11,12,13,14,15,16,17,18].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},`${v} °C`)});
+  [1971,1990,2010,2025,2050,2075,2100].forEach(v=>add("text",{x:x(v),y:H-12,"text-anchor":"middle",class:"axis muted text-small"},v));
+  add("path",{d:path(hist),class:"line-observed"});add("path",{d:path(proj),class:"line-projected"});add("line",{x1:x(2025),y1:m.t,x2:x(2025),y2:m.t+ph,class:"cut"});add("text",{x:x(2100)+8,y:y(proj.at(-1)[1])+4,class:"direct text-small"},`${fmt(proj.at(-1)[1])} °C`);
+  const all=[...hist.slice(0,-1),...proj],focus=add("line",{x1:x(2025),y1:m.t,x2:x(2025),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+  hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(1971,Math.min(2100,Math.round(1971+(sx-m.l)/pw*129))),d=all.find(v=>v[0]===yr);if(!d)return;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=`${yr} · ${yr<=2025?"Reanálisis ERA5-Land":window.SCENARIO_MODE==="normative"?"Proyección regional RCP4.5":"Proyección regional RCP8.5"} ${fmt(d[1])} °C`;});
+  hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  document.querySelectorAll(".indicator-group").forEach((content,groupIndex)=>{
+  const chapters=[...content.querySelectorAll(":scope > .chapter")].filter(chapter=>!chapter.hidden);
+  chapters.forEach((chapter,index)=>{
+    const heading=chapter.querySelector("h2"),item=document.createElement("section"),button=document.createElement("button"),panel=document.createElement("div"),symbol=document.createElement("span");
+    item.className="indicator-item";button.className="indicator-toggle";button.type="button";button.setAttribute("aria-expanded","false");panel.className="indicator-panel";panel.id=`indicator-panel-${groupIndex+1}-${index+1}`;panel.hidden=true;button.setAttribute("aria-controls",panel.id);symbol.className="indicator-symbol";symbol.setAttribute("aria-hidden","true");symbol.textContent="+";
+    const label=document.createElement("span");label.textContent=heading.textContent;button.append(label,symbol);chapter.before(item);panel.appendChild(chapter);item.append(button,panel);
+    button.addEventListener("click",()=>{const open=button.getAttribute("aria-expanded")==="true";button.setAttribute("aria-expanded",String(!open));panel.hidden=open;symbol.textContent=open?"+":"−";});
+  });
+  });
+})();
+
+(() => {
+  const root=document.getElementById("euskadi-sample"), svg=root.querySelector(".pib-chart"), ns="http://www.w3.org/2000/svg";
+  const obsShares=[[2004,1.1,30.1,9.6,59.3],[2005,1,30.1,9.8,59.1],[2006,.9,29.8,9.9,59.4],[2007,.8,29.2,10.8,59.3],[2008,.7,28.5,10.1,60.7],[2009,.6,24.5,9.5,65.3],[2010,.7,25.3,8.8,65.2],[2011,.7,25.5,7.9,65.9],[2012,.9,24.9,7.1,67.1],[2013,.9,24.7,6.6,67.7],[2014,.8,24.5,6.4,68.2],[2015,.8,24.4,6.3,68.5],[2016,.8,24.5,6.1,68.6],[2017,1,24.4,6,68.6],[2018,.9,24.3,6.1,68.6],[2019,.9,24.1,6.1,68.8],[2020,.8,23.2,5.8,70.1],[2021,.9,23.4,5.5,70.2],[2022,.9,24.2,5.4,69.5],[2023,.9,23.7,5.5,69.9],[2024,.9,23,5.5,70.6]];
+  const gdpHist=[[2004,79.1],[2005,82.2],[2006,85.8],[2007,89.5],[2008,90.5],[2009,86.8],[2010,87.3],[2011,87.5],[2012,85.7],[2013,84.1],[2014,85.5],[2015,88],[2016,90.9],[2017,93.4],[2018,96.3],[2019,98.5],[2020,89.2],[2021,94.6],[2022,100],[2023,103],[2024,105.7]],gdpByYear=new Map(gdpHist),obs=obsShares.map(d=>{const shares=d.slice(1),shareTotal=shares.reduce((a,b)=>a+b,0);return[d[0],...shares.map(v=>v*gdpByYear.get(d[0])/shareTotal)]});
+  const slopes=[.008181818,-.13,-.100909091,.227272727],recentGdp=gdpHist.filter(d=>d[0]>=2014),gdpMx=recentGdp.reduce((s,d)=>s+d[0],0)/recentGdp.length,gdpMy=recentGdp.reduce((s,d)=>s+d[1],0)/recentGdp.length,gdpSlope=recentGdp.reduce((s,d)=>s+(d[0]-gdpMx)*(d[1]-gdpMy),0)/recentGdp.reduce((s,d)=>s+(d[0]-gdpMx)**2,0),gdpIntercept=gdpMy-gdpSlope*gdpMx,proj=[];
+  for(let yr=2025;yr<=2050;yr++){const raw=obsShares.at(-1).slice(1).map((v,i)=>v+slopes[i]*(yr-2024)),shareTotal=raw.reduce((a,b)=>a+b,0),gdp=gdpIntercept+gdpSlope*yr;proj.push([yr,...raw.map(v=>v/shareTotal*gdp)]);}
+  const series=[{n:"Servicios",i:4,k:"services"},{n:"Industria y energía",i:2,k:"industry"},{n:"Construcción",i:3,k:"construction"},{n:"Agricultura",i:1,k:"agriculture"}];
+  const W=900,H=455,m={l:58,r:160,t:15,b:38},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-v/160*ph;
+  const add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;};
+  [0,40,80,120,160].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},v);});
+  add("text",{x:16,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 16 ${m.t+ph/2})`,class:"axis muted text-small"},"PIB real por sector · índice 2022 = 100");
+  [2004,2010,2020,2024,2030,2040,2050].forEach(v=>add("text",{x:x(v),y:H-12,"text-anchor":"middle",class:"axis muted text-small"},v));
+  function stack(data,phase){let lower=data.map(()=>0);return series.map(s=>{const upper=data.map((d,i)=>lower[i]+d[s.i]);let p=`M ${x(data[0][0])} ${y(upper[0])}`;for(let i=1;i<data.length;i++)p+=` L ${x(data[i][0])} ${y(upper[i])}`;for(let i=data.length-1;i>=0;i--)p+=` L ${x(data[i][0])} ${y(lower[i])}`;p+=" Z";add("path",{d:p,class:`${phase}-${s.k}`});let q=`M ${x(data[0][0])} ${y(upper[0])}`;for(let i=1;i<data.length;i++)q+=` L ${x(data[i][0])} ${y(upper[i])}`;add("path",{d:q,class:"separator"});const b={s,lower:[...lower],upper:[...upper]};lower=upper;return b;});}
+  stack(obs,"hist");const bounds=stack(proj,"proj");add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});
+  const end=proj.length-1;bounds.forEach(b=>{const mid=(b.lower[end]+b.upper[end])/2;add("line",{x1:x(2050)+3,y1:y(mid),x2:m.l+pw+14,y2:y(mid),class:"grid"});add("text",{x:m.l+pw+20,y:y(mid)-3,class:"direct text-small"},b.s.n);add("text",{x:m.l+pw+20,y:y(mid)+13,class:"direct muted text-small"},proj[end][b.s.i].toFixed(1).replace(".",","));});
+  const allSector=[...obs.slice(0,-1),...proj],sectorDetail=document.getElementById("sector-detail");
+  const focusSector=add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"});
+  const hitSector=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+  hitSector.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),d=allSector.find(v=>v[0]===yr);if(!d)return;focusSector.setAttribute("visibility","visible");focusSector.setAttribute("x1",x(yr));focusSector.setAttribute("x2",x(yr));const total=d.slice(1).reduce((a,b)=>a+b,0),item=(label,i)=>`${label} ${d[i].toFixed(1).replace(".",",")} (${(100*d[i]/total).toFixed(1).replace(".",",")} %)`;sectorDetail.textContent=`${yr} · PIB real total ${total.toFixed(1).replace(".",",")} · ${item("Servicios",4)} · ${item("Industria y energía",2)} · ${item("Construcción",3)} · ${item("Agricultura",1)}`;});
+  hitSector.addEventListener("mouseleave",()=>focusSector.setAttribute("visibility","hidden"));
+})();
+</script>
+<script>
+(() => {
+  const ns="http://www.w3.org/2000/svg",svg=document.getElementById("energy-intensity-interactive"),detail=document.getElementById("energy-intensity-detail"),normative=window.SCENARIO_MODE==="normative";
+  const add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;},fmt=(n,d=1)=>n.toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
+  const finalHist=[[2004,64812],[2005,64096],[2006,65065],[2007,66817],[2008,66934],[2009,60989],[2010,62825],[2011,60211],[2012,59679],[2013,58691],[2014,57944],[2015,58531],[2016,58236],[2017,61439],[2018,58745],[2019,58021],[2020,51998],[2021,57221],[2022,56757],[2023,52677],[2024,53178]],gdpHist=[[2004,79.1],[2005,82.2],[2006,85.8],[2007,89.5],[2008,90.5],[2009,86.8],[2010,87.3],[2011,87.5],[2012,85.7],[2013,84.1],[2014,85.5],[2015,88],[2016,90.9],[2017,93.4],[2018,96.3],[2019,98.5],[2020,89.2],[2021,94.6],[2022,100],[2023,103],[2024,105.7]],gdpByYear=new Map(gdpHist),base=finalHist.find(d=>d[0]===2010)[1]/gdpByYear.get(2010),value=(final,gdp)=>100*(final/gdp)/base,hist=finalHist.map(d=>[d[0],value(d[1],gdpByYear.get(d[0])),d[1],gdpByYear.get(d[0])]);
+  const gdpRecent=gdpHist.filter(d=>d[0]>=2014),gdpMx=gdpRecent.reduce((s,d)=>s+d[0],0)/gdpRecent.length,gdpMy=gdpRecent.reduce((s,d)=>s+d[1],0)/gdpRecent.length,gdpSlope=gdpRecent.reduce((s,d)=>s+(d[0]-gdpMx)*(d[1]-gdpMy),0)/gdpRecent.reduce((s,d)=>s+(d[0]-gdpMx)**2,0),gdpIntercept=gdpMy-gdpSlope*gdpMx,finalRecent=finalHist.filter(d=>d[0]>=2014),finalMx=finalRecent.reduce((s,d)=>s+d[0],0)/finalRecent.length,finalMy=finalRecent.reduce((s,d)=>s+d[1],0)/finalRecent.length,finalSlope=finalRecent.reduce((s,d)=>s+(d[0]-finalMx)*(d[1]-finalMy),0)/finalRecent.reduce((s,d)=>s+(d[0]-finalMx)**2,0),projected=[[2024,hist.at(-1)[1],53178,105.7]];
+  const normFinal=yr=>yr<=2030?53178+(57221*.88-53178)*(yr-2024)/6:57221*.88+(57221*.63-57221*.88)*(yr-2030)/20;
+  for(let yr=2025;yr<=2050;yr++){const final=normative?normFinal(yr):53178+finalSlope*(yr-2024),gdp=gdpIntercept+gdpSlope*yr;projected.push([yr,value(final,gdp),final,gdp]);}
+  const W=900,H=430,m={l:68,r:118,t:22,b:42},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-v/130*ph;
+  [0,25,50,75,100,125].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-10,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},v);});
+  add("text",{x:16,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 16 ${m.t+ph/2})`,class:"axis muted text-small"},"Índice de intensidad · 2010 = 100");
+  [2004,2010,2020,2024,2030,2040,2050].forEach(v=>add("text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+  const path=data=>data.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[1])}`).join(" ");
+  add("path",{d:path(hist),class:"line-observed"});add("path",{d:path(projected),class:"line-projected"});add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});
+  add("text",{x:x(2050)+10,y:y(projected.at(-1)[1])+4,class:"direct"},`${fmt(projected.at(-1)[1],1)} puntos`);
+  const focus=add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+  hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),d=(yr<=2024?hist:projected).find(v=>v[0]===yr);if(!d)return;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=`${yr} · Intensidad ${fmt(d[1],1)} puntos · Consumo final ${fmt(d[2],0)} GWh · PIB real ${fmt(d[3],1)} puntos (2022 = 100)`;});
+  hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const ns="http://www.w3.org/2000/svg",svg=document.getElementById("population-interactive"),detail=document.getElementById("population-detail");
+  const add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;},fmt=n=>Math.round(n).toLocaleString("es-ES");
+  const hist=[[2004,2095014],[2005,2104396],[2006,2115383],[2007,2130996],[2008,2147754],[2009,2162953],[2010,2169038],[2011,2174033],[2012,2181590],[2013,2178949],[2014,2172877],[2015,2173210],[2016,2171886],[2017,2175819],[2018,2180449],[2019,2188017],[2020,2199711],[2021,2193199],[2022,2186517],[2023,2196745],[2024,2208007]],mx=hist.reduce((s,d)=>s+d[0],0)/hist.length,my=hist.reduce((s,d)=>s+d[1],0)/hist.length,slope=hist.reduce((s,d)=>s+(d[0]-mx)*(d[1]-my),0)/hist.reduce((s,d)=>s+(d[0]-mx)**2,0),intercept=my-slope*mx,fit=[];
+  for(let yr=2004;yr<=2050;yr++)fit.push([yr,intercept+slope*yr]);
+  const W=900,H=430,m={l:88,r:125,t:22,b:42},pw=W-m.l-m.r,ph=H-m.t-m.b,min=2050000,max=2400000,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-(v-min)/(max-min)*ph;
+  [2050000,2100000,2150000,2200000,2250000,2300000,2350000,2400000].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-10,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},`${(v/1000000).toFixed(2).replace(".",",")} M`);});
+  add("text",{x:17,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 17 ${m.t+ph/2})`,class:"axis muted text-small"},"Habitantes");
+  [2004,2010,2020,2024,2030,2040,2050].forEach(v=>add("text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+  const path=data=>data.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[1])}`).join(" ");
+  add("path",{d:path(hist),class:"line-observed"});add("path",{d:path(fit),class:"line-projected"});add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});
+  add("text",{x:x(2050)+10,y:y(fit.at(-1)[1])+4,class:"direct"},`${fmt(fit.at(-1)[1])} hab.`);
+  const focus=add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+  hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),observed=hist.find(d=>d[0]===yr),estimated=intercept+slope*yr;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=observed?`${yr} · Dato observado ${fmt(observed[1])} habitantes · Regresión ${fmt(estimated)} habitantes`:`${yr} · Regresión prolongada ${fmt(estimated)} habitantes`;});
+  hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const ns="http://www.w3.org/2000/svg";
+  const add=(svg,tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;};
+  const fmt=n=>Math.round(n).toLocaleString("es-ES");
+
+  const svg=document.getElementById("gdp-interactive"),detail=document.getElementById("gdp-detail");
+  const hist=[[2004,79.1],[2005,82.2],[2006,85.8],[2007,89.5],[2008,90.5],[2009,86.8],[2010,87.3],[2011,87.5],[2012,85.7],[2013,84.1],[2014,85.5],[2015,88],[2016,90.9],[2017,93.4],[2018,96.3],[2019,98.5],[2020,89.2],[2021,94.6],[2022,100],[2023,103],[2024,105.7]],recent=hist.filter(d=>d[0]>=2014),mx=recent.reduce((s,d)=>s+d[0],0)/recent.length,my=recent.reduce((s,d)=>s+d[1],0)/recent.length,slope=recent.reduce((s,d)=>s+(d[0]-mx)*(d[1]-my),0)/recent.reduce((s,d)=>s+(d[0]-mx)**2,0),intercept=my-slope*mx;
+  const projected=[];for(let yr=2014;yr<=2050;yr++)projected.push([yr,intercept+slope*yr]);
+  const all=[...hist.slice(0,-1),...projected],W=900,H=430,m={l:60,r:120,t:22,b:42},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-(v-60)/100*ph;
+  [60,80,100,120,140,160].forEach(v=>{add(svg,"line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add(svg,"text",{x:m.l-10,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},v);});
+  add(svg,"text",{x:15,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 15 ${m.t+ph/2})`,class:"axis muted text-small"},"Índice de volumen encadenado (2022 = 100)");
+  [2004,2010,2020,2024,2030,2040,2050].forEach(v=>add(svg,"text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+  const path=data=>data.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[1])}`).join(" ");
+  add(svg,"path",{d:`M ${x(2004)} ${y(60)} ${path(hist).replace(/^M/,"L")} L ${x(2024)} ${y(60)} Z`,class:"area-observed"});
+  add(svg,"path",{d:path(hist),class:"line-observed"});
+  add(svg,"path",{d:`M ${x(2024)} ${y(60)} ${path(projected).replace(/^M/,"L")} L ${x(2050)} ${y(60)} Z`,class:"area-projected"});
+  add(svg,"path",{d:path(projected),class:"line-projected"});
+  add(svg,"line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});
+  add(svg,"text",{x:x(2050)+12,y:y(projected.at(-1)[1])-4,class:"direct"},`${projected.at(-1)[1].toFixed(1).replace(".",",")} puntos`);
+  const focus=add(svg,"line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"});
+  const hit=add(svg,"rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+  hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),observed=hist.find(v=>v[0]===yr),fit=intercept+slope*yr;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=observed?`${yr} · Dato observado ${observed[1].toFixed(1).replace(".",",")} puntos · Regresión ${fit.toFixed(1).replace(".",",")} puntos`:`${yr} · Regresión prolongada ${fit.toFixed(1).replace(".",",")} puntos`;});
+  hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const ns="http://www.w3.org/2000/svg",svg=document.getElementById("gdp-per-capita-interactive"),detail=document.getElementById("gdp-per-capita-detail");
+  const add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;},fmt=(n,d=1)=>n.toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
+  const gdp=[[2004,79.1],[2005,82.2],[2006,85.8],[2007,89.5],[2008,90.5],[2009,86.8],[2010,87.3],[2011,87.5],[2012,85.7],[2013,84.1],[2014,85.5],[2015,88],[2016,90.9],[2017,93.4],[2018,96.3],[2019,98.5],[2020,89.2],[2021,94.6],[2022,100],[2023,103],[2024,105.7]],population=[[2004,2095014],[2005,2104396],[2006,2115383],[2007,2130996],[2008,2147754],[2009,2162953],[2010,2169038],[2011,2174033],[2012,2181590],[2013,2178949],[2014,2172877],[2015,2173210],[2016,2171886],[2017,2175819],[2018,2180449],[2019,2188017],[2020,2199711],[2021,2193199],[2022,2186517],[2023,2196745],[2024,2208007]],basePopulation=population.find(d=>d[0]===2022)[1],value=(g,p)=>g*basePopulation/p,fit=series=>{const mx=series.reduce((s,d)=>s+d[0],0)/series.length,my=series.reduce((s,d)=>s+d[1],0)/series.length,b=series.reduce((s,d)=>s+(d[0]-mx)*(d[1]-my),0)/series.reduce((s,d)=>s+(d[0]-mx)**2,0);return year=>my+b*(year-mx)},gdpFit=fit(gdp.filter(d=>d[0]>=2014)),populationFit=fit(population);
+  const hist=gdp.map(([year,g])=>{const p=population.find(d=>d[0]===year)[1];return[year,value(g,p),g,p]}),projected=[];for(let year=2014;year<=2050;year++){const g=gdpFit(year),p=populationFit(year);projected.push([year,value(g,p),g,p]);}
+  const W=900,H=430,m={l:68,r:118,t:22,b:42},pw=W-m.l-m.r,ph=H-m.t-m.b,min=75,max=145,x=year=>m.l+(year-2004)/46*pw,y=v=>m.t+ph-(v-min)/(max-min)*ph;
+  [80,90,100,110,120,130,140].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-10,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},v);});
+  add("text",{x:16,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 16 ${m.t+ph/2})`,class:"axis muted text-small"},"PIB real por habitante · 2022 = 100");[2004,2010,2020,2024,2030,2040,2050].forEach(v=>add("text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+  const path=data=>data.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[1])}`).join(" ");add("path",{d:path(hist),class:"line-observed"});add("path",{d:path(projected),class:"line-projected"});add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});add("text",{x:x(2050)+10,y:y(projected.at(-1)[1])+4,class:"direct"},`${fmt(projected.at(-1)[1])} puntos`);
+  const focus=add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,year=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),observed=hist.find(d=>d[0]===year),model=projected.find(d=>d[0]===year);focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(year));focus.setAttribute("x2",x(year));detail.textContent=observed?`${year} · Observado ${fmt(observed[1])} puntos · PIB real ${fmt(observed[2])} · Población ${Math.round(observed[3]).toLocaleString("es-ES")}`:`${year} · Trayectoria derivada ${fmt(model[1])} puntos · PIB real ${fmt(model[2])} · Población ${Math.round(model[3]).toLocaleString("es-ES")}`;});hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const ns="http://www.w3.org/2000/svg",svg=document.getElementById("employment-interactive"),detail=document.getElementById("employment-detail");
+  const add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;};
+  const years=[2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],tot=[956.3,902.8,873.6,865.3,876.4,901.8,904.7,923.6,936.1,917.6,946.8,967.3,995.7,987.7],abs=[[9.9,209.5,66.3,670.6],[11.6,186,55.9,649.3],[14.3,179.1,56.8,623.4],[12.3,174.7,50.1,628.3],[11.2,183.4,47.9,633.9],[12.5,201.1,49.3,638.9],[12.8,207.6,48,636.3],[9.3,200.8,50.3,663.3],[10.2,190.7,52.9,682.3],[8.4,190,51.2,668],[8.6,205.9,46.5,685.8],[10.4,199.2,53.6,704.1],[10.8,200,56.7,728.3],[8.5,194.7,46.9,737.7]];
+  const obs=years.map((yr,j)=>{const sum=abs[j].reduce((a,b)=>a+b,0);return[yr,...abs[j].map(v=>v*tot[j]/sum)]}),base=obs.at(-1),ls=[-.0477122533,-.00925421995,-.01142331337],recentTotals=years.map((yr,j)=>[yr,tot[j]]).filter(d=>d[0]>=2014),mx=recentTotals.reduce((s,d)=>s+d[0],0)/recentTotals.length,my=recentTotals.reduce((s,d)=>s+d[1],0)/recentTotals.length,totalSlope=recentTotals.reduce((s,d)=>s+(d[0]-mx)*(d[1]-my),0)/recentTotals.reduce((s,d)=>s+(d[0]-mx)**2,0),proj=[];
+  for(let yr=2024;yr<=2050;yr++){const ratios=ls.map((s,i)=>base[i+1]/base[4]*Math.exp(s*(yr-2024))),serv=100/(1+ratios.reduce((a,b)=>a+b,0)),shares=[...ratios.map(r=>r*serv),serv],total=987.7+totalSlope*(yr-2024);proj.push([yr,...shares.map(v=>v*total/100)]);}
+  const all=[...obs.slice(0,-1),...proj],series=[{n:"Servicios",i:4,k:"services"},{n:"Industria",i:2,k:"industry"},{n:"Construcción",i:3,k:"construction"},{n:"Agricultura",i:1,k:"agriculture"}],W=900,H=455,m={l:62,r:145,t:15,b:38},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2011)/39*pw,y=v=>m.t+ph-v/1400*ph;
+  [0,350,700,1050,1400].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},v.toLocaleString("es-ES"));});
+  add("text",{x:16,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 16 ${m.t+ph/2})`,class:"axis muted text-small"},"Miles de personas ocupadas");
+  [2011,2020,2024,2030,2040,2050].forEach(v=>add("text",{x:x(v),y:H-12,"text-anchor":"middle",class:"axis muted text-small"},v));
+  function stack(data,phase){let lower=data.map(()=>0);return series.map(s=>{const upper=data.map((d,i)=>lower[i]+d[s.i]);let p=`M ${x(data[0][0])} ${y(upper[0])}`;for(let i=1;i<data.length;i++)p+=` L ${x(data[i][0])} ${y(upper[i])}`;for(let i=data.length-1;i>=0;i--)p+=` L ${x(data[i][0])} ${y(lower[i])}`;p+=" Z";add("path",{d:p,class:`${phase}-${s.k}`});const b={s,lower:[...lower],upper:[...upper]};lower=upper;return b;});}
+  stack(obs,"hist");const bounds=stack(proj,"proj");add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});
+  bounds.forEach(b=>{const i=proj.length-1,mid=(b.lower[i]+b.upper[i])/2;add("text",{x:m.l+pw+12,y:y(mid),class:"direct text-small"},`${b.s.n} ${proj[i][b.s.i].toFixed(1).replace(".",",")}`);});
+  const focus=add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+  hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2011,Math.min(2050,Math.round(2011+(sx-m.l)/pw*39))),d=all.find(v=>v[0]===yr);if(!d)return;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));const total=d.slice(1).reduce((a,b)=>a+b,0),item=(label,i)=>`${label} ${d[i].toFixed(1).replace(".",",")} (${(100*d[i]/total).toFixed(1).replace(".",",")} %)`;detail.textContent=`${yr} · Empleo total ${total.toFixed(1).replace(".",",")} mil · ${item("Servicios",4)} · ${item("Industria",2)} · ${item("Construcción",3)} · ${item("Agricultura",1)}`;});
+  hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const ns="http://www.w3.org/2000/svg",svg=document.getElementById("service-subsectors-interactive"),detail=document.getElementById("service-subsectors-detail"),add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;},fmt=(n,d=0)=>n.toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
+  const years=Array.from({length:21},(_,i)=>2004+i),totalIndex=[69.6,72,75.3,78.4,81,80.9,81.5,82.2,81.8,80.8,82.2,85,87.5,90,92.9,95.3,87.9,93.8,100,103.3,106.3],indices=[[75.3,77.3,80.4,83.2,84.2,81.8,82.2,81.3,79.3,78.1,79.6,83.6,86.6,90.1,93.8,95.9,77.1,88.8,100,103.8,105.8],[66.4,69.2,72.6,75.1,76,74.8,74.4,74.4,73.4,74.1,74.6,79.1,80.5,84,85.2,87.6,87.2,90.5,100,101,107.4],[98,101.4,108.9,111.1,112.1,107.6,100.1,94.1,92.5,83.8,86.6,86.6,88.2,89.2,93,97.9,101.4,103.6,100,105.5,112.2],[69.9,73.2,76.7,78.3,81.3,84.6,84.7,86.1,87.3,86.9,87.8,91.4,92.8,94.9,97,99.1,97.8,98.8,100,103.9,104],[61,63.6,66.6,71.3,75.4,73.1,73.7,75.3,75.7,75.2,74.4,76.9,79.8,82.1,85.3,87,82,88.6,100,105.4,110.5],[60.9,62.8,65.2,68.8,73,75.5,78.5,81.2,81.4,81.8,84,85.2,87.3,89.3,90.9,93.9,94.9,97.1,100,101.2,104.1],[74.2,77.1,80.4,83.3,84.3,87.7,89.3,92.2,93.3,92.1,95.3,99.5,103.5,106.7,110.6,111.9,90.5,96.9,100,102.8,105.8]],base=[16601.699,2113.413,3590.123,7644.732,7790.365,13647.242,3046.346],totalBase=54433.92,values=(idx,total)=>{const raw=idx.map((v,i)=>base[i]*v/100),sum=raw.reduce((a,b)=>a+b,0);return raw.map(v=>v*total/sum)},hist=years.map((yr,j)=>[yr,...values(indices.map(s=>s[j]),totalBase*totalIndex[j]/100)]),fit=series=>{const a=series.filter(d=>d[0]>=2014),mx=a.reduce((s,d)=>s+d[0],0)/a.length,my=a.reduce((s,d)=>s+d[1],0)/a.length,b=a.reduce((s,d)=>s+(d[0]-mx)*(d[1]-my),0)/a.reduce((s,d)=>s+(d[0]-mx)**2,0),intercept=my-b*mx;return yr=>intercept+b*yr},totalFit=fit(years.map((yr,i)=>[yr,totalIndex[i]])),fits=indices.map(s=>fit(years.map((yr,i)=>[yr,s[i]]))),proj=[];
+  for(let yr=2025;yr<=2050;yr++)proj.push([yr,...values(fits.map(f=>Math.max(0,f(yr))),totalBase*Math.max(0,totalFit(yr))/100)]);
+  const names=["Comercio, hostelería y transporte","Información y comunicaciones","Finanzas y seguros","Actividades inmobiliarias","Actividades profesionales","AAPP, educación, sanidad y servicios sociales","Resto de servicios"],short=["Comercio, transporte y hostelería","Información y comunicaciones","Finanzas y seguros","Inmobiliarias","Profesionales","AAPP, educación y sanidad","Resto de servicios"],colors=["#0072b2","#e69f00","#009e73","#6f42c1","#d55e00","#56b4e9","#f0c419"],W=900,H=480,m={l:72,r:215,t:16,b:40},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-v/80000*ph;
+  [0,20000,40000,60000,80000].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},fmt(v));});add("text",{x:16,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 16 ${m.t+ph/2})`,class:"axis muted text-small"},"Millones de euros de 2022");[2004,2010,2020,2024,2030,2040,2050].forEach(v=>add("text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+  const stack=(data,opacity)=>{let lower=data.map(()=>0);return names.map((name,s)=>{const upper=data.map((d,i)=>lower[i]+d[s+1]);let p=`M ${x(data[0][0])} ${y(upper[0])}`;for(let i=1;i<data.length;i++)p+=` L ${x(data[i][0])} ${y(upper[i])}`;for(let i=data.length-1;i>=0;i--)p+=` L ${x(data[i][0])} ${y(lower[i])}`;p+=" Z";add("path",{d:p,fill:colors[s],opacity});const boundary=`M ${x(data[0][0])} ${y(upper[0])} `+upper.slice(1).map((v,i)=>`L ${x(data[i+1][0])} ${y(v)}`).join(" ");add("path",{d:boundary,fill:"none",stroke:"rgba(255,255,255,.75)","stroke-width":1});const result={lower:[...lower],upper:[...upper],s};lower=upper;return result})};
+  stack(hist,.82);const bounds=stack(proj,.55);add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});const end=proj.length-1;bounds.forEach(b=>{const mid=(b.lower[end]+b.upper[end])/2;add("text",{x:m.l+pw+10,y:y(mid)+4,class:"direct text-small"},short[b.s]);});
+  const all=[...hist,...proj],focus=add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),d=all.find(v=>v[0]===yr);if(!d)return;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));const total=d.slice(1).reduce((a,b)=>a+b,0);detail.textContent=`${yr} · Servicios ${fmt(total)} M€ de 2022 · `+names.map((n,i)=>`${n} ${fmt(d[i+1])} M€ (${fmt(100*d[i+1]/total,1)} %)`).join(" · ")});hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const ns="http://www.w3.org/2000/svg",svg=document.getElementById("wage-interactive"),detail=document.getElementById("wage-detail");
+  const add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;};
+  const hist=[[2004,13.01],[2009,14.61],[2013,13.05],[2016,13.06],[2020,14.84],[2024,13.35]];
+  const meanX=hist.reduce((s,d)=>s+d[0],0)/hist.length,meanY=hist.reduce((s,d)=>s+d[1],0)/hist.length;
+  const slope=hist.reduce((s,d)=>s+(d[0]-meanX)*(d[1]-meanY),0)/hist.reduce((s,d)=>s+(d[0]-meanX)**2,0),intercept=meanY-slope*meanX;
+  const projected=[];for(let yr=2004;yr<=2050;yr++)projected.push([yr,intercept+slope*yr]);
+  const W=900,H=430,m={l:70,r:110,t:22,b:42},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-(v-12)/4*ph;
+  [12,13,14,15,16].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-10,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},`${v.toFixed(0)} €`);});
+  add("text",{x:17,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 17 ${m.t+ph/2})`,class:"axis muted text-small"},"Euros constantes de 2024 por hora");
+  [2004,2010,2020,2024,2030,2040,2050].forEach(v=>add("text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+  const path=data=>data.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[1])}`).join(" ");
+  add("path",{d:path(hist),class:"line-observed"});hist.forEach(d=>add("circle",{cx:x(d[0]),cy:y(d[1]),r:5,fill:"var(--viz-series-2)"}));
+  add("path",{d:path(projected),class:"line-projected"});add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});
+  const end=projected.at(-1)[1];add("text",{x:x(2050)+10,y:y(end)+4,class:"direct"},`${end.toFixed(2).replace(".",",")} €`);
+  const focus=add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+  hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),observed=hist.find(d=>d[0]===yr),fit=intercept+slope*yr;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=observed?`${yr} · Dato observado ${observed[1].toFixed(2).replace(".",",")} €/hora · Regresión ${fit.toFixed(2).replace(".",",")} €/hora`:`${yr} · Regresión prolongada ${fit.toFixed(2).replace(".",",")} €/hora`;});
+  hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const ns="http://www.w3.org/2000/svg",svg=document.getElementById("unemployment-interactive"),detail=document.getElementById("unemployment-detail");
+  const add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;};
+  const hist=[[2011,10.8],[2012,11.8],[2013,15.1],[2014,16.1],[2015,15.7],[2016,13.8],[2017,11.6],[2018,10.5],[2019,9.8],[2020,10.6],[2021,10.0],[2022,8.6],[2023,7.8],[2024,7.4]];
+  const recent=hist.filter(d=>d[0]>=2014),mx=recent.reduce((s,d)=>s+d[0],0)/recent.length,my=recent.reduce((s,d)=>s+Math.log(d[1]),0)/recent.length;
+  const slope=recent.reduce((s,d)=>s+(d[0]-mx)*(Math.log(d[1])-my),0)/recent.reduce((s,d)=>s+(d[0]-mx)**2,0),intercept=my-slope*mx,projected=[];
+  for(let yr=2014;yr<=2050;yr++)projected.push([yr,Math.exp(intercept+slope*yr)]);
+  const W=900,H=430,m={l:65,r:105,t:22,b:42},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2011)/39*pw,y=v=>m.t+ph-v/18*ph;
+  [0,5,10,15].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-10,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},`${v}%`);});
+  add("text",{x:16,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 16 ${m.t+ph/2})`,class:"axis muted text-small"},"Porcentaje de la población activa");
+  [2011,2020,2024,2030,2040,2050].forEach(v=>add("text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+  const path=data=>data.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[1])}`).join(" ");
+  add("path",{d:path(hist),class:"line-observed"});hist.forEach(d=>add("circle",{cx:x(d[0]),cy:y(d[1]),r:4,fill:"var(--viz-series-2)"}));
+  add("path",{d:path(projected),class:"line-projected"});add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});
+  const end=projected.at(-1)[1];add("text",{x:x(2050)+10,y:y(end)+4,class:"direct"},`${end.toFixed(1).replace(".",",")}%`);
+  const focus=add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+  hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2011,Math.min(2050,Math.round(2011+(sx-m.l)/pw*39))),observed=hist.find(v=>v[0]===yr),fit=yr>=2014?Math.exp(intercept+slope*yr):null;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=observed&&fit!==null?`${yr} · Dato observado ${observed[1].toFixed(1).replace(".",",")}% · Ajuste exponencial ${fit.toFixed(1).replace(".",",")}%`:observed?`${yr} · Dato observado ${observed[1].toFixed(1).replace(".",",")}%`:`${yr} · Ajuste exponencial prolongado ${fit.toFixed(1).replace(".",",")}%`;});
+  hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const ns="http://www.w3.org/2000/svg",svg=document.getElementById("emissions-interactive"),detail=document.getElementById("emissions-detail");
+  const add=(tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;};
+  const hist=[[2004,25.806],[2005,25.524],[2006,25.711],[2007,25.874],[2008,25.111],[2009,22.666],[2010,21.746],[2011,20.245],[2012,20.447],[2013,18.814],[2014,18.844],[2015,19.467],[2016,18.745],[2017,19.738],[2018,19.081],[2019,18.599],[2020,16.458],[2021,17.607],[2022,18.258],[2023,16.194],[2024,15.8]];
+  const recent=hist.filter(d=>d[0]>=2014),mx=recent.reduce((s,d)=>s+d[0],0)/recent.length,my=recent.reduce((s,d)=>s+Math.log(d[1]),0)/recent.length;
+  const slope=recent.reduce((s,d)=>s+(d[0]-mx)*(Math.log(d[1])-my),0)/recent.reduce((s,d)=>s+(d[0]-mx)**2,0),projected=[],normative=window.SCENARIO_MODE==="normative",target2030=25.524*.55,target2050=2.6;
+  for(let yr=2024;yr<=2050;yr++){const v=normative?(yr<=2030?15.8+(target2030-15.8)*(yr-2024)/6:target2030+(target2050-target2030)*(yr-2030)/20):hist.at(-1)[1]*Math.exp(slope*(yr-2024));projected.push([yr,Math.max(0,v)]);}
+  const W=900,H=440,m={l:72,r:118,t:22,b:45},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-v/30*ph;
+  [0,5,10,15,20,25,30].forEach(v=>{add("line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add("text",{x:m.l-10,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},v);});
+  add("text",{x:16,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 16 ${m.t+ph/2})`,class:"axis muted text-small"},"Millones de toneladas de CO₂ equivalente");
+  [2004,2010,2020,2024,2030,2040,2050].forEach(v=>add("text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+  const path=data=>data.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[1])}`).join(" ");
+  add("path",{d:path(hist),class:"line-observed"});hist.forEach(d=>add("circle",{cx:x(d[0]),cy:y(d[1]),r:d[0]===2024?5:3.5,fill:"var(--viz-series-2)"}));
+  add("path",{d:path(projected),class:"line-projected"});add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});
+  add("line",{x1:m.l,y1:y(2.6),x2:m.l+pw,y2:y(2.6),stroke:"var(--viz-series-3)","stroke-width":2,"stroke-dasharray":"8 6"});add("text",{x:m.l+pw-4,y:y(2.6)-9,"text-anchor":"end",class:"target-label text-small"},"Absorciones UTCUTS 2023: 2,6");
+  add("circle",{cx:x(2030),cy:y(target2030),r:7,class:"target-guide"});add("text",{x:x(2030)+10,y:y(target2030)-10,class:"target-label text-small"},"Objetivo 2030: 14,0");
+  add("circle",{cx:x(2050),cy:y(target2050),r:7,class:"target-guide"});add("text",{x:x(2050)-8,y:y(target2050)-13,"text-anchor":"end",class:"target-label text-small"},"Supuesto bruto 2050: 2,6");
+  const end=projected.at(-1)[1];add("text",{x:x(2050)+10,y:y(end)+4,class:"direct"},`${end.toFixed(1).replace(".",",")}`);
+  const all=[...hist.slice(0,-1),...projected],focus=add("line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add("rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+  hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),d=all.find(v=>v[0]===yr);if(!d)return;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=`${yr} · ${d[1].toFixed(1).replace(".",",")} Mt CO₂-eq · ${yr<2024?"dato observado":yr===2024?"avance provisional":normative?"senda normativa":"tendencia exponencial"}`;});
+  hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+})();
+
+(() => {
+  const data=[[2004,8147.97,878.5,8424.04,2086.24,64812,4095,2964.74,28.092,4.574],[2005,13846.18,1002.22,3837.53,742.7,64096,4069,1744.92,28.078,2.722],[2006,13103.63,913.6,5063.3,1200.56,65065,4022,2114.16,28.928,3.249],[2007,11671.04,926.35,6332.34,1682.45,66817,4543,2608.8,28.707,3.904],[2008,12263.28,1142.44,5546.32,1502.43,66934,4573,2644.87,27.954,3.951],[2009,13275.55,1094.02,2512.65,957.65,60989,4443,2051.67,26.621,3.364],[2010,9370.33,1175.5,5207.4,2769.02,62825,4526,3944.52,27.096,6.279],[2011,7142.37,976.01,6735.6,3238.84,60211,4324,4214.85,27.409,7],[2012,8320.43,1052.38,5105.05,2342.28,59679,4180,3394.66,25.651,5.688],[2013,6046.93,1250.44,5336.65,3846.35,58691,4179,5096.79,25.595,8.684],[2014,5359.83,1067.89,5724.49,4182.88,57944,4536,5250.77,25.666,9.062],[2015,5142.14,1081.05,6525.62,3777.69,58531,4691,4858.74,25.6,8.301],[2016,4677.3,991.7,5980.17,4046.38,58236,4830,5038.08,24.358,8.651],[2017,5007.68,993.69,6671.22,3391.78,61439,5324,4385.47,23.474,7.138],[2018,4228.8,1230.31,6397.22,4293.41,58745,7197,5523.72,24.761,9.403],[2019,7484.52,1108.31,4435.37,2826.34,58021,7243,3934.65,24.472,6.781],[2020,5439.1,1065.19,4358.35,3637.72,51998,6780,4702.91,24.812,9.044],[2021,6086.52,1129.14,4310.85,4045.1,57221,7876,5174.24,24.636,9.043],[2022,8887.25,1070.68,2871.24,2230.95,56757,7325,3301.63,23.682,5.817],[2023,4673.48,962.86,4252.5,4623.91,52677,6376,5586.77,24.939,10.606],[2024,4732.71,1163.93,3618.07,5196.7,53178,6748,6360.63,24.837,11.961]];
+  const mixData=[[2004,6.697,41.521,33.982,.552,4.843,12.403],[2005,6.646,39.934,43.322,.518,4.462,5.117],[2006,5.969,40.978,41.327,.382,4.363,6.982],[2007,6.056,40.564,39.117,.283,5.13,8.85],[2008,3.192,39.277,44.161,.255,5.414,7.701],[2009,2.567,40.002,47.185,.235,5.937,4.074],[2010,2.662,39.241,41.478,.288,6.718,9.613],[2011,2.277,39.044,38.448,.171,7.02,13.039],[2012,4.909,38.749,39.753,.091,6.856,9.641],[2013,.777,41.796,38.073,.363,6.585,12.406],[2014,.722,42.695,35.471,.405,6.981,13.727],[2015,.705,43.609,33.944,.447,7.219,14.077],[2016,.499,45.4,32.316,.45,7.544,13.791],[2017,.574,43.947,33.324,.398,8.32,13.438],[2018,.365,44.914,30.706,.4,9.361,14.254],[2019,.345,43.699,36.649,.486,9.263,9.559],[2020,.288,44.048,33.852,.346,9.785,11.68],[2021,.41,42.81,35.359,.322,9.741,11.357],[2022,.276,46.444,37.418,.352,8.799,6.71],[2023,.326,47.897,29.64,.39,8.727,13.02],[2024,.344,47.647,30.418,.46,8.493,12.638]];
+  const cibData=[[2004,84736],[2005,89502],[2006,89716],[2007,90567],[2008,91527],[2009,85166],[2010,82983],[2011,76495],[2012,77242],[2013,74019],[2014,72172],[2015,73191],[2016,72705],[2017,74884],[2018,75004],[2019,75972],[2020,68459],[2021,73576],[2022,76033],[2023,68171],[2024,69750]];
+  const ns="http://www.w3.org/2000/svg",add=(svg,tag,a={},txt="")=>{const e=document.createElementNS(ns,tag);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));if(txt)e.textContent=txt;svg.appendChild(e);return e;},fmt=(n,d=0)=>n.toLocaleString("es-ES",{minimumFractionDigits:d,maximumFractionDigits:d});
+  const normative=window.SCENARIO_MODE==="normative";
+  const interpolateTarget=(yr,current,target2030,target2050)=>yr<=2030?current+(target2030-current)*(yr-2024)/6:target2030+(target2050-target2030)*(yr-2030)/20;
+  const directRenewable=[3003,2647,2821,3331,3221,3402,3904,3703,3518,2714,3013,3026,3447,3976,4589,4778,4442,4736,4453,3920,3610];
+  const finalCarrierHist=[[2004,1916,24354,1806,15525,18207],[2005,1777,25228,1773,14674,17997],[2006,1857,25465,1556,14545,18822],[2007,1418,26422,1588,14876,19181],[2008,889,26207,1889,16017,18711],[2009,662,24290,1749,14650,16236],[2010,752,23943,6,17197,17023],[2011,689,22510,6,16800,16503],[2012,598,23453,6,16797,15308],[2013,548,23749,170,16488,15022],[2014,521,23948,184,15406,14872],[2015,516,24805,206,14995,14984],[2016,363,25700,206,14334,14185],[2017,430,27008,188,15415,14422],[2018,274,26808,189,12339,14546],[2019,262,26570,232,11981,14199],[2020,197,23674,151,10632,12902],[2021,302,25544,145,12397,14097],[2022,210,27209,163,11280,13441],[2023,222,25490,162,9744,13137],[2024,240,26346,196,9578,13208]];
+  const normativeData=data.map((d,i)=>{const r=[...d];r[7]=d[7]+directRenewable[i];r[9]=100*r[7]/d[5];return r;});
+  const renewableSource=normativeData;
+  const regression=(source,col,from=2014)=>{const recent=source.filter(d=>d[0]>=from),mx=recent.reduce((s,d)=>s+d[0],0)/recent.length,my=recent.reduce((s,d)=>s+d[col],0)/recent.length;return recent.reduce((s,d)=>s+(d[0]-mx)*(d[col]-my),0)/recent.reduce((s,d)=>s+(d[0]-mx)**2,0);};
+  const mixSlopes=[1,2,3,4,5,6].map(i=>regression(mixData,i,2004));
+  const projectMix=yr=>{const raw=mixData.at(-1).slice(1).map((v,i)=>Math.max(.05,v+mixSlopes[i]*(yr-2024))),total=raw.reduce((a,b)=>a+b,0);return raw.map(v=>v/total*100);};
+  const consumptionSlope=regression(data,5),renewableOwnSlope=regression(data,2),importedRenewableSlope=regression(data,4),cibSlope=regression(cibData,1);
+  const projectFinalConsumption=yr=>interpolateTarget(yr,53178,57221*.88,57221*.63);
+  const projectCIB=yr=>normative?projectFinalConsumption(yr)*(yr<=2030?1.312+(1.20-1.312)*(yr-2024)/6:1.20+(1.10-1.20)*(yr-2030)/20):69750+cibSlope*(yr-2024);
+  const projectPrimaryRenewable=yr=>6748+(11235-6748)*(yr-2024)/6;
+  const directRenewableData=data.map((d,i)=>[d[0],directRenewable[i]]),directRenewableSlope=regression(directRenewableData,1,2014),ownTotalSlope=regression(data,1,2014),electricShareSlope=regression(data,8,2004),ownRenewTrendSlope=regression(data,2,2015);
+  const modelFinal=yr=>normative?projectFinalConsumption(yr):53178+consumptionSlope*(yr-2024);
+  const modelElectricShare=yr=>normative?interpolateTarget(yr,24.837,35,52):24.837+electricShareSlope*(yr-2024);
+  const normFinal2030=57221*.88,normFinal2050=57221*.63,oldOwnRenewTarget2030=3454,ownRenewTarget2030=normFinal2030*.35*.15;
+  const legacyOwnRenew=yr=>1163.93+(oldOwnRenewTarget2030-1163.93)*(yr-2024)/6;
+  const modelOwnRenew=yr=>normative?projectOwnRenewableElectric(yr):Math.max(0,1163.93+ownRenewTrendSlope*(yr-2024));
+  const own2030=Math.max(oldOwnRenewTarget2030,4732.71+ownTotalSlope*6);
+  const legacyOwnTotal=yr=>yr<=2030?4732.71+(own2030-4732.71)*(yr-2024)/6:legacyOwnRenew(yr);
+  const baseImportRenewShare=100*5196.7/(53178*.24837-4732.71),modelImportRenewShare=yr=>normative?interpolateTarget(yr,58.953,81,100):Math.min(100,baseImportRenewShare+1.7294272727272733*(yr-2024));
+  const tendentialImportEnd=Math.max(5196.7,(53178+consumptionSlope*26)*(24.837+electricShareSlope*26)/100-Math.max(0,1163.93+ownRenewTrendSlope*26)),tendentialImportTarget=yr=>5196.7+(tendentialImportEnd-5196.7)*(yr-2024)/26;
+  const modelOwnTotal=yr=>{if(normative)return Math.max(modelOwnRenew(yr),legacyOwnTotal(yr)-(legacyOwnRenew(yr)-modelOwnRenew(yr)));const raw=Math.max(modelOwnRenew(yr),4732.71+ownTotalSlope*(yr-2024));if(yr===2024)return raw;const electric=modelFinal(yr)*modelElectricShare(yr)/100,requiredImport=tendentialImportTarget(yr)/Math.max(modelImportRenewShare(yr)/100,1e-9);return Math.max(modelOwnRenew(yr),Math.min(raw,electric-requiredImport))};
+  const modelImportTotal=yr=>Math.max(0,modelFinal(yr)*modelElectricShare(yr)/100-modelOwnTotal(yr));
+  const legacyImportedRenewable=yr=>Math.max(0,modelFinal(yr)*modelElectricShare(yr)/100-legacyOwnTotal(yr))*modelImportRenewShare(yr)/100;
+  const rawImportedRenewable=yr=>yr===2024?5196.7:normative?Math.min(modelImportTotal(yr),legacyOwnRenew(yr)+legacyImportedRenewable(yr)-modelOwnRenew(yr)):Math.min(tendentialImportTarget(yr),modelImportTotal(yr)*modelImportRenewShare(yr)/100);
+  const projectImportedRenewable=yr=>{if(!normative||yr<=2030)return rawImportedRenewable(yr);const start=rawImportedRenewable(2030),end=rawImportedRenewable(2050);return start*Math.pow(end/start,(yr-2030)/20)};
+  const trendDirectRenew=yr=>Math.max(0,3610+directRenewableSlope*(yr-2024)),normDirect2030=Math.max(trendDirectRenew(2030),normFinal2030*.32-(oldOwnRenewTarget2030+(normFinal2030*.35-own2030)*.81)),normDirect2050=normFinal2050*.97-normFinal2050*.52;
+  const modelDirectRenew=yr=>{if(!normative)return trendDirectRenew(yr);const raw=interpolateTarget(yr,3610,normDirect2030,normDirect2050),trend=trendDirectRenew(yr),geo=yr<=2030?180*3610/3920+(232.6-180*3610/3920)*(yr-2024)/6:232.6+(519.5-232.6)*(yr-2030)/20;return Math.max(raw,(trend*(.574+.064+.041)+geo)/.725)};
+  const normativeDirectTech=yr=>{const total=modelDirectRenew(yr),trend=trendDirectRenew(yr),biomass=Math.max(0,2413.1+(trend-3610)*.6287),ambient=yr<=2030?166+(232.6-166)*(yr-2024)/6:232.6+(1903.97-232.6)*(yr-2030)/20,renewableHeat=Math.max(0,331.5+(trend-3610)*.0701+(ambient-166)),bio=Math.max(0,total-biomass-renewableHeat);return[bio,biomass,renewableHeat]};
+  const projectTotalRenewable=yr=>modelDirectRenew(yr)+modelOwnRenew(yr)+projectImportedRenewable(yr);
+  const projectRenewableAvailable=yr=>100*projectTotalRenewable(yr)/modelFinal(yr);
+  const projectNetEmissions=yr=>normative?(yr<=2030?13.594+(11.438-13.594)*(yr-2023)/7:11.438*(2050-yr)/20):13.594+(7.1-13.594)*(yr-2023)/27;
+  const ownRenewableElectricData=data.map(d=>[d[0],d[2]]).concat([[2025,1091.72]]);
+  const importedElectricityRenewableShareData=[[2004,19.85],[2005,16.216],[2006,19.166],[2007,20.991],[2008,21.314],[2009,27.598],[2010,34.713],[2011,32.473],[2012,31.453],[2013,41.886],[2014,42.221],[2015,36.666],[2016,40.355],[2017,33.705],[2018,40.159],[2019,38.92],[2020,45.494],[2021,48.41],[2022,43.727],[2023,52.095],[2024,58.953]];
+  const splitMixData=mixData.map((d,i)=>{const q=importedElectricityRenewableShareData[i][1]/100;return[d[0],d[1],d[2],d[4],d[3],d[6]*(1-q),d[6]*q,d[5]]});
+  const projectOwnRenewableElectric=yr=>yr<=2030?1163.93+(ownRenewTarget2030-1163.93)*(yr-2024)/6:ownRenewTarget2030+((450.6+2500+1244+650)-ownRenewTarget2030)*(yr-2030)/20;
+  const projectImportedElectricityRenewableShare=yr=>normative?interpolateTarget(yr,58.953,81,100):Math.min(100,58.953+1.7294272727272733*(yr-2024));
+  function lineChart(id,col,{min,max,ticks,axis,unit,decimals=0,from=2014,projector=null,color=null},source=data){
+    const svg=document.getElementById(id),detail=document.getElementById(id.replace("-interactive","-detail")),slope=regression(source,col,from),hist=source.map(d=>[d[0],d[col]]),anchorYear=hist.at(-1)[0],proj=[];for(let yr=anchorYear;yr<=2050;yr++)proj.push([yr,projector?projector(yr):hist.at(-1)[1]+slope*(yr-anchorYear)]);
+    const W=900,H=430,m={l:74,r:112,t:22,b:42},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-(v-min)/(max-min)*ph;
+    ticks.forEach(v=>{add(svg,"line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add(svg,"text",{x:m.l-10,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},fmt(v,decimals));});
+    add(svg,"text",{x:16,y:m.t+ph/2,"text-anchor":"middle",transform:`rotate(-90 16 ${m.t+ph/2})`,class:"axis muted text-small"},axis);[2004,2010,2020,2024,2030,2040,2050].forEach(v=>add(svg,"text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+    const path=a=>a.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[1])}`).join(" "),style=color?`stroke:${color}`:null;add(svg,"path",{d:path(hist),class:"line-observed",...(style?{style}:{})});hist.forEach(d=>add(svg,"circle",{cx:x(d[0]),cy:y(d[1]),r:3.5,fill:color||"var(--viz-series-2)"}));add(svg,"path",{d:path(proj),class:"line-projected",...(style?{style}:{})});add(svg,"line",{x1:x(anchorYear),y1:m.t,x2:x(anchorYear),y2:m.t+ph,class:"cut"});
+    const end=proj.at(-1)[1];add(svg,"text",{x:x(2050)+10,y:y(end)+4,class:"direct text-small"},`${fmt(end,decimals)}${unit}`);const all=[...hist.slice(0,-1),...proj],focus=add(svg,"line",{x1:x(anchorYear),y1:m.t,x2:x(anchorYear),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add(svg,"rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});
+    hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),d=all.find(v=>v[0]===yr);if(!d)return;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=`${yr} · ${fmt(d[1],decimals)}${unit} · ${yr<=anchorYear?"dato observado":normative?"senda normativa":"tendencia lineal"}`;});hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+  }
+  function complementShareChart(id,source=data){
+    const svg=document.getElementById(id),detail=document.getElementById(id.replace("-interactive","-detail")),hist=source.map(d=>{const renewable=d[5]*d[9]/100;return[d[0],renewable,d[5]-renewable,d[5],d[9]]}),anchorYear=hist.at(-1)[0],proj=[];for(let yr=anchorYear;yr<=2050;yr++){const total=normative?projectFinalConsumption(yr):data.at(-1)[5]+consumptionSlope*(yr-2024),share=projectRenewableAvailable(yr),renewable=total*share/100;proj.push([yr,renewable,total-renewable,total,share])}
+    const all=[...hist.slice(0,-1),...proj],W=900,H=430,m={l:72,r:38,t:22,b:42},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-v/70000*ph;
+    [0,10000,20000,30000,40000,50000,60000,70000].forEach(v=>{add(svg,"line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add(svg,"text",{x:m.l-9,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},fmt(v))});[2004,2010,2020,2024,2030,2040,2050].forEach(v=>add(svg,"text",{x:x(v),y:H-13,"text-anchor":"middle",class:"axis muted text-small"},v));
+    const area=(lower,upper)=>`M ${x(all[0][0])} ${y(upper(all[0]))} `+all.slice(1).map(d=>`L ${x(d[0])} ${y(upper(d))}`).join(" ")+" "+all.slice().reverse().map(d=>`L ${x(d[0])} ${y(lower(d))}`).join(" ")+" Z";
+    add(svg,"path",{d:area(()=>0,d=>d[1]),fill:"#7fbd32",opacity:.88});add(svg,"path",{d:area(d=>d[1],d=>d[3]),fill:"#555b60",opacity:.62});add(svg,"path",{d:all.map((d,i)=>`${i?"L":"M"} ${x(d[0])} ${y(d[3])}`).join(" "),fill:"none",stroke:"var(--ink)","stroke-width":1.5});add(svg,"line",{x1:x(anchorYear),y1:m.t,x2:x(anchorYear),y2:m.t+ph,class:"cut"});
+    const focus=add(svg,"line",{x1:x(anchorYear),y1:m.t,x2:x(anchorYear),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add(svg,"rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),d=all.find(v=>v[0]===yr);if(!d)return;focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=`${yr} · Consumo final ${fmt(d[3])} GWh · Renovables ${fmt(d[1])} GWh (${fmt(d[4],1)} %) · No renovables ${fmt(d[2])} GWh`;});hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+  }
+  lineChart("final-consumption-interactive",5,{min:30000,max:70000,ticks:[30000,40000,50000,60000,70000],axis:"GWh",unit:" GWh",projector:modelFinal});
+  lineChart("primary-renewable-interactive",6,{min:0,max:30000,ticks:[0,7500,15000,22500,30000],axis:"GWh",unit:" GWh",color:"#7fbd32",projector:normative?projectPrimaryRenewable:null});
+  lineChart("imported-renewable-interactive",4,{min:0,max:18000,ticks:[0,3000,6000,9000,12000,15000,18000],axis:"GWh",unit:" GWh",color:"#7fbd32",projector:projectImportedRenewable});
+  lineChart("total-renewable-interactive",7,{min:0,max:40000,ticks:[0,8000,16000,24000,32000,40000],axis:"GWh",unit:" GWh",color:"#7fbd32",projector:projectTotalRenewable},renewableSource);
+  complementShareChart("renewable-available-interactive",renewableSource);
+
+  const svg=document.getElementById("energy-mix-interactive"),detail=document.getElementById("energy-mix-detail"),shares=finalCarrierHist.map((d,i)=>{const own=data[i][2],imported=data[i][4],direct=directRenewable[i],final=data[i][5],electricNon=Math.max(0,final-d[1]-d[2]-d[3]-d[4]-direct-own-imported);return[d[0],d[1],d[2],d[3],d[4],electricNon,imported,own,direct*.725,direct*.275]}),proj=[];
+  const fossilSeries=[[[2004,1916],[2014,521],[2024,240]],[[2004,24354],[2014,23948],[2024,26346]],[[2004,1806],[2014,184],[2024,196]],[[2004,15525],[2014,15406],[2024,9578]]];
+  const finalMix=yr=>{const final=modelFinal(yr),electric=final*modelElectricShare(yr)/100,ownElectric=modelOwnRenew(yr),importElectric=projectImportedRenewable(yr),electricRenew=ownElectric+importElectric,electricNon=Math.max(0,electric-electricRenew),direct=modelDirectRenew(yr),nonElectric=Math.max(0,final-electric-direct),tw=fossilSeries.map(s=>Math.max(0,s.at(-1)[1]+regression(s,1,2014)*(yr-2024))),ts=tw.reduce((a,v)=>a+v,0);let w=tw.map(v=>v/ts);if(normative&&yr>2030){const w30=fossilSeries.map(s=>Math.max(0,s.at(-1)[1]+regression(s,1,2014)*6)),s30=w30.reduce((a,v)=>a+v,0),a=w30.map(v=>v/s30),f=(yr-2030)/20,target=[0,.5,0,.5];w=a.map((v,i)=>v+(target[i]-v)*f)}const directExternal=normative?normativeDirectTech(yr)[0]:direct*.275,directOwn=Math.max(0,direct-directExternal);return[...w.map(v=>nonElectric*v),electricNon,importElectric,ownElectric,directOwn,directExternal]};
+  for(let yr=2024;yr<=2050;yr++)proj.push([yr,...finalMix(yr)]);
+  const series=[{n:"Renovables directas de origen exterior",i:9,c:"#c49a6c"},{n:"Renovables directas propias",i:8,c:"url(#direct-own-pattern)"},{n:"Electricidad renovable propia",i:7,c:"url(#electric-renew-own-pattern)"},{n:"Electricidad renovable importada",i:6,c:"url(#electric-renew-pattern)"},{n:"Electricidad importada no renovable",i:5,c:"url(#electric-nonrenew-pattern)"},{n:"Gas natural",i:4,c:"#a8b0b5"},{n:"Energías derivadas",i:3,c:"#7b5fa7"},{n:"Derivados del petróleo",i:2,c:"#555b60"},{n:"Carbón y derivados",i:1,c:"#1f2529"}],W=900,H=455,m={l:64,r:245,t:15,b:38},pw=W-m.l-m.r,ph=H-m.t-m.b,x=yr=>m.l+(yr-2004)/46*pw,y=v=>m.t+ph-v/70000*ph;
+  const defs=document.createElementNS(ns,"defs");svg.appendChild(defs);const makePattern=(id,bg,{stripe=false,dots=false}={})=>{const p=document.createElementNS(ns,"pattern");p.setAttribute("id",id);p.setAttribute("patternUnits","userSpaceOnUse");p.setAttribute("width","10");p.setAttribute("height","10");const rect=document.createElementNS(ns,"rect");rect.setAttribute("width","10");rect.setAttribute("height","10");rect.setAttribute("fill",bg);p.append(rect);if(stripe){const line=document.createElementNS(ns,"path");line.setAttribute("d","M-2 2 L2 -2 M0 10 L10 0 M8 12 L12 8");line.setAttribute("stroke","rgba(255,255,255,.88)");line.setAttribute("stroke-width","1");p.append(line)}if(dots){const dot=document.createElementNS(ns,"circle");dot.setAttribute("cx","3");dot.setAttribute("cy","3");dot.setAttribute("r","1.15");dot.setAttribute("fill","rgba(24,63,55,.72)");p.append(dot)}defs.appendChild(p)};makePattern("electric-nonrenew-pattern","#7b8981",{stripe:true});makePattern("electric-renew-pattern","#3a9b50",{stripe:true});makePattern("electric-renew-own-pattern","#3a9b50",{dots:true});makePattern("direct-own-pattern","#b7dc79",{dots:true});
+  [0,10000,20000,30000,40000,50000,60000,70000].forEach(v=>{add(svg,"line",{x1:m.l,y1:y(v),x2:m.l+pw,y2:y(v),class:"grid"});add(svg,"text",{x:m.l-8,y:y(v)+4,"text-anchor":"end",class:"axis muted text-small"},fmt(v));});[2004,2010,2020,2024,2030,2040,2050].forEach(v=>add(svg,"text",{x:x(v),y:H-12,"text-anchor":"middle",class:"axis muted text-small"},v));
+  function stack(a,opacity){let lower=a.map(()=>0);return series.map(s=>{const upper=a.map((d,i)=>lower[i]+d[s.i]);let p=`M ${x(a[0][0])} ${y(upper[0])}`;for(let i=1;i<a.length;i++)p+=` L ${x(a[i][0])} ${y(upper[i])}`;for(let i=a.length-1;i>=0;i--)p+=` L ${x(a[i][0])} ${y(lower[i])}`;p+=" Z";add(svg,"path",{d:p,fill:s.c,opacity});const b={s,lower:[...lower],upper:[...upper]};lower=upper;return b;});}
+  const histBounds=stack(shares,.82),bounds=stack(proj,.38);function electricOutline(a,b){[b.find(v=>v.s.i===7).lower,b.find(v=>v.s.i===5).upper].forEach(values=>{const p=values.map((v,i)=>`${i?"L":"M"} ${x(a[i][0])} ${y(v)}`).join(" ");add(svg,"path",{d:p,class:"electric-outline"});});}electricOutline(shares,histBounds);electricOutline(proj,bounds);add(svg,"line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"cut"});bounds.forEach(b=>{const i=proj.length-1,mid=(b.lower[i]+b.upper[i])/2;add(svg,"text",{x:m.l+pw+12,y:y(mid),class:"direct text-small"},`${b.s.n} ${fmt(proj[i][b.s.i])} GWh`);});
+  const all=[...shares.slice(0,-1),...proj],focus=add(svg,"line",{x1:x(2024),y1:m.t,x2:x(2024),y2:m.t+ph,class:"focus-line",visibility:"hidden"}),hit=add(svg,"rect",{x:m.l,y:m.t,width:pw,height:ph,class:"hit-area"});hit.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)*W/r.width,yr=Math.max(2004,Math.min(2050,Math.round(2004+(sx-m.l)/pw*46))),d=all.find(v=>v[0]===yr);if(!d)return;const total=d.slice(1).reduce((a,b)=>a+b,0);focus.setAttribute("visibility","visible");focus.setAttribute("x1",x(yr));focus.setAttribute("x2",x(yr));detail.textContent=`${yr} · Consumo final ${fmt(total)} GWh · `+series.map(s=>`${s.n} ${fmt(d[s.i])} GWh (${fmt(100*d[s.i]/total,1)} %)`).join(" · ");});hit.addEventListener("mouseleave",()=>focus.setAttribute("visibility","hidden"));
+
+  const rsvg=document.getElementById("renewable-mix-interactive"),rdetail=document.getElementById("renewable-mix-detail"),rHist=[[2015,535.7,2426.5,63.8],[2016,593.5,2613.7,239.8],[2017,794.3,2937.6,244.1],[2018,1219.2,3108.2,261.6],[2019,1179.8,3331.3,266.9],[2020,1074.6,3080.2,287.2],[2021,976.6,3538.9,220.5],[2022,892.6,3320.1,240.3],[2023,1180.7,2464.5,274.8],[2024,865.4,2413.1,331.5]],rProj=[];for(let yr=2024;yr<=2050;yr++){const mixYear=proj.find(d=>d[0]===yr),total=mixYear[8]+mixYear[9];if(!normative){rProj.push([yr,total*.2397,total*.6684,total*.0919]);continue}const trendTotal=trendDirectRenew(yr),biomass=Math.max(0,2413.1+(trendTotal-3610)*.6287),ambient=yr<=2030?166+(232.6-166)*(yr-2024)/6:232.6+(1903.97-232.6)*(yr-2030)/20,heat=Math.max(0,331.5+(trendTotal-3610)*.0701+(ambient-166)),bio=Math.max(0,total-biomass-heat);rProj.push([yr,bio,biomass,heat])}const rAll=[...rHist,...rProj],rSeries=[{n:"Combustibles renovables (bio, H₂ y sintéticos)",i:1,c:"#c49a6c"},{n:"Biomasa",i:2,c:"#6b4423"},{n:"Calor renovable (solar térmica, aerotermia y geotermia)",i:3,c:"#2a9d8f"}],rW=900,rH=455,rm={l:58,r:245,t:15,b:38},rpw=rW-rm.l-rm.r,rph=rH-rm.t-rm.b,rx=yr=>rm.l+(yr-2015)/35*rpw,ry=v=>rm.t+rph-v/18000*rph;const rDefs=document.createElementNS(ns,"defs");rsvg.appendChild(rDefs);rSeries.forEach((s,i)=>{if(s.n.startsWith("Biocarburantes")||s.n.startsWith("Combustibles renovables"))return;const p=document.createElementNS(ns,"pattern");p.setAttribute("id",`renew-own-${i}`);p.setAttribute("patternUnits","userSpaceOnUse");p.setAttribute("width","8");p.setAttribute("height","8");const bg=document.createElementNS(ns,"rect");bg.setAttribute("width","8");bg.setAttribute("height","8");bg.setAttribute("fill",s.c);const stripe=document.createElementNS(ns,"path");stripe.setAttribute("d","M-2 2 L2 -2 M0 8 L8 0 M6 10 L10 6");stripe.setAttribute("stroke","rgba(255,255,255,.9)");stripe.setAttribute("stroke-width","1");p.append(bg,stripe);rDefs.appendChild(p);s.c=`url(#renew-own-${i})`});[0,3000,6000,9000,12000,15000,18000].forEach(v=>{add(rsvg,"line",{x1:rm.l,y1:ry(v),x2:rm.l+rpw,y2:ry(v),class:"grid"});add(rsvg,"text",{x:rm.l-8,y:ry(v)+4,"text-anchor":"end",class:"axis muted text-small"},fmt(v))});[2015,2020,2024,2030,2040,2050].forEach(v=>add(rsvg,"text",{x:rx(v),y:rH-12,"text-anchor":"middle",class:"axis muted text-small"},v));let rLower=rAll.map(()=>0);const rBounds=rSeries.map(s=>{const upper=rAll.map((d,i)=>rLower[i]+d[s.i]);let p=`M ${rx(rAll[0][0])} ${ry(upper[0])}`;for(let i=1;i<rAll.length;i++)p+=` L ${rx(rAll[i][0])} ${ry(upper[i])}`;for(let i=rAll.length-1;i>=0;i--)p+=` L ${rx(rAll[i][0])} ${ry(rLower[i])}`;p+=" Z";add(rsvg,"path",{d:p,fill:s.c,opacity:.84});const b={s,lower:[...rLower],upper:[...upper]};rLower=upper;return b});add(rsvg,"line",{x1:rx(2024),y1:rm.t,x2:rx(2024),y2:rm.t+rph,class:"cut"});rBounds.forEach((b,j)=>{const end=rProj.at(-1)[b.s.i],mid=(b.lower.at(-1)+b.upper.at(-1))/2;add(rsvg,"text",{x:rm.l+rpw+12,y:ry(mid),class:"direct text-small"},`${b.s.n} ${fmt(end)} GWh`)});const rFocus=add(rsvg,"line",{x1:rx(2024),y1:rm.t,x2:rx(2024),y2:rm.t+rph,class:"focus-line",visibility:"hidden"}),rHit=add(rsvg,"rect",{x:rm.l,y:rm.t,width:rpw,height:rph,class:"hit-area"});rHit.addEventListener("mousemove",e=>{const r=rsvg.getBoundingClientRect(),sx=(e.clientX-r.left)*rW/r.width,yr=Math.max(2015,Math.min(2050,Math.round(2015+(sx-rm.l)/rpw*35))),d=rAll.find(v=>v[0]===yr);if(!d)return;const total=d.slice(1).reduce((a,b)=>a+b,0);rFocus.setAttribute("visibility","visible");rFocus.setAttribute("x1",rx(yr));rFocus.setAttribute("x2",rx(yr));rdetail.textContent=`${yr} · Total ${fmt(total)} GWh · `+rSeries.map(s=>`${s.n} ${fmt(d[s.i])} GWh (${fmt(100*d[s.i]/total,1)} %)`).join(" · ")});rHit.addEventListener("mouseleave",()=>rFocus.setAttribute("visibility","hidden"));
+})();
+</script>
+<script>
+window.addEventListener("load",()=>{const svg=document.getElementById("renewable-mix-interactive"),areas=svg?.querySelectorAll("path[fill]");if(!svg||areas.length<5)return;const ns="http://www.w3.org/2000/svg",defs=svg.querySelector("defs")||document.createElementNS(ns,"defs"),colors=["#c49a6c","#6b4423","#f2c94c","#2a9d8f","#756bb1"];if(!defs.parentNode)svg.prepend(defs);for(let i=1;i<5;i++){const p=document.createElementNS(ns,"pattern"),bg=document.createElementNS(ns,"rect"),dot=document.createElementNS(ns,"circle"),id=`renew-dots-${i}`;p.setAttribute("id",id);p.setAttribute("patternUnits","userSpaceOnUse");p.setAttribute("width","9");p.setAttribute("height","9");bg.setAttribute("width","9");bg.setAttribute("height","9");bg.setAttribute("fill",colors[i]);dot.setAttribute("cx","3");dot.setAttribute("cy","3");dot.setAttribute("r","1.15");dot.setAttribute("fill","rgba(255,255,255,.9)");p.append(bg,dot);defs.append(p);areas[i].setAttribute("fill",`url(#${id})`)}const key=svg.closest(".chapter")?.querySelector(".key");if(key){const icon=key.querySelector("svg");if(icon){icon.outerHTML='<span style="display:inline-block;width:1rem;height:1rem;border:1px solid #7b858a;border-radius:2px;background-color:#756bb1;background-image:radial-gradient(#fff 1.2px,transparent 1.3px);background-size:6px 6px"></span>'}for(const node of key.childNodes){if(node.nodeType===3&&node.textContent.includes("Lauburu ="))node.textContent=node.textContent.replace("Lauburu =","Punteado =")}}});
+</script>
+<script src="assets/source-disclosures.js?v=20260712-1"></script>
+</body>
+</html>
