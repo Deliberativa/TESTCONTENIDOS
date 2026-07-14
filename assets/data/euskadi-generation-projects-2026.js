@@ -144,4 +144,3 @@ window.energyMapGenerationProjects={
     'Proyectos cuya planta queda fuera de Euskadi y solo evacúan por su territorio.'
   ]
 };
-

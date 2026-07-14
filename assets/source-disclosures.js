@@ -41,4 +41,3 @@
   const init=()=>{injectStyles();document.querySelectorAll('details.compare-row p.method').forEach(wrapMethod);document.querySelectorAll('details.compare-row>p.source').forEach(wrapSource);document.querySelectorAll('.chapter .chart-note').forEach(splitChartNote)};
   if(document.readyState==='complete')init();else window.addEventListener('load',init,{once:true});
 })();
-
