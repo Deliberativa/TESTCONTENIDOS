@@ -1,6 +1,6 @@
 window.energyMapElectricProjects={
-  updated:'12 de julio de 2026',
-  methodology:'Solo se incluyen obras cuyo inicio ha sido confirmado oficialmente o actuaciones que disponen de autorización administrativa de construcción. Una autorización no acredita por sí sola que las obras hayan comenzado.',
+  updated:'15 de julio de 2026',
+  methodology:'Solo se incluyen obras cuyo inicio ha sido confirmado oficialmente, actuaciones que disponen de autorización administrativa de construcción o corredores estratégicos cuyo comienzo ha sido anunciado públicamente por Red Eléctrica. Una autorización o un calendario anunciado no acreditan por sí solos que las obras hayan comenzado.',
   projects:[
     {
       id:'luminabaso-220',name:'Nueva subestación de Luminabaso',status:'construction',statusLabel:'En construcción',voltage:'220 kV',kind:'Subestación y entrada/salida',
@@ -41,6 +41,11 @@ window.energyMapElectricProjects={
       id:'elgea-itxaso-220',name:'Renovación Elgea–Itxaso',status:'authorized',statusLabel:'Autorización de construcción',voltage:'220 kV',kind:'Renovación de línea existente',
       geometry:{type:'LineString',coordinates:[[-2.450114,42.892684],[-2.242083,43.043461]]},scope:'Renovación del tramo entre el apoyo 389, en el entorno de Elgea, y la subestación de Itxaso.',geometryNote:'Eje cartográfico simplificado entre los extremos oficiales; no reproduce cada apoyo.',
       sourceLabel:'Gobierno Vasco / BOPV, 18 de julio de 2025',sourceUrl:'https://www.euskadi.eus/bopv2/datos/2025/09/2503761a.pdf'
+    },
+    {
+      id:'itxaso-castejon-muruarte-400',name:'Nueva conexión Navarra–Euskadi · Itxaso–Castejón/Muruarte',status:'scheduled',statusLabel:'DIA favorable · obras previstas desde finales de 2026',voltage:'400 kV',kind:'Nueva línea aérea de doble circuito',
+      geometry:{type:'LineString',coordinates:[[-2.275540,43.060920],[-2.244000,43.031000],[-2.201000,42.982000],[-2.151000,42.936000],[-2.099000,42.897000],[-2.020000,42.912000],[-1.943000,42.901000],[-1.875000,42.864000],[-1.831000,42.824000],[-1.803000,42.774000],[-1.759000,42.731000],[-1.724000,42.695000]]},scope:'Nueva conexión de 92,482 km entre la subestación de Itxaso y el apoyo T113 de la línea Castejón–Muruarte. El proyecto dispone dos circuitos de 400 kV —2.080 MVA por circuito en verano y 2.440 MVA en invierno— y prevé desmontar las líneas Itxaso–Orcoyen 1 y 2 de 220 kV.',geometryNote:'Trazado esquemático construido a partir del corredor y los núcleos citados en la declaración de impacto ambiental. Representa la dirección y el alcance territorial de la conexión, no la posición exacta de sus 192 apoyos.',
+      sourceLabel:'BOE, DIA de 13 de noviembre de 2023 · Red Eléctrica, junio de 2026',sourceUrl:'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-23855'
     },
     {
       id:'alonsotegi-basauri-guenes-220',name:'Modificaciones en Alonsotegi–Basauri y Basauri–Güeñes',status:'authorized',statusLabel:'Autorización de construcción',voltage:'220 kV',kind:'Modificación local de líneas existentes',

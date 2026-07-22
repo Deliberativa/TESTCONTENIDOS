@@ -39,5 +39,5 @@
     const source=document.createElement('p');source.className='source';source.innerHTML=`<strong>${match[1]}:</strong> ${match[2]}`;node.innerHTML=node.innerHTML.slice(0,match.index).trim();node.dataset.sourcesSplit='true';node.after(source);wrapSource(source);if(!node.textContent.trim())node.hidden=true;
   };
   const init=()=>{injectStyles();document.querySelectorAll('details.compare-row p.method').forEach(wrapMethod);document.querySelectorAll('details.compare-row>p.source').forEach(wrapSource);document.querySelectorAll('.chapter .chart-note').forEach(splitChartNote)};
-  if(document.readyState==='complete')init();else window.addEventListener('load',init,{once:true});
+  queueMicrotask(init);
 })();
