@@ -3,18 +3,614 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Comparativa de impactos · Escenarios energéticos de Euskadi</title>
+<title>Dilema y comparativa de impactos · Escenarios energéticos de Euskadi</title>
 <style>
-:root{--ink:#183f37;--sub:#557169;--border:#cfe3dc;--soft:#f7faf8;--green:#009b7a;--lime:#cddd23}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Arial,"Helvetica Neue",sans-serif;line-height:1.6}.hero{padding:3.2rem clamp(1.25rem,7vw,6rem);color:#fff;background:linear-gradient(112deg,#009b7a,#23aa68 48%,#d3df20)}.hero h1{margin:0;font-size:clamp(2rem,5vw,4rem);line-height:1.06}.hero p{max-width:75ch;margin:.8rem 0 0}nav{display:flex;gap:1.3rem;flex-wrap:wrap;padding:1rem clamp(1.25rem,6vw,4.5rem);background:var(--soft);border-bottom:1px solid var(--border)}nav a{color:var(--sub);text-decoration:none}.active{color:#007b65;font-weight:700;border-bottom:3px solid var(--lime);padding-bottom:.3rem}main{max-width:980px;margin:auto;padding:3rem clamp(1.2rem,5vw,4rem) 6rem}.lead{max-width:78ch;font-size:1.15rem}.status{display:inline-block;margin:.5rem 0 2rem;padding:.35rem .7rem;border:1px solid var(--border);border-radius:999px;color:#007b65;background:var(--soft);font-size:.82rem;font-weight:700}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}.card{padding:1.4rem 1.5rem;border:1px solid var(--border);border-top:5px solid var(--green);background:#fff}.card:nth-child(2){border-top-color:#79b93e}.card:nth-child(3){border-top-color:var(--lime)}.card h2{margin:0 0 .55rem;color:#007b65;font-size:1.25rem}.card p{margin:0;color:var(--sub)}.note{margin:1.5rem 0 0;padding:1rem 1.2rem;border-left:5px solid var(--lime);background:#f4f8e9;color:var(--sub)}footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gradient(90deg,#009b7a,#cddd23)}@media(max-width:780px){.grid{grid-template-columns:1fr}}
+:root{--ink:#183f37;--sub:#557169;--border:#cfe3dc;--soft:#f7faf8;--green:#009b7a;--green-dark:#007b65;--green-pale:#e7f4ef;--blue:#2d7792;--blue-pale:#e9f3f6;--lime:#cddd23;--sand:#f5f1e8}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Arial,"Helvetica Neue",sans-serif;line-height:1.6;background:#fff}.hero{padding:3.2rem clamp(1.25rem,7vw,6rem);color:#fff;background:linear-gradient(112deg,#009b7a,#23aa68 48%,#d3df20)}.hero h1{max-width:16ch;margin:0;font-size:clamp(2rem,5vw,4rem);line-height:1.06}.hero p{max-width:75ch;margin:.8rem 0 0;font-size:1.08rem}nav{display:flex;gap:1.3rem;flex-wrap:wrap;padding:1rem clamp(1.25rem,6vw,4.5rem);background:var(--soft);border-bottom:1px solid var(--border)}nav a{color:var(--sub);text-decoration:none}.active{color:var(--green-dark);font-weight:700;border-bottom:3px solid var(--lime);padding-bottom:.3rem}main{max-width:1080px;margin:auto;padding:3rem clamp(1.2rem,5vw,4rem) 6rem}.eyebrow{margin:0 0 .45rem;color:var(--green-dark);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.dilemma h2,.challenges h2,.comparison-preview h2{max-width:22ch;margin:.1rem 0 1rem;font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.12}.lead{max-width:78ch;margin:0;font-size:1.15rem}.decision-map{margin:2.2rem 0 3.5rem;padding:clamp(1rem,3vw,2rem);border:1px solid var(--border);border-radius:1.25rem;background:linear-gradient(180deg,#fbfdfc,#f2f8f5)}.objective{max-width:640px;margin:0 auto 1.35rem;padding:1rem 1.3rem;border-radius:.85rem;text-align:center;color:#fff;background:var(--green-dark);box-shadow:0 8px 22px rgba(24,63,55,.13)}.objective strong{display:block;font-size:1.2rem}.objective span{display:block;margin-top:.15rem;font-size:.88rem;color:#e5f7f0}.routes{display:grid;grid-template-columns:minmax(0,1fr) 2.7rem minmax(0,1fr);align-items:stretch;gap:.75rem}.route{padding:1.45rem;border-radius:1rem;border:1px solid var(--border);background:#fff}.route-own{border-top:6px solid var(--green)}.route-grid{border-top:6px solid var(--blue)}.route-label{display:inline-block;margin-bottom:.55rem;padding:.2rem .55rem;border-radius:999px;color:var(--green-dark);background:var(--green-pale);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.route-grid .route-label{color:#245e74;background:var(--blue-pale)}.route h3{margin:0 0 .55rem;font-size:1.35rem;line-height:1.18}.route p{margin:0;color:var(--sub)}.route ul{margin:.9rem 0 0;padding-left:1.15rem;color:var(--ink)}.route li+li{margin-top:.35rem}.route-divider{display:grid;place-items:center;color:var(--green-dark);font-size:1.7rem;font-weight:800}.common-enablers{position:relative;margin:1.4rem auto 0;padding:1.2rem 1.35rem;border-radius:.9rem;background:var(--sand);text-align:center}.common-enablers::before{content:"";position:absolute;left:50%;top:-1.4rem;width:2px;height:1.4rem;background:#a5bbb4}.common-enablers span{display:block;color:var(--sub);font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.common-enablers strong{display:block;margin:.15rem 0;font-size:1.08rem}.common-enablers p{max-width:78ch;margin:.35rem auto 0;color:var(--sub)}.challenges{padding-top:.25rem}.challenge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0 3.5rem}.challenge{padding:1.35rem;border:1px solid var(--border);border-radius:.9rem;background:#fff}.challenge-number{display:grid;place-items:center;width:2.2rem;height:2.2rem;margin-bottom:.75rem;border-radius:50%;color:#fff;background:var(--green-dark);font-weight:800}.challenge:nth-child(2) .challenge-number{background:var(--blue)}.challenge:nth-child(3) .challenge-number{color:var(--ink);background:var(--lime)}.challenge h3{margin:0 0 .55rem;font-size:1.1rem;line-height:1.25}.challenge p{margin:0;color:var(--sub)}.comparison-preview{padding:1.7rem;border-left:6px solid var(--lime);border-radius:0 1rem 1rem 0;background:#f5f8e9}.comparison-preview h2{margin-top:0;font-size:1.55rem}.comparison-preview p{max-width:78ch;margin:.5rem 0;color:var(--sub)}.criteria{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 0;padding:0;list-style:none}.criteria li{padding:.35rem .7rem;border:1px solid #cbdba1;border-radius:999px;background:#fff;color:var(--ink);font-size:.86rem;font-weight:700}footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gradient(90deg,#009b7a,#cddd23)}@media(max-width:780px){.routes{grid-template-columns:1fr}.route-divider{min-height:1.5rem}.common-enablers::before{display:none}.challenge-grid{grid-template-columns:1fr}.hero h1{max-width:none}}@media(max-width:520px){nav{gap:.7rem 1rem}.decision-map{margin-inline:-.35rem;padding:.85rem}.route{padding:1.15rem}}
+</style>
+<style>
+.impact-study{margin-top:4rem;padding-top:3.5rem;border-top:1px solid var(--border)}.impact-study>h2{max-width:24ch;margin:.15rem 0 1rem;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.12}.scope-note{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:start;margin:1.5rem 0 2.5rem;padding:1.1rem 1.25rem;border-radius:.9rem;background:var(--blue-pale)}.scope-note strong{display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;color:#fff;background:var(--blue)}.scope-note p{margin:0;color:#315d66}.reading-key{display:flex;flex-wrap:wrap;gap:.55rem;margin:0 0 2.7rem}.key{padding:.35rem .65rem;border-radius:999px;font-size:.78rem;font-weight:800}.key-evidence{color:#075d4b;background:#daf1e8}.key-conflict{color:#745817;background:#f5ecc7}.key-uncertain{color:#69515b;background:#f0e7eb}.technology{margin-top:2.7rem;padding:clamp(1.2rem,3vw,2rem);border:1px solid var(--border);border-radius:1.25rem;background:#fff;box-shadow:0 10px 30px rgba(24,63,55,.06)}.technology.wind{border-top:8px solid #6da78c}.technology.solar{border-top:8px solid #e5bb24}.tech-head{display:grid;grid-template-columns:5rem 1fr;gap:1rem;align-items:start}.tech-symbol{display:grid;place-items:center;width:4.4rem;height:4.4rem;border-radius:1rem;font-size:2.2rem;background:var(--green-pale)}.solar .tech-symbol{background:#fff4c9}.tech-head h3{margin:.1rem 0 .45rem;font-size:clamp(1.5rem,3vw,2.15rem);line-height:1.12}.tech-head p{max-width:78ch;margin:0;color:var(--sub)}.impact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1.5rem 0}.impact-card{padding:1.1rem 1.15rem;border-radius:.85rem;background:var(--soft);border:1px solid #e0ebe7}.impact-card h4{margin:0 0 .35rem;font-size:1.02rem;line-height:1.25}.impact-card p{margin:0;color:var(--sub);font-size:.93rem}.evidence-label{display:inline-block;margin-bottom:.45rem;padding:.13rem .42rem;border-radius:999px;color:#075d4b;background:#daf1e8;font-size:.68rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}.evidence-label.conflict{color:#745817;background:#f5ecc7}.evidence-label.uncertain{color:#69515b;background:#f0e7eb}.source-link{white-space:nowrap;color:var(--green-dark);font-weight:700;text-decoration:none}.source-link:hover{text-decoration:underline}.species-box,.case-box,.responses-box{margin:1.2rem 0;padding:1.2rem 1.3rem;border-radius:.9rem}.species-box{background:#f1f7f4}.species-box h4,.case-box h4,.responses-box h4{margin:0 0 .55rem;font-size:1.08rem}.species-box p,.case-box p,.responses-box p{margin:.4rem 0;color:var(--sub)}.species-list{display:flex;flex-wrap:wrap;gap:.45rem;margin:.75rem 0 0;padding:0;list-style:none}.species-list li{padding:.3rem .55rem;border:1px solid #bdd8cd;border-radius:.55rem;background:#fff;font-size:.82rem}.case-box{border-left:5px solid #d6a51a;background:#fff9e5}.decision-table{width:100%;margin-top:.9rem;border-collapse:collapse;font-size:.9rem}.decision-table th,.decision-table td{padding:.62rem .55rem;text-align:left;vertical-align:top;border-bottom:1px solid #eadfb9}.decision-table th{color:#6d591c;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em}.status-no,.status-yes{display:inline-block;padding:.12rem .38rem;border-radius:999px;font-size:.7rem;font-weight:800}.status-no{color:#813e32;background:#f5dfda}.status-yes{color:#075d4b;background:#daf1e8}.conflict-section{margin:1.5rem 0}.conflict-section h4{margin:0 0 .8rem;font-size:1.12rem}.conflict-timeline{display:grid;gap:.65rem}.conflict-item{display:grid;grid-template-columns:8rem 1fr;gap:.8rem;padding:.8rem 0;border-bottom:1px solid var(--border)}.conflict-item strong{font-size:.83rem;color:var(--green-dark)}.conflict-item p{margin:0;color:var(--sub);font-size:.92rem}.claim-check{margin:1.2rem 0;padding:1rem 1.2rem;border:1px dashed #bfaab2;border-radius:.85rem;background:#fbf7f9}.claim-check h4{margin:0 0 .4rem}.claim-check p{margin:0;color:#69515b;font-size:.92rem}.responses-box{background:linear-gradient(135deg,#edf7f3,#f7fae9)}.responses-box ul{margin:.6rem 0 0;padding-left:1.15rem}.responses-box li+li{margin-top:.35rem}.comparison-takeaway{margin:2rem 0 0;padding:1.3rem 1.4rem;border-radius:1rem;color:#fff;background:linear-gradient(120deg,var(--green-dark),#2c826d)}.comparison-takeaway h3{margin:0 0 .45rem}.comparison-takeaway p{margin:0;color:#e8f6f1}.research-references{margin-top:1.5rem;border:1px solid var(--border);border-radius:.9rem;background:#fff}.research-references summary{cursor:pointer;padding:1rem 1.2rem;font-weight:800;color:var(--green-dark)}.reference-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;padding:0 1.2rem 1.2rem}.reference-columns h4{margin:.4rem 0}.reference-columns ol{margin:.4rem 0;padding-left:1.35rem}.reference-columns li{margin:.45rem 0;color:var(--sub);font-size:.86rem}.reference-columns a{color:var(--green-dark)}@media(max-width:780px){.impact-grid,.reference-columns{grid-template-columns:1fr}.conflict-item{grid-template-columns:1fr;gap:.2rem}.tech-head{grid-template-columns:1fr}.decision-table{display:block;overflow-x:auto}.technology{padding:1.1rem}}@media(max-width:520px){.impact-study{margin-top:3rem;padding-top:2.5rem}.scope-note{grid-template-columns:1fr}.tech-symbol{width:3.7rem;height:3.7rem}.technology{margin-inline:-.35rem}}
+</style>
+<style>
+.dependency-study{margin-top:4.5rem;padding-top:3.5rem;border-top:1px solid var(--border)}.dependency-study>h2{max-width:25ch;margin:.15rem 0 1rem;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.12}.dependency-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1.6rem 0 2.3rem}.dependency-metric{padding:1.1rem;border-radius:.9rem;border:1px solid var(--border);background:var(--soft)}.dependency-metric strong{display:block;font-size:1.65rem;line-height:1;color:var(--green-dark)}.dependency-metric span{display:block;margin-top:.45rem;color:var(--sub);font-size:.86rem}.dependency-metric:nth-child(2) strong{color:var(--blue)}.dependency-metric:nth-child(3) strong{color:#8b6920}.dependency-types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1.3rem 0 2.7rem}.dependency-type{padding:1rem;border-radius:.85rem;background:#fff;border:1px solid var(--border)}.dependency-type b{display:block;margin-bottom:.25rem}.dependency-type span{color:var(--sub);font-size:.88rem}.dependency-type.fuel{border-top:5px solid #ac6a58}.dependency-type.network{border-top:5px solid var(--blue)}.dependency-type.technology-chain{border-top:5px solid #8172a4}.dependency-block{margin:2.2rem 0;padding:clamp(1.2rem,3vw,2rem);border-radius:1.15rem;border:1px solid var(--border);background:#fff}.dependency-block.state{border-left:8px solid var(--blue)}.dependency-block.fuels{border-left:8px solid #ac6a58}.dependency-block.electrification{border-left:8px solid #8172a4}.dependency-block>h3{margin:.1rem 0 .65rem;font-size:clamp(1.35rem,2.6vw,1.95rem);line-height:1.18}.dependency-block>p{max-width:80ch;margin:.45rem 0;color:var(--sub)}.decision-chain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem;margin:1.3rem 0}.decision-step{position:relative;padding:1rem .9rem;border-radius:.8rem;background:var(--blue-pale)}.decision-step b{display:block;margin-bottom:.3rem;color:#245e74;font-size:.9rem}.decision-step p{margin:0;color:#426b74;font-size:.82rem}.decision-step:not(:last-child)::after{content:"›";position:absolute;right:-.52rem;top:38%;z-index:2;color:var(--blue);font-size:1.4rem;font-weight:900}.dependency-warning{margin:1rem 0;padding:.9rem 1rem;border-radius:.8rem;background:#fff7db;color:#6d591c;font-size:.9rem}.dependency-warning strong{color:#5d4811}.dependency-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1.2rem 0}.dependency-card{padding:1.1rem;border-radius:.85rem;background:var(--soft);border:1px solid #e0ebe7}.dependency-card h4{margin:0 0 .35rem}.dependency-card p{margin:0;color:var(--sub);font-size:.91rem}.origin-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1.2rem 0}.origin-card{padding:1.15rem;border-radius:.9rem;background:#f8f1ef;border:1px solid #ead7d1}.origin-card.renewable-fuel{background:#f5f8e9;border-color:#dce5b4}.origin-card h4{margin:0 0 .4rem}.origin-card p{margin:.35rem 0;color:var(--sub);font-size:.91rem}.origin-card strong.big{display:block;margin:.65rem 0 .2rem;font-size:1.45rem;color:#884d40}.origin-card.renewable-fuel strong.big{color:#677417}.dependency-table{width:100%;margin:1.4rem 0;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--border);border-radius:.85rem;font-size:.87rem}.dependency-table th,.dependency-table td{padding:.75rem .65rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}.dependency-table tr:last-child td{border-bottom:0}.dependency-table th{color:#fff;background:var(--green-dark);font-size:.71rem;letter-spacing:.04em;text-transform:uppercase}.dependency-table td:first-child{font-weight:800}.dependency-level{display:inline-block;padding:.13rem .42rem;border-radius:999px;font-size:.68rem;font-weight:800}.dependency-level.high{color:#813e32;background:#f5dfda}.dependency-level.medium{color:#745817;background:#f5ecc7}.dependency-level.changed{color:#4e4472;background:#ece8f6}.autonomy-actions{margin:1.4rem 0 0;padding:1.2rem 1.3rem;border-radius:.9rem;background:linear-gradient(135deg,#e9f5f0,#f5f8e9)}.autonomy-actions h4{margin:0 0 .55rem}.autonomy-actions ul{columns:2;gap:2.2rem;margin:.5rem 0 0;padding-left:1.15rem}.autonomy-actions li{break-inside:avoid;margin:.35rem 0}.dependency-conclusion{margin:2rem 0 0;padding:1.35rem;border-radius:1rem;color:#fff;background:linear-gradient(120deg,#315f72,#5a4f82)}.dependency-conclusion h3{margin:0 0 .4rem}.dependency-conclusion p{margin:0;color:#eef4f7}@media(max-width:820px){.dependency-metrics,.dependency-types,.decision-chain{grid-template-columns:repeat(2,minmax(0,1fr))}.decision-step::after{display:none}}@media(max-width:640px){.dependency-metrics,.dependency-types,.decision-chain,.dependency-card-grid,.origin-row{grid-template-columns:1fr}.autonomy-actions ul{columns:1}.dependency-table{display:block;overflow-x:auto}.dependency-block{padding:1.1rem}.dependency-study{margin-top:3.3rem;padding-top:2.5rem}}
+</style>
+<style>
+html{scroll-behavior:smooth}
+.section-index{margin:0 0 3.8rem;padding:clamp(1.2rem,3vw,2rem);border:1px solid var(--border);border-radius:1.25rem;background:linear-gradient(135deg,#f4faf7,#f7f9ea);box-shadow:0 12px 32px rgba(24,63,55,.07)}
+.section-index-header{display:grid;grid-template-columns:minmax(0,.72fr) minmax(18rem,1.28fr);gap:1.5rem;align-items:end;margin-bottom:1.35rem}
+.section-index-header h2{margin:.05rem 0;font-size:clamp(1.55rem,3vw,2.25rem);line-height:1.12}
+.section-index-header p:last-child{max-width:62ch;margin:0;color:var(--sub)}
+.section-index-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.section-index-link{display:grid;grid-template-columns:2.35rem 1fr;gap:.8rem;align-items:start;min-height:8.2rem;padding:1rem 1.05rem;border:1px solid #c8ddd5;border-radius:.9rem;color:var(--ink);background:rgba(255,255,255,.88);text-decoration:none;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.section-index-link:hover{transform:translateY(-2px);border-color:#83b5a4;box-shadow:0 8px 22px rgba(24,63,55,.09)}
+.section-index-link:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.section-index-number{display:grid;place-items:center;width:2.25rem;height:2.25rem;border-radius:50%;color:#fff;background:var(--green-dark);font-size:.86rem;font-weight:800}
+.section-index-link:nth-child(2) .section-index-number{background:#6b8e2d}
+.section-index-link:nth-child(3) .section-index-number{background:#4e9275}
+.section-index-link:nth-child(4) .section-index-number{background:var(--blue)}
+.section-index-copy strong{display:block;margin:.05rem 0 .25rem;font-size:1.03rem;line-height:1.2}
+.section-index-copy span{display:block;color:var(--sub);font-size:.86rem;line-height:1.45}
+.section-index-topics{margin-top:.45rem;color:var(--green-dark)!important;font-size:.74rem!important;font-weight:800;letter-spacing:.025em}
+.section-index-shortcuts{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;margin-top:1rem;padding-top:1rem;border-top:1px solid #c8ddd5}
+.section-index-shortcuts>span{margin-right:.15rem;color:var(--sub);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.section-index-shortcuts a{padding:.28rem .58rem;border:1px solid #bdd7ce;border-radius:999px;color:var(--green-dark);background:#fff;font-size:.78rem;font-weight:800;text-decoration:none}
+.section-index-shortcuts a:hover{text-decoration:underline;border-color:#83b5a4}
+.section-index-shortcuts a:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.back-index{display:inline-flex;align-items:center;gap:.35rem;margin-top:1.2rem;padding:.35rem .65rem;border-radius:999px;color:var(--green-dark);background:var(--green-pale);font-size:.78rem;font-weight:800;text-decoration:none}
+.back-index:hover{text-decoration:underline}
+.back-index:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+#dilema,#retos,#criterios,#impactos-generacion-propia,#wind-impact-title,#solar-impact-title,#impactos-dependencia,#state-dependency-title,#fuel-dependency-title,#electrification-dependency-title{scroll-margin-top:1.4rem}
+@media(max-width:760px){.section-index-header{grid-template-columns:1fr;gap:.55rem}.section-index-grid{grid-template-columns:1fr}.section-index-link{min-height:0}}
+@media(max-width:520px){.section-index{margin-inline:-.35rem;padding:1rem}.section-index-link{padding:.9rem}.section-index-copy span{font-size:.83rem}}
+</style>
+<style>
+/* Lectura progresiva: mismo ritmo compacto que la comparación de escenarios. */
+.hero{padding:2.05rem clamp(1.25rem,7vw,6rem)}
+.hero h1{max-width:none;font-size:clamp(1.9rem,4vw,3.15rem)}
+.hero p{margin-top:.5rem;font-size:.98rem}
+main{padding-top:1.45rem}
+.section-index{margin-bottom:1.25rem;padding:1.15rem;border-radius:.85rem;box-shadow:none}
+.section-index-header{grid-template-columns:minmax(0,.75fr) minmax(18rem,1.25fr);gap:1rem;margin-bottom:.9rem}
+.section-index-header h2{font-size:clamp(1.25rem,2.4vw,1.65rem)}
+.section-index-header p:last-child{font-size:.86rem;line-height:1.45}
+.section-index-grid{gap:.55rem}
+.section-index-link{grid-template-columns:1.85rem 1fr;gap:.6rem;min-height:0;padding:.72rem .8rem;border-radius:.65rem}
+.section-index-number{width:1.8rem;height:1.8rem;font-size:.73rem}
+.section-index-copy strong{font-size:.91rem}
+.section-index-copy span{font-size:.78rem;line-height:1.35}
+.section-index-topics{margin-top:.28rem;font-size:.67rem!important}
+.section-index-shortcuts{margin-top:.75rem;padding-top:.75rem}
+.accordion-controls{display:flex;flex-wrap:wrap;gap:.45rem;margin:.75rem 0 0}
+.accordion-controls button{padding:.35rem .65rem;border:1px solid #a9cbbf;border-radius:999px;color:var(--green-dark);background:#fff;font:inherit;font-size:.76rem;font-weight:800;cursor:pointer}
+.accordion-controls button:hover{border-color:var(--green-dark);background:var(--green-pale)}
+.accordion-controls button:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.impact-accordion{margin:.65rem 0;border:1px solid var(--border);border-left:5px solid var(--green);border-radius:.75rem;overflow:hidden;background:#fff}
+.impact-accordion.criteria-panel{border-left-color:#809c32}
+.impact-accordion.generation-panel{border-left-color:#5a9a7d}
+.impact-accordion.dependency-panel{border-left-color:var(--blue)}
+.impact-accordion-summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(145px,215px) 1.35rem;gap:.85rem;align-items:center;min-height:6rem;padding:.68rem .8rem;list-style:none;cursor:pointer;background:#f7faf8}
+.impact-accordion-summary::-webkit-details-marker{display:none}
+.impact-accordion-summary::after{content:"+";display:grid;place-items:center;width:1.35rem;height:1.35rem;border-radius:50%;color:#fff;background:var(--green-dark);font-size:1rem;font-weight:800;line-height:1}
+.impact-accordion[open]>.impact-accordion-summary::after{content:"−"}
+.impact-accordion[open]>.impact-accordion-summary{border-bottom:1px solid var(--border)}
+.impact-summary-copy{min-width:0}
+.impact-summary-kicker{display:block;margin-bottom:.18rem;color:var(--green-dark);font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.impact-summary-copy strong{display:block;font-size:1rem;line-height:1.15}
+.impact-summary-copy>span:last-child{display:block;margin-top:.28rem;color:var(--sub);font-size:.78rem;line-height:1.35}
+.impact-summary-image{position:relative;display:block;height:78px;overflow:hidden;border-radius:.5rem;background:#dfeae6}
+.impact-summary-image img{display:block;width:100%;height:100%;object-fit:cover}
+.impact-summary-image small{position:absolute;right:0;bottom:0;left:0;padding:.22rem .38rem;color:#fff;background:linear-gradient(transparent,rgba(12,35,31,.88));font-size:.57rem;line-height:1.15}
+.impact-accordion-body{padding:1rem 1.05rem 1.25rem}
+.impact-accordion-body>.dilemma h2,.impact-accordion-body>.challenges h2,.impact-accordion-body>.comparison-preview h2,.impact-accordion-body>.impact-study>h2,.impact-accordion-body>.dependency-study>h2{font-size:clamp(1.3rem,2.5vw,1.8rem)}
+.impact-accordion-body .lead{font-size:.96rem;line-height:1.55}
+.impact-accordion-body .decision-map{margin:1.25rem 0 .3rem;padding:1rem;border-radius:.8rem}
+.impact-accordion-body .objective{margin-bottom:.85rem;padding:.7rem 1rem}
+.impact-accordion-body .objective strong{font-size:1rem}
+.impact-accordion-body .route{padding:.9rem;border-radius:.7rem}
+.impact-accordion-body .route h3{font-size:1.05rem}
+.impact-accordion-body .route p,.impact-accordion-body .route li,.impact-accordion-body .challenge p{font-size:.86rem;line-height:1.45}
+.impact-accordion-body .common-enablers{margin-top:.9rem;padding:.8rem 1rem}
+.impact-accordion-body .challenge-grid{gap:.65rem;margin:1rem 0 1.2rem}
+.impact-accordion-body .challenge{padding:.85rem}
+.impact-accordion-body .challenge-number{width:1.8rem;height:1.8rem;margin-bottom:.5rem;font-size:.78rem}
+.impact-accordion-body .challenge h3{font-size:.95rem}
+.impact-accordion-body .comparison-preview{padding:1rem;border-left-width:4px;border-radius:0 .7rem .7rem 0}
+.impact-accordion-body .impact-study,.impact-accordion-body .dependency-study{margin:0;padding:0;border:0}
+.impact-accordion-body .scope-note{margin:1rem 0;padding:.85rem}
+.impact-accordion-body .reading-key{margin-bottom:1rem}
+.impact-category{margin-top:1rem}
+.impact-category-title{display:flex;align-items:center;gap:.48rem;margin:0 0 .5rem;padding-bottom:.38rem;border-bottom:1px solid var(--border);font-size:.82rem;line-height:1.2;text-transform:uppercase;letter-spacing:.055em}
+.impact-category-title::before{content:"";width:.62rem;height:.62rem;border-radius:50%;background:#5a9a7d}
+.impact-category-social .impact-category-title::before{background:var(--blue)}
+.impact-category-economic .impact-category-title::before{background:#b1842c}
+.impact-category .impact-grid{margin-top:0}
+.impact-category-environment .impact-card{border-top:3px solid #9bc8b5}
+.impact-category-social .impact-card{border-top:3px solid #9dc6d5}
+.impact-category-economic .impact-card{border-top:3px solid #d5b46c}
+.impact-documentary-photo{display:grid;grid-template-columns:minmax(220px, .72fr) minmax(0,1.28fr);gap:1rem;align-items:center;margin:.7rem 0 0;padding:.75rem;border:1px solid #b8d7ca;border-radius:.72rem;background:#f2f8f5}
+.impact-documentary-photo img{display:block;width:100%;height:auto;border-radius:.5rem}
+.impact-documentary-photo figcaption{color:var(--sub);font-size:.82rem;line-height:1.48}
+.impact-documentary-photo figcaption strong{display:block;margin-bottom:.35rem;color:var(--ink);font-size:.92rem;line-height:1.25}
+.impact-documentary-photo .documentary-label{display:inline-block;margin-bottom:.42rem;padding:.14rem .42rem;border-radius:999px;color:#075d4b;background:#d7eee4;font-size:.66rem;font-weight:800;letter-spacing:.045em;text-transform:uppercase}
+.impact-card .impact-documentary-photo{display:block;margin:.65rem 0 0;padding:0;overflow:hidden;border-color:#c9ded5;background:#fff}
+.impact-card .impact-documentary-photo img{width:100%;max-height:22rem;object-fit:cover;object-position:center}
+.impact-card .impact-documentary-photo figcaption{padding:.58rem .65rem;font-size:.72rem;line-height:1.38}
+.impact-card .impact-documentary-photo figcaption strong{font-size:.79rem}
+.impact-accordion-body .technology{margin-top:1rem;padding:1rem;border-radius:.8rem;box-shadow:none}
+.impact-accordion-body .tech-head{grid-template-columns:3.2rem 1fr;gap:.7rem}
+.impact-accordion-body .tech-symbol{width:3rem;height:3rem;border-radius:.65rem;font-size:1.55rem}
+.impact-accordion-body .tech-head h3{font-size:1.25rem}
+.impact-accordion-body .tech-head p,.impact-accordion-body .impact-card p,.impact-accordion-body .conflict-item p,.impact-accordion-body .dependency-card p,.impact-accordion-body .origin-card p{font-size:.84rem;line-height:1.45}
+.impact-accordion-body .impact-grid,.impact-accordion-body .dependency-card-grid,.impact-accordion-body .origin-row{gap:.55rem;margin:1rem 0}
+.impact-accordion-body .impact-card,.impact-accordion-body .dependency-card{padding:.75rem .8rem}
+.impact-accordion-body .impact-card h4,.impact-accordion-body .dependency-card h4{font-size:.91rem}
+.impact-accordion-body .species-box,.impact-accordion-body .case-box,.impact-accordion-body .responses-box,.impact-accordion-body .dependency-block{margin:1rem 0;padding:1rem;border-radius:.75rem}
+.impact-accordion-body .dependency-metrics,.impact-accordion-body .dependency-types{gap:.55rem;margin:1rem 0}
+.impact-accordion-body .dependency-metric,.impact-accordion-body .dependency-type{padding:.75rem}
+.impact-accordion-body .dependency-metric strong{font-size:1.25rem}
+.impact-accordion-body .dependency-block>h3{font-size:1.22rem}
+.impact-accordion-body .research-references summary{padding:.7rem .85rem;font-size:.82rem}
+.impact-accordion-body .reference-columns{padding:0 .85rem .85rem}
+.impact-accordion-body .comparison-takeaway,.impact-accordion-body .dependency-conclusion{margin-top:1rem;padding:1rem;border-radius:.75rem}
+@media(max-width:760px){.section-index-header{grid-template-columns:1fr}.impact-accordion-summary{grid-template-columns:minmax(0,1fr) 1.35rem}.impact-summary-image{display:none}.impact-accordion-body{padding:.85rem}.impact-accordion-body .impact-grid,.impact-accordion-body .dependency-metrics,.impact-accordion-body .dependency-types{grid-template-columns:1fr}.impact-documentary-photo{grid-template-columns:1fr}.impact-documentary-photo img{max-height:34rem;object-fit:contain}}
+@media(max-width:520px){.section-index{margin-inline:0}.impact-accordion{margin-inline:-.25rem}.impact-accordion-summary{padding:.7rem}.impact-accordion-body .tech-head{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header class="hero"><h1>Comparativa de impactos</h1><p>Impactos de aumentar la producción propia de energía en Euskadi.</p></header>
-<nav><a href="comparacion_escenarios_euskadi.html">Comparativa de escenarios</a><a href="modelo_coherencia_energetica.html">Modelo y metodología</a><a class="active" href="comparativa_impactos.html">Comparativa de impactos</a><a href="bloqueos_palancas.html">Bloqueos y palancas</a></nav>
+<header class="hero"><h1>Dilema y comparativa de impactos</h1><p>Los distintos caminos para electrificar Euskadi y alcanzar los objetivos climáticos de 2050.</p></header>
+<nav><a href="comparacion_escenarios_euskadi.html">Energía, clima y futuros de Euskadi</a><a href="modelo_coherencia_energetica.html">Modelo y metodología</a><a class="active" href="comparativa_impactos.html">Dilema y comparativa de impactos</a><a href="bloqueos_palancas.html">Bloqueos y palancas</a></nav>
 <main>
-<span class="status">Sección por definir</span>
-<p class="lead">Esta sección comparará los impactos positivos y negativos de aumentar la producción propia de energía en Euskadi frente a mantener una mayor dependencia de la energía importada. El contenido concreto y los criterios de comparación están todavía por definir.</p>
+<aside class="section-index" id="indice" role="navigation" aria-labelledby="section-index-title">
+  <div class="section-index-header">
+    <div>
+      <p class="eyebrow">Índice de la sección</p>
+      <h2 id="section-index-title">Elige qué parte quieres consultar</h2>
+    </div>
+    <p>La sección avanza desde la decisión general hasta los impactos concretos. Abre únicamente el bloque que quieras consultar y vuelve a cerrarlo cuando termines.</p>
+  </div>
+  <div class="section-index-grid" role="list">
+    <a class="section-index-link" href="#bloque-dilema" role="listitem">
+      <span class="section-index-number" aria-hidden="true">01</span>
+      <span class="section-index-copy"><strong>El dilema energético</strong><span>Dos estrategias complementarias: producir más renovable en Euskadi o captar más electricidad de la red exterior.</span><span class="section-index-topics">Generación propia · red exterior · almacenamiento</span></span>
+    </a>
+    <a class="section-index-link" href="#bloque-retos" role="listitem">
+      <span class="section-index-number" aria-hidden="true">02</span>
+      <span class="section-index-copy"><strong>Retos y criterios de comparación</strong><span>Las capacidades necesarias y las preguntas comunes para comparar caminos que tienen costes e impactos diferentes.</span><span class="section-index-topics">Territorio · coste · seguridad · aceptación</span></span>
+    </a>
+    <a class="section-index-link" href="#bloque-generacion" role="listitem">
+      <span class="section-index-number" aria-hidden="true">03</span>
+      <span class="section-index-copy"><strong>Impactos de generar en Euskadi</strong><span>Efectos documentados y conflictividad asociados a la eólica y la solar.</span><span class="section-index-topics">Medioambientales · sociales · económicos</span></span>
+    </a>
+    <a class="section-index-link" href="#bloque-dependencia" role="listitem">
+      <span class="section-index-number" aria-hidden="true">04</span>
+      <span class="section-index-copy"><strong>Impactos de la dependencia</strong><span>Qué autonomía se gana y qué nuevas dependencias aparecen al cambiar combustibles por electricidad.</span><span class="section-index-topics">Estado y red · proveedores · electrificación</span></span>
+    </a>
+  </div>
+  <div class="section-index-shortcuts" aria-label="Accesos directos a los análisis">
+    <span>Accesos directos</span>
+    <a href="#wind-impact-title">Eólica</a>
+    <a href="#solar-impact-title">Solar</a>
+    <a href="#state-dependency-title">Estado y red</a>
+    <a href="#fuel-dependency-title">Combustibles</a>
+    <a href="#electrification-dependency-title">Electrificación</a>
+  </div>
+  <div class="accordion-controls" aria-label="Controles de los bloques">
+    <button type="button" data-impact-action="open">Abrir todo</button>
+    <button type="button" data-impact-action="close">Cerrar todo</button>
+  </div>
+</aside>
+
+<details class="impact-accordion dilemma-panel" id="bloque-dilema">
+<summary class="impact-accordion-summary">
+  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 01</span><strong>El dilema energético</strong><span>Cómo combinar generación propia, red exterior, almacenamiento y electrificación.</span></span>
+  <span class="impact-summary-image"><img src="assets/photos/installations/ekian-arasur.webp" alt="Vista aérea del parque solar Ekian en Álava"><small>Parque solar Ekian, Arasur · Álava</small></span>
+</summary>
+<div class="impact-accordion-body">
+<section class="dilemma" id="dilema" aria-labelledby="dilemma-title">
+<p class="eyebrow">El punto de decisión</p>
+<h2 id="dilemma-title">¿Hasta dónde debe llegar Euskadi con la generación renovable propia?</h2>
+<p class="lead">Euskadi debe transformar profundamente su sistema energético para alcanzar los objetivos de 2050. No existe un único recorrido. Puede producir una parte mayor de la electricidad renovable dentro de su territorio o apoyarse más en la electricidad que llegará por una red peninsular y europea cada vez más renovable. En la práctica, ambos caminos se combinarán: el verdadero dilema es <strong>qué peso dar a cada uno y qué capacidades construir para que funcionen</strong>.</p>
+
+<div class="decision-map" aria-label="Dos estrategias complementarias para alcanzar los objetivos energéticos de 2050">
+  <div class="objective"><strong>Objetivos climáticos y energéticos de 2050</strong><span>Descarbonizar los usos de la energía manteniendo seguridad, competitividad y resiliencia.</span></div>
+  <div class="routes">
+    <article class="route route-own">
+      <span class="route-label">Estrategia 1</span>
+      <h3>Más renovable producida en Euskadi</h3>
+      <p>Desarrollar principalmente energía eólica y solar, junto con el resto de recursos renovables propios. Reduce la dependencia exterior, pero exige decidir cuánto territorio y qué emplazamientos se destinan a producir energía.</p>
+      <ul>
+        <li>Más capacidad de generación propia.</li>
+        <li>Redes internas capaces de integrar la nueva producción.</li>
+        <li>Almacenamiento para aprovechar excedentes y cubrir horas sin viento o sol.</li>
+      </ul>
+    </article>
+    <div class="route-divider" aria-hidden="true">+</div>
+    <article class="route route-grid">
+      <span class="route-label">Estrategia 2</span>
+      <h3>Más electricidad captada de la red</h3>
+      <p>Aprovechar los grandes flujos de electricidad —previsiblemente cada vez más renovable— que atravesarán Euskadi. La energía puede circular por la red de transporte sin quedar disponible para el consumo vasco si faltan puntos de acceso y capacidad de distribución.</p>
+      <ul>
+        <li>Más subestaciones y puntos de conexión con la red de alta tensión.</li>
+        <li>Refuerzo de la distribución hacia industria, servicios y hogares.</li>
+        <li>Coordinación y negociación con el Estado para incluir estas necesidades en la planificación de la red.</li>
+      </ul>
+    </article>
+  </div>
+  <div class="common-enablers">
+    <span>Capacidades comunes a los dos caminos</span>
+    <strong>Almacenamiento + accesos a la red + electrificación</strong>
+    <p>El almacenamiento no pertenece solo a la generación propia: también puede cargarse con excedentes de la red. Para hacerlo necesita puntos de conexión suficientes. Y ninguna de las dos estrategias descarboniza por sí sola si la industria, los edificios y la movilidad no sustituyen progresivamente los combustibles fósiles por electricidad.</p>
+  </div>
+</div>
+</section>
+</div>
+</details>
+
+<details class="impact-accordion criteria-panel" id="bloque-retos">
+<summary class="impact-accordion-summary">
+  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 02</span><strong>Retos y criterios de comparación</strong><span>Las capacidades necesarias y las preguntas comunes para comparar los caminos.</span></span>
+  <span class="impact-summary-image"><img src="assets/photos/electric-grid/subestacion-santurtzi-efe-luis-tejido.jpg" alt="Subestación eléctrica de Santurtzi"><small>Subestación eléctrica de Santurtzi · Luis Tejido / EFE</small></span>
+</summary>
+<div class="impact-accordion-body">
+<section class="challenges" id="retos" aria-labelledby="challenges-title">
+<p class="eyebrow">Tres retos conectados</p>
+<h2 id="challenges-title">El dilema se decide actuando sobre tres capacidades</h2>
+<div class="challenge-grid">
+  <article class="challenge"><span class="challenge-number">1</span><h3>Producir dentro del territorio</h3><p>Determinar cuánta renovable propia se quiere instalar, dónde puede ubicarse y qué impactos territoriales, ambientales, económicos y sociales se consideran asumibles.</p></article>
+  <article class="challenge"><span class="challenge-number">2</span><h3>Captar, distribuir y almacenar</h3><p>Abrir suficientes «puertas» desde la red de transporte, reforzar subestaciones y distribución, y almacenar energía tanto propia como importada cuando exista excedente.</p></article>
+  <article class="challenge"><span class="challenge-number">3</span><h3>Electrificar los consumos</h3><p>Adaptar procesos industriales, calefacción, movilidad y servicios. Cuanto mayor sea la electrificación eficiente, mayor será la parte del consumo que podrá cubrirse con renovables propias, almacenadas o importadas.</p></article>
+</div>
+</section>
+
+<section class="comparison-preview" id="criterios" aria-labelledby="comparison-title">
+<h2 id="comparison-title">Qué comparará esta sección</h2>
+<p>La comparación no buscará un camino sin impactos —no existe—, sino una combinación que permita cumplir los objetivos con costes, riesgos y efectos asumibles. Se contrastará qué ocurre cuando Euskadi aumenta la producción propia y qué ocurre cuando depende en mayor medida de la red exterior, incluyendo las infraestructuras necesarias en cada caso.</p>
+<ul class="criteria" aria-label="Criterios de comparación"><li>Territorio y paisaje</li><li>Biodiversidad</li><li>Coste e inversión</li><li>Industria y empleo</li><li>Materiales</li><li>Seguridad energética</li><li>Dependencia exterior</li><li>Plazos</li><li>Aceptación social</li></ul>
+<a class="back-index" href="#indice">↑ Volver al índice</a>
+</section>
+</div>
+</details>
+
+<details class="impact-accordion generation-panel" id="bloque-generacion">
+<summary class="impact-accordion-summary">
+  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 03</span><strong>Impactos de generar en Euskadi</strong><span>Impactos medioambientales, sociales y económicos de la eólica y la solar.</span></span>
+  <span class="impact-summary-image"><img src="assets/photos/installations/elgea-urkilla-aixeindar.jpg" alt="Aerogeneradores del parque eólico Elgea-Urkilla"><small>Parque eólico Elgea–Urkilla · Aixeindar</small></span>
+</summary>
+<div class="impact-accordion-body">
+<section class="impact-study" id="impactos-generacion-propia" aria-labelledby="own-impact-title">
+<p class="eyebrow">Primera estrategia · generar en Euskadi</p>
+<h2 id="own-impact-title">Impactos y conflictividad de la generación renovable propia</h2>
+<p class="lead">La eólica y la solar tienen emisiones de ciclo de vida muy inferiores a las de los combustibles fósiles y son necesarias para descarbonizar el sistema. Pero «renovable» no significa «sin impacto». Los efectos locales dependen mucho del lugar, la escala, el diseño, las infraestructuras asociadas y la acumulación de proyectos (IPCC, 2022; UICN, 2021). Esta recopilación reúne los impactos acreditados por evaluaciones ambientales y literatura científica, y los argumentos que han movilizado a plataformas rurales, agrarias y ecologistas en Euskadi.</p>
+
+<div class="scope-note"><strong>i</strong><p><b>Cómo debe leerse.</b> La existencia de un impacto no decide por sí sola si un proyecto debe aprobarse. La comparación debe valorar su magnitud, posibilidad de evitarlo, alternativas de ubicación y beneficio energético. También se distingue entre daños documentados, preocupaciones sociales legítimas y afirmaciones para las que todavía no existe evidencia sólida.</p></div>
+<div class="reading-key" aria-label="Clave de lectura"><span class="key key-evidence">Impacto documentado</span><span class="key key-conflict">Conflicto o preocupación social</span><span class="key key-uncertain">Evidencia limitada o dependiente del caso</span></div>
+
+<article class="technology wind" aria-labelledby="wind-impact-title">
+  <header class="tech-head">
+    <div class="tech-symbol" aria-hidden="true">◌</div>
+    <div><p class="eyebrow">Energía eólica terrestre</p><h3 id="wind-impact-title">Mucho rendimiento energético, gran exposición territorial</h3><p>La eólica ocupa físicamente una parte limitada del parque, pero sus aerogeneradores, caminos, plataformas y líneas se distribuyen sobre áreas extensas y suelen situarse en cordales. Por eso su conflicto se concentra en el paisaje, la fauna voladora, la conectividad ecológica y el uso social de los montes (Gobierno Vasco, 2023, 2024, 2025; MITECO, 2023, 2025).</p></div>
+  </header>
+
+  <section class="impact-category impact-category-environment" aria-labelledby="wind-environment-title">
+    <h4 class="impact-category-title" id="wind-environment-title">Impactos medioambientales</h4>
+    <div class="impact-grid">
+      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Aves y murciélagos</h4><p>Riesgo de colisión con palas y tendidos, electrocución en infraestructuras asociadas y abandono de áreas de alimentación o cría. El riesgo crece en corredores, dormideros, colonias y zonas con vuelos frecuentes; no se deduce solo del número de turbinas (MITECO, 2025; SEO/BirdLife, s. f.). En Badaia, el seguimiento de enero a octubre de 2015 registró cuatro colisiones de aves —tres buitres leonados y un alcaudón dorsirrojo— y estimó diez aves afectadas tras corregir las limitaciones del rastreo. Es un caso local de diez meses, no una tasa extrapolable a otros parques o años (AR Consultores en Medio Ambiente, 2015).</p>
+        <figure class="impact-documentary-photo">
+          <img src="assets/photos/impacts/badaia-a6-buitre-2015.png" alt="Buitre leonado muerto tras una colisión en el parque eólico de Badaia, sobre terreno nevado">
+          <figcaption><strong>Buitre leonado colisionado en Badaia</strong>Ejemplar localizado junto al aerogenerador 6 el 14 de marzo de 2015. El informe sitúa el parque en la sierra de Badaia, Álava, pero no precisa en qué municipio se encuentra exactamente este apoyo (AR Consultores en Medio Ambiente, 2015).</figcaption>
+        </figure>
+      </section>
+      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Hábitat, obras, suelo y efectos acumulados</h4><p>Los accesos, desmontes, plataformas, zanjas, cimentaciones y líneas pueden eliminar vegetación, erosionar el suelo, alterar drenajes y fragmentar hábitats. Las pistas permanecen durante la explotación y varios parques próximos pueden cerrar corredores o reducir territorios de campeo aunque cada proyecto, aislado, parezca asumible. Cantoblanco, Itsaraz y Laminoria fueron desfavorables precisamente por efectos relevantes o acumulados (Gobierno Vasco, 2024, 2025; MITECO, 2025).</p>
+        <figure class="impact-documentary-photo">
+          <img src="assets/photos/impacts/oiz-pistas-cordal.jpg" alt="Vista aérea del parque eólico de Oiz y de la pista de mantenimiento que recorre el cordal">
+          <figcaption><strong>La pista interior del parque eólico de Oiz</strong>En el cordal del monte Oiz, entre Berriz, Mallabia y Munitibar-Arbatzegi Gerrikaitz, la línea clara que acompaña a los aerogeneradores es la pista de mantenimiento y sus ramales de acceso. No toda la red visible en las laderas pertenece al parque: muchos caminos inferiores responden a la explotación forestal. La vigilancia ambiental controla la restauración de viales, plataformas, taludes y zanjas, además de posibles procesos erosivos y arrastres de material (Adam Cli, 2021; Gobierno Vasco, 2024).</figcaption>
+        </figure>
+      </section>
+    </div>
+  </section>
+  <section class="impact-category impact-category-social" aria-labelledby="wind-social-title">
+    <h4 class="impact-category-title" id="wind-social-title">Impactos sociales</h4>
+    <div class="impact-grid">
+      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Paisaje y patrimonio</h4><p>La altura, el movimiento y la iluminación hacen visibles los aerogeneradores desde grandes cuencas visuales. En Azazeta se calificó el impacto paisajístico global como severo, permanente durante la explotación y solo reversible tras el desmantelamiento (Gobierno Vasco, 2023).</p></section>
+      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Ruido, sombra e iluminación</h4><p>El ruido y el parpadeo de sombras pueden causar molestia cerca de viviendas y requieren distancias, límites y seguimiento. La OMS formula una recomendación condicionada para reducir la exposición media al ruido eólico por debajo de 45 dB L<sub>den</sub> (OMS Europa, 2018).</p></section>
+    </div>
+  </section>
+  <section class="impact-category impact-category-economic" aria-labelledby="wind-economic-title">
+    <h4 class="impact-category-title" id="wind-economic-title">Impactos económicos</h4>
+    <div class="impact-grid">
+      <section class="impact-card"><span class="evidence-label conflict">Conflicto social y económico</span><h4>Vida rural y distribución de beneficios</h4><p>Las plataformas cuestionan que los costes territoriales se concentren en pueblos con poca capacidad de decisión mientras la energía y el rendimiento económico se consumen o capturan fuera. La aceptación mejora con participación temprana, beneficios locales transparentes y propiedad compartida (Langer et al., 2020; Registro de Asociaciones del País Vasco, s. f.).</p></section>
+    </div>
+  </section>
+
+  <section class="species-box">
+    <h4>Especies especialmente sensibles citadas en evaluaciones vascas</h4>
+    <p>No es una lista abstracta: aparecen en los expedientes de Itsaraz, Cantoblanco o Laminoria. Itsaraz identifica al milano real como «en peligro de extinción» en los catálogos estatal y vasco; también recoge alimoche, aguilucho cenizo, águila real, buitre leonado, halcón peregrino, picamaderos negro y rutas potenciales del quebrantahuesos. Cantoblanco añade una afección acumulada que podría comprometer territorios de águila real y poblaciones de rapaces y quirópteros (Gobierno Vasco, 2024, 2025; MITECO, 2025).</p>
+    <ul class="species-list"><li>Milano real</li><li>Alimoche</li><li>Aguilucho cenizo</li><li>Águila real</li><li>Quebrantahuesos</li><li>Buitre leonado</li><li>Halcón peregrino</li><li>Picamaderos negro</li><li>Murciélagos cavernícolas y forestales</li></ul>
+  </section>
+
+  <section class="case-box">
+    <h4>Las decisiones oficiales muestran que la ubicación importa</h4>
+    <p>No existe una respuesta única para todos los parques. Las administraciones han rechazado proyectos cuando no podían descartarse daños significativos y han autorizado otros con condiciones estrictas (Gobierno Vasco, 2023, 2024, 2025; MITECO, 2023, 2025).</p>
+    <table class="decision-table">
+      <thead><tr><th>Proyecto</th><th>Decisión ambiental</th><th>Motivo o condición relevante</th></tr></thead>
+      <tbody>
+        <tr><td>Cantoblanco</td><td><span class="status-no">Desfavorable</span></td><td>Rapaces, quirópteros, Red Natura y efecto acumulado con Badaia.</td></tr>
+        <tr><td>Itsaraz</td><td><span class="status-no">Desfavorable</span></td><td>No quedaron garantizadas la protección de fauna amenazada, hábitats y espacios Natura 2000.</td></tr>
+        <tr><td>Laminoria</td><td><span class="status-no">Desfavorable</span></td><td>Afección crítica a aves y murciélagos, conectividad, hábitats y paisaje; acumulación con Azazeta.</td></tr>
+        <tr><td>Labraza</td><td><span class="status-yes">Favorable condicionada</span></td><td>Vigilancia de aves y murciélagos, sistemas de detección y parada, restauración y restricciones operativas.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="conflict-section">
+    <h4>Plataformas y movilización social</h4>
+    <div class="conflict-timeline">
+      <div class="conflict-item"><strong>Arabako Mendiak Aske</strong><p>Defiende biodiversidad, paisaje, montes públicos y conectividad ecológica; propone priorizar espacios antropizados próximos a la demanda y una generación más local y participada. Su registro oficial confirma estos fines (Registro de Asociaciones del País Vasco, s. f.).</p></div>
+      <div class="conflict-item"><strong>Euskal Herria Bizirik</strong><p>Articula una red contraria a los «macroproyectos» y en marzo de 2025 reunió en Vitoria-Gasteiz una marcha respaldada por alrededor de 150 colectivos. Su argumento central es que no rechaza la transición, sino un despliegue que considera industrializador y poco participado (EITB, 2025).</p></div>
+      <div class="conflict-item"><strong>Eibarko Mendiak Bizirik</strong><p>Nació en 2025 frente al proyecto Basalgo, con seis aerogeneradores de unos 200 metros entre Eibar, Soraluze y Bergara. Resume una posición repetida: «renovables sí», pero no a cualquier escala ni en cualquier lugar (Cadena SER, 2025).</p></div>
+    </div>
+  </section>
+
+  <section class="claim-check"><h4>Qué no debe afirmarse como hecho demostrado</h4><p>La molestia por ruido, la alteración del sueño y el impacto visual merecen prevención y seguimiento. En cambio, no existe base sólida para presentar un supuesto «síndrome de la turbina eólica» o daños generales por infrasonidos como efectos establecidos. Conviene separar esas afirmaciones de los impactos ecológicos, territoriales y acústicos que sí están documentados (OMS Europa, 2018).</p></section>
+
+  <section class="responses-box"><h4>Cómo se reduce el impacto eólico</h4><ul><li>Evitar corredores, áreas de nidificación, espacios protegidos y cordales de gran fragilidad paisajística antes de diseñar el parque.</li><li>Evaluar conjuntamente parques, líneas, accesos y proyectos próximos; no dividir artificialmente la evaluación.</li><li>Usar detección y parada selectiva, restricciones estacionales, soterramiento o corrección de tendidos y restauración con seguimiento independiente.</li><li>Dar capacidad real de decisión a municipios y juntas, publicar compensaciones y favorecer participación o propiedad local.</li></ul></section>
+  <details class="research-references">
+    <summary>Referencias</summary>
+    <div class="reference-columns">
+      <section><h4>Evaluaciones y planificación pública</h4><ol>
+        <li>AR Consultores en Medio Ambiente. (2015). <a href="https://www.euskadi.eus/contenidos/documentacion/seguimiento_eolico_badaia/es_doc/adjuntos/2015-Incidencia-parque-eolico-Badaia-sobre-la-avifauna-y-los-quiropteros.pdf"><i>Control y seguimiento de la incidencia del parque eólico de Badaia sobre la avifauna y los quirópteros: Fase de funcionamiento, año 2015, informe extraordinario</i></a>. Gobierno Vasco.</li>
+        <li>Adam Cli. (2021). <i>Vista aérea del cordal y del parque eólico de Oiz</i> [Fotografía].</li>
+        <li>Gobierno Vasco. (2024). <i>Documentación de vigilancia ambiental del parque eólico de Oiz</i>.</li>
+        <li>Gobierno Vasco (2024). <a href="https://www.euskadi.eus/bopv2/datos/2024/09/2404273a.shtml">Declaración ambiental del parque eólico Cantoblanco</a>.</li>
+        <li>MITECO (2025). <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-700">Declaración ambiental del parque eólico Itsaraz</a>.</li>
+        <li>Gobierno Vasco (2025). <a href="https://www.euskadi.eus/bopv2/datos/2025/03/2501203a.shtml">Declaración ambiental del parque eólico Laminoria</a>.</li>
+        <li>Gobierno Vasco (2023). <a href="https://www.euskadi.eus/resolucion/resolucion-20-enero-2023-del-director-calidad-ambiental-y-economia-circular-que-se-formula-declaracion-impacto-ambiental-del-anteproyecto-parque-eolico-azazeta-e-infraestructuras-asociadas-promovido-aixeindar-/s-terminos-municipales-bernedo-barrundia-arraia-maeztu-alegria-dulantzi-iruraiz-gauna-y-san-millandonemiliaga-alava/web01-a2libzer/es/">Declaración ambiental del parque eólico Azazeta</a>.</li>
+        <li>MITECO (2023). <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-1850">Declaración ambiental del parque eólico Labraza</a>.</li>
+      </ol></section>
+      <section><h4>Ciencia, salud y movilización</h4><ol>
+        <li>SEO/BirdLife (s. f.). <a href="https://seo.org/evaluacion-de-impacto-ambiental/">Energías renovables y evaluación ambiental</a>.</li>
+        <li>OMS Europa (2018). <a href="https://www.who.int/europe/publications/i/item/9789289053563">Environmental Noise Guidelines for the European Region</a>.</li>
+        <li>Langer et al. (2020). <a href="https://www.mdpi.com/2071-1050/12/5/1754">Participación y aceptación comunitaria de la energía eólica</a>.</li>
+        <li>Registro de Asociaciones del País Vasco (s. f.). <a href="https://www.euskadi.eus/gobierno-vasco/-/asociacion/asociacion-defensa-montes-alava-frente-industrializacion-y-privatizacion-arabako-mendiak-aske/">Arabako Mendiak Aske</a>.</li>
+        <li>EITB (2025). <a href="https://www.eitb.eus/es/noticias/sociedad/detalle/9938102/una-marcha-en-vitoriagasteiz-pide-parar-macroproyectos-energeticos-que-amenazan-biodiversidad/">Marcha de colectivos contra macroproyectos energéticos</a>.</li>
+        <li>Cadena SER (2025). <a href="https://cadenaser.com/euskadi/2025/11/20/nace-la-plataforma-eibarko-mendiak-bizirik-radio-eibar/">Creación de Eibarko Mendiak Bizirik</a>.</li>
+      </ol></section>
+    </div>
+  </details>
+</article>
+
+<article class="technology solar" aria-labelledby="solar-impact-title">
+  <header class="tech-head">
+    <div class="tech-symbol" aria-hidden="true">☀</div>
+    <div><p class="eyebrow">Solar fotovoltaica sobre suelo</p><h3 id="solar-impact-title">Menos altura, pero más ocupación continua del terreno</h3><p>La solar en tejados, aparcamientos o suelos ya transformados tiene un conflicto territorial muy distinto del de una gran planta sobre suelo rural. Las críticas vascas se concentran en los proyectos de gran superficie en Álava, sus líneas de evacuación y su coincidencia con tierras agrarias y núcleos pequeños (Gobierno Vasco, 2025, 2026a; UAGA, s. f.-a, s. f.-b).</p></div>
+  </header>
+
+  <section class="impact-category impact-category-environment" aria-labelledby="solar-environment-title">
+    <h4 class="impact-category-title" id="solar-environment-title">Impactos medioambientales</h4>
+    <div class="impact-grid">
+      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Hábitat, suelo y agua</h4><p>El desbroce, nivelado, caminos, vallado y sombreado pueden alterar vegetación, infiltración, escorrentía y fauna terrestre. El vallado introduce barreras; la gravedad depende de la gestión del suelo y de si se conservan corredores y cubierta vegetal.</p></section>
+      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Líneas, subestaciones y efecto acumulado</h4><p>La huella real no termina en los paneles. Subestaciones, caminos y líneas de evacuación añaden afecciones y pueden conectar varios recintos. Las alegaciones a 19 proyectos de Solaria cuestionan precisamente su evaluación separada pese a compartir red (Noticias de Álava, 2026; Crónica Vasca, 2026).</p></section>
+      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Materiales y final de vida</h4><p>Fabricar módulos, inversores y estructuras consume materiales y energía; al final deben reutilizarse o reciclarse. El IPCC señala el reciclaje y el uso inteligente del suelo como las principales vías para reducir el impacto ambiental de la fotovoltaica (IPCC, 2022).</p></section>
+    </div>
+  </section>
+  <section class="impact-category impact-category-social" aria-labelledby="solar-social-title">
+    <h4 class="impact-category-title" id="solar-social-title">Impactos sociales</h4>
+    <div class="impact-grid">
+      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Paisaje y proximidad a pueblos</h4><p>Las estructuras son bajas, pero una planta extensa transforma la textura y el carácter de un paisaje agrario. En Vitoria Solar 1, la Diputación pidió estudiar una ubicación más alejada de Arzubiaga y pantallas vegetales por el impacto visual y el riesgo de colisión de aves (Cadena SER, 2024).</p></section>
+      <section class="impact-card"><span class="evidence-label conflict">Conflicto social</span><h4>Decisión, expropiación y reparto</h4><p>Juntas y organizaciones agrarias denuncian presión para cambiar usos, declaración de utilidad pública y beneficios poco vinculados al territorio. La oposición crece cuando el proyecto llega cerrado y la comunidad solo puede alegar, no participar en su diseño o propiedad.</p></section>
+    </div>
+  </section>
+  <section class="impact-category impact-category-economic" aria-labelledby="solar-economic-title">
+    <h4 class="impact-category-title" id="solar-economic-title">Impactos económicos</h4>
+    <div class="impact-grid">
+      <section class="impact-card"><span class="evidence-label conflict">Conflicto económico</span><h4>Tierra agraria y alimentación</h4><p>La UAGA reclama que las plantas eviten suelos fértiles y de alto valor estratégico. El impacto no es solo perder hectáreas durante décadas: puede fragmentar explotaciones, encarecer arrendamientos y cambiar la economía agraria por rentas energéticas (UAGA, s. f.-a).</p></section>
+    </div>
+  </section>
+
+  <section class="case-box">
+    <h4>Qué reconoce la planificación vasca</h4>
+    <p>El PTS de Energías Renovables considera que la solar tiene, en general, menor impacto paisajístico que la eólica, pero identifica disponibilidad de suelo, efecto barrera, paisaje, consumo de recursos y residuos. Limita la ocupación solar al 10% de una cuenca visual —15% dentro de zonas de localización seleccionada— y excluye espacios de mayor protección. Que el impacto estratégico resulte «compatible» no elimina la evaluación de cada planta: las directrices vascas de 2026 exigen alternativas de ubicación, estudios previos de aves y murciélagos, vigilancia de mortalidad y restauración (Gobierno Vasco, 2026a, 2026b).</p>
+  </section>
+
+  <section class="conflict-section">
+    <h4>El foco del conflicto solar en Álava</h4>
+    <div class="conflict-timeline">
+      <div class="conflict-item"><strong>UAGA y juntas administrativas</strong><p>En 2024 se presentaron unas 15.000 alegaciones a distintos macroproyectos; 5.500 correspondían a Gorbeialdea. Las objeciones agrarias se centran en suelo fértil, continuidad de explotaciones y acumulación de infraestructuras (UAGA, s. f.-b).</p></div>
+      <div class="conflict-item"><strong>Araba Bizirik, ATACA y ACORA</strong><p>Estas plataformas colaboran con sindicatos y concejos frente a proyectos considerados sobredimensionados. En 2026, nueve ayuntamientos, unas 130 juntas y varias organizaciones presentaron más de 7.200 alegaciones a proyectos de Solaria (Noticias de Álava, 2026; Crónica Vasca, 2026).</p></div>
+      <div class="conflict-item"><strong>Alegaciones institucionales</strong><p>El propio expediente vasco recoge objeciones de UAGA, ATACA, ACORA, Arabako Mendiak Aske y numerosas juntas por posible incompatibilidad con el PTS Agroforestal y tierras de alto valor estratégico (Gobierno Vasco, 2025).</p></div>
+    </div>
+  </section>
+
+  <section class="responses-box"><h4>Cómo se reduce el impacto solar</h4><ul><li>Priorizar cubiertas, aparcamientos, áreas industriales, canteras, vertederos y suelos degradados antes que tierra agraria fértil o hábitats de valor.</li><li>Concentrar evacuación y subestaciones, mantener corredores, cubierta vegetal y drenaje natural, y diseñar vallados permeables para fauna.</li><li>Usar agrivoltaica solo cuando la producción agraria siga siendo real, medible y prioritaria; no como etiqueta para justificar cualquier ocupación.</li><li>Impulsar proyectos de menor escala, autoconsumo, comunidades energéticas y participación pública o local, sin asumir que por ello el impacto desaparece.</li></ul></section>
+  <details class="research-references">
+    <summary>Referencias</summary>
+    <div class="reference-columns">
+      <section><h4>Planificación y evaluación pública</h4><ol>
+        <li>Gobierno Vasco (2026a). <a href="https://www.euskadi.eus/bopv2/datos/2026/03/2601215a.shtml">PTS de Energías Renovables: evaluación y respuesta a alegaciones</a>.</li>
+        <li>Gobierno Vasco (2026b). <a href="https://www.euskadi.eus/documentacion/2026/directrices-para-los-estudios-de-avifauna-y-quiropterofauna-en-los-proyectos-de-plantas-fotovoltaivas-sometidas-a-evaluacion-de-impacto-ambiental-simplificada/web01-a2inginp/es/">Directrices de avifauna y quirópteros para plantas fotovoltaicas</a>.</li>
+        <li>Gobierno Vasco (2025). <a href="https://www.euskadi.eus/bopv2/datos/2025/02/2500887a.shtml">Expediente solar y alegaciones territoriales y agrarias</a>.</li>
+        <li>IPCC (2022). <a href="https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-6/">AR6 WGIII, capítulo 6: sistemas energéticos</a>.</li>
+        <li>UICN (2021). <a href="https://iucn.org/resources/publication/mitigating-biodiversity-impacts-associated-solar-and-wind-energy-development">Mitigación de impactos de la energía solar y eólica sobre la biodiversidad</a>.</li>
+      </ol></section>
+      <section><h4>Organizaciones y movilización</h4><ol>
+        <li>UAGA (s. f.-a). <a href="https://www.uaga.eus/uaga-defiende-la-tierra-agraria-fertil-ante-macroproyectos-de-parques-solares-en-alava/">Defensa de la tierra agraria fértil</a>.</li>
+        <li>UAGA (s. f.-b). <a href="https://www.uaga.eus/15-000-alegaciones-a-los-macroproyectos-energeticos-que-asedian-alava/">Balance de 15.000 alegaciones</a>.</li>
+        <li>Noticias de Álava (2026). <a href="https://www.noticiasdealava.eus/alava/2026/03/26/uaga-reclama-proyectos-solaria-alava-10867498.html">Alegaciones a proyectos de Solaria</a>.</li>
+        <li>Cadena SER (2024). <a href="https://cadenaser.com/euskadi/2024/12/26/la-diputacion-de-alava-pide-alejar-el-parque-vitoria-solar-1-de-arzubiaga-ser-vitoria/">Vitoria Solar 1 y Arzubiaga</a>.</li>
+        <li>Crónica Vasca (2026). <a href="https://cronicavasca.elespanol.com/empresas/20260326/plataformas-presentan-alegaciones-proyectos-solaria-alava/1003742745624_0.html">Más de 7.200 alegaciones a proyectos solares</a>.</li>
+      </ol></section>
+    </div>
+  </details>
+</article>
+
+<div class="comparison-takeaway"><h3>Primera conclusión para el dilema</h3><p>La alternativa no es «renovables o naturaleza». La decisión es cuánto generar, dónde y bajo qué propiedad y reglas. La eólica ofrece más energía por superficie directa, pero concentra visibilidad y riesgo para fauna voladora en cordales sensibles. La solar es modular y fácil de acercar al consumo, pero las grandes plantas pueden competir con suelo agrario y transformar paisajes completos. En ambas, evitar primero los lugares incompatibles es más eficaz que intentar compensar después.</p></div>
+<a class="back-index" href="#indice">↑ Volver al índice</a>
+</section>
+</div>
+</details>
+
+<details class="impact-accordion dependency-panel" id="bloque-dependencia">
+<summary class="impact-accordion-summary">
+  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 04</span><strong>Impactos de la dependencia</strong><span>Estado y red, combustibles exteriores, proveedores y nuevas cadenas tecnológicas.</span></span>
+  <span class="impact-summary-image"><img src="assets/photos/non-electric/terminal-gnl-bilbao.webp" alt="Terminal de gas natural licuado del Puerto de Bilbao"><small>Terminal de GNL de Bilbao · entrada de gas exterior</small></span>
+</summary>
+<div class="impact-accordion-body">
+<section class="dependency-study" id="impactos-dependencia" aria-labelledby="dependency-title">
+  <p class="eyebrow">Segunda dimensión del dilema</p>
+  <h2 id="dependency-title">Impactos de la dependencia: qué autonomía se gana y cuál se cambia</h2>
+  <p class="lead">Euskadi parte de una dependencia energética muy elevada. Producir más renovable propia y electrificar reducen la necesidad de comprar petróleo, gas y otros combustibles de forma permanente. Sin embargo, no crean independencia total: aumentan la importancia de la planificación estatal de la red, de los gestores que conceden acceso, del mercado eléctrico y de unas cadenas internacionales de equipos y materiales (Eustat, 2025; Red Eléctrica, 2026). La pregunta útil no es si existe dependencia, sino <strong>de qué se depende, durante cuánto tiempo y con qué capacidad de respuesta</strong>.</p>
+
+  <div class="dependency-metrics" aria-label="Tres cifras para situar la dependencia energética vasca">
+    <div class="dependency-metric"><strong>90,3 %</strong><span>dependencia energética de Euskadi en 2023, frente al 58,3% de la UE-27. Es el último año comparable publicado en esta serie (Eustat, 2025a).</span></div>
+    <div class="dependency-metric"><strong>4 nuevas</strong><span>subestaciones y actuaciones en unas 20 existentes figuran en la propuesta inicial estatal para Euskadi con horizonte 2030; todavía deben culminar la planificación (Red Eléctrica, 2026).</span></div>
+    <div class="dependency-metric"><strong>≈78 %</strong><span>del consumo interior bruto vasco de 2024 correspondió solo a petróleo y gas: 4.683 de 5.998 ktep (Eustat &amp; Gobierno Vasco, 2025b).</span></div>
+  </div>
+
+  <div class="dependency-types" aria-label="Tres clases de dependencia">
+    <div class="dependency-type fuel"><b>Dependencia de combustible</b><span>Hace falta una entrada continua de moléculas. Cada unidad consumida obliga a comprar otra y mantiene exposición a precios, países y rutas.</span></div>
+    <div class="dependency-type network"><b>Dependencia institucional y de red</b><span>La energía puede existir, pero no llegar al usuario si faltan posición, capacidad, permiso, transformación o distribución.</span></div>
+    <div class="dependency-type technology-chain"><b>Dependencia tecnológica y material</b><span>Paneles, baterías, motores, electrónica, cobre o minerales críticos se compran sobre todo al construir o reponer los activos.</span></div>
+  </div>
+  <details class="research-references">
+    <summary>Referencias</summary>
+    <div class="reference-columns">
+      <section><h4>Datos de contexto</h4><ol>
+        <li>Eustat (2025a). <a href="https://www.eustat.eus/elementos/ele0018500/dependencia-energetica--de-la-c-a-de-euskadi-y-de-los-paises-de-la-union-europea-/tbl0018533_c.html">Dependencia energética de Euskadi y la Unión Europea</a>.</li>
+        <li>Eustat y Gobierno Vasco (2025b). <a href="https://es.eustat.eus/elementos/ele0006800/ti_consumo-interior-bruto--de-la-ca-de-euskadi-por-tipos-de-energia-ktep-2000-2024/tbl0006857_c.html">Consumo interior bruto por tipos de energía, 2000–2024</a>.</li>
+        <li>Red Eléctrica (2026). <a href="https://www.ree.es/es/sala-de-prensa/actualidad/nota-de-prensa/2026/04/beatriz-corredor-e-imanol-pradales-analizan-inversiones-red-electrica-euskadi">Inversiones y propuesta de planificación en Euskadi</a>.</li>
+      </ol></section>
+    </div>
+  </details>
+
+  <article class="dependency-block state" aria-labelledby="state-dependency-title">
+    <p class="eyebrow">La puerta eléctrica</p>
+    <h3 id="state-dependency-title">Dependencia del Estado y de los gestores de red</h3>
+    <p>La red de alta tensión que atraviesa Euskadi no es una reserva automática de electricidad para la industria vasca. Para extraer más potencia hacen falta capacidad técnica, posiciones en subestaciones, transformadores, refuerzos aguas arriba y abajo y permisos de acceso y conexión. La planificación vinculante de la red de transporte la aprueba la Administración General del Estado, con participación de las comunidades autónomas. Red Eléctrica evalúa y concede el acceso cuando la conexión es a transporte; el distribuidor lo hace en su red, y la CNMC fija metodologías y resuelve conflictos (Boletín Oficial del Estado, 2013; CNMC, s. f.; Red Eléctrica, 2026).</p>
+
+    <div class="decision-chain" aria-label="Cadena de decisiones para aumentar potencia eléctrica industrial">
+      <div class="decision-step"><b>Industria y territorio</b><p>Definen MW, perfil horario, emplazamiento, madurez y fecha de necesidad.</p></div>
+      <div class="decision-step"><b>Gobierno Vasco y distribuidora</b><p>Agrupan demanda, preparan suelo y permisos y proponen refuerzos de distribución y transporte.</p></div>
+      <div class="decision-step"><b>MITECO y planificación estatal</b><p>Deciden qué nuevas instalaciones de transporte entran en el plan vinculante y en qué horizonte.</p></div>
+      <div class="decision-step"><b>Gestor de red</b><p>Calcula capacidad y condiciones; concede o deniega acceso y conexión con criterios reglados.</p></div>
+    </div>
+
+    <div class="dependency-warning"><strong>Matiz importante:</strong> no todo aumento de potencia industrial exige una decisión específica del Gobierno central. Si existe capacidad en distribución o en una posición ya disponible, puede tramitarse por la vía ordinaria. La dependencia estatal se vuelve decisiva cuando faltan instalaciones de transporte planificadas, posiciones o refuerzos estructurales. Una denegación no puede ser arbitraria: debe basarse en falta de capacidad o imposibilidad técnica y puede discutirse ante la CNMC.</div>
+
+    <div class="dependency-card-grid">
+      <section class="dependency-card"><h4>Riesgo de calendario industrial</h4><p>Una fábrica puede electrificar un horno o una línea en pocos años, mientras una subestación y su planificación tardan más. Si la red llega tarde, la inversión se aplaza, reduce escala o conserva gas.</p></section>
+      <section class="dependency-card"><h4>Prioridades territoriales frente a criterio estatal</h4><p>El Estado debe optimizar el conjunto del sistema y sus costes. Esa lógica no siempre coincide con el calendario o la localización que Euskadi considera prioritarios para su industria.</p></section>
+      <section class="dependency-card"><h4>Cuello de botella también en distribución</h4><p>Tener capacidad en alta tensión no basta. La energía debe transformarse y llegar al polígono; un refuerzo de transporte sin red de distribución asociada puede no resolver la demanda final.</p></section>
+      <section class="dependency-card"><h4>Capacidad informativa, no reservada</h4><p>Los mapas públicos orientan, pero los valores de nudos relacionados no se pueden sumar y la capacidad puede cambiar al estudiar una solicitud. La potencia solo queda asegurada mediante el permiso correspondiente.</p></section>
+    </div>
+    <details class="research-references">
+      <summary>Referencias</summary>
+      <div class="reference-columns">
+        <section><h4>Competencias, acceso y planificación</h4><ol>
+          <li>Boletín Oficial del Estado (2013). <a href="https://boe.es/buscar/act.php?id=BOE-A-2013-13645">Ley 24/2013 del Sector Eléctrico, artículos 4, 4 bis y 33</a>.</li>
+          <li>CNMC (s. f.). <a href="https://www.cnmc.es/sectores-que-regulamos/energia/supervision-del-mercado-electrico/informe-acceso-y-conexion-redes">Información, mapas y normativa de acceso y conexión</a>.</li>
+          <li>Red Eléctrica (2026). <a href="https://www.ree.es/es/sala-de-prensa/actualidad/nota-de-prensa/2026/04/beatriz-corredor-e-imanol-pradales-analizan-inversiones-red-electrica-euskadi">Inversiones y propuesta de planificación en Euskadi</a>.</li>
+        </ol></section>
+      </div>
+    </details>
+  </article>
+
+  <article class="dependency-block fuels" aria-labelledby="fuel-dependency-title">
+    <p class="eyebrow">Moléculas que deben seguir llegando</p>
+    <h3 id="fuel-dependency-title">Dependencia de proveedores de combustibles</h3>
+    <p>Todo uso que no se electrifique necesita otra fuente. Si continúa usando petróleo o gas, mantiene una dependencia exterior directa, emisiones y exposición a mercados internacionales. Si cambia a combustibles renovables, puede reducir emisiones, pero no necesariamente la dependencia: seguirá necesitando materia prima, transformación, certificación y transporte.</p>
+
+    <div class="origin-row">
+      <section class="origin-card">
+        <h4>Petróleo y gas fósil</h4>
+        <strong class="big">Dependencia recurrente</strong>
+        <p>En 2024, Argelia suministró el 39,5% del gas recibido por el sistema español; Rusia y Estados Unidos fueron también orígenes principales. El crudo estuvo más diversificado, con proveedores como Estados Unidos, Brasil, México o Nigeria. La cesta cambia cada año, pero sigue expuesta a conflictos, sanciones, decisiones de productores, fletes, estrechos y precios internacionales (Enagás, 2025; CORES, 2025).</p>
+        <p><b>Impacto añadido:</b> la dependencia no es solo geopolítica. Cada nueva compra mantiene emisiones de CO₂ y desplaza al exterior parte de los impactos de extracción, procesado y transporte.</p>
+      </section>
+      <section class="origin-card renewable-fuel">
+        <h4>Biocombustibles y biomasa importada</h4>
+        <strong class="big">Renovable no significa local</strong>
+        <p>No existe una matriz consolidada del origen de lo consumido específicamente en Euskadi. Como contexto, las estadísticas españolas de 2024 sitúan a Indonesia como primer origen declarado de la materia prima del biodiésel —32,4%— y, junto con Malasia, concentran el 68,8% de la materia prima del HVO. Son orígenes de materia prima, no necesariamente de combustible acabado (MITECO, 2025).</p>
+        <p><b>Riesgo añadido:</b> aceites de cultivos como palma o soja pueden provocar cambio directo o indirecto del uso del suelo. La Comisión Europea mantiene el aceite de palma como materia prima de alto riesgo ILUC y propuso incluir también la soja en 2026. En esos casos, las emisiones por cambio de uso del suelo pueden anular el ahorro frente al combustible fósil (Centro Común de Investigación de la Comisión Europea, s. f.; Comisión Europea, 2026).</p>
+      </section>
+    </div>
+
+    <div class="dependency-warning"><strong>La certificación reduce riesgo, pero no convierte cualquier biocombustible en inocuo.</strong> Debe distinguir residuos genuinos —aceite usado, estiércoles, lodos o restos alimentarios— de cultivos que compiten por tierra; verificar trazabilidad y fraude; contabilizar transporte y procesado; y evitar que la demanda energética desplace cultivos alimentarios o expansión agrícola hacia bosques y turberas.</div>
+    <details class="research-references">
+      <summary>Referencias</summary>
+      <div class="reference-columns">
+        <section><h4>Combustibles fósiles</h4><ol>
+          <li>Enagás (2025). <a href="https://www.enagas.es/content/dam/enagas/es/ficheros/sala-de-comunicacion/publicaciones/informe-sistema-gasista/informe-sistema-gasista-2024.pdf">Informe del sistema gasista español 2024</a>.</li>
+          <li>CORES (2025). <a href="https://www.cores.es/es/node/3775">Informe estadístico anual 2024</a>.</li>
+        </ol></section>
+        <section><h4>Biocombustibles, materias primas y uso del suelo</h4><ol>
+          <li>MITECO (2025). <a href="https://www.miteco.gob.es/content/dam/miteco/es/energia/files-1/biocarburantes/Documents/ESTADISTICAS-BIOS%20CERT%20DEFINITIVAS%202024.xlsx">Estadísticas definitivas de biocarburantes 2024</a>.</li>
+          <li>Centro Común de Investigación de la Comisión Europea (s. f.). <a href="https://joint-research-centre.ec.europa.eu/reports-and-technical-documentation/biofuels-bioenergy-land-use-change-due-increased-biofuels-demand_en">Cambio directo e indirecto de uso del suelo por biocombustibles</a>.</li>
+          <li>Comisión Europea (2026). <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A52026DC0036">Actualización de materias primas de alto riesgo ILUC</a>.</li>
+        </ol></section>
+      </div>
+    </details>
+  </article>
+
+  <article class="dependency-block electrification" aria-labelledby="electrification-dependency-title">
+    <p class="eyebrow">La dependencia que cambia de forma</p>
+    <h3 id="electrification-dependency-title">Electrificar da más autonomía energética, pero crea nuevas dependencias</h3>
+    <p>Un motor eléctrico, una bomba de calor o un horno eléctrico no necesitan importar combustible para cada hora de uso. Pueden alimentarse con generación vasca, peninsular o europea y cambiar de fuente sin sustituir la máquina. Esa flexibilidad reduce la vulnerabilidad frente a un país productor concreto. A cambio, el sistema necesita una red más robusta, generación suficiente, almacenamiento, respuesta de demanda y cadenas de suministro de equipos y materiales.</p>
+
+    <div class="dependency-card-grid">
+      <section class="dependency-card"><h4>Red, mercado e interconexiones</h4><p>Si aumenta la electricidad importada, Euskadi queda más expuesta a congestiones, disponibilidad del sistema peninsular y europeo y precios horarios. La interconexión diversifica orígenes, pero una crisis de red afecta simultáneamente a muchos consumos.</p></section>
+      <section class="dependency-card"><h4>Equipos y fabricación concentrada</h4><p>China concentra alrededor del 85% de la capacidad de fabricación de la cadena solar y el 80% de la de baterías de ion-litio. La dependencia es principalmente al construir o reponer, no una compra diaria de energía (Agencia Internacional de la Energía, 2026).</p></section>
+      <section class="dependency-card"><h4>Minerales críticos</h4><p>Cobre, litio, níquel, grafito, tierras raras y otros materiales son esenciales para redes, baterías, motores y aerogeneradores. La UE reconoce una fuerte concentración exterior y fija para 2030 que no más del 65% de cada material estratégico proceda de un único tercer país (Comisión Europea, 2024).</p></section>
+      <section class="dependency-card"><h4>Operación digital y resiliencia</h4><p>Una economía más eléctrica depende más de automatización, telecomunicaciones y ciberseguridad. También debe resistir temporales, calor extremo y fallos simultáneos mediante mallado, reservas, almacenamiento y planes de reposición.</p></section>
+    </div>
+
+    <table class="dependency-table">
+      <thead><tr><th>Camino</th><th>Dependencia principal</th><th>Cuándo se paga o sufre</th><th>Impacto dominante</th></tr></thead>
+      <tbody>
+        <tr><td>Petróleo y gas</td><td><span class="dependency-level high">Alta y continua</span> Países, rutas y mercado mundial</td><td>Cada unidad consumida</td><td>Precio, geopolítica, emisiones y extracción exterior</td></tr>
+        <tr><td>Combustibles renovables importados</td><td><span class="dependency-level high">Continua</span> Materia prima, certificación y logística</td><td>Cada unidad consumida</td><td>Tierra, trazabilidad, posible deforestación y coste</td></tr>
+        <tr><td>Electricidad de la red</td><td><span class="dependency-level medium">Media</span> Capacidad, mercado y operación común</td><td>Durante el consumo</td><td>Congestión, precio horario y dependencia institucional</td></tr>
+        <tr><td>Renovable propia electrificada</td><td><span class="dependency-level changed">Transformada</span> Red, equipos y materiales</td><td>Sobre todo al invertir y reponer</td><td>Territorio local, cadena tecnológica y minerales</td></tr>
+      </tbody>
+    </table>
+
+    <section class="autonomy-actions">
+      <h4>Cómo aumentar autonomía sin confundirla con aislamiento</h4>
+      <ul>
+        <li>Electrificar primero los usos donde la tecnología es eficiente y madura.</li>
+        <li>Combinar generación propia, red exterior, almacenamiento y flexibilidad; ninguna basta sola.</li>
+        <li>Presentar al Estado una cartera industrial madura por nudo, MW, perfil horario y fecha.</li>
+        <li>Coordinar planificación estatal y planes de inversión de distribución, con seguimiento público de cada refuerzo.</li>
+        <li>Reservar combustibles sostenibles y trazables para usos difíciles de electrificar.</li>
+        <li>Diversificar proveedores de equipos y materiales, favorecer fabricación europea, reparación y reciclaje.</li>
+        <li>Usar contratos de largo plazo y respuesta de demanda para reducir exposición a precios horarios.</li>
+        <li>Reforzar ciberseguridad, redundancia, almacenamiento y capacidad de recuperación de la red.</li>
+      </ul>
+    </section>
+    <details class="research-references">
+      <summary>Referencias</summary>
+      <div class="reference-columns">
+        <section><h4>Materiales y cadenas tecnológicas</h4><ol>
+          <li>Comisión Europea (2024). <a href="https://single-market-economy.ec.europa.eu/sectors/raw-materials/areas-specific-interest/critical-raw-materials/critical-raw-materials-act_en">Reglamento europeo de materias primas fundamentales</a>.</li>
+          <li>Agencia Internacional de la Energía (2026). <a href="https://www.iea.org/reports/energy-technology-perspectives-2026/supply-chain-risks-and-industrial-competitiveness">Riesgos de las cadenas de suministro de tecnologías energéticas</a>.</li>
+          <li>Comisión Europea (2024). <a href="https://energy.ec.europa.eu/topics/renewable-energy/solar-energy/european-solar-charter_en">Carta Solar Europea</a>.</li>
+        </ol></section>
+        <section><h4>Seguridad del sistema</h4><ol>
+          <li>Agencia Internacional de la Energía (s. f.). <a href="https://www.iea.org/topics/energy-security">Seguridad energética en sistemas electrificados</a>.</li>
+        </ol></section>
+      </div>
+    </details>
+  </article>
+
+  <div class="dependency-conclusion"><h3>Segunda conclusión para el dilema</h3><p>La electrificación reduce la dependencia más difícil de gestionar: la compra continua de combustibles a productores exteriores. Pero traslada parte del poder de decisión hacia la planificación de red y parte del riesgo hacia equipos, materiales y operación eléctrica. La estrategia más autónoma no es desconectarse, sino disponer de varias vías —producción propia, acceso suficiente a la red, almacenamiento, eficiencia y proveedores diversificados— para que el fallo de una no bloquee todo el sistema.</p></div>
+  <a class="back-index" href="#indice">↑ Volver al índice</a>
+
+</section>
+</div>
+</details>
 </main>
-<footer>Página de trabajo para preparar contenidos y escenarios futuros.</footer>
+<footer>Energía, clima y futuros de Euskadi · Dilema y comparativa de impactos · 2026</footer>
+<script>
+(() => {
+  const panels = Array.from(document.querySelectorAll(".impact-accordion"));
+  const revealTarget = () => {
+    if (!window.location.hash) return;
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    const target = document.getElementById(id);
+    if (!target) return;
+    const panel = target.matches(".impact-accordion") ? target : target.closest(".impact-accordion");
+    if (panel) panel.open = true;
+  };
+  document.querySelectorAll("[data-impact-action]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const open = button.dataset.impactAction === "open";
+      panels.forEach((panel) => { panel.open = open; });
+    });
+  });
+  document.addEventListener("click", (event) => {
+    if (event.target.closest('a[href^="#"]')) window.setTimeout(revealTarget, 0);
+  });
+  window.addEventListener("hashchange", revealTarget);
+  revealTarget();
+})();
+</script>
 </body>
 </html>
