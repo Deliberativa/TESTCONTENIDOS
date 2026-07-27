@@ -82,6 +82,8 @@ main{padding-top:1.45rem}
 .impact-accordion-body{padding:1rem 1.05rem 1.25rem}
 .impact-accordion-body>.dilemma h2,.impact-accordion-body>.challenges h2,.impact-accordion-body>.comparison-preview h2,.impact-accordion-body>.impact-study>h2,.impact-accordion-body>.dependency-study>h2{font-size:clamp(1.3rem,2.5vw,1.8rem)}
 .impact-accordion-body .lead{font-size:.96rem;line-height:1.55}
+.impact-accordion-body .assembly-introduction{margin-bottom:1.6rem}
+.impact-accordion-body .dilemma h2{max-width:40ch}
 .impact-accordion-body .decision-map{margin:1.25rem 0 .3rem;padding:1rem;border-radius:.8rem}
 .impact-accordion-body .objective{margin-bottom:.85rem;padding:.7rem 1rem}
 .impact-accordion-body .objective strong{font-size:1rem}
@@ -115,6 +117,14 @@ main{padding-top:1.45rem}
 .impact-card .impact-documentary-photo img{width:100%;max-height:22rem;object-fit:cover;object-position:center}
 .impact-card .impact-documentary-photo figcaption{padding:.58rem .65rem;font-size:.72rem;line-height:1.38}
 .impact-card .impact-documentary-photo figcaption strong{font-size:.79rem}
+.noise-impact-card{grid-column:auto}
+.wind-noise-map{margin:.9rem 0 0;overflow:hidden;border:1px solid #b8d7ca;border-radius:.78rem;background:#fff}
+.wind-noise-map img{display:block;width:100%;height:auto;background:#f4f0e9}
+.wind-noise-map figcaption{padding:.72rem .82rem;color:var(--sub);font-size:.76rem;line-height:1.48;border-top:1px solid #dbe8e2}
+.wind-noise-map figcaption strong{color:var(--ink)}
+.noise-complaints-note{margin:.78rem 0 0;padding:.72rem .8rem;border-left:4px solid #6b91a4;border-radius:0 .55rem .55rem 0;background:#eef6f8}
+.noise-complaints-note h5{margin:0 0 .3rem;color:var(--ink);font-size:.82rem}
+.noise-complaints-note p{margin:0!important;color:var(--sub);font-size:.76rem!important;line-height:1.48!important}
 .impact-accordion-body .technology{margin-top:1rem;padding:1rem;border-radius:.8rem;box-shadow:none}
 .impact-accordion-body .tech-head{grid-template-columns:3.2rem 1fr;gap:.7rem}
 .impact-accordion-body .tech-symbol{width:3rem;height:3rem;border-radius:.65rem;font-size:1.55rem}
@@ -134,6 +144,64 @@ main{padding-top:1.45rem}
 @media(max-width:760px){.section-index-header{grid-template-columns:1fr}.impact-accordion-summary{grid-template-columns:minmax(0,1fr) 1.35rem}.impact-summary-image{display:none}.impact-accordion-body{padding:.85rem}.impact-accordion-body .impact-grid,.impact-accordion-body .dependency-metrics,.impact-accordion-body .dependency-types{grid-template-columns:1fr}.impact-documentary-photo{grid-template-columns:1fr}.impact-documentary-photo img{max-height:34rem;object-fit:contain}}
 @media(max-width:520px){.section-index{margin-inline:0}.impact-accordion{margin-inline:-.25rem}.impact-accordion-summary{padding:.7rem}.impact-accordion-body .tech-head{grid-template-columns:1fr}}
 </style>
+<style>
+/* Tarjetas de impacto: composición flexible y lectura vertical para los casos con evidencia extensa. */
+.impact-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.wind .impact-category-environment .impact-grid{grid-template-columns:1fr}
+.wind .impact-category-environment .impact-card{padding:1rem}
+.wind .impact-category-environment .impact-card .impact-documentary-photo{display:grid;grid-template-columns:minmax(15rem,.9fr) minmax(0,1.1fr);align-items:center}
+.wind .impact-category-environment .impact-card .impact-documentary-photo figcaption{padding:.75rem .85rem}
+.wind .impact-category-environment .impact-card .species-box{margin:.85rem 0 0;border:1px solid #c9ded5;background:#eaf4ef}
+.impact-photo-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:.75rem 0 0}
+.impact-photo-pair figure{margin:0;overflow:hidden;border:1px solid #c9ded5;border-radius:.72rem;background:#fff}
+.impact-photo-pair img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center}
+.impact-photo-pair figcaption{padding:.65rem .72rem;color:var(--sub);font-size:.74rem;line-height:1.4}
+.impact-photo-pair figcaption strong{display:block;margin-bottom:.25rem;color:var(--ink);font-size:.82rem;line-height:1.25}
+@media(max-width:760px){.wind .impact-category-environment .impact-card .impact-documentary-photo{display:block}}
+@media(max-width:580px){.impact-photo-pair{grid-template-columns:1fr}}
+</style>
+<style id="wind-benefit-distribution">
+.benefit-distribution-card{grid-column:1/-1;padding:1rem!important}
+.benefit-distribution-card>p{max-width:92ch}
+.wind-economy-model{margin:.9rem 0 0;padding:1rem;border:1px solid #dbc992;border-radius:.8rem;background:#fffdf6}
+.wind-economy-model h5{margin:0;font-size:.96rem;line-height:1.25}
+.wind-economy-model .economy-intro{margin:.25rem 0 .8rem!important;color:var(--sub);font-size:.78rem!important}
+.economy-panel+.economy-panel{margin-top:1rem;padding-top:1rem;border-top:1px solid #eadfb9}
+.economy-panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem;margin-bottom:.55rem}
+.economy-panel-head span{color:#775d18;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.045em}
+.economy-stack{display:flex;width:100%;min-height:3.8rem;overflow:hidden;border:1px solid #cfbd82;border-radius:.62rem;background:#fff}
+.economy-segment{display:flex;flex-direction:column;justify-content:center;min-width:3.6rem;padding:.45rem .55rem;color:#fff;line-height:1.12}
+.economy-segment strong{font-size:1.05rem}
+.economy-segment small{font-size:.67rem;font-weight:700;line-height:1.2}
+.economy-segment.debt{background:#4f7888}
+.economy-segment.equity{background:#8c7129}
+.economy-segment.cost{background:#73817d}
+.economy-segment.local{background:#4e9a72}
+.economy-segment.public{background:#6a8ca0}
+.economy-segment.finance{background:#765f83}
+.economy-segment.residual{background:#b1842c}
+.economy-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin-top:.6rem}
+.economy-detail article{padding:.62rem .68rem;border:1px solid #e5dcc0;border-radius:.58rem;background:#fff}
+.economy-detail strong{display:block;margin-bottom:.12rem;font-size:.77rem;line-height:1.25}
+.economy-detail p{margin:0!important;color:var(--sub);font-size:.72rem!important;line-height:1.38!important}
+.economy-detail.revenue-detail{grid-template-columns:repeat(5,minmax(0,1fr))}
+.economy-detail .detail-cost{border-top:3px solid #73817d}
+.economy-detail .detail-local{border-top:3px solid #4e9a72}
+.economy-detail .detail-public{border-top:3px solid #6a8ca0}
+.economy-detail .detail-finance{border-top:3px solid #765f83}
+.economy-detail .detail-residual{border-top:3px solid #b1842c}
+.economy-reading{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin:.8rem 0 0}
+.economy-reading div{padding:.65rem .72rem;border-radius:.58rem;background:#f5f1e8}
+.economy-reading strong{display:block;margin-bottom:.16rem;color:#604d1d;font-size:.76rem}
+.economy-reading p{margin:0!important;color:var(--sub);font-size:.72rem!important;line-height:1.4!important}
+.economy-caveat{margin:.78rem 0 0!important;padding:.68rem .75rem;border-left:4px solid #c89c30;border-radius:0 .5rem .5rem 0;background:#fff6dc;color:#69551c!important;font-size:.75rem!important;line-height:1.45!important}
+.local-benefit-options{margin:.8rem 0 0;padding:.72rem .78rem;border-radius:.6rem;background:#edf6f1}
+.local-benefit-options strong{font-size:.8rem}
+.local-benefit-options ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.28rem .9rem;margin:.42rem 0 0;padding-left:1.1rem}
+.local-benefit-options li{color:var(--sub);font-size:.73rem;line-height:1.38}
+@media(max-width:820px){.economy-detail.revenue-detail{grid-template-columns:repeat(2,minmax(0,1fr))}.economy-reading{grid-template-columns:1fr}}
+@media(max-width:600px){.economy-panel-head{display:block}.economy-panel-head span{display:block;margin-top:.15rem}.economy-stack{display:grid;min-height:0}.economy-segment{width:100%!important;min-width:0}.economy-detail,.economy-detail.revenue-detail,.local-benefit-options ul{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header class="hero"><h1>Dilema y comparativa de impactos</h1><p>Los distintos caminos para electrificar Euskadi y alcanzar los objetivos climáticos de 2050.</p></header>
@@ -150,18 +218,14 @@ main{padding-top:1.45rem}
   <div class="section-index-grid" role="list">
     <a class="section-index-link" href="#bloque-dilema" role="listitem">
       <span class="section-index-number" aria-hidden="true">01</span>
-      <span class="section-index-copy"><strong>El dilema energético</strong><span>Decidir el equilibrio entre asumir más impactos en Euskadi o depender más de la energía exterior.</span><span class="section-index-topics">Impactos territoriales · autonomía · dependencia</span></span>
-    </a>
-    <a class="section-index-link" href="#bloque-retos" role="listitem">
-      <span class="section-index-number" aria-hidden="true">02</span>
-      <span class="section-index-copy"><strong>Retos y criterios de comparación</strong><span>Las capacidades necesarias y las preguntas comunes para comparar caminos que tienen costes e impactos diferentes.</span><span class="section-index-topics">Territorio · coste · seguridad · aceptación</span></span>
+      <span class="section-index-copy"><strong>La pregunta para la asamblea</strong><span>Decidir cuánto debería aumentar la producción renovable propia más allá del objetivo del 15 % en 2030.</span><span class="section-index-topics">Beneficios · impactos · territorio · industria</span></span>
     </a>
     <a class="section-index-link" href="#bloque-generacion" role="listitem">
-      <span class="section-index-number" aria-hidden="true">03</span>
+      <span class="section-index-number" aria-hidden="true">02</span>
       <span class="section-index-copy"><strong>Impactos de generar en Euskadi</strong><span>Efectos documentados y conflictividad asociados a la eólica y la solar.</span><span class="section-index-topics">Medioambientales · sociales · económicos</span></span>
     </a>
     <a class="section-index-link" href="#bloque-dependencia" role="listitem">
-      <span class="section-index-number" aria-hidden="true">04</span>
+      <span class="section-index-number" aria-hidden="true">03</span>
       <span class="section-index-copy"><strong>Impactos de la dependencia</strong><span>Qué autonomía se gana y qué nuevas dependencias aparecen al cambiar combustibles por electricidad.</span><span class="section-index-topics">Estado y red · proveedores · electrificación</span></span>
     </a>
   </div>
@@ -181,17 +245,18 @@ main{padding-top:1.45rem}
 
 <details class="impact-accordion dilemma-panel" id="bloque-dilema">
 <summary class="impact-accordion-summary">
-  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 01</span><strong>El dilema energético</strong><span>Más generación propia y más impactos locales, o más energía de la red y más dependencia.</span></span>
+  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 01 · Pregunta para la asamblea</span><strong>¿Cuánto más debería aumentar la producción renovable?</strong><span>Partiendo del objetivo del 15 % en 2030, valorar conjuntamente beneficios e implicaciones.</span></span>
   <span class="impact-summary-image"><img src="assets/photos/installations/ekian-arasur.webp" alt="Vista aérea del parque solar Ekian en Álava"><small>Parque solar Ekian, Arasur · Álava</small></span>
 </summary>
 <div class="impact-accordion-body">
 <section class="dilemma" id="dilema" aria-labelledby="dilemma-title">
-<p class="eyebrow">El punto de decisión</p>
-<h2 id="dilemma-title">¿Cuánta energía producir aquí y cuánta obtener de la red?</h2>
-<p class="lead">Esta es la decisión que permanece abierta. <strong>Cuanta más electricidad renovable se genere en Euskadi, menor será la dependencia exterior, pero mayores serán los impactos territoriales, ambientales y sociales que habrá que asumir aquí.</strong> Cuanta más electricidad se obtenga de la red, menor será la presión de nuevas instalaciones de generación sobre el territorio vasco, pero mayor será la dependencia de la energía producida fuera, de la capacidad de la red y de las decisiones estatales que permiten acceder a ella. No se trata de elegir un extremo: hay que decidir <strong>en qué punto situar el equilibrio</strong>.</p>
+<p class="eyebrow">Pregunta central para la asamblea</p>
+<p class="lead assembly-introduction">Euskadi, al igual que el resto de Europa, comienza a sufrir cada vez más las consecuencias del cambio climático y de la dependencia energética. Aumentar la energía renovable propia aportaría una mayor autonomía energética, una mejora de la economía y facilitaría la reducción de las emisiones de los gases que causan el cambio climático. Para avanzar en esta dirección, el Gobierno Vasco se ha marcado como objetivo intermedio alcanzar en 2030 un 15 % de generación renovable propia sobre el total de la energía eléctrica y alcanzar en 2050 las cero emisiones netas de los gases que originan el cambio climático. Sin embargo, no es tan fácil avanzar en esta dirección. Estas instalaciones tienen impactos en el paisaje, el medio ambiente y el mundo rural, y encuentran oposición social, sobre todo en las zonas afectadas.</p>
+<h2 id="dilemma-title">Euskadi tiene como objetivo llegar al 15 % de producción eléctrica renovable en 2030. ¿Cuánto más debería aumentar la producción renovable considerando sus beneficios e implicaciones ambientales, sociales, industriales y territoriales?</h2>
+<p class="lead">Esta es la decisión que permanece abierta. <strong>Cuanta más electricidad renovable se genere en Euskadi, menor será la dependencia exterior, pero mayores serán los impactos territoriales, ambientales y sociales que habrá que asumir aquí.</strong></p>
 
 <div class="decision-map" aria-label="Equilibrio entre generación propia e importación de electricidad para alcanzar los objetivos energéticos de 2050">
-  <div class="objective"><strong>Una misma meta, dos costes que equilibrar</strong><span>Alcanzar los objetivos de 2050 decidiendo qué impactos se asumen en el territorio y qué grado de dependencia exterior se acepta.</span></div>
+  <div class="objective"><strong>Punto de partida: 15 % en 2030. La asamblea decide hasta dónde avanzar después.</strong><span>La respuesta debe valorar conjuntamente autonomía y beneficios industriales, impactos ambientales y sociales, transformación territorial, costes y dependencia exterior.</span></div>
   <div class="routes">
     <article class="route route-own">
       <span class="route-label">Más autonomía</span>
@@ -225,34 +290,9 @@ main{padding-top:1.45rem}
 </div>
 </details>
 
-<details class="impact-accordion criteria-panel" id="bloque-retos">
-<summary class="impact-accordion-summary">
-  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 02</span><strong>Retos y criterios de comparación</strong><span>Las capacidades necesarias y las preguntas comunes para comparar los caminos.</span></span>
-  <span class="impact-summary-image"><img src="assets/photos/electric-grid/subestacion-santurtzi-efe-luis-tejido.jpg" alt="Subestación eléctrica de Santurtzi"><small>Subestación eléctrica de Santurtzi · Luis Tejido / EFE</small></span>
-</summary>
-<div class="impact-accordion-body">
-<section class="challenges" id="retos" aria-labelledby="challenges-title">
-<p class="eyebrow">Tres capacidades conectadas</p>
-<h2 id="challenges-title">Tres capacidades que modifican el equilibrio</h2>
-<div class="challenge-grid">
-  <article class="challenge"><span class="challenge-number">1</span><h3>Producir dentro del territorio</h3><p>Determinar cuánta renovable propia se quiere instalar, dónde puede ubicarse y qué impactos territoriales, ambientales, económicos y sociales se consideran asumibles.</p></article>
-  <article class="challenge"><span class="challenge-number">2</span><h3>Captar, distribuir y almacenar</h3><p>Abrir suficientes «puertas» desde la red de transporte, reforzar subestaciones y distribución, y almacenar energía tanto propia como importada cuando exista excedente.</p></article>
-  <article class="challenge"><span class="challenge-number">3</span><h3>Electrificar los consumos</h3><p>Adaptar procesos industriales, calefacción, movilidad y servicios. Cuanto mayor sea la electrificación eficiente, mayor será la parte del consumo que podrá cubrirse con renovables propias, almacenadas o importadas.</p></article>
-</div>
-</section>
-
-<section class="comparison-preview" id="criterios" aria-labelledby="comparison-title">
-<h2 id="comparison-title">Qué comparará esta sección</h2>
-<p>La comparación no buscará un camino sin impactos —no existe—, sino una combinación que permita cumplir los objetivos con costes, riesgos y efectos asumibles. Se contrastará qué ocurre cuando Euskadi aumenta la producción propia y qué ocurre cuando depende en mayor medida de la red exterior, incluyendo las infraestructuras necesarias en cada caso.</p>
-<ul class="criteria" aria-label="Criterios de comparación"><li>Territorio y paisaje</li><li>Biodiversidad</li><li>Coste e inversión</li><li>Industria y empleo</li><li>Materiales</li><li>Seguridad energética</li><li>Dependencia exterior</li><li>Plazos</li><li>Aceptación social</li></ul>
-<a class="back-index" href="#indice">↑ Volver al índice</a>
-</section>
-</div>
-</details>
-
 <details class="impact-accordion generation-panel" id="bloque-generacion">
 <summary class="impact-accordion-summary">
-  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 03</span><strong>Impactos de generar en Euskadi</strong><span>Impactos medioambientales, sociales y económicos de la eólica y la solar.</span></span>
+  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 02</span><strong>Impactos de generar en Euskadi</strong><span>Impactos medioambientales, sociales y económicos de la eólica y la solar.</span></span>
   <span class="impact-summary-image"><img src="assets/photos/installations/elgea-urkilla-aixeindar.jpg" alt="Aerogeneradores del parque eólico Elgea-Urkilla"><small>Parque eólico Elgea–Urkilla · Aixeindar</small></span>
 </summary>
 <div class="impact-accordion-body">
@@ -274,10 +314,16 @@ main{padding-top:1.45rem}
     <h4 class="impact-category-title" id="wind-environment-title">Impactos medioambientales</h4>
     <div class="impact-grid">
       <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Aves y murciélagos</h4><p>Riesgo de colisión con palas y tendidos, electrocución en infraestructuras asociadas y abandono de áreas de alimentación o cría. El riesgo crece en corredores, dormideros, colonias y zonas con vuelos frecuentes; no se deduce solo del número de turbinas (MITECO, 2025; SEO/BirdLife, s. f.). En Badaia, el seguimiento de enero a octubre de 2015 registró cuatro colisiones de aves —tres buitres leonados y un alcaudón dorsirrojo— y estimó diez aves afectadas tras corregir las limitaciones del rastreo. Es un caso local de diez meses, no una tasa extrapolable a otros parques o años (AR Consultores en Medio Ambiente, 2015).</p>
-        <figure class="impact-documentary-photo">
-          <img src="assets/photos/impacts/badaia-a6-buitre-2015.png" alt="Buitre leonado muerto tras una colisión en el parque eólico de Badaia, sobre terreno nevado">
-          <figcaption><strong>Buitre leonado colisionado en Badaia</strong>Ejemplar localizado junto al aerogenerador 6 el 14 de marzo de 2015. El informe sitúa el parque en la sierra de Badaia, Álava, pero no precisa en qué municipio se encuentra exactamente este apoyo (AR Consultores en Medio Ambiente, 2015).</figcaption>
-        </figure>
+        <div class="impact-photo-pair" aria-label="Dos fotografías documentales de dos colisiones diferentes de buitres leonados en el parque eólico de Badaia">
+          <figure>
+            <img src="assets/photos/impacts/badaia-a6-buitre-2015.png" alt="Primer plano de un buitre leonado muerto tras una colisión en el parque eólico de Badaia">
+            <figcaption><strong>Primer plano del ejemplar</strong>Buitre leonado localizado junto al aerogenerador 6 el 14 de marzo de 2015 (AR Consultores en Medio Ambiente, 2015).</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/photos/impacts/badaia-a22-buitre-2015.png" alt="Buitre leonado localizado tras una colisión junto al aerogenerador 22 del parque eólico de Badaia">
+            <figcaption><strong>Segundo caso documentado</strong>Buitre leonado localizado junto al aerogenerador 22 el 8 de mayo de 2015. Es una colisión distinta de la mostrada en la fotografía anterior (AR Consultores en Medio Ambiente, 2015).</figcaption>
+          </figure>
+        </div>
         <div class="species-box">
           <h4>Especies especialmente sensibles citadas en evaluaciones vascas</h4>
           <p>No es una lista abstracta: aparecen en los expedientes de Itsaraz, Cantoblanco o Laminoria. Itsaraz identifica al milano real como «en peligro de extinción» en los catálogos estatal y vasco; también recoge alimoche, aguilucho cenizo, águila real, buitre leonado, halcón peregrino, picamaderos negro y rutas potenciales del quebrantahuesos. Cantoblanco añade una afección acumulada que podría comprometer territorios de águila real y poblaciones de rapaces y quirópteros (Gobierno Vasco, 2024, 2025; MITECO, 2025).</p>
@@ -295,14 +341,73 @@ main{padding-top:1.45rem}
   <section class="impact-category impact-category-social" aria-labelledby="wind-social-title">
     <h4 class="impact-category-title" id="wind-social-title">Impactos sociales</h4>
     <div class="impact-grid">
-      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Paisaje y patrimonio</h4><p>La altura, el movimiento y la iluminación hacen visibles los aerogeneradores desde grandes cuencas visuales. En Azazeta se calificó el impacto paisajístico global como severo, permanente durante la explotación y solo reversible tras el desmantelamiento (Gobierno Vasco, 2023).</p></section>
-      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Ruido, sombra e iluminación</h4><p>El ruido y el parpadeo de sombras pueden causar molestia cerca de viviendas y requieren distancias, límites y seguimiento. La OMS formula una recomendación condicionada para reducir la exposición media al ruido eólico por debajo de 45 dB L<sub>den</sub> (OMS Europa, 2018).</p></section>
+      <section class="impact-card"><span class="evidence-label">Documentado</span><h4>Paisaje y patrimonio</h4><p>La altura, el movimiento y la iluminación hacen visibles los aerogeneradores desde grandes cuencas visuales. En Azazeta se calificó el impacto paisajístico global como severo, permanente durante la explotación y solo reversible tras el desmantelamiento (Gobierno Vasco, 2023).</p>
+        <figure class="impact-documentary-photo">
+          <img src="assets/photos/impacts/gordoa-elgea-cadena-ser-2025.jpeg" alt="El parque eólico de Elgea visto desde el pueblo de Gordoa, en Asparrena">
+          <figcaption><strong>Elgea visto desde Gordoa</strong>Los aerogeneradores del parque eólico de Elgea —integrado en el complejo Elgea‑Urkilla— dominan el cordal sobre el pueblo de Gordoa, en Asparrena; el edificio destacado en primer plano es probablemente la iglesia de la Asunción de Nuestra Señora. La fotografía es ilustrativa: no muestra el proyecto Cluster Gamarra I–VII del que trata el artículo original, previsto en otros municipios alaveses (Cadena SER, 2025; Iberdrola, 2021). Fotografía: Mikel Arrazola / Cadena SER.</figcaption>
+        </figure>
+      </section>
+      <section class="impact-card noise-impact-card"><span class="evidence-label">Documentado</span><h4>Ruido, sombra e iluminación</h4>
+        <p>El funcionamiento de los aerogeneradores puede generar un zumbido continuo, parpadeo de sombras e iluminación nocturna que causen molestia cerca de viviendas. La OMS recomienda mantener la exposición media al ruido eólico por debajo de 45 dB. Los controles publicados de Oiz y Elgea‑Urkilla no detectaron incumplimientos en los puntos estudiados, pero esto no descarta molestias en otros lugares o condiciones y justifica mantener distancias y seguimiento (Gobierno Vasco, 2020a, 2020b; OMS Europa, 2018).</p>
+        <aside class="noise-complaints-note">
+          <h5>¿Hay quejas vecinales documentadas?</h5>
+          <p>En Euskadi hay oposición vecinal que menciona expresamente el ruido. En Labraza, el concejo y vecinos advirtieron de un posible «zumbido constante día y noche» y recurrieron el proyecto, aunque la noticia se publicó cuando las obras acababan de comenzar: era una preocupación anticipada, no una afección ya comprobada (Crónica Vasca, 2025). No hemos localizado noticias sólidas sobre quejas causadas por un parque vasco en funcionamiento. Sí existen testimonios de molestias junto a parques activos en Galicia, pero no demuestran que ocurra lo mismo en Euskadi (La Voz de Galicia, 2016).</p>
+        </aside>
+        <figure class="wind-noise-map">
+          <img src="assets/illustrations/impacts/mapa-ruido-eolico-estimado-euskadi.svg" alt="Cribado conservador de Euskadi que señala dónde convendría medir el ruido eólico, sin afirmar exposición acústica confirmada">
+          <figcaption><strong>Mapa preventivo, no medición real.</strong> Señala los núcleos próximos a aerogeneradores donde convendría comprobar la posible molestia. Ninguno aparece por encima de 45 dB en esta estimación, pero solo una medición local permite saber qué se oye realmente (Gobierno Vasco, 2025; GeoEuskadi, s. f.).</figcaption>
+        </figure>
+      </section>
     </div>
   </section>
   <section class="impact-category impact-category-economic" aria-labelledby="wind-economic-title">
     <h4 class="impact-category-title" id="wind-economic-title">Impactos económicos</h4>
     <div class="impact-grid">
-      <section class="impact-card"><span class="evidence-label conflict">Conflicto social y económico</span><h4>Vida rural y distribución de beneficios</h4><p>Las plataformas cuestionan que los costes territoriales se concentren en pueblos con poca capacidad de decisión mientras la energía y el rendimiento económico se consumen o capturan fuera. La aceptación mejora con participación temprana, beneficios locales transparentes y propiedad compartida (Langer et al., 2020; Registro de Asociaciones del País Vasco, s. f.).</p></section>
+      <section class="impact-card benefit-distribution-card"><span class="evidence-label conflict">Conflicto social y económico</span><h4>Vida rural y distribución de beneficios</h4><p>Las plataformas cuestionan que los costes territoriales se concentren en pueblos con poca capacidad de decisión mientras la energía y el rendimiento económico se consumen o capturan fuera. La aceptación mejora cuando la participación comienza antes de decidir la ubicación y cuando se hacen transparentes las rentas, los impuestos, la contratación local y la propiedad del proyecto. La Comisión Europea distingue expresamente entre participar en el procedimiento y participar financieramente o compartir beneficios; una compensación económica aislada no sustituye la capacidad de decisión (Comisión Europea, 2026; Ellis y Ferraro, 2017; Registro de Asociaciones del País Vasco, s. f.).</p>
+        <div class="wind-economy-model" role="group" aria-labelledby="wind-economy-model-title">
+          <h5 id="wind-economy-model-title">De quién sale el dinero y quién recibe valor</h5>
+          <p class="economy-intro">La primera barra usa el promedio mundial observado en eólica terrestre con financiación identificada en 2019–2020. La segunda es un ejemplo pedagógico de flujo anual: permite distinguir costes, devolución de capital y beneficio, pero no representa las cuentas de un parque vasco concreto.</p>
+
+          <section class="economy-panel" aria-labelledby="wind-investment-title">
+            <div class="economy-panel-head"><h5 id="wind-investment-title">1. Quién aporta 100 € de inversión inicial</h5><span>Promedio eólica terrestre 2019–2020</span></div>
+            <div class="economy-stack" role="img" aria-label="De cada 100 euros de inversión inicial, 69 proceden de deuda y 31 de capital propio">
+              <div class="economy-segment debt" style="width:69%"><strong>69 €</strong><small>deuda</small></div>
+              <div class="economy-segment equity" style="width:31%"><strong>31 €</strong><small>capital propio</small></div>
+            </div>
+            <div class="economy-detail">
+              <article><strong>Bancos y otros prestamistas · 69 €</strong><p>Adelantan la mayor parte del capital y esperan recuperar el principal más intereses. Es financiación, no una subvención.</p></article>
+              <article><strong>Promotor y coinversores · 31 €</strong><p>Aportan el capital que asume primero el riesgo. La participación municipal, cooperativa o ciudadana solo existe si se diseña expresamente.</p></article>
+            </div>
+            <p class="economy-caveat"><strong>Qué se construye con esa inversión:</strong> en un proyecto eólico español publicado por MITECO, los aerogeneradores representaban alrededor del 70–75 %; la obra civil, el 10–15 %; y el resto cubría conexión, subestación, ingeniería, restauración y otros conceptos. Son costes de construcción y compras, no beneficios del promotor (Greenalia Wind Power, 2021; IRENA y CPI, 2023).</p>
+          </section>
+
+          <section class="economy-panel" aria-labelledby="wind-revenue-title">
+            <div class="economy-panel-head"><h5 id="wind-revenue-title">2. Cómo circulan 100 € de ingreso anual</h5><span>Ejemplo central ilustrativo</span></div>
+            <div class="economy-stack" role="img" aria-label="Ejemplo ilustrativo: de 100 euros de ingreso anual, 20 cubren operación, 5 quedan directamente en el territorio, 7 van a administraciones públicas, 40 atienden la deuda y 28 son el residual del promotor y sus inversores">
+              <div class="economy-segment cost" style="width:20%"><strong>20 €</strong><small>operación</small></div>
+              <div class="economy-segment local" style="width:5%"><strong>5 €</strong><small>territorio</small></div>
+              <div class="economy-segment public" style="width:7%"><strong>7 €</strong><small>sector público</small></div>
+              <div class="economy-segment finance" style="width:40%"><strong>40 €</strong><small>deuda</small></div>
+              <div class="economy-segment residual" style="width:28%"><strong>28 €</strong><small>residual</small></div>
+            </div>
+            <div class="economy-detail revenue-detail">
+              <article class="detail-cost"><strong>20 € · Coste operativo</strong><p>Mantenimiento, seguros, vigilancia, gestión, mercado y conexión. Solo se queda cerca si se contrata localmente.</p></article>
+              <article class="detail-local"><strong>5 € · Retorno rural directo</strong><p>Arrendamientos, proveedores locales o fondo comunitario. No hay un porcentaje obligatorio y uniforme.</p></article>
+              <article class="detail-public"><strong>7 € · Administraciones</strong><p>Impuestos, tasas y cánones de distinto nivel. Solo una parte corresponde necesariamente al municipio anfitrión.</p></article>
+              <article class="detail-finance"><strong>40 € · Servicio de deuda</strong><p>Incluye devolución del préstamo e intereses. El principal recuperado no es beneficio del banco; solo lo son intereses y comisiones.</p></article>
+              <article class="detail-residual"><strong>28 € · Residual del proyecto</strong><p>No equivale a dividendo: de aquí salen impuesto de sociedades, reservas, reinversión, recuperación del capital propio y, si queda, beneficio.</p></article>
+            </div>
+            <div class="economy-reading" aria-label="Cómo interpretar el reparto">
+              <div><strong>Coste puro</strong><p>Operar, mantener, asegurar y gestionar el parque consume recursos cada año.</p></div>
+              <div><strong>Recuperar capital</strong><p>Devolver principal y recuperar la inversión propia devuelve dinero adelantado; no es todavía ganancia.</p></div>
+              <div><strong>Beneficio o valor capturado</strong><p>Intereses, dividendos, rentas de suelo, salarios, contratos locales e ingresos públicos benefician a actores diferentes.</p></div>
+            </div>
+            <p class="economy-caveat"><strong>No es un reparto universal.</strong> El precio de la electricidad, el viento, la deuda, la fiscalidad, el alquiler y el contrato de venta pueden cambiar mucho la barra. Sin las cuentas del proyecto solo puede mostrarse una hipótesis. Precisamente por eso deberían publicarse para cada parque la inversión, la financiación, los pagos al territorio y el destino del excedente.</p>
+          </section>
+
+          <div class="local-benefit-options"><strong>Cómo puede aumentar la parte que permanece en el territorio</strong><ul><li>Reservar participación accionarial para municipios, cooperativas o residentes.</li><li>Fijar un fondo comunitario verificable y ligado a los ingresos reales.</li><li>Publicar alquileres, impuestos, empleo y contratación local por separado.</li><li>Ofrecer energía compartida o descuentos sin sustituir la participación temprana.</li></ul></div>
+        </div>
+      </section>
     </div>
   </section>
 
@@ -344,13 +449,25 @@ main{padding-top:1.45rem}
         <li>Gobierno Vasco (2025). <a href="https://www.euskadi.eus/bopv2/datos/2025/03/2501203a.shtml">Declaración ambiental del parque eólico Laminoria</a>.</li>
         <li>Gobierno Vasco (2023). <a href="https://www.euskadi.eus/resolucion/resolucion-20-enero-2023-del-director-calidad-ambiental-y-economia-circular-que-se-formula-declaracion-impacto-ambiental-del-anteproyecto-parque-eolico-azazeta-e-infraestructuras-asociadas-promovido-aixeindar-/s-terminos-municipales-bernedo-barrundia-arraia-maeztu-alegria-dulantzi-iruraiz-gauna-y-san-millandonemiliaga-alava/web01-a2libzer/es/">Declaración ambiental del parque eólico Azazeta</a>.</li>
         <li>MITECO (2023). <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-1850">Declaración ambiental del parque eólico Labraza</a>.</li>
+        <li>Gobierno Vasco. (2025). <a href="https://www.euskadi.eus/contenidos/informacion/anuncio_parque_eolico_jatagane/es_def/adjuntos/Anexo_5_Estudio_Acustico_PE_Jata_Gane.pdf"><i>Estudio acústico del parque eólico Jata Gane</i></a>. Departamento de Industria, Transición Energética y Sostenibilidad.</li>
+        <li>Gobierno Vasco. (2020a). <a href="https://www.euskadi.eus/contenidos/documentacion/seguimiento_elgea_urkilla/es_doc/adjuntos/Plan-de-vigilancia-ambiental-anual-2019.pdf"><i>Seguimiento ambiental del parque eólico Elgea‑Urkilla: informe anual 2019 y campaña acústica de febrero de 2020</i></a>.</li>
+        <li>Gobierno Vasco. (2020b). <a href="https://www.euskadi.eus/contenidos/documentacion/seguimiento_eolico_oiz/es_doc/adjuntos/2019-Plan-vigilancia-ambiental-anual-2019-Oiz.pdf"><i>Plan de vigilancia ambiental anual del parque eólico Oiz: campaña acústica</i></a>.</li>
+        <li>GeoEuskadi. (s. f.). <a href="https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/NOMBRESGEOGRAFICOS_CAS_EUS/MapServer"><i>Nombres geográficos: entidades de población</i></a>. Infraestructura de Datos Espaciales de Euskadi.</li>
       </ol></section>
-      <section><h4>Ciencia, salud y movilización</h4><ol>
+      <section><h4>Ciencia, salud, paisaje y movilización</h4><ol>
         <li>SEO/BirdLife (s. f.). <a href="https://seo.org/evaluacion-de-impacto-ambiental/">Energías renovables y evaluación ambiental</a>.</li>
         <li>OMS Europa (2018). <a href="https://www.who.int/europe/publications/i/item/9789289053563">Environmental Noise Guidelines for the European Region</a>.</li>
+        <li>Crónica Vasca. (2025, 22 de noviembre). <a href="https://cronicavasca.elespanol.com/empresas/20251122/concejo-labraza-exige-paralizacion-inmediata-parque-eolico/1003742709793_0.html"><i>El Concejo de Labraza exige la paralización inmediata del parque eólico</i></a>.</li>
+        <li>La Voz de Galicia. (2016, 31 de enero). <a href="https://www.lavozdegalicia.es/noticia/galicia/2016/01/31/ruido-e-insoportable-cando-ven-aire-nin-tele-nin-telefono-nin-/0003_201601G31P14991.htm"><i>«O ruído é insoportable; cando ven aire, nin tele, nin teléfono, nin nada»</i></a>.</li>
         <li>Langer et al. (2020). <a href="https://www.mdpi.com/2071-1050/12/5/1754">Participación y aceptación comunitaria de la energía eólica</a>.</li>
+        <li>Ellis, G., y Ferraro, G. (2017). <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC103743"><i>The social acceptance of wind energy: Where we stand and the path ahead</i></a>. Joint Research Centre, Comisión Europea.</li>
+        <li>Comisión Europea. (2026). <a href="https://energy.ec.europa.eu/topics/renewable-energy/enabling-framework-renewables/public-inclusion-toolbox-renewable-energy_en"><i>Public inclusion toolbox for renewable energy</i></a>. Dirección General de Energía.</li>
+        <li>IRENA y Climate Policy Initiative. (2023). <a href="https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2023/Feb/IRENA_CPI_Global_RE_finance_2023.pdf"><i>Global landscape of renewable energy finance 2023</i></a>. International Renewable Energy Agency.</li>
+        <li>Greenalia Wind Power, S. L. U. (2021). <a href="https://www.miteco.gob.es/content/dam/miteco/es/energia/files-1/renovables/regimen-economico/26Enero/Proyectos%20de%20inversi%C3%B3n%20e%C3%B3licos%20adjudicatarios%20de%20la%20subasta/EOL_PE21%20GREENALIA%20WIND%20POWER%2C%20S.L.U.%20134%20MW.pdf"><i>Plan estratégico de estimaciones de los impactos socioeconómicos de un parque eólico</i></a>. MITECO.</li>
         <li>Registro de Asociaciones del País Vasco (s. f.). <a href="https://www.euskadi.eus/gobierno-vasco/-/asociacion/asociacion-defensa-montes-alava-frente-industrializacion-y-privatizacion-arabako-mendiak-aske/">Arabako Mendiak Aske</a>.</li>
         <li>EITB (2025). <a href="https://www.eitb.eus/es/noticias/sociedad/detalle/9938102/una-marcha-en-vitoriagasteiz-pide-parar-macroproyectos-energeticos-que-amenazan-biodiversidad/">Marcha de colectivos contra macroproyectos energéticos</a>.</li>
+        <li>Cadena SER. (2025, 5 de febrero). <a href="https://cadenaser.com/euskadi/2025/02/05/solicitan-permiso-para-un-nuevo-parque-eolico-en-alava-ser-vitoria/"><i>Solicitan permiso para un nuevo parque eólico en Álava</i></a>. Fotografía de Mikel Arrazola: «Parque eólico de Elguea desde Gordoa».</li>
+        <li>Iberdrola. (2021, 26 de mayo). <a href="https://www.iberdrola.com/sala-comunicacion/noticias/detalle/iberdrola-instalara-primera-bateria-proyecto-eolico-parque-elgea-urkilla-pais-vasco"><i>Iberdrola instalará la primera batería en un proyecto eólico, en el parque Elgea‑Urkilla, en el País Vasco</i></a>.</li>
         <li>Cadena SER (2025). <a href="https://cadenaser.com/euskadi/2025/11/20/nace-la-plataforma-eibarko-mendiak-bizirik-radio-eibar/">Creación de Eibarko Mendiak Bizirik</a>.</li>
       </ol></section>
     </div>
@@ -429,7 +546,7 @@ main{padding-top:1.45rem}
 
 <details class="impact-accordion dependency-panel" id="bloque-dependencia">
 <summary class="impact-accordion-summary">
-  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 04</span><strong>Impactos de la dependencia</strong><span>Estado y red, combustibles exteriores, proveedores y nuevas cadenas tecnológicas.</span></span>
+  <span class="impact-summary-copy"><span class="impact-summary-kicker">Bloque 03</span><strong>Impactos de la dependencia</strong><span>Estado y red, combustibles exteriores, proveedores y nuevas cadenas tecnológicas.</span></span>
   <span class="impact-summary-image"><img src="assets/photos/non-electric/terminal-gnl-bilbao.webp" alt="Terminal de gas natural licuado del Puerto de Bilbao"><small>Terminal de GNL de Bilbao · entrada de gas exterior</small></span>
 </summary>
 <div class="impact-accordion-body">
