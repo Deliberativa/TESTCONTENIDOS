@@ -83,7 +83,7 @@
       id,
       geometry:{type:'Point',coordinates:[longitude,latitude]},
       properties:{
-        descripcion:'Instalación fotovoltaica a red',
+        descripcion:id===900012?'Ekindar Azpeitia':'Instalación fotovoltaica a red',
         numero:1,
         municipio,
         cuenca:'No indicada',
