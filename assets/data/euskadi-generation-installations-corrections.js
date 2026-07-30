@@ -19,6 +19,27 @@
     return !isMisclassifiedElgeaStorage&&!duplicatedInEve.has(id);
   });
 
+  // Elgea y Urkilla son dos parques contiguos, pero para la lectura territorial
+  // del mapa se presentan como un único complejo, sin duplicar potencia.
+  // Elgea aporta 26,97 MW y Urkilla 32,3 MW: 59,27 MW en total.
+  const urkilla=inventory.features.find(feature=>Number(feature&&feature.id)===2557);
+  const elgea=inventory.features.find(feature=>Number(feature&&feature.id)===2672);
+  if(elgea&&elgea.properties&&urkilla&&urkilla.properties){
+    Object.assign(elgea.properties,{
+      descripcion:'PARQUE EÓLICO ELGEA-URKILLA',
+      numero:Number(elgea.properties.numero||0)+Number(urkilla.properties.numero||0),
+      mw:Number(elgea.properties.mw||0)+Number(urkilla.properties.mw||0),
+      minetur:'RE-001474 y 3 más · RE-003932',
+      detailConnectionNote:'El punto unifica territorialmente los parques contiguos de Elgea (26,97 MW) y Urkilla (32,3 MW). La potencia mostrada, 59,27 MW, es la suma de ambos parques sin doble contabilización.',
+      detailSourceLabel:'EVE · memoria 2003'
+    });
+    elgea.geometry={...elgea.geometry,coordinates:[
+      (Number(elgea.geometry.coordinates[0])+Number(urkilla.geometry.coordinates[0]))/2,
+      (Number(elgea.geometry.coordinates[1])+Number(urkilla.geometry.coordinates[1]))/2
+    ]};
+    inventory.features=inventory.features.filter(feature=>Number(feature&&feature.id)!==2557);
+  }
+
   // Arasur 1 y 2 ya figuraba en ESIOS como un único registro agregado de
   // 24 MW. Se conserva una sola vez y se asigna al listado declarado por EVE.
   const arasur=inventory.features.find(feature=>Number(feature&&feature.id)===2582);
