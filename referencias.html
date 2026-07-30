@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Referencias · Libro Blanco de la ACTECC</title>
+<style>
+:root{--ink:#183f37;--sub:#557169;--border:#cfe3dc;--soft:#f7faf8;--green:#009b7a;--lime:#cddd23;--paper:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:Arial,"Helvetica Neue",sans-serif;line-height:1.6}
+.hero{padding:1.2rem clamp(1.25rem,7vw,6rem) 1.05rem;color:#fff;background:linear-gradient(112deg,#009b7a,#23aa68 48%,#d3df20)}
+.hero-kicker{margin:0 0 .3rem;color:rgba(255,255,255,.9);font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{max-width:30ch;margin:0;font-size:clamp(1.7rem,3.2vw,2.85rem);line-height:1.06}
+.hero>p:last-of-type{max-width:88ch;margin:.32rem 0 0;font-size:.82rem;line-height:1.42}
+.hero-about{max-width:94ch;margin:.45rem 0 0}
+.hero-about summary{display:inline-flex;align-items:center;gap:.42rem;padding:.25rem .55rem;border:1px solid rgba(255,255,255,.58);border-radius:999px;color:#fff;background:rgba(17,68,57,.14);font-size:.67rem;font-weight:800;line-height:1.2;cursor:pointer;list-style:none}
+.hero-about summary::-webkit-details-marker{display:none}
+.hero-about summary::after{content:"+";font-size:.88rem;line-height:1}
+.hero-about[open] summary::after{content:"−"}
+.hero .hero-about p{max-width:94ch;margin:.42rem 0 0;padding:.5rem .65rem;border-left:3px solid rgba(255,255,255,.72);color:#fff;background:rgba(14,72,59,.17);font-size:.73rem;line-height:1.46}
+nav{display:flex;gap:1.3rem;flex-wrap:wrap;padding:1rem clamp(1.25rem,6vw,4.5rem);background:var(--soft);border-bottom:1px solid var(--border)}
+nav a{color:var(--sub);text-decoration:none}
+nav a[href="referencias.html"]{margin-left:auto}
+.active{color:#007b65;font-weight:700;border-bottom:3px solid var(--lime);padding-bottom:.3rem}
+main{max-width:1120px;margin:auto;padding:2.3rem clamp(1.2rem,4vw,3.2rem) 6rem}
+.lead{max-width:920px;margin:0;color:#355a50;font-size:1.05rem;line-height:1.7}
+.editorial-note{margin:1.4rem 0;padding:1rem 1.1rem;border-left:5px solid var(--lime);background:#f5f8e9;color:#48635c;font-size:.88rem}
+.editorial-note strong{color:var(--ink)}
+.tools{position:sticky;top:0;z-index:4;display:flex;gap:.7rem;align-items:center;margin:1.6rem 0 1rem;padding:.8rem;background:rgba(247,250,248,.96);border:1px solid var(--border);backdrop-filter:blur(8px)}
+.tools label{font-size:.75rem;font-weight:800}
+.tools input{flex:1;min-width:0;padding:.65rem .75rem;color:var(--ink);background:#fff;border:1px solid #afcbc2;border-radius:.35rem;font:inherit}
+.tools output{white-space:nowrap;color:var(--sub);font-size:.75rem;font-weight:700}
+.status{padding:1rem;border:1px dashed #a9c9be;background:#f8fbfa;color:var(--sub)}
+.letter-group{margin:2rem 0}
+.letter-group h2{position:sticky;top:4.8rem;z-index:2;margin:0 0 .55rem;padding:.38rem .55rem;color:#007b65;background:#eef7f3;border-left:5px solid var(--green);font-size:1rem}
+.references{margin:0;padding:0;list-style:none}
+.references li{padding:.72rem .15rem .72rem 1.6rem;text-indent:-1.6rem;border-bottom:1px solid #e1ece8;color:#334f48;font-size:.84rem;line-height:1.6}
+.references li::first-line{color:var(--ink)}
+.references a{color:#006f5c;text-decoration-thickness:.08em;text-underline-offset:.14em;overflow-wrap:anywhere}
+.references em{font-style:italic}
+.reference-origin{display:block;margin:.16rem 0 0 1.6rem;color:#72847f;font-size:.65rem;text-indent:0}
+.core-sources{margin:1.3rem 0 0;padding:1rem 1.15rem;border:1px solid var(--border);background:#fbfdfc}
+.core-sources h2{margin:0 0 .55rem;color:#007b65;font-size:1.05rem}
+.core-sources ul{margin:0;padding-left:1.25rem}
+.core-sources li{margin:.45rem 0;color:#405e56;font-size:.82rem}
+.core-sources a{color:#006f5c}
+.empty{display:none;padding:1rem;color:#725c2d;background:#fff8e8;border-left:4px solid #d7aa25}
+footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gradient(90deg,#009b7a,#cddd23)}
+@media(max-width:720px){nav a[href="referencias.html"]{margin-left:0}.tools{align-items:stretch;flex-direction:column}.tools label,.tools input,.tools output{width:100%}.letter-group h2{top:8.7rem}}
+</style>
+<link rel="stylesheet" href="assets/styles/actecc-shell.css">
+</head>
+<body class="actecc-shell">
+<header class="hero">
+  <p class="hero-kicker">Libro Blanco de la Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi · ACTECC</p>
+  <h1>Referencias</h1>
+  <p>Bibliografía general de las fuentes utilizadas en las páginas de energía y futuros, comparativa de impactos, y modelo y metodología.</p>
+  <details class="hero-about"><summary>Sobre este Libro Blanco</summary><p>Este documento ofrece una base común de información para la deliberación de la Asamblea Ciudadana. Distingue los datos observados de las estimaciones y de los escenarios de futuro, explicita los principales supuestos y reúne las fuentes utilizadas. Su finalidad no es prescribir una única respuesta, sino facilitar una decisión informada, comprensible y contrastable.</p></details>
+</header>
+<nav aria-label="Navegación principal">
+  <a href="comparacion_escenarios_euskadi.html">Energía, clima y futuros de Euskadi</a>
+  <a href="comparativa_impactos.html">Dilema y comparativa de impactos</a>
+  <a href="que_es_actecc.html">Asamblea Ciudadana</a>
+  <a href="modelo_coherencia_energetica.html">Modelo y metodología</a>
+  <a class="active" href="referencias.html" aria-current="page">Referencias</a>
+</nav>
+<main>
+  <aside class="section-directory" id="indice" role="navigation" aria-label="Índice de la sección">
+    <div class="section-directory-heading"><p>Índice de la sección</p><span>Consulta el marco institucional o busca directamente en la bibliografía completa.</span></div>
+    <div class="section-directory-tabs" style="--directory-columns:3">
+      <a class="section-directory-tab" href="#referencias-introduccion"><span class="section-directory-number">01</span><span><strong>Cómo leer las referencias</strong><small>Sistema autor-fecha y criterio editorial.</small></span></a>
+      <a class="section-directory-tab" href="#marco-institucional-title"><span class="section-directory-number">02</span><span><strong>Marco institucional</strong><small>Normas y documentos principales de la ACTECC.</small></span></a>
+      <a class="section-directory-tab" href="#buscar-referencias"><span class="section-directory-number">03</span><span><strong>Bibliografía completa</strong><small>Buscador por autor, institución, título o año.</small></span></a>
+    </div>
+    <div class="section-directory-subgroups" style="--directory-group-columns:2">
+      <section class="section-directory-group"><h3>Criterios</h3><div class="section-directory-sublinks"><a href="#referencias-introduccion">APA 7</a><a href="#marco-institucional-title">Autoría institucional</a></div></section>
+      <section class="section-directory-group"><h3>Consulta</h3><div class="section-directory-sublinks"><a href="#buscar-referencias">Buscar</a><a href="#bibliografia-completa">Listado alfabético</a></div></section>
+    </div>
+  </aside>
+  <section class="section-introduction" id="referencias-introduccion" aria-labelledby="references-page-introduction-title">
+    <div class="section-introduction-heading">
+      <p class="section-introduction-kicker">Descripción de la sección</p>
+      <h2 id="references-page-introduction-title">Cómo utilizar esta bibliografía</h2>
+      <p>Una relación general de las fuentes citadas en las diferentes páginas del Libro Blanco.</p>
+    </div>
+    <div class="section-introduction-copy">
+      <p>Las citas siguen el sistema autor-fecha. Esta bibliografía reúne las referencias completas sin sustituir los listados específicos que acompañan a cada sección.</p>
+      <p><strong>Criterio editorial.</strong> Se aplica el estilo APA 7 para autoría, fecha, título y enlace. Las instituciones se citan como autor corporativo; «s. f.» indica que la fuente no identifica una fecha verificable. Las notas metodológicas y los cálculos propios permanecen asociados a la sección donde se utilizan.</p>
+    </div>
+  </section>
+
+  <section class="core-sources" aria-labelledby="marco-institucional-title">
+    <h2 id="marco-institucional-title">Marco institucional de la ACTECC</h2>
+    <ul>
+      <li>Gobierno Vasco. (2026). <a href="../01_Datos_originales/Bibliografia/Informes/2026_06_17_ACTECC_FAQ_vf.pdf" target="_blank" rel="noopener"><i>ACTECC FAQ: Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi</i></a>. Documento institucional de referencia, versión de 17 de junio de 2026.</li>
+      <li>Gobierno Vasco. (2024). <a href="https://www.euskadi.eus/eli/es-pv/l/2024/02/08/1/dof/spa/html/web01-a2ingair/es/" target="_blank" rel="noopener"><i>Ley 1/2024, de 8 de febrero, de Transición Energética y Cambio Climático</i></a>. Boletín Oficial del País Vasco.</li>
+      <li>Gobierno Vasco. (2026). <a href="https://www.euskadi.eus/anuncio-administrativo/decreto-que-se-regula-asamblea-ciudadana-transicion-energetica-y-cambio-climatico-euskadi/inf-3270268/web01-tramite/es/" target="_blank" rel="noopener"><i>Proyecto de decreto por el que se regula la Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi</i></a>.</li>
+    </ul>
+  </section>
+
+  <div class="tools" id="buscar-referencias" role="search">
+    <label for="reference-search">Buscar en la bibliografía</label>
+    <input id="reference-search" type="search" placeholder="Autor, título, institución o año" autocomplete="off">
+    <output id="reference-count" aria-live="polite">Cargando referencias…</output>
+  </div>
+  <p class="status" id="reference-status">Reuniendo y ordenando las referencias de las tres páginas del Libro Blanco…</p>
+  <p class="empty" id="reference-empty">No hay referencias que coincidan con la búsqueda.</p>
+  <div id="bibliografia-completa"><div id="reference-groups" aria-live="polite"></div></div>
+</main>
+<footer>Libro Blanco de la Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi (ACTECC) · 2026</footer>
+<script>
+(() => {
+  const sourcePages = [
+    {url:'comparacion_escenarios_euskadi.html', label:'Energía, clima y futuros de Euskadi'},
+    {url:'comparativa_impactos.html', label:'Dilema y comparativa de impactos'},
+    {url:'que_es_actecc.html', label:'Asamblea Ciudadana'},
+    {url:'modelo_coherencia_energetica.html', label:'Modelo y metodología'}
+  ];
+  const authorByHost = new Map([
+    ['www.euskadi.eus','Gobierno Vasco'],['euskadi.eus','Gobierno Vasco'],['www.irekia.euskadi.eus','Gobierno Vasco'],
+    ['www.eve.eus','Ente Vasco de la Energía'],['eve.eus','Ente Vasco de la Energía'],
+    ['www.ree.es','Red Eléctrica'],['www.esios.ree.es','Red Eléctrica'],['esios.ree.es','Red Eléctrica'],
+    ['www.boe.es','Gobierno de España'],['www.miteco.gob.es','MITECO'],['ec.europa.eu','Comisión Europea'],
+    ['joint-research-centre.ec.europa.eu','Comisión Europea, Joint Research Centre'],['ec.europa.eu','Comisión Europea'],
+    ['ec.europa.eu/eurostat','Eurostat'],['www.ipcc.ch','IPCC'],['ipcc.ch','IPCC'],
+    ['www.entsoe.eu','ENTSO-E'],['analysesetdonnees.rte-france.com','RTE'],['www.rte-france.com','RTE']
+  ]);
+  const groupsHost = document.getElementById('reference-groups');
+  const status = document.getElementById('reference-status');
+  const count = document.getElementById('reference-count');
+  const search = document.getElementById('reference-search');
+  const empty = document.getElementById('reference-empty');
+  let references = [];
+
+  const cleanUrl = value => {
+    try {
+      const url = new URL(value, location.href);
+      url.hash = '';
+      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(key => url.searchParams.delete(key));
+      return url.href;
+    } catch (_) {
+      return value;
+    }
+  };
+  const walkText = node => {
+    node.childNodes.forEach(child => {
+      if (child.nodeType === Node.TEXT_NODE) child.nodeValue = child.nodeValue.replace(/\s+\/\s+/g,' & ');
+      else walkText(child);
+    });
+  };
+  const inferredAuthor = node => {
+    const link = node.querySelector('a[href]');
+    if (!link) return 'Fuente institucional';
+    try {
+      const url = new URL(link.href, location.href);
+      return authorByHost.get(url.hostname) || url.hostname.replace(/^www\./,'');
+    } catch (_) {
+      return 'Fuente institucional';
+    }
+  };
+  const normalizeReference = (sourceNode, origin) => {
+    const node = sourceNode.cloneNode(true);
+    node.querySelectorAll('script,style,button,summary').forEach(item => item.remove());
+    node.querySelectorAll('[id],[class]').forEach(item => { item.removeAttribute('id'); item.removeAttribute('class'); });
+    node.querySelectorAll('i').forEach(item => { const em=document.createElement('em'); em.innerHTML=item.innerHTML; item.replaceWith(em); });
+    walkText(node);
+    node.querySelectorAll('a[href]').forEach(link => {
+      link.href = cleanUrl(link.getAttribute('href'));
+      link.target = '_blank';
+      link.rel = 'noopener';
+    });
+    const leadingText = [...node.childNodes].find(child => child.nodeType === Node.TEXT_NODE && child.nodeValue.trim());
+    if (leadingText) {
+      leadingText.nodeValue = leadingText.nodeValue.replace(
+        /^(\s*[^()]{2,120}?)([^\s.])\s+(\((?:\d{4}[a-z]?(?:[–-]\d{4}[a-z]?)?(?:,\s*[^)]{1,45})?|s\.\s*f\.(?:-[a-z])?|en prensa)\))/i,
+        '$1$2. $3'
+      );
+    }
+    let text = node.textContent.replace(/\s+/g,' ').trim();
+    if (!text) return null;
+    const opening = text.slice(0,220);
+    const hasAuthorDate = /\((?:\d{4}[a-z]?(?:[–-]\d{4}[a-z]?)?(?:,\s*[^)]{1,45})?|s\.\s*f\.(?:-[a-z])?|en prensa)\)(?:[.,;:]|\s|$)/i.test(opening);
+    if (!hasAuthorDate) {
+      const firstText = [...node.childNodes].find(child => child.nodeType === Node.TEXT_NODE && child.nodeValue.trim());
+      if (firstText && /^\s*[^.;]{2,100}\.\s*/.test(firstText.nodeValue)) {
+        firstText.nodeValue = firstText.nodeValue.replace(/^(\s*[^.;]{2,100}\.)\s+/, '$1 (s. f.). ');
+      } else {
+        node.insertAdjacentHTML('afterbegin', `${inferredAuthor(node)}. (s. f.). `);
+      }
+      text = node.textContent.replace(/\s+/g,' ').trim();
+    }
+    if (!/[.!?]$/.test(text)) node.append('.');
+    const firstLink = node.querySelector('a[href]');
+    const key = firstLink ? cleanUrl(firstLink.href) : text.toLocaleLowerCase('es').replace(/\W+/g,' ').slice(0,180);
+    return {key, html:node.innerHTML.trim(), text, origin};
+  };
+  const extract = (html, page) => {
+    const doc = new DOMParser().parseFromString(html,'text/html');
+    const nodes = [];
+    doc.querySelectorAll('details').forEach(details => {
+      const summary = details.querySelector(':scope > summary');
+      if (!summary || !/(referencias|fuentes)/i.test(summary.textContent)) return;
+      details.querySelectorAll('li').forEach(li => nodes.push(li));
+    });
+    doc.querySelectorAll('ul.sources > li').forEach(li => nodes.push(li));
+    doc.querySelectorAll('p.source').forEach(p => {
+      if (p.querySelector('a[href]') && /(referencia|fuente|datos|gobierno|ente|eustat|eurostat|red eléctrica|cálculo)/i.test(p.textContent)) nodes.push(p);
+    });
+    return nodes.map(node => normalizeReference(node,page.label)).filter(Boolean);
+  };
+  const dedupe = items => {
+    const map = new Map();
+    items.forEach(item => {
+      const prior = map.get(item.key);
+      if (!prior || item.text.length > prior.text.length) map.set(item.key,item);
+    });
+    return [...map.values()].sort((a,b) => a.text.localeCompare(b.text,'es',{sensitivity:'base'}));
+  };
+  const initial = value => {
+    const letter = value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().charAt(0).toUpperCase();
+    return /[A-Z]/.test(letter) ? letter : '#';
+  };
+  const render = query => {
+    const normalized = query.trim().toLocaleLowerCase('es');
+    const visible = references.filter(item => item.text.toLocaleLowerCase('es').includes(normalized));
+    groupsHost.replaceChildren();
+    const byLetter = new Map();
+    visible.forEach(item => {
+      const key = initial(item.text);
+      if (!byLetter.has(key)) byLetter.set(key,[]);
+      byLetter.get(key).push(item);
+    });
+    [...byLetter].forEach(([letter,items]) => {
+      const section=document.createElement('section'); section.className='letter-group';
+      const heading=document.createElement('h2'); heading.textContent=letter; section.append(heading);
+      const list=document.createElement('ul'); list.className='references';
+      items.forEach(item => {
+        const li=document.createElement('li');
+        li.innerHTML=item.html;
+        const origin=document.createElement('small'); origin.className='reference-origin'; origin.textContent=`Sección de procedencia: ${item.origin}.`;
+        li.append(origin); list.append(li);
+      });
+      section.append(list); groupsHost.append(section);
+    });
+    count.textContent=`${visible.length} ${visible.length===1?'referencia':'referencias'}`;
+    empty.style.display=visible.length ? 'none' : 'block';
+  };
+  Promise.all(sourcePages.map(async page => {
+    const response = await fetch(page.url,{cache:'no-store'});
+    if (!response.ok) throw new Error(`${page.url}: ${response.status}`);
+    return extract(await response.text(),page);
+  })).then(result => {
+    references=dedupe(result.flat());
+    status.remove();
+    render('');
+  }).catch(error => {
+    status.innerHTML='<strong>No ha sido posible componer la bibliografía general.</strong> Las referencias específicas siguen disponibles en cada sección. Para cargar esta página en local, utilice el servidor de vista previa del proyecto.';
+    count.textContent='Referencias por secciones';
+    console.error(error);
+  });
+  search.addEventListener('input',event => render(event.target.value));
+})();
+</script>
+<script src="assets/scripts/actecc-section-directory.js"></script>
+</body>
+</html>

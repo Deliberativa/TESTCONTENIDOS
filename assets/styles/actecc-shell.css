@@ -1,0 +1,300 @@
+:root{
+  --actecc-shell-max:70rem;
+  --actecc-shell-content:63.6rem;
+  --actecc-shell-gutter:clamp(1.25rem,4vw,3.2rem);
+  --actecc-shell-align:max(
+    var(--actecc-shell-gutter),
+    calc((100vw - var(--actecc-shell-content))/2)
+  );
+}
+
+/* Marco editorial común. No altera índices, mapas, gráficas ni desplegables. */
+.actecc-shell > .hero{
+  padding:1.15rem var(--actecc-shell-align) 1rem;
+}
+.actecc-shell > .hero h1{
+  max-width:none;
+  margin:0;
+  font-size:clamp(1.8rem,3vw,2.25rem);
+  line-height:1.08;
+}
+.actecc-shell > .hero .hero-kicker{
+  margin:0 0 .3rem;
+  font-size:.62rem;
+  line-height:1.35;
+}
+.actecc-shell > .hero .hero-subtitle,
+.actecc-shell > .hero > p:last-of-type{
+  max-width:88ch;
+  margin:.32rem 0 0!important;
+  font-size:.82rem;
+  line-height:1.42;
+}
+.actecc-shell > nav{
+  align-items:center;
+  min-height:4rem;
+  padding:.78rem var(--actecc-shell-align);
+  gap:1.3rem;
+}
+.actecc-shell > nav a{
+  font-size:.92rem;
+  line-height:1.3;
+}
+.actecc-shell > main{
+  width:min(100%,var(--actecc-shell-max));
+  max-width:var(--actecc-shell-max);
+  margin-inline:auto;
+  padding:2rem var(--actecc-shell-gutter) 6rem;
+}
+.actecc-shell > main > .lead{
+  margin-top:0;
+  font-size:1rem;
+  line-height:1.68;
+}
+.actecc-shell .page-opening-title{
+  margin-top:0;
+  font-size:1.625rem;
+  line-height:1.2;
+}
+.actecc-shell .wind-impact-intro-copy h2{
+  font-size:1.8rem;
+  line-height:1.14;
+}
+
+/* Índice e introducción editorial comunes a las cinco pestañas. */
+.actecc-shell .section-directory{
+  margin:0 0 1rem;
+  padding:.85rem;
+  border:1px solid #c9ddd6;
+  border-radius:.78rem;
+  background:linear-gradient(135deg,#f4faf7 0%,#fbfced 100%);
+  box-shadow:0 7px 22px rgba(24,63,55,.045);
+}
+.actecc-shell .section-directory-heading{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:1rem;
+  margin:0 0 .62rem;
+}
+.actecc-shell .section-directory-heading p{
+  margin:0;
+  color:#315d52;
+  font-size:.68rem;
+  font-weight:850;
+  letter-spacing:.085em;
+  text-transform:uppercase;
+}
+.actecc-shell .section-directory-heading span{
+  color:#6a817a;
+  font-size:.64rem;
+  line-height:1.35;
+}
+.actecc-shell .section-directory-tabs{
+  display:grid;
+  grid-template-columns:repeat(var(--directory-columns,4),minmax(0,1fr));
+  gap:.45rem;
+}
+.actecc-shell .section-directory-tab{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:.52rem;
+  align-items:start;
+  min-width:0;
+  min-height:4.05rem;
+  padding:.62rem .68rem;
+  color:#214a40;
+  background:rgba(255,255,255,.92);
+  border:1px solid #cadfd7;
+  border-radius:.56rem;
+  text-decoration:none;
+  transition:border-color .16s ease,box-shadow .16s ease,transform .16s ease;
+}
+.actecc-shell .section-directory-tab:hover{
+  border-color:#65a491;
+  box-shadow:0 5px 14px rgba(24,63,55,.09);
+  transform:translateY(-1px);
+}
+.actecc-shell .section-directory-tab:focus-visible,
+.actecc-shell .section-directory-sublinks a:focus-visible{
+  outline:3px solid #cddd23;
+  outline-offset:2px;
+}
+.actecc-shell .section-directory-number{
+  display:grid;
+  place-items:center;
+  width:1.55rem;
+  height:1.55rem;
+  color:#fff;
+  background:#278875;
+  border-radius:50%;
+  font-size:.58rem;
+  font-weight:900;
+  line-height:1;
+}
+.actecc-shell .section-directory-tab strong{
+  display:block;
+  font-size:.75rem;
+  line-height:1.22;
+}
+.actecc-shell .section-directory-tab small{
+  display:block;
+  margin-top:.16rem;
+  color:#617871;
+  font-size:.59rem;
+  line-height:1.32;
+}
+.actecc-shell .section-directory-subgroups{
+  display:grid;
+  grid-template-columns:repeat(var(--directory-group-columns,4),minmax(0,1fr));
+  gap:.45rem;
+  margin-top:.62rem;
+  padding-top:.62rem;
+  border-top:1px solid #c9ddd6;
+}
+.actecc-shell .section-directory-group{
+  min-width:0;
+  padding:.52rem .56rem;
+  background:rgba(255,255,255,.68);
+  border:1px solid #d7e6e1;
+  border-radius:.5rem;
+}
+.actecc-shell .section-directory-group h3{
+  margin:0 0 .38rem;
+  color:#42685e;
+  font-size:.62rem;
+  font-weight:850;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+}
+.actecc-shell .section-directory-sublinks{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.28rem;
+}
+.actecc-shell .section-directory-sublinks a{
+  display:inline-flex;
+  align-items:center;
+  min-height:1.72rem;
+  padding:.25rem .43rem;
+  color:#265348;
+  background:#fff;
+  border:1px solid #c9ddd6;
+  border-radius:999px;
+  font-size:.58rem;
+  font-weight:750;
+  line-height:1.2;
+  text-decoration:none;
+}
+.actecc-shell .section-directory-sublinks a:hover{
+  color:#006f5c;
+  background:#f0f8f5;
+  border-color:#70aa99;
+}
+.actecc-shell .section-introduction{
+  display:grid;
+  grid-template-columns:minmax(13rem,.72fr) minmax(0,1.28fr);
+  gap:1.35rem;
+  align-items:start;
+  margin:0 0 1.65rem;
+  padding:1rem 1.05rem;
+  background:#fff;
+  border:1px solid #d7e6e1;
+  border-left:4px solid #278875;
+  border-radius:0 .65rem .65rem 0;
+}
+.actecc-shell .section-introduction-heading,
+.actecc-shell .section-introduction-copy{
+  min-width:0;
+}
+.actecc-shell .section-introduction-kicker{
+  margin:0 0 .3rem;
+  color:#4f756b;
+  font-size:.61rem;
+  font-weight:850;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+.actecc-shell .section-introduction h2{
+  margin:0;
+  color:#183f37;
+  font-size:1.32rem;
+  line-height:1.18;
+}
+.actecc-shell .section-introduction-heading p:last-child{
+  margin:.42rem 0 0;
+  color:#4c6b63;
+  font-size:.78rem;
+  line-height:1.48;
+}
+.actecc-shell .section-introduction-copy{
+  color:#47665e;
+  font-size:.79rem;
+  line-height:1.58;
+}
+.actecc-shell .section-introduction-copy p{
+  margin:0 0 .58rem;
+}
+.actecc-shell .section-introduction-copy p:last-child{
+  margin-bottom:0;
+}
+.actecc-shell .section-introduction-copy h3{
+  margin:0 0 .35rem;
+  color:#315d52;
+  font-size:.78rem;
+}
+.actecc-shell .section-introduction .legend{
+  margin-top:.72rem;
+  font-size:.69rem;
+}
+.actecc-shell [id]{
+  scroll-margin-top:5.4rem;
+}
+
+@media(max-width:720px){
+  .actecc-shell > .hero{
+    padding-block:1rem .9rem;
+  }
+  .actecc-shell > .hero h1{
+    font-size:clamp(1.65rem,8vw,2rem);
+  }
+  .actecc-shell > nav{
+    min-height:0;
+    padding-block:.72rem;
+    gap:.7rem 1rem;
+  }
+  .actecc-shell > nav a{
+    font-size:.84rem;
+  }
+  .actecc-shell > main{
+    padding-top:1.6rem;
+  }
+  .actecc-shell .page-opening-title{
+    font-size:1.45rem;
+  }
+  .actecc-shell .section-directory-heading{
+    display:block;
+  }
+  .actecc-shell .section-directory-heading span{
+    display:block;
+    margin-top:.18rem;
+  }
+  .actecc-shell .section-directory-tabs,
+  .actecc-shell .section-directory-subgroups,
+  .actecc-shell .section-introduction{
+    grid-template-columns:1fr;
+  }
+  .actecc-shell .section-directory-tab{
+    min-height:0;
+  }
+  .actecc-shell .section-introduction{
+    gap:.72rem;
+  }
+}
+
+@media(min-width:721px) and (max-width:980px){
+  .actecc-shell .section-directory-tabs,
+  .actecc-shell .section-directory-subgroups{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}

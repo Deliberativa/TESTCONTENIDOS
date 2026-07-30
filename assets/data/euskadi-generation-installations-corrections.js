@@ -33,6 +33,69 @@
     });
   }
 
+  // ESIOS clasifica Uriarte SafyBox como instalación eólica de producción.
+  // La fuente empresarial documenta que sus dos aerogeneradores de 5 kW
+  // abastecen directamente procesos productivos: se mantiene la tecnología
+  // minieólica, pero el punto se muestra en la capa de autoconsumo.
+  const uriarteSafybox=inventory.features.find(feature=>Number(feature&&feature.id)===5693);
+  if(uriarteSafybox&&uriarteSafybox.properties){
+    Object.assign(uriarteSafybox.properties,{
+      descripcion:'URIARTE SAFYBOX, S.A.',
+      mapLayerKey:'solar',
+      documentedSelfConsumption:true,
+      selfConsumptionLabel:'Autoconsumo minieólico directo',
+      annualGWhEstimate:0.025,
+      annualGWhMethod:'Producción prevista publicada: 25.000 kWh/año',
+      detailSourceLabel:'Interempresas / Futurenergy (2014)',
+      detailSourceUrl:'https://www.interempresas.net/Energia/461265-Uriarte-SafyBox-inaugurara-una-pionera-instalacion-minieolica-de-autoconsumo.html'
+    });
+  }
+
+  // El inventario ESIOS contiene un registro antiguo de 10 kW a unos 14 m
+  // del polideportivo Antzizar (id 8782, alta en 2007). La instalación
+  // municipal de autoconsumo terminada en 2022 es otra actuación, de 300 kW,
+  // documentada por el Ayuntamiento de Beasain. Se conserva el registro
+  // antiguo y se incorpora la instalación nueva como punto independiente.
+  // Al no haberse identificado su ficha ESIOS individual, queda fuera del
+  // cálculo agregado del vertido estimado de los registros ESIOS.
+  const antzizarId=990001;
+  if(!inventory.features.some(feature=>Number(feature&&feature.id)===antzizarId)){
+    inventory.features.push({
+      type:'Feature',
+      id:antzizarId,
+      geometry:{type:'Point',coordinates:[-2.214064,43.0460007]},
+      properties:{
+        descripcion:'POLIDEPORTIVO ANTZIZAR · AUTOCONSUMO FOTOVOLTAICO',
+        numero:1,
+        municipio:'GIPUZKOA Beasain',
+        cuenca:'ORIA IBAIA',
+        mw:0.3,
+        provincia:'GIPUZKOA',
+        municipio_ine:'No indicado',
+        minetur:'Registro individual no identificado',
+        tecnologia:'Fotovoltaica',
+        alta:1667260800000,
+        baja:64060588800000,
+        objectid:antzizarId,
+        fecha_mod:1680480000000,
+        fuente:'Ayuntamiento de Beasain',
+        mapLayerKey:'solar',
+        documentedSelfConsumption:true,
+        selfConsumptionLabel:'Autoconsumo fotovoltaico municipal',
+        // La coordenada original se conserva en geometry. En el mapa regional
+        // el símbolo se ancla visualmente a la derecha de «Beasain» para evitar
+        // su solapamiento con el registro ESIOS antiguo.
+        mapDisplayAnchorMunicipality:'Beasain',
+        excludeFromEsiosExportEstimate:true,
+        annualGWhEstimate:0.42,
+        annualGWhMethod:'Aproximación del modelo: 0,300 MW × 1.400 horas equivalentes = 0,420 GWh/año',
+        detailSourceLabel:'Ayuntamiento de Beasain (2023)',
+        detailSourceUrl:'https://www.beasain.eus/es/noticias-es/181-infraestructuras-y-servicios/5013-las-actuaciones-a-favor-de-la-sostenibilidad-y-el-medio-ambiente-del-polideportivo-cumplen-las-expectativas',
+        detailConnectionNote:'La instalación está documentada como autoconsumo del polideportivo. La información pública consultada no indica si dispone de excedentes ni cuánto podría verter a la red; por eso sus 300 kW no se incorporan al cálculo agregado de vertido de ESIOS.'
+      }
+    });
+  }
+
   // Relación agregada facilitada por EVE. Como no incorpora coordenadas ni
   // identificadores registrales, estos 36 puntos se sitúan aproximadamente
   // dentro del municipio y no se usan para inferir nuevos solapes.

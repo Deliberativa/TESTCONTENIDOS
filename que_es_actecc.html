@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi · Libro Blanco</title>
+<style>
+:root{--ink:#183f37;--sub:#557169;--border:#cfe3dc;--soft:#f7faf8;--green:#009b7a;--lime:#cddd23;--paper:#fff;--warm:#fff8e8}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:Arial,"Helvetica Neue",sans-serif;line-height:1.62}
+.hero{padding:1.2rem clamp(1.25rem,7vw,6rem) 1.05rem;color:#fff;background:linear-gradient(112deg,#009b7a,#23aa68 48%,#d3df20)}
+.hero-kicker{margin:0 0 .3rem;color:rgba(255,255,255,.9);font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{max-width:30ch;margin:0;font-size:clamp(1.7rem,3.2vw,2.85rem);line-height:1.06}
+.hero-subtitle{max-width:88ch;margin:.32rem 0 0;font-size:.82rem;line-height:1.42}
+.hero-about{max-width:94ch;margin:.45rem 0 0}
+.hero-about summary{display:inline-flex;align-items:center;gap:.42rem;padding:.25rem .55rem;border:1px solid rgba(255,255,255,.58);border-radius:999px;color:#fff;background:rgba(17,68,57,.14);font-size:.67rem;font-weight:800;line-height:1.2;cursor:pointer;list-style:none}
+.hero-about summary::-webkit-details-marker{display:none}
+.hero-about summary::after{content:"+";font-size:.88rem;line-height:1}
+.hero-about[open] summary::after{content:"−"}
+.hero .hero-about p{max-width:94ch;margin:.42rem 0 0;padding:.5rem .65rem;border-left:3px solid rgba(255,255,255,.72);color:#fff;background:rgba(14,72,59,.17);font-size:.73rem;line-height:1.46}
+nav{display:flex;gap:1.3rem;flex-wrap:wrap;padding:1rem clamp(1.25rem,6vw,4.5rem);background:var(--soft);border-bottom:1px solid var(--border)}
+nav a{color:var(--sub);text-decoration:none}
+nav a[href="referencias.html"]{margin-left:auto}
+.active{color:#007b65;font-weight:700;border-bottom:3px solid var(--lime);padding-bottom:.3rem}
+main{max-width:1120px;margin:auto;padding:2.5rem clamp(1.2rem,4vw,3.2rem) 6rem}
+.lead{max-width:940px;margin:0 0 1.7rem;font-size:1.17rem;line-height:1.75}
+.source-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.3rem;align-items:center;margin:1.5rem 0 2.5rem;padding:1.25rem 1.35rem;background:#f1f8f5;border:1px solid var(--border);border-left:6px solid var(--green)}
+.source-card p{margin:.3rem 0;color:#405f57;font-size:.88rem}
+.source-card strong{display:block;font-size:1.05rem}
+.source-card a{display:inline-block;padding:.68rem .9rem;color:#fff;background:#007f69;border-radius:.35rem;text-decoration:none;font-size:.82rem;font-weight:800}
+.summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.6rem 0 2.7rem}
+.summary-card{padding:1.15rem 1.2rem;border:1px solid var(--border);border-top:5px solid var(--green);background:#fff}
+.summary-card h2{margin:0 0 .35rem;color:#007b65;font-size:1.15rem}
+.summary-card p{margin:0;color:#405e56;font-size:.91rem}
+h2.section-title{margin:2.7rem 0 .75rem;color:#007b65;font-size:1.55rem}
+.process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem;margin:1.1rem 0 2rem;padding:0;list-style:none;counter-reset:steps}
+.process li{position:relative;padding:2.8rem 1rem 1rem;background:var(--soft);border:1px solid var(--border);font-size:.84rem}
+.process li::before{counter-increment:steps;content:counter(steps);position:absolute;top:.8rem;left:1rem;width:1.45rem;height:1.45rem;display:grid;place-items:center;color:#fff;background:var(--green);border-radius:50%;font-size:.72rem;font-weight:900}
+.guarantees{columns:2;column-gap:2.5rem;margin:1rem 0;padding-left:1.2rem}
+.guarantees li{break-inside:avoid;margin:0 0 .75rem}
+.note{margin-top:2.2rem;padding:1rem 1.15rem;color:#665523;background:var(--warm);border-left:5px solid #d7aa25;font-size:.86rem}
+footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gradient(90deg,#009b7a,#cddd23)}
+@media(max-width:850px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}.source-card{grid-template-columns:1fr}.source-card a{justify-self:start}}
+@media(max-width:650px){nav a[href="referencias.html"]{margin-left:0}.summary-grid,.process{grid-template-columns:1fr}.guarantees{columns:1}}
+</style>
+<link rel="stylesheet" href="assets/styles/actecc-shell.css">
+</head>
+<body class="actecc-shell">
+<header class="hero">
+  <p class="hero-kicker">Libro Blanco de la Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi · ACTECC</p>
+  <h1>Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi</h1>
+  <p class="hero-subtitle">Una asamblea de personas seleccionadas por sorteo para informarse, deliberar y formular recomendaciones sobre la transición energética y el cambio climático de Euskadi.</p>
+  <details class="hero-about"><summary>Sobre este Libro Blanco</summary><p>Este documento ofrece una base común de información para la deliberación de la Asamblea Ciudadana. Distingue los datos observados de las estimaciones y de los escenarios de futuro, explicita los principales supuestos y reúne las fuentes utilizadas. Su finalidad no es prescribir una única respuesta, sino facilitar una decisión informada, comprensible y contrastable.</p></details>
+</header>
+<nav aria-label="Navegación principal">
+  <a href="comparacion_escenarios_euskadi.html">Energía, clima y futuros de Euskadi</a>
+  <a href="comparativa_impactos.html">Dilema y comparativa de impactos</a>
+  <a class="active" href="que_es_actecc.html" aria-current="page">Asamblea Ciudadana</a>
+  <a href="modelo_coherencia_energetica.html">Modelo y metodología</a>
+  <a href="referencias.html">Referencias</a>
+</nav>
+<main>
+  <aside class="section-directory" id="indice" role="navigation" aria-label="Índice de la sección">
+    <div class="section-directory-heading"><p>Índice de la sección</p><span>Consulta el propósito, el proceso de selección y las garantías de participación.</span></div>
+    <div class="section-directory-tabs">
+      <a class="section-directory-tab" href="#que-aporta"><span class="section-directory-number">01</span><span><strong>Qué aporta la Asamblea</strong><small>Diversidad, información, deliberación y respuesta pública.</small></span></a>
+      <a class="section-directory-tab" href="#como-trabaja"><span class="section-directory-number">02</span><span><strong>Cómo se forma y trabaja</strong><small>Invitación, inscripción, sorteo y deliberación.</small></span></a>
+      <a class="section-directory-tab" href="#garantias-participacion"><span class="section-directory-number">03</span><span><strong>Garantías de participación</strong><small>Accesibilidad, igualdad, compensación e independencia.</small></span></a>
+      <a class="section-directory-tab" href="#documento-referencia"><span class="section-directory-number">04</span><span><strong>Documento de referencia</strong><small>Fuente institucional utilizada para esta página.</small></span></a>
+    </div>
+    <div class="section-directory-subgroups" style="--directory-group-columns:2">
+      <section class="section-directory-group"><h3>Qué ofrece</h3><div class="section-directory-sublinks"><a href="#grupo-diverso">Grupo diverso</a><a href="#informacion-previa">Información</a><a href="#deliberacion-ciudadana">Deliberación</a><a href="#respuesta-institucional">Respuesta</a></div></section>
+      <section class="section-directory-group"><h3>Cómo participar</h3><div class="section-directory-sublinks"><a href="#como-trabaja">Selección y sesiones</a><a href="#garantias-participacion">Apoyos y garantías</a></div></section>
+    </div>
+  </aside>
+  <section class="section-introduction" aria-labelledby="assembly-page-introduction-title">
+    <div class="section-introduction-heading">
+      <p class="section-introduction-kicker">Descripción de la sección</p>
+      <h2 id="assembly-page-introduction-title">Qué es la ACTECC</h2>
+      <p>Un espacio de aprendizaje y deliberación ciudadana sobre la transición energética y el cambio climático de Euskadi.</p>
+    </div>
+    <div class="section-introduction-copy">
+      <p>La Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi es un órgano de gobernanza previsto en la Ley 1/2024. Reúne a 32 personas residentes en Euskadi, elegidas mediante sorteo cívico, para conocer distintas perspectivas, reflexionar juntas y trasladar recomendaciones al Gobierno Vasco.</p>
+      <p>No se requieren conocimientos previos. El proceso combina información plural, diálogo entre personas diversas y una respuesta pública y motivada de la institución destinataria.</p>
+    </div>
+  </section>
+
+  <aside class="source-card" id="documento-referencia" aria-label="Documento institucional de referencia">
+    <div>
+      <strong>Documento institucional de referencia</strong>
+      <p>ACTECC FAQ, versión de 17 de junio de 2026. Es la fuente principal de esta página y la referencia prioritaria del proyecto para explicar qué es y cómo funciona la Asamblea.</p>
+    </div>
+    <a href="../01_Datos_originales/Bibliografia/Informes/2026_06_17_ACTECC_FAQ_vf.pdf" target="_blank" rel="noopener">Abrir el PDF completo</a>
+  </aside>
+
+  <section class="summary-grid" id="que-aporta" aria-label="Resumen de la ACTECC">
+    <article class="summary-card" id="grupo-diverso">
+      <h2>Un grupo diverso</h2>
+      <p>La selección por sorteo busca reflejar la diversidad de la sociedad vasca y dar a cualquier persona la posibilidad de participar, con independencia de su profesión, estudios, ideas o experiencia previa.</p>
+    </article>
+    <article class="summary-card" id="informacion-previa">
+      <h2>Información antes de decidir</h2>
+      <p>No se requieren conocimientos previos. Las personas participantes reciben información plural, escuchan distintas perspectivas, preguntan a especialistas y cuentan con apoyo para comprender los asuntos tratados.</p>
+    </article>
+    <article class="summary-card" id="deliberacion-ciudadana">
+      <h2>Deliberación ciudadana</h2>
+      <p>Las sesiones permiten intercambiar experiencias y opiniones de manera respetuosa. El objetivo no es sumar respuestas aisladas, sino elaborar conjuntamente recomendaciones razonadas.</p>
+    </article>
+    <article class="summary-card" id="respuesta-institucional">
+      <h2>Respuesta institucional</h2>
+      <p>Las recomendaciones se trasladan al Departamento de Industria, Transición Energética y Sostenibilidad, que debe responder públicamente y por escrito cuáles aplicará, cuáles no y por qué, con plazos y recursos previstos.</p>
+    </article>
+  </section>
+
+  <h2 class="section-title" id="como-trabaja">Cómo se forma y cómo trabaja</h2>
+  <ol class="process">
+    <li><strong>Invitación amplia.</strong><br>Un primer sorteo selecciona a 20.000 personas mayores de 18 años residentes en Euskadi.</li>
+    <li><strong>Inscripción voluntaria.</strong><br>Las personas invitadas deciden si desean ofrecerse para participar en todo el proceso.</li>
+    <li><strong>Segundo sorteo.</strong><br>Entre quienes se inscriben se eligen 32 integrantes procurando que el grupo refleje la diversidad social vasca.</li>
+    <li><strong>Aprendizaje y deliberación.</strong><br>El grupo recibe información, escucha perspectivas, debate y acuerda recomendaciones dirigidas al Gobierno Vasco.</li>
+  </ol>
+
+  <h2 class="section-title" id="garantias-participacion">Garantías para una participación real</h2>
+  <ul class="guarantees">
+    <li>La Asamblea es bilingüe: cada persona puede expresarse en euskera o castellano, con interpretación.</li>
+    <li>Las dinámicas están diseñadas para participar en condiciones de comodidad, respeto e igualdad.</li>
+    <li>Se contemplan apoyos de accesibilidad, cuidados, cuestiones lingüísticas y otras circunstancias personales.</li>
+    <li>La participación es voluntaria y se compensa con 100 euros por sesión, además de cubrir desplazamientos y comidas.</li>
+    <li>Se preservan la privacidad, la protección de datos y la confidencialidad de la información sensible.</li>
+    <li>Los cargos políticos electos no pueden formar parte de la Asamblea, como garantía de independencia.</li>
+  </ul>
+
+  <aside class="note"><strong>Información todavía provisional.</strong> El documento de referencia conserva marcadores pendientes en la pregunta concreta de la Asamblea, algunas fechas, el teléfono, el horario de atención, el código QR y la página web. Esta página no presenta esos elementos como definitivos hasta que exista una versión institucional cerrada.</aside>
+</main>
+<footer>Libro Blanco de la Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi (ACTECC) · 2026</footer>
+<script src="assets/scripts/actecc-section-directory.js"></script>
+</body>
+</html>
