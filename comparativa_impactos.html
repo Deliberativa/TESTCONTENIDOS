@@ -310,7 +310,7 @@ main{padding-top:1.45rem}
 .industrial-capacity-intro p{margin:0;color:var(--sub);font-size:.86rem;line-height:1.5}
 .industrial-capacity-intro p+p{margin-top:.6rem}
 .industrial-capacity-impact-item .positive-impact-chart{margin:0}
-.industrial-capacity-impact-item .energy-company-examples{grid-column:1/-1;grid-row:2;margin:0;padding:1rem;border:1px solid #c7dcd2;border-radius:.7rem;background:rgba(255,255,255,.82)}
+.industrial-capacity-impact-item .energy-company-examples{grid-column:1/-1;grid-row:2;margin:0;padding:0;overflow:hidden;border:1px solid #c7dcd2;border-radius:.7rem;background:rgba(255,255,255,.82)}
 .externalization-impact-item .positive-impact-content{display:block}
 .external-impact-gallery{width:100%;max-width:none;margin:0 0 1.4rem;transform:none}
 .impact-mural-panel{margin:0;background:#f0f7f4;border:1px solid #c9dfd4}
@@ -366,12 +366,21 @@ main{padding-top:1.45rem}
 .positive-stat-strip strong{display:block;margin-bottom:.12rem;color:#176d52;font-size:1.08rem}
 .positive-source{margin-top:.55rem!important;color:#60756d!important;font-size:.65rem!important;line-height:1.4!important}
 .energy-company-examples{margin-top:.85rem;padding-top:.8rem;border-top:1px solid #d5e4dd}
-.energy-company-examples h4{margin:0 0 .2rem;color:var(--ink);font-size:.84rem}
-.energy-company-examples>p{margin:0 0 .65rem!important;font-size:.72rem!important}
+.energy-company-examples>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.8rem;padding:.8rem .9rem;color:var(--green-dark);background:#f7faf8;font-size:.84rem;font-weight:850;cursor:pointer;list-style:none}
+.energy-company-examples>summary::-webkit-details-marker{display:none}
+.energy-company-examples>summary::after{content:'+';display:grid;place-items:center;width:1.45rem;height:1.45rem;border:1px solid #92b8a8;border-radius:50%;background:#fff;color:var(--green-dark);font-size:1rem;font-weight:600}
+.energy-company-examples[open]>summary{border-bottom:1px solid #c7dcd2;background:#eaf3ef}
+.energy-company-examples[open]>summary::after{content:'−'}
+.energy-company-examples-body{padding:.9rem 1rem 1rem}
+.energy-company-examples-body>p{margin:0 0 .65rem!important;font-size:.72rem!important}
 .energy-company-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.48rem}
 .energy-company{padding:.6rem .65rem;border:1px solid #d1e1d9;border-radius:.58rem;background:#fff}
 .energy-company a{color:var(--green-dark);font-size:.76rem;font-weight:850}
+.energy-company span a{font-size:inherit;font-weight:700}
 .energy-company span{display:block;margin-top:.18rem;color:var(--sub);font-size:.66rem;line-height:1.36}
+.energy-company .company-employment{margin-top:.48rem;padding-top:.42rem;border-top:1px solid #e0ebe6;color:#315d50;font-size:.65rem;line-height:1.4}
+.energy-company .company-employment strong{color:var(--ink)}
+.energy-company .company-employment em{color:#66766f;font-style:normal}
 .positive-impact-item.invalid-positive-impact{border-color:#e2bbb3;background:#fff7f4}
 .positive-impact-item.invalid-positive-impact>summary{color:#8b4034}
 .positive-impact-item.invalid-positive-impact[open]>summary{border-bottom-color:#e2bbb3;background:#fbe9e5}
@@ -1464,19 +1473,55 @@ nav a[href="referencias.html"]{margin-left:auto}
             <p class="positive-source">Fuente: Clúster de Energía, presentación institucional. Perímetro sectorial amplio; no es una estimación causal del despliegue renovable.</p>
           </div>
         </div>
-        <div class="energy-company-examples">
-          <h4>Ejemplos de empresas y capacidades existentes en Euskadi</h4>
-          <p>La cadena de valor no se limita a fabricar el aerogenerador completo: incluye componentes, reparación, electrónica, hidráulica, estructuras, ensayos e integración eléctrica.</p>
+        <details class="energy-company-examples">
+          <summary>Empresas y capacidades industriales presentes en Euskadi</summary>
+          <div class="energy-company-examples-body">
+            <p>La selección reúne grandes multinacionales y proveedores especializados. La sede social o la actividad industrial en Euskadi no implica necesariamente propiedad vasca. Las cifras distinguen, siempre que la fuente lo permite, la plantilla directa localizada en Euskadi del empleo indirecto o del empleo total del grupo; no deben sumarse entre sí como si tuvieran el mismo perímetro.</p>
           <div class="energy-company-grid">
-            <div class="energy-company"><a href="https://izadi-group.com/reparacion-de-un-asiento-de-rodamiento-de-eje-principal-eolico-con-laser-cladding/">Izadi Group · Errenteria</a><span>Mecanizado, reductores, monitorización y reparación de grandes componentes eólicos mediante revestimiento láser.</span></div>
-            <div class="energy-company"><a href="https://haizeawindgroup.com/productos/">Haizea Wind Group · Puerto de Bilbao</a><span>Torres eólicas terrestres y marinas, piezas de transición y cimentaciones monopilote para eólica offshore.</span></div>
-            <div class="energy-company"><a href="https://www.laulagun.com/es/">Laulagun Bearings · Olaberria e Idiazabal</a><span>Diseño, fabricación y ensayo de grandes rodamientos de pala y orientación para aerogeneradores terrestres y marinos.</span></div>
-            <div class="energy-company"><a href="https://www.hinegroup.com/hydraulic-systems-wind-power/">Hine · Olaberria</a><span>Sistemas hidráulicos, frenos, control de paso, refrigeración y utillajes para instalación y mantenimiento eólico.</span></div>
-            <div class="energy-company"><a href="https://www.ingeteam.com/es/eolica">Ingeteam</a><span>Convertidores, generadores, control, operación y mantenimiento para generación eólica, además de solar, almacenamiento y redes.</span></div>
-            <div class="energy-company"><a href="https://www.ormazabal.com/en-gb/solution/green-generation-storage/">Ormazabal · Derio</a><span>Equipos de media tensión, protección, control e integración de instalaciones renovables y almacenamiento en la red.</span></div>
+            <div class="energy-company">
+              <a href="https://www.iberdrola.com/conocenos/nuestra-empresa">Iberdrola · Bilbao</a>
+              <span>Una de las mayores compañías eléctricas del mundo, con actividad en eólica terrestre y marina, hidráulica, solar fotovoltaica, redes inteligentes y almacenamiento. Aunque su sede está en Bilbao, el 71,8 % del capital correspondía en 2025 a inversores institucionales internacionales; no es, por tanto, una empresa de propiedad mayoritariamente vasca (<a href="https://www.iberdrola.com/conocenos/nuestra-empresa">Iberdrola, 2026a</a>; <a href="https://www.iberdrola.com/accionistas-inversores/accion/capital">Iberdrola, 2026b</a>).</span>
+              <span class="company-employment"><strong>Empleo directo en Euskadi:</strong> cerca de <strong>1.800 personas</strong> en 2025 <a href="https://www.deia.eus/economia/2025/05/27/iberdrola-empresa-favorita-trabajar-euskadi-9687620.html">(DEIA, 2025)</a>. La cifra de más de 30.000 empleos sostenidos por sus compras a proveedores es un impacto económico ampliado, no plantilla propia <a href="https://www.iberdrola.com/sala-comunicacion/noticias/detalle/iberdrola-sostiene-mas-de-30000-empleos-en-euskadi-gracias-a-sus-compras-a-proveedores-vascos">(Iberdrola, 2026c)</a>.</span>
+            </div>
+            <div class="energy-company">
+              <a href="https://www.siemensgamesa.com/global/en/home/general/corporate-information.html">Siemens Gamesa Renewable Energy · Zamudio</a>
+              <span>Multinacional especializada en aerogeneradores terrestres y marinos, mantenimiento y optimización eólica. Conserva su sede social en Zamudio y presencia internacional en más de 90 países, pero desde 2023 pertenece íntegramente al grupo alemán Siemens Energy (<a href="https://www.siemensgamesa.com/global/en/home/general/corporate-information.html">Siemens Gamesa, 2026a</a>; <a href="https://www.siemensgamesa.com/global/en/home/about-us/company-history.html">Siemens Gamesa, 2026b</a>).</span>
+              <span class="company-employment"><strong>Empleo directo en Euskadi:</strong> la última cifra territorial completa localizada es de <strong>1.011 personas</strong> en Zamudio, Mungia y Asteasu, correspondiente a 2022. <em>Se presenta con su fecha porque los ajustes posteriores impiden tratarla como plantilla actual.</em> <a href="https://cronicavasca.elespanol.com/empresas/20231017/los-de-siemens-gamesa-en-euskadi-la/802419956_0.html">(Aguirre, 2023)</a>.</span>
+            </div>
+            <div class="energy-company">
+              <a href="https://izadi-group.com/reparacion-de-un-asiento-de-rodamiento-de-eje-principal-eolico-con-laser-cladding/">Izadi Group · Errenteria</a>
+              <span>Mecanizado, reductores, monitorización y reparación de grandes componentes eólicos mediante revestimiento láser.</span>
+              <span class="company-employment"><strong>Empleo directo en Euskadi:</strong> <strong>más de 50 personas</strong> en su planta de Errenteria <a href="https://www.afmec.es/es/empresas/asociados/izadi">(AFMEC, 2026)</a>.</span>
+            </div>
+            <div class="energy-company">
+              <a href="https://haizeawindgroup.com/productos/">Haizea Wind Group · Puerto de Bilbao</a>
+              <span>Torres eólicas terrestres y marinas, piezas de transición y cimentaciones monopilote para eólica marina.</span>
+              <span class="company-employment"><strong>Empleo directo en Euskadi:</strong> <strong>900 personas</strong> en la planta del Puerto de Bilbao en 2026. El grupo declara 1.500 en total e incluye centros dentro y fuera de Euskadi, por lo que esa cifra global no se atribuye íntegramente al territorio <a href="https://cincodias.elpais.com/companias/2026-06-23/haizea-wind-participa-en-el-mega-parque-de-eolica-marina-del-grupo-aleman-rwe-y-del-fondo-estadounidense-kkr.html">(Vadillo, 2026)</a>.</span>
+            </div>
+            <div class="energy-company">
+              <a href="https://www.laulagun.com/es/">Laulagun Bearings · Olaberria e Idiazabal</a>
+              <span>Diseño, fabricación y ensayo de grandes rodamientos de pala y orientación para aerogeneradores terrestres y marinos.</span>
+              <span class="company-employment"><strong>Empleo directo en Euskadi:</strong> la fuente empresarial consultada sitúa la plantilla de la sociedad vasca en el intervalo de <strong>101 a 250 personas</strong>; no se ha localizado un total público más preciso y actualizado <a href="https://www.iberinform.es/empresa/7012732/lau-lagun-bearings">(Iberinform, 2026)</a>.</span>
+            </div>
+            <div class="energy-company">
+              <a href="https://www.hinegroup.com/hydraulic-systems-wind-power/">Hine · Olaberria</a>
+              <span>Sistemas hidráulicos, frenos, control de paso, refrigeración y utillajes para instalación y mantenimiento eólico.</span>
+              <span class="company-employment"><strong>Empleo directo en Euskadi:</strong> <strong>320 personas</strong> en Hine Renovables, Olaberria, según la referencia territorial publicada en 2023 <a href="https://www.ela.eus/es/oria-goierri/noticias/acuerdo-con-subidas-salariales-superiores-al-ipc-y-mejoras-sustanciales">(ELA, 2023b)</a>.</span>
+            </div>
+            <div class="energy-company">
+              <a href="https://www.ingeteam.com/es/eolica">Ingeteam · Zamudio, Ortuella, Beasain y Berango</a>
+              <span>Convertidores, generadores, control y almacenamiento. En 2026, Iberdrola le adjudicó contratos por 25 millones de euros para sistemas de baterías BESS asociados a instalaciones renovables en España <a href="https://www.deia.eus/economia/2026/09/08/iberdrola-adjudica-pedidos-30-millones-redes-11518566.html">(DEIA, 2026)</a>.</span>
+              <span class="company-employment"><strong>Empleo directo en Euskadi:</strong> <strong>no publica un total territorial consolidado</strong>. Las referencias parciales identifican 670 personas en Beasain en 2023 y 70 incorporadas en Berango en 2025; no incluyen toda la plantilla de Zamudio y Ortuella y, por ello, no constituyen un total <a href="https://www.ela.eus/es/noticias/movilizaciones-para-garantizar-el-empleo-y-en-defensa-del-poder-adquisitivo">(ELA, 2023a)</a>; <a href="https://cincodias.elpais.com/companias/2025-11-03/ingeteam-cierra-la-compra-de-alconza-e-incorpora-su-plantilla-de-70-trabajadores.html">(Cinco Días, 2025)</a>.</span>
+            </div>
+            <div class="energy-company">
+              <a href="https://www.ormazabal.com/en-gb/solution/green-generation-storage/">Ormazabal · Igorre y Derio</a>
+              <span>Equipos de media tensión e integración de la red. En 2026, Iberdrola le encargó dos subestaciones móviles por cerca de cinco millones de euros para reforzar la capacidad operativa de la red <a href="https://www.deia.eus/economia/2026/09/08/iberdrola-adjudica-pedidos-30-millones-redes-11518566.html">(DEIA, 2026)</a>.</span>
+              <span class="company-employment"><strong>Empleo directo en Euskadi:</strong> <strong>más de 600 personas</strong> en Igorre en 2025; la nueva sede de Derio está concebida para un equipo de unas 200. Estas magnitudes no se suman como nueva creación neta porque la fuente no aclara qué parte corresponde a traslados internos <a href="https://cincodias.elpais.com/companias/2025-07-07/ormazabal-se-refuerza-en-redes-electricas-con-una-inversion-de-35-millones.html">(Vadillo, 2025)</a>.</span>
+            </div>
           </div>
-          <p class="positive-source">Selección ilustrativa basada en información publicada por las propias empresas y en proyectos del Clúster de Energía. No constituye un directorio completo ni implica que toda su facturación o empleo proceda de renovables instaladas en Euskadi.</p>
-        </div>
+            <p class="positive-source"><strong>Criterio de lectura:</strong> las cifras son empleo directo localizado cuando existe un dato público. Los intervalos, referencias parciales y cifras históricas se identifican expresamente. La selección no constituye un directorio completo ni implica que toda la plantilla o facturación proceda de instalaciones renovables construidas en Euskadi.</p>
+          </div>
+        </details>
       </div>
     </article>
 
@@ -1563,6 +1608,21 @@ nav a[href="referencias.html"]{margin-left:auto}
         <li>Hine (s. f.). <a href="https://www.hinegroup.com/hydraulic-systems-wind-power/">Sistemas hidráulicos y de refrigeración para aerogeneradores</a>.</li>
         <li>Ingeteam (s. f.). <a href="https://www.ingeteam.com/es/eolica">Tecnología de conversión y control para energía eólica</a>.</li>
         <li>Ormazabal (s. f.). <a href="https://www.ormazabal.com/en-gb/solution/green-generation-storage/">Integración de generación renovable y almacenamiento en la red</a>.</li>
+        <li>Iberdrola. (2026a). <a href="https://www.iberdrola.com/conocenos/nuestra-empresa"><i>Grupo Iberdrola: nuestra empresa</i></a>.</li>
+        <li>Iberdrola. (2026b). <a href="https://www.iberdrola.com/accionistas-inversores/accion/capital"><i>Capital social y distribución accionarial</i></a>. Datos a 31 de diciembre de 2025.</li>
+        <li>Iberdrola. (2026c, 26 de mayo). <a href="https://www.iberdrola.com/sala-comunicacion/noticias/detalle/iberdrola-sostiene-mas-de-30000-empleos-en-euskadi-gracias-a-sus-compras-a-proveedores-vascos"><i>Iberdrola sostiene más de 30.000 empleos en Euskadi gracias a sus compras a proveedores vascos</i></a>.</li>
+        <li>DEIA. (2025, 27 de mayo). <a href="https://www.deia.eus/economia/2025/05/27/iberdrola-empresa-favorita-trabajar-euskadi-9687620.html"><i>Iberdrola, la empresa favorita para trabajar en Euskadi</i></a>.</li>
+        <li>Siemens Gamesa Renewable Energy. (2026a). <a href="https://www.siemensgamesa.com/global/en/home/general/corporate-information.html"><i>Corporate information</i></a>.</li>
+        <li>Siemens Gamesa Renewable Energy. (2026b). <a href="https://www.siemensgamesa.com/global/en/home/about-us/company-history.html"><i>Company history</i></a>.</li>
+        <li>Aguirre, M. (2023, 17 de octubre). <a href="https://cronicavasca.elespanol.com/empresas/20231017/los-de-siemens-gamesa-en-euskadi-la/802419956_0.html"><i>Los 1.000 trabajadores de Siemens Gamesa en Euskadi, en vilo con la decisión de la empresa</i></a>. Crónica Vasca.</li>
+        <li>Asociación Española del Mecanizado y la Transformación Metalmecánica. (2026). <a href="https://www.afmec.es/es/empresas/asociados/izadi"><i>Izadi</i></a>.</li>
+        <li>Vadillo, J. (2026, 23 de junio). <a href="https://cincodias.elpais.com/companias/2026-06-23/haizea-wind-participa-en-el-mega-parque-de-eolica-marina-del-grupo-aleman-rwe-y-del-fondo-estadounidense-kkr.html"><i>Haizea Wind participa en el megaparque de eólica marina del grupo alemán RWE y del fondo estadounidense KKR</i></a>. Cinco Días.</li>
+        <li>Iberinform. (2026). <a href="https://www.iberinform.es/empresa/7012732/lau-lagun-bearings"><i>Lau Lagun Bearings, S. L.: datos generales y dimensión de plantilla</i></a>.</li>
+        <li>ELA. (2023a, 25 de abril). <a href="https://www.ela.eus/es/noticias/movilizaciones-para-garantizar-el-empleo-y-en-defensa-del-poder-adquisitivo"><i>Movilizaciones para garantizar el empleo y en defensa del poder adquisitivo</i></a>.</li>
+        <li>ELA. (2023b, 13 de diciembre). <a href="https://www.ela.eus/es/oria-goierri/noticias/acuerdo-con-subidas-salariales-superiores-al-ipc-y-mejoras-sustanciales"><i>Acuerdo con subidas salariales superiores al IPC y mejoras sustanciales</i></a>.</li>
+        <li>Cinco Días. (2025, 3 de noviembre). <a href="https://cincodias.elpais.com/companias/2025-11-03/ingeteam-cierra-la-compra-de-alconza-e-incorpora-su-plantilla-de-70-trabajadores.html"><i>Ingeteam cierra la integración de la plantilla y de los activos de Alconza</i></a>.</li>
+        <li>Vadillo, J. (2025, 7 de julio). <a href="https://cincodias.elpais.com/companias/2025-07-07/ormazabal-se-refuerza-en-redes-electricas-con-una-inversion-de-35-millones.html"><i>Ormazabal se refuerza en redes eléctricas con una inversión de 35 millones</i></a>. Cinco Días.</li>
+        <li>DEIA. (2026, 8 de septiembre). <a href="https://www.deia.eus/economia/2026/09/08/iberdrola-adjudica-pedidos-30-millones-redes-11518566.html"><i>Iberdrola adjudica 30 millones a Ingeteam y Ormazabal para reforzar las redes y el almacenamiento energético</i></a>.</li>
       </ol></section>
       <section><h4>Procedencia de las imágenes</h4><ol>
         <li>Arrano (2009). <a href="https://www.flickr.com/photos/arrano/3724281714/">Antorcha industrial en Muskiz</a>, CC BY-NC-ND 2.0.</li>

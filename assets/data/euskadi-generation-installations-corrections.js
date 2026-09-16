@@ -3,6 +3,13 @@
   if(!inventory||!Array.isArray(inventory.features))return;
 
   const eveSource='Datos proporcionados por EVE';
+  const solarTerritoryHours=territory=>{
+    const name=String(territory||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
+    if(/ARABA|ALAVA/.test(name))return 1400;
+    if(/BIZKAIA|VIZCAYA|GIPUZKOA|GUIPUZCOA/.test(name))return 1000;
+    return null;
+  };
+  window.solarTerritoryEquivalentHours=solarTerritoryHours;
   const duplicatedInEve=new Set([
     2539, // Ekiola Mendialdea: 1 MW nominal en ESIOS; 1,50 MWp en EVE.
     8726, // Leintz Bailarako Ekiola: 1 MW nominal en ESIOS; 1,256 MWp en EVE.
@@ -19,6 +26,27 @@
     return !isMisclassifiedElgeaStorage&&!duplicatedInEve.has(id);
   });
 
+  // Elgea y Urkilla son dos parques contiguos, pero para la lectura territorial
+  // del mapa se presentan como un único complejo, sin duplicar potencia.
+  // Elgea aporta 26,97 MW y Urkilla 32,3 MW: 59,27 MW en total.
+  const urkilla=inventory.features.find(feature=>Number(feature&&feature.id)===2557);
+  const elgea=inventory.features.find(feature=>Number(feature&&feature.id)===2672);
+  if(elgea&&elgea.properties&&urkilla&&urkilla.properties){
+    Object.assign(elgea.properties,{
+      descripcion:'PARQUE EÓLICO ELGEA-URKILLA',
+      numero:Number(elgea.properties.numero||0)+Number(urkilla.properties.numero||0),
+      mw:Number(elgea.properties.mw||0)+Number(urkilla.properties.mw||0),
+      minetur:'RE-001474 y 3 más · RE-003932',
+      detailConnectionNote:'El punto unifica territorialmente los parques contiguos de Elgea (26,97 MW) y Urkilla (32,3 MW). La potencia mostrada, 59,27 MW, es la suma de ambos parques sin doble contabilización.',
+      detailSourceLabel:'EVE · memoria 2003'
+    });
+    elgea.geometry={...elgea.geometry,coordinates:[
+      (Number(elgea.geometry.coordinates[0])+Number(urkilla.geometry.coordinates[0]))/2,
+      (Number(elgea.geometry.coordinates[1])+Number(urkilla.geometry.coordinates[1]))/2
+    ]};
+    inventory.features=inventory.features.filter(feature=>Number(feature&&feature.id)!==2557);
+  }
+
   // Arasur 1 y 2 ya figuraba en ESIOS como un único registro agregado de
   // 24 MW. Se conserva una sola vez y se asigna al listado declarado por EVE.
   const arasur=inventory.features.find(feature=>Number(feature&&feature.id)===2582);
@@ -28,8 +56,9 @@
       fuente:eveSource,
       eveTipo:'Fotovoltaica a red',
       eveComarca:'Arabako Ibarrak / Valles Alaveses',
-      annualGWhEstimate:33.596,
-      annualGWhMethod:'Factor medio del inventario solar 2024 (81,7 GWh / 58,36 MW)'
+      annualGWhEstimate:33.6,
+      annualEquivalentHours:1400,
+      annualGWhMethod:'Aproximación territorial EVE: Araba 1.400 h/año; Bizkaia y Gipuzkoa 1.000 h/año (comunicación personal, septiembre de 2026)'
     });
   }
 
@@ -138,7 +167,7 @@
     [900035,-2.411965,43.01433,0.702,'GIPUZKOA Oñati','GIPUZKOA','Debagoiena / Alto Deba',1672531200000]
   ];
   const existingIds=new Set(inventory.features.map(feature=>Number(feature&&feature.id)));
-  const factor=81.7/58.36;
+  // Canonical estimates retain full precision before aggregation.
   eveRows.forEach(([id,longitude,latitude,mw,municipio,provincia,comarca,alta])=>{
     if(existingIds.has(id))return;
     inventory.features.push({
@@ -163,9 +192,24 @@
         ubicacion_aproximada:true,
         eveTipo:'Fotovoltaica a red',
         eveComarca:comarca,
-        annualGWhEstimate:Math.round(mw*factor*1000)/1000,
-        annualGWhMethod:'Factor medio del inventario solar 2024 (81,7 GWh / 58,36 MW)'
+        annualGWhEstimate:mw*solarTerritoryHours(provincia)/1000,
+        annualEquivalentHours:solarTerritoryHours(provincia),
+        annualGWhUncertainty:"Aproximación orientativa, posiblemente optimista según EVE; sin intervalo cuantificado. Año completo teórico, no producción medida.",
+        annualGWhSourceDate:"2026-09-07",
+        annualGWhMethod:'Potencia × horas territoriales EVE / 1.000; Araba 1.400, Bizkaia y Gipuzkoa 1.000 h/año'
       }
     });
+  });
+  // Recalculate existing records too: the embedded base may already contain EVE rows.
+  inventory.features.forEach(feature=>{
+    const p=feature.properties||{};
+    if(p.fuente!==eveSource||p.tecnologia!=='Fotovoltaica')return;
+    const h=solarTerritoryHours((p.provincia||"")+" "+(p.municipio||""));
+    if(!h)throw new Error('Territorio solar EVE no identificado: '+feature.id);
+    p.annualGWhEstimate=Number(p.mw)*h/1000;
+    p.annualEquivalentHours=h;
+    p.annualGWhMethod='Potencia × '+h+' horas equivalentes territoriales EVE / 1.000 (septiembre de 2026)';
+    p.annualGWhSourceDate='2026-09-07';
+    p.annualGWhUncertainty='Aproximación orientativa posiblemente optimista; sin intervalo cuantificado. Año completo teórico.';
   });
 })();

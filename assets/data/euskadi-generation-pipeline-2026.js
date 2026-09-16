@@ -1,5 +1,5 @@
 window.energyMapGenerationPipeline={
-  updated:"30 de julio de 2026",
+  updated:"7 de septiembre de 2026",
   methodology:"Inventario de expedientes de generación renovable situados en Euskadi que conservan una tramitación pública activa y para los que no se ha localizado una autorización administrativa previa firme. Incluye información pública de la autorización y la evaluación ambiental, informes ambientales y solicitudes iniciales sometidas a competencia. Excluye anuncios empresariales sin expediente oficial, proyectos autorizados, plantas operativas y expedientes denegados, archivados o desistidos. Al activar la capa, su producción anual estimada se incorpora de forma exploratoria a la electricidad propia solar o eólica y reduce importación; no modifica las proyecciones tendencial o normativa.",
   projects:[
     {
@@ -86,6 +86,19 @@ window.energyMapGenerationPipeline={
       note:"No debe confundirse con Ferosca I, que dispone de autorización previa. No se ha localizado resolución posterior para Feroskana.",
       sources:[
         {label:"Gobierno Vasco · información pública de Feroskana",url:"https://www.euskadi.eus/gobierno-vasco/-/anuncio-parque-eolico-feroskana/"}
+      ]
+    },
+    {
+      id:"basalgo",name:"Parque eólico Basalgo",technology:"wind",mw:24.95,annualGWhEstimate:49.746369,annualGWhMethod:"Factor genérico documentado del inventario eólico vasco: 1,993842 GWh/MW·año",annualGWhUncertainty:"Estimación de último recurso; el diseño revisado no publica todavía una producción anual y la cifra no sustituye el estudio de recurso eólico del promotor",
+      stage:"public-information-eia-revised",stageLabel:"Proyecto modificado · nuevo plazo de alegaciones",stageDate:"Información pública inicial: 17 de octubre de 2025 · modificación comunicada: 4 de septiembre de 2026",
+      municipalities:["Eibar","Soraluze-Placencia de las Armas","Bergara","Elgeta","Elgoibar"],coordinate:[-2.44652,43.173214],area:"5 aerogeneradores · diseño revisado de 24,95 MW",
+      locationNote:"Punto representativo calculado como centroide de las seis posiciones de la cartografía oficial inicial. La reordenación de septiembre de 2026 reduce el parque a cinco máquinas, pero sus nuevas coordenadas no constan todavía en las fuentes públicas consultadas.",
+      note:"Expediente 20-GE-Y-2024-00007. El proyecto inicial preveía seis aerogeneradores y 28 MW. Tras atenderse una alegación sobre distancias respecto a Udalaitz y refugios de alimoche, la propuesta se reorganiza a cinco máquinas y 24,95 MW: tres en Eibar, una en Soraluze y una en Bergara. No se ha localizado autorización administrativa previa, declaración de impacto ambiental ni autorización de construcción; por ello se representa únicamente en la capa de tramitación y no como proyecto del PTS ni como obra aprobada.",
+      sources:[
+        {label:"Gobierno Vasco · información pública y documentación de Basalgo",url:"https://www.euskadi.eus/anuncio-informacion-publica-parque-eolico-basalgo/web01-a2energi/es/"},
+        {label:"BOPV · anuncio de información pública",url:"https://www.euskadi.eus/bopv2/datos/2025/10/2504389a.pdf"},
+        {label:"Noticias de Gipuzkoa · proyecto modificado y alegaciones",url:"https://www.noticiasdegipuzkoa.eus/gipuzkoa/bertan/2026/09/04/parque-eolico-basalgo-eibar-alegaciones-aerogeneradores-11502913.html"},
+        {label:"Onda Vasca · distribución revisada de aerogeneradores",url:"https://www.ondavasca.com/la-empresa-promotora-del-parque-eolico-de-basalgo-plantea-ahora-ubicar-tres-aerogenadores-en-eibar/"}
       ]
     },
     {
