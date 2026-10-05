@@ -1,5 +1,5 @@
 window.energyMapGenerationPipeline={
-  updated:"7 de septiembre de 2026",
+  updated:"24 de septiembre de 2026",
   methodology:"Inventario de expedientes de generación renovable situados en Euskadi que conservan una tramitación pública activa y para los que no se ha localizado una autorización administrativa previa firme. Incluye información pública de la autorización y la evaluación ambiental, informes ambientales y solicitudes iniciales sometidas a competencia. Excluye anuncios empresariales sin expediente oficial, proyectos autorizados, plantas operativas y expedientes denegados, archivados o desistidos. Al activar la capa, su producción anual estimada se incorpora de forma exploratoria a la electricidad propia solar o eólica y reduce importación; no modifica las proyecciones tendencial o normativa.",
   projects:[
     {
@@ -134,13 +134,15 @@ window.energyMapGenerationPipeline={
       ]
     },
     {
-      id:"hernani-i-ii",name:"Parques eólicos Hernani I y Hernani II",technology:"wind",mw:9.98,annualGWhEstimate:19.898547,annualGWhMethod:"Factor genérico documentado del inventario eólico vasco: 1,993842 GWh/MW·año",annualGWhUncertainty:"Estimación de último recurso y expediente en fase inicial; no sustituye un estudio de recurso eólico",
-      stage:"competition",stageLabel:"Solicitud inicial sometida a competencia",stageDate:"25 de febrero de 2025",
-      municipalities:["Villabona","Ibarra","Tolosa"],coordinate:[-2.005,43.158],area:"2 aerogeneradores",
+      id:"hernani-i-ii",name:"Parques eólicos Hernani I y Hernani II",technology:"wind",mw:9.98,annualGWhEstimate:19.898547,annualGWhMethod:"Factor genérico documentado del inventario eólico vasco: 1,993842 GWh/MW·año",annualGWhUncertainty:"Estimación de último recurso para un expediente en información pública; no sustituye un estudio de recurso eólico",
+      stage:"public-info",stageLabel:"En información pública: autorización administrativa previa y declaración de impacto ambiental",stageDate:"24 de septiembre de 2026",
+      municipalities:["Villabona","Andoain","Urnieta","Hernani"],coordinate:[-2.005,43.158],area:"2 aerogeneradores · 4,99 MW cada uno",
       locationNote:"Centro aproximado de las coordenadas UTM publicadas para ambos aerogeneradores.",
-      note:"Es una fase anterior a la información pública ambiental y no equivale a una autorización ni a una selección definitiva del proyecto.",
+      note:"El BOPV de 24 de septiembre de 2026 somete a información pública conjunta el proyecto y su estudio de impacto ambiental. Los aerogeneradores se sitúan en Villabona y la línea de evacuación de 11,509 km atraviesa Villabona, Andoain, Urnieta y Hernani. El trámite no equivale todavía a una autorización administrativa previa ni a una declaración de impacto ambiental favorable.",
       sources:[
-        {label:"Gobierno Vasco · solicitud a competencia Hernani I y II",url:"https://www.euskadi.eus/bopv2/datos/2025/03/2501372a.pdf"}
+        {label:"Gobierno Vasco · información pública del Clúster Eólico Hernani I-II · BOPV 24-09-2026",url:"https://www.euskadi.eus/bopv2/datos/2026/09/2604004a.shtml"},
+        {label:"Gobierno Vasco · selección del anteproyecto Hernani I y II · BOPV 21-05-2025",url:"https://www.euskadi.eus/bopv2/datos/2025/05/2502166a.shtml"},
+        {label:"Diario Vasco · proyecto eólico planteado en Villabona · 24-09-2026",url:"https://www.diariovasco.com/economia/promotora-espanola-plantea-proyecto-parque-eolico-villabona-20260924122505-nt.html"}
       ]
     },
     {

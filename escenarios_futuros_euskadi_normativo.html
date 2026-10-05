@@ -806,7 +806,7 @@ strong { font-size:1.7rem; }
   const projectTotalRenewable=yr=>modelDirectRenew(yr)+modelOwnRenew(yr)+projectImportedRenewable(yr);
   const projectRenewableAvailable=yr=>100*projectTotalRenewable(yr)/modelFinal(yr);
   const projectNetEmissions=yr=>normative?(yr<=2030?13.594+(11.438-13.594)*(yr-2023)/7:11.438*(2050-yr)/20):13.594+(7.1-13.594)*(yr-2023)/27;
-  const ownRenewableElectricData=data.map(d=>[d[0],d[2]]).concat([[2025,1091.72]]);
+  const ownRenewableElectricData=data.map(d=>[d[0],d[2]]).concat([[2025,938.72]]);
   const importedElectricityRenewableShareData=[[2004,19.85],[2005,16.216],[2006,19.166],[2007,20.991],[2008,21.314],[2009,27.598],[2010,34.713],[2011,32.473],[2012,31.453],[2013,41.886],[2014,42.221],[2015,36.666],[2016,40.355],[2017,33.705],[2018,40.159],[2019,38.92],[2020,45.494],[2021,48.41],[2022,43.727],[2023,52.095],[2024,58.953]];
   const splitMixData=mixData.map((d,i)=>{const q=importedElectricityRenewableShareData[i][1]/100;return[d[0],d[1],d[2],d[4],d[3],d[6]*(1-q),d[6]*q,d[5]]});
   const projectOwnRenewableElectric=yr=>yr<=2030?1163.93+(ownRenewTarget2030-1163.93)*(yr-2024)/6:ownRenewTarget2030+((450.6+2500+1244+650)-ownRenewTarget2030)*(yr-2030)/20;

@@ -31,9 +31,7 @@
       .definition-disclosure-body>.definition::before{content:none}
       .definition-disclosure-body>.definition.is-long{column-count:auto}
       .overlay-definition-row>.definition-disclosure{min-width:0;margin:0}
-      .map-copy-grid>.definition-disclosure{grid-column:1/-1;order:1;margin:0;align-self:start}
-      .map-copy-grid>.method-disclosure{order:2}
-      .map-copy-grid>.apa-citation{order:3;align-self:center;margin:.15rem .25rem}
+      .map-copy-grid>.definition-disclosure{margin:0;align-self:start}
       .why-disclosure{margin:.65rem 0 0}
       .why-disclosure>summary{position:relative;display:block;padding:.62rem 6.2rem .62rem .8rem;cursor:pointer;list-style:none;background:#f3f7e8;border-left:4px solid var(--norm,#9fae24);color:var(--sub,#536963);font-size:.82rem;line-height:1.4}
       .why-disclosure>summary::-webkit-details-marker{display:none}
