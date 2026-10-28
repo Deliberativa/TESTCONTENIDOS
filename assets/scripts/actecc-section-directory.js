@@ -1,4 +1,13 @@
 (() => {
+  // Acceso a la consulta documental del Libro Blanco.
+  const mainNav = document.querySelector('body > nav');
+  if (mainNav && !mainNav.querySelector('a[href="consultar.html"]')) {
+    const askLink = document.createElement('a');
+    askLink.href = 'consultar.html';
+    askLink.textContent = 'Preguntar';
+    mainNav.insertBefore(askLink, mainNav.querySelector('a[href="relato.html"]'));
+  }
+
   const openAncestors = target => {
     let node = target;
     while (node) {
