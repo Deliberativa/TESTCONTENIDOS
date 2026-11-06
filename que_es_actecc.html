@@ -40,8 +40,10 @@ h2.section-title{margin:2.7rem 0 .75rem;color:#007b65;font-size:1.55rem}
 .guarantees{columns:2;column-gap:2.5rem;margin:1rem 0;padding-left:1.2rem}
 .guarantees li{break-inside:avoid;margin:0 0 .75rem}
 .note{margin-top:2.2rem;padding:1rem 1.15rem;color:#665523;background:var(--warm);border-left:5px solid #d7aa25;font-size:.86rem}
+.content-committee{margin:2.7rem 0 2.2rem;padding:1.2rem;background:linear-gradient(135deg,#eef8f4,#fff);border:1px solid var(--border);border-top:5px solid var(--green)}
+.content-committee-heading{max-width:78ch}.content-committee-kicker{margin:0 0 .3rem;color:#087a68;font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.content-committee h2{margin:0;color:var(--ink);font-size:1.35rem}.content-committee-intro{margin:.45rem 0 1rem;color:#45665d;font-size:.86rem;line-height:1.58}.content-committee-group-title{margin:1.05rem 0 .55rem;color:#315c52;font-size:.78rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase}.content-committee-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}.content-expert{display:flex;min-width:0;flex-direction:column;padding:.9rem;background:#fff;border:1px solid #d8e5e0;border-left:4px solid var(--expert-color,#087a68)}.content-expert h3{margin:0;color:var(--ink);font-size:1rem;line-height:1.25}.content-expert-role{margin:.3rem 0;color:#335c52;font-size:.72rem;font-weight:700;line-height:1.45}.content-expert p{margin:.25rem 0;color:#536d65;font-size:.7rem;line-height:1.5}.content-expert a{margin-top:auto;padding-top:.55rem;color:#007f6b;font-size:.68rem;font-weight:800}.content-committee-note{margin:.85rem 0 0;padding:.68rem .75rem;background:#fff7e8;border-left:4px solid #e69f00;color:#625644;font-size:.72rem;line-height:1.52}
 footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gradient(90deg,#009b7a,#cddd23)}
-@media(max-width:850px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}.source-card{grid-template-columns:1fr}.source-card a{justify-self:start}}
+@media(max-width:850px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}.source-card{grid-template-columns:1fr}.source-card a{justify-self:start}.content-committee-grid{grid-template-columns:1fr}}
 @media(max-width:650px){nav a[href="relato.html"]{margin-left:0}.summary-grid,.process{grid-template-columns:1fr}.guarantees{columns:1}}
 </style>
 <link rel="stylesheet" href="assets/styles/actecc-shell.css">
@@ -68,7 +70,8 @@ footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gra
       <a class="section-directory-tab" href="#que-aporta"><span class="section-directory-number">01</span><span><strong>Qué aporta la Asamblea</strong><small>Diversidad, información, deliberación y respuesta pública.</small></span></a>
       <a class="section-directory-tab" href="#como-trabaja"><span class="section-directory-number">02</span><span><strong>Cómo se forma y trabaja</strong><small>Invitación, inscripción, sorteo y deliberación.</small></span></a>
       <a class="section-directory-tab" href="#garantias-participacion"><span class="section-directory-number">03</span><span><strong>Garantías de participación</strong><small>Accesibilidad, igualdad, compensación e independencia.</small></span></a>
-      <a class="section-directory-tab" href="#documento-referencia"><span class="section-directory-number">04</span><span><strong>Documento de referencia</strong><small>Fuente institucional utilizada para esta página.</small></span></a>
+      <a class="section-directory-tab" href="#comite-contenidos"><span class="section-directory-number">04</span><span><strong>Comité de contenidos</strong><small>Personas expertas que acompañan y contrastan la información.</small></span></a>
+      <a class="section-directory-tab" href="#documento-referencia"><span class="section-directory-number">05</span><span><strong>Documento de referencia</strong><small>Fuente institucional utilizada para esta página.</small></span></a>
     </div>
     <div class="section-directory-subgroups" style="--directory-group-columns:2">
       <section class="section-directory-group"><h3>Qué ofrece</h3><div class="section-directory-sublinks"><a href="#grupo-diverso">Grupo diverso</a><a href="#informacion-previa">Información</a><a href="#deliberacion-ciudadana">Deliberación</a><a href="#respuesta-institucional">Respuesta</a></div></section>
@@ -90,7 +93,7 @@ footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gra
   <aside class="source-card" id="documento-referencia" aria-label="Documento institucional de referencia">
     <div>
       <strong>Actualización institucional del proceso</strong>
-      <p>El anuncio del Gobierno Vasco de 30 de septiembre de 2026 concreta la pregunta, la selección, el calendario y el resultado esperado. El FAQ de 17 de junio se mantiene como documento complementario para las garantías y el funcionamiento detallado.</p>
+      <p>El anuncio del Gobierno Vasco de 30 de septiembre de 2026 concreta la pregunta, la selección y el resultado esperado. El calendario se ha actualizado posteriormente: las invitaciones están previstas para noviembre de 2026 y las sesiones se celebrarán entre enero y marzo de 2027. El FAQ de 17 de junio se mantiene como documento complementario para las garantías y el funcionamiento detallado.</p>
     </div>
     <a href="https://www.irekia.euskadi.eus/es/news/113132-euskadi-debatira-cuanta-energia-renovable-desarrollamos-donde-mediante-una-asamblea-ciudadana" target="_blank" rel="noopener">Abrir el anuncio oficial</a>
   </aside>
@@ -114,12 +117,81 @@ footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gra
     </article>
   </section>
 
+  <section class="content-committee" id="comite-contenidos" aria-labelledby="content-committee-title">
+    <div class="content-committee-heading">
+      <p class="content-committee-kicker">Asesoramiento experto</p>
+      <h2 id="content-committee-title">Comité de contenidos</h2>
+      <p class="content-committee-intro">La preparación de los contenidos cuenta con el asesoramiento de personas expertas en ámbitos complementarios de la transición energética. Su participación contribuye a identificar datos, enfoques y aspectos que requieren matización.</p>
+    </div>
+    <h3 class="content-committee-group-title">Especialistas en transición energética y cambio climático</h3>
+    <div class="content-committee-grid">
+      <article class="content-expert" style="--expert-color:#19756b">
+        <h3>Mercedes Maroto-Valer</h3>
+        <p class="content-expert-role">Catedrática Robert Buchan de Ingeniería de la Energía Sostenible, directora del Research Centre for Carbon Solutions y vicerrectora adjunta de Sostenibilidad Global en Heriot-Watt University.</p>
+        <p>Especialista en sistemas energéticos, descarbonización industrial, hidrógeno y captura, uso y almacenamiento de carbono.</p>
+        <a href="https://www.hw.ac.uk/profiles/executive/mercedes-maroto-valer" target="_blank" rel="noopener noreferrer">Perfil institucional ↗</a>
+      </article>
+      <article class="content-expert" style="--expert-color:#7fbd32">
+        <h3>Elisa Sainz de Murieta</h3>
+        <p class="content-expert-role">Profesora de Economía Aplicada en la Universidad del País Vasco / Euskal Herriko Unibertsitatea e investigadora asociada de BC3.</p>
+        <p>Especialista en adaptación al cambio climático, riesgos climáticos, impactos socioeconómicos y gobernanza.</p>
+        <a href="https://ekoizpen-zientifikoa.ehu.eus/investigadores/326546/detalle" target="_blank" rel="noopener noreferrer">Perfil institucional ↗</a>
+      </article>
+      <article class="content-expert" style="--expert-color:#247ba0">
+        <h3>Jorge Fernández Gómez</h3>
+        <p class="content-expert-role">Investigador sénior y coordinador del área de Energía y Medioambiente de Orkestra–Instituto Vasco de Competitividad.</p>
+        <p>Especialista en economía, regulación y mercados energéticos, transición energética y competitividad industrial.</p>
+        <a href="https://www.orkestra.deusto.es/es/actualidad/noticias-eventos/noticias/1299-jorge-fernandez-nuevo-coordinador-area-energia" target="_blank" rel="noopener noreferrer">Perfil institucional ↗</a>
+      </article>
+    </div>
+    <h3 class="content-committee-group-title">Ihobe, Sociedad Pública de Gestión Ambiental</h3>
+    <div class="content-committee-grid">
+      <article class="content-expert" style="--expert-color:#6a9f35">
+        <h3>María Jáuregui Lasa</h3>
+        <p class="content-expert-role">Técnica de proyectos de Ihobe y miembro del comité de contenidos.</p>
+        <p>Figura como contacto técnico de Ihobe para la asistencia a la secretaría técnica de la Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi.</p>
+        <a href="https://www.euskadi.eus/anuncio_contratacion/asistencia-tecnica-secretaria-tecnica-asamblea-ciudadana-transicion-energetica-y-cambio-climatico-euskadi/web01-tramite/es/" target="_blank" rel="noopener noreferrer">Referencia institucional ↗</a>
+      </article>
+      <article class="content-expert" style="--expert-color:#6a9f35">
+        <h3>Carlos Castillo Galán</h3>
+        <p class="content-expert-role">Técnico del área de Acción Climática de Ihobe y miembro del comité de contenidos.</p>
+        <p>Cuenta con experiencia en instrumentos climáticos orientados a la acción, tanto en mitigación como en adaptación al cambio climático.</p>
+        <a href="https://www.ihobe.eus/es/actualidad/ihobe-participa-en-una-jornada-organizada-por-surfrider-sobre-impactos-cambio-climatico-en-costa-vasca" target="_blank" rel="noopener noreferrer">Perfil institucional ↗</a>
+      </article>
+    </div>
+    <h3 class="content-committee-group-title">Ente Vasco de la Energía (EVE)</h3>
+    <div class="content-committee-grid">
+      <article class="content-expert" style="--expert-color:#009b7a">
+        <h3>Olatz Ajuria Astobiza</h3>
+        <p class="content-expert-role">Profesional del Ente Vasco de la Energía (EVE) y miembro del comité de contenidos.</p>
+        <p>Su perfil público recoge experiencia vinculada a proyectos renovables, innovación y energía marina.</p>
+        <a href="https://es.linkedin.com/in/olatz-ajuria-astobiza-128930aa" target="_blank" rel="noopener noreferrer">Perfil profesional ↗</a>
+      </article>
+      <article class="content-expert" style="--expert-color:#009b7a">
+        <h3>Blanca Delgado Azcona</h3>
+        <p class="content-expert-role">Profesional del Ente Vasco de la Energía (EVE) y miembro del comité de contenidos.</p>
+        <p>Participa desde EVE en el contraste y la revisión de la información que recibe la Asamblea.</p>
+        <a href="https://es.linkedin.com/in/blanca-delgado-azcona-54070512a" target="_blank" rel="noopener noreferrer">Perfil profesional ↗</a>
+      </article>
+    </div>
+    <h3 class="content-committee-group-title">Evidencia y deliberación ciudadana</h3>
+    <div class="content-committee-grid">
+      <article class="content-expert" style="--expert-color:#ef7d32">
+        <h3>Yago Bermejo Abati</h3>
+        <p class="content-expert-role">Cofundador de Deliberativa y miembro del comité de contenidos, especializado en evidencia y deliberación ciudadana.</p>
+        <p>Cuenta con más de diez años de experiencia en el diseño y la coordinación de procesos de participación y deliberación ciudadana en los ámbitos local, estatal, europeo y global.</p>
+        <a href="https://deliberativa.org/nosotros/" target="_blank" rel="noopener noreferrer">Perfil institucional ↗</a>
+      </article>
+    </div>
+    <p class="content-committee-note">El asesoramiento ayuda a contrastar y mejorar la información. La responsabilidad sobre la selección, la síntesis y la presentación final de los contenidos corresponde al equipo del proyecto.</p>
+  </section>
+
   <h2 class="section-title" id="como-trabaja">Cómo se forma y cómo trabaja</h2>
   <ol class="process">
-    <li><strong>Invitación amplia.</strong><br>Se envían 20.000 cartas a personas residentes en Euskadi seleccionadas mediante muestreo cívico en colaboración con Eustat.</li>
+    <li><strong>Invitación amplia.</strong><br>Las invitaciones todavía no se han enviado. Está previsto remitir en noviembre de 2026 un total de 20.000 cartas a personas residentes en Euskadi seleccionadas mediante muestreo cívico en colaboración con Eustat.</li>
     <li><strong>Inscripción voluntaria.</strong><br>Las personas invitadas deciden si desean ofrecerse para participar en todo el proceso.</li>
     <li><strong>Segundo sorteo.</strong><br>Entre quienes se inscriben se eligen 32 integrantes con equilibrio de edades, territorios y perfiles socioculturales.</li>
-    <li><strong>Cinco sesiones.</strong><br>Entre noviembre de 2026 y febrero de 2027, el grupo se informa, delibera y formula recomendaciones. El informe final se publicará en junio de 2027.</li>
+    <li><strong>Cinco sesiones.</strong><br>Entre enero y marzo de 2027, el grupo se informará, deliberará y formulará recomendaciones. El informe final se publicará en junio de 2027.</li>
   </ol>
 
   <h2 class="section-title" id="garantias-participacion">Garantías para una participación real</h2>
