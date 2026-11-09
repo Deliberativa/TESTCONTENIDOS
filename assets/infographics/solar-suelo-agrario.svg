@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">¿Cuánta superficie agraria podría ocupar la energía solar?</title>
+  <desc id="desc">Comparación entre la superficie agraria útil de Euskadi, la ocupación solar existente, la aprobada y el máximo hipotético del PTS.</desc>
+  <defs>
+    <pattern id="ptsHatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <rect width="14" height="14" fill="#FDAB6E" fill-opacity="0.42"/>
+      <rect width="4" height="14" fill="#FDAB6E"/>
+    </pattern>
+    <pattern id="grid" width="58" height="24" patternUnits="userSpaceOnUse">
+      <rect x="0.5" y="0.5" width="57" height="23" rx="2" fill="#FFFDF7" stroke="#00183A" stroke-opacity="0.18"/>
+    </pattern>
+    <clipPath id="gridClip"><rect x="80" y="286" width="580" height="240" rx="5"/></clipPath>
+    <style>
+      .display{font-family:Nohemi,Arial,sans-serif;font-weight:800;fill:#00183A}
+      .body{font-family:Geist,Arial,sans-serif;fill:#00183A}
+      .small{font-size:17px}.label{font-size:20px;font-weight:650}.number{font-size:42px;font-weight:800}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#FFFDF7"/>
+  <rect x="0" y="0" width="18" height="1000" fill="#FDAB6E"/>
+
+  <text id="headline" class="display" x="80" y="88" font-size="41">¿Cuánta tierra agraria podría ocupar la energía solar?</text>
+  <text class="body" x="82" y="135" font-size="21">La escala total es pequeña, pero crece de forma notable y puede concentrarse territorialmente.</text>
+  <image href="../deliberativa-logo.png" x="1325" y="55" width="195" height="64" preserveAspectRatio="xMidYMid meet"/>
+
+  <text class="display" x="80" y="220" font-size="26">1 · La escala completa</text>
+  <text class="body" x="80" y="252" font-size="19">Las 177.011 ha de superficie agraria útil de Euskadi representan el campo completo.</text>
+
+  <g clip-path="url(#gridClip)">
+    <rect x="80" y="286" width="580" height="240" fill="url(#grid)"/>
+    <!-- 1,45 % del total: una celda completa y un 45 % de la siguiente -->
+    <rect x="80" y="286" width="58" height="24" fill="url(#ptsHatch)"/>
+    <rect x="138" y="286" width="26.1" height="24" fill="url(#ptsHatch)"/>
+  </g>
+  <rect x="80" y="286" width="580" height="240" rx="5" fill="none" stroke="#00183A" stroke-width="2"/>
+  <text class="body small" x="80" y="554">100 casillas = 100 % de la superficie agraria útil</text>
+  <path d="M164 299 C230 285 274 275 334 252" fill="none" stroke="#FDAB6E" stroke-width="3"/>
+  <circle cx="164" cy="299" r="5" fill="#FDAB6E"/>
+  <text class="display" x="704" y="336" font-size="64" fill="#00183A">1,4–1,5 %</text>
+  <text class="body" x="708" y="375" font-size="23" font-weight="650">de la superficie agraria útil</text>
+  <text class="body" x="708" y="411" font-size="20">si se desarrollara todo el potencial solar del PTS</text>
+  <rect x="706" y="443" width="666" height="85" rx="12" fill="#F4E8DD"/>
+  <text class="body" x="730" y="475" font-size="18" font-weight="650">Máximo teórico: 1,66 %</text>
+  <text class="body" x="730" y="505" font-size="17">Si todas las ZLS fueran agrarias y se ocuparan por completo.</text>
+
+  <text class="display" x="80" y="628" font-size="26">2 · Ampliamos solo los dos primeros puntos porcentuales</text>
+  <text class="body" x="80" y="660" font-size="19">Así se distinguen las instalaciones existentes, las aprobadas y el potencial territorial.</text>
+
+  <!-- escala 0–2 %: 680 px, 340 px por punto porcentual -->
+  <line x1="384" y1="700" x2="1064" y2="700" stroke="#00183A" stroke-opacity="0.25" stroke-width="2"/>
+  <g class="body" font-size="15" fill="#00183A">
+    <line x1="384" y1="692" x2="384" y2="708" stroke="#00183A"/><text x="376" y="728">0</text>
+    <line x1="554" y1="692" x2="554" y2="708" stroke="#00183A"/><text x="540" y="728">0,5</text>
+    <line x1="724" y1="692" x2="724" y2="708" stroke="#00183A"/><text x="716" y="728">1</text>
+    <line x1="894" y1="692" x2="894" y2="708" stroke="#00183A"/><text x="880" y="728">1,5</text>
+    <line x1="1064" y1="692" x2="1064" y2="708" stroke="#00183A"/><text x="1053" y="728">2 %</text>
+  </g>
+
+  <text class="body label" x="80" y="771">Existentes</text>
+  <rect x="384" y="748" width="20.4" height="32" rx="5" fill="#00183A"/>
+  <text class="body" x="420" y="772" font-size="19"><tspan font-weight="750">103 ha</tspan><tspan> · 0,06 %</tspan></text>
+
+  <text class="body label" x="80" y="833">Existentes + aprobadas</text>
+  <rect x="384" y="810" width="74.8" height="32" rx="5" fill="#74A2BB"/>
+  <text class="body" x="475" y="834" font-size="19"><tspan font-weight="750">394 ha</tspan><tspan> · 0,22 %</tspan></text>
+
+  <text class="body label" x="80" y="895">Todo el potencial solar del PTS</text>
+  <rect x="384" y="872" width="476" height="32" rx="5" fill="url(#ptsHatch)"/>
+  <rect x="860" y="872" width="34" height="32" fill="#FDAB6E" fill-opacity="0.25"/>
+  <line x1="948" y1="858" x2="948" y2="918" stroke="#FDAB6E" stroke-width="2" stroke-dasharray="5 5"/>
+  <text class="body" x="930" y="938" font-size="14">máx. 1,66 %</text>
+  <text class="body" x="925" y="895" font-size="19"><tspan font-weight="750">2.490–2.640 ha</tspan><tspan> · 1,4–1,5 %</tspan></text>
+
+  <rect x="1280" y="736" width="240" height="110" rx="18" fill="#00183A"/>
+  <text x="1306" y="775" font-family="Geist,Arial,sans-serif" font-size="17" font-weight="650" fill="#FFFDF7">Del presente al PTS</text>
+  <text x="1306" y="827" font-family="Nohemi,Arial,sans-serif" font-size="46" font-weight="800" fill="#FDAB6E">≈ ×25</text>
+
+  <line x1="80" y1="936" x2="1520" y2="936" stroke="#00183A" stroke-opacity="0.18"/>
+  <text class="body" x="80" y="966" font-size="15">Lectura: las ZLS son potencial territorial, no proyectos comprometidos. La afección local puede ser mayor si se concentra en determinados municipios o suelos productivos.</text>
+  <text class="body" x="80" y="990" font-size="13">Fuentes: PTS de Energías Renovables del Gobierno Vasco; Eustat, SAU 2023. Estimación agraria del PTS: 85–90 % de 2.930,9 ha.</text>
+</svg>

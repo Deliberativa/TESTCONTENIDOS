@@ -114,6 +114,43 @@ main{padding-top:1.45rem}
 .land-context-prose p{margin:0 0 .82rem;font-size:.82rem;line-height:1.58;break-inside:avoid}
 .land-context-prose strong{color:#5d422e}
 .land-context-prose a{color:#70541a;font-weight:750;text-decoration:underline;text-underline-offset:2px}
+.solar-land-viz{margin:1rem 0 1.25rem;padding:clamp(.9rem,2.5vw,1.4rem);border:1px solid var(--border);border-radius:1rem;background:linear-gradient(180deg,#fbfdfc,#f4faf7)}
+.solar-land-viz-header{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;margin-bottom:1rem}
+.solar-land-viz-header h5{margin:0;color:var(--ink);font-size:clamp(1.1rem,2.4vw,1.5rem);line-height:1.18}
+.solar-land-viz-header p{max-width:70ch;margin:.35rem 0 0;color:var(--sub);font-size:.84rem}
+.solar-land-viz-tag{flex:0 0 auto;padding:.28rem .6rem;border-radius:999px;color:var(--green-dark);background:var(--green-pale);font-size:.66rem;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
+.solar-land-scenario:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.solar-land-layer-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin:.25rem 0 .7rem}
+.solar-land-layer-controls button{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:.5rem;align-items:center;padding:.58rem .65rem;border:1px solid var(--border);border-radius:.7rem;color:var(--ink);background:#fff;font:inherit;text-align:left;cursor:pointer}
+.solar-land-layer-controls button i{width:.85rem;height:.85rem;border-radius:.2rem;background:var(--layer-color)}
+.solar-land-layer-controls button span{font-size:.72rem;font-weight:800;line-height:1.2}.solar-land-layer-controls button strong{font-size:.72rem;white-space:nowrap}
+.solar-land-layer-controls button[aria-pressed="false"]{color:#7a8d87;background:#f6f8f7}.solar-land-layer-controls button[aria-pressed="false"] i{opacity:.18}.solar-land-layer-controls button[aria-pressed="false"] strong{text-decoration:line-through}
+.solar-land-layer-controls button:hover{border-color:#83b5a4}.solar-land-layer-controls button:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.solar-land-single-stage{padding:.9rem;border:1px solid var(--border);border-radius:.85rem;background:#fff}
+.solar-land-single-heading{display:flex;justify-content:space-between;gap:1rem;margin-bottom:.65rem}.solar-land-single-heading>div:last-child{text-align:right}
+.solar-land-single-heading span{display:block;color:var(--sub);font-size:.66rem;font-weight:750}.solar-land-single-heading strong{display:block;color:var(--ink);font-size:1rem}
+.solar-land-single-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));grid-template-rows:repeat(10,1fr);aspect-ratio:4/1.45;overflow:hidden;border:1.5px solid var(--ink);border-radius:.45rem;background:#fff}
+.solar-land-single-grid .solar-land-cell{background:#fbfdfc}.solar-land-single-grid .solar-land-cell::before{display:none}
+.solar-land-single-scale{display:flex;justify-content:space-between;gap:1rem;margin-top:.42rem;color:var(--sub);font-size:.63rem}.solar-land-single-scale span:last-child{text-align:right;font-weight:750}
+.solar-land-scenarios{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.solar-land-scenario{min-width:0;padding:.85rem;border:1px solid var(--border);border-radius:.85rem;background:#fff;cursor:pointer;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.solar-land-scenario:hover,.solar-land-scenario.is-selected{transform:translateY(-2px);border-color:var(--scenario-color);box-shadow:0 8px 22px rgba(24,63,55,.09)}
+.solar-land-scenario-kicker{display:block;color:var(--scenario-color);font-size:.63rem;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
+.solar-land-scenario h6{min-height:2.35em;margin:.28rem 0 .48rem;color:var(--ink);font-size:.94rem;line-height:1.16}
+.solar-land-value{display:block;color:var(--ink);font-size:clamp(1.5rem,3.2vw,2.2rem);font-weight:850;line-height:1}
+.solar-land-hectares{display:block;margin:.25rem 0 .65rem;color:var(--sub);font-size:.73rem}
+.solar-land-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));grid-template-rows:repeat(10,1fr);aspect-ratio:20/9;overflow:hidden;border:1.5px solid var(--ink);border-radius:.35rem;background:#fff}
+.solar-land-cell{position:relative;min-width:0;min-height:0;border-right:1px solid #d5e2de;border-bottom:1px solid #d5e2de;background:#fbfdfc;overflow:hidden}
+.solar-land-cell:nth-child(10n){border-right:0}.solar-land-cell:nth-last-child(-n+10){border-bottom:0}
+.solar-land-cell::before{content:"";position:absolute;inset:0 auto 0 0;width:var(--cell-fill,0%);background:var(--scenario-color)}
+.solar-land-scenario[data-scenario="pts"] .solar-land-cell::before{background:repeating-linear-gradient(135deg,#d6a51a 0 4px,#fff1b8 4px 8px)}
+.solar-land-grid-note{display:block;margin-top:.38rem;color:var(--sub);font-size:.62rem}
+.solar-land-detail{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.75rem;align-items:center;margin-top:.85rem;padding:.8rem .9rem;border-radius:.75rem;background:var(--green-pale)}
+.solar-land-detail-badge{display:grid;place-items:center;min-width:3rem;height:3rem;padding:0 .4rem;border-radius:50%;color:#fff;background:var(--green-dark);font-size:.9rem;font-weight:850}
+.solar-land-detail strong{display:block;color:var(--ink);font-size:.86rem}.solar-land-detail p{margin:.14rem 0 0;color:var(--sub);font-size:.75rem;line-height:1.42}
+.solar-land-viz figcaption{margin-top:.8rem;padding-top:.7rem;border-top:1px solid var(--border);color:var(--sub);font-size:.66rem;line-height:1.48}
+.solar-land-viz figcaption p{margin:.2rem 0}.solar-land-viz figcaption strong{color:var(--ink)}.solar-land-viz figcaption a{color:var(--green-dark);font-weight:750;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:800px){.solar-land-scenarios{grid-template-columns:1fr}.solar-land-scenario h6{min-height:0}.solar-land-grid{aspect-ratio:2.5/1}.solar-land-viz-header{display:block}.solar-land-viz-tag{display:inline-block;margin-top:.55rem}.solar-land-layer-controls{grid-template-columns:1fr}.solar-land-single-grid{aspect-ratio:2.25/1}.solar-land-single-heading,.solar-land-single-scale{display:block}.solar-land-single-heading>div:last-child,.solar-land-single-scale span:last-child{margin-top:.35rem;text-align:left}}
 .land-comparison{margin:1rem 0 1.2rem;padding:1rem;border:1px solid #d7bd76;border-radius:.8rem;background:#fff}
 .land-comparison h5{margin:0 0 .35rem;color:#624817;font-size:1.08rem}
 .land-comparison>p{margin:.35rem 0;color:var(--sub);font-size:.86rem}
@@ -1063,6 +1100,30 @@ nav a[href="relato.html"]{margin-left:auto}
       <p><strong>El conflicto se concentra especialmente en Álava.</strong> En 2024 se presentaron unas 15.000 alegaciones a distintos macroproyectos energéticos, 5.500 de ellas en Gorbeialdea, según el <a href="https://www.uaga.eus/15-000-alegaciones-a-los-macroproyectos-energeticos-que-asedian-alava/" target="_blank" rel="noopener">balance de UAGA</a>. En 2026, nueve ayuntamientos, unas 130 juntas administrativas y varias organizaciones presentaron más de 7.200 alegaciones a proyectos de Solaria, según <a href="https://www.noticiasdealava.eus/alava/2026/03/26/uaga-reclama-proyectos-solaria-alava-10867498.html" target="_blank" rel="noopener">Noticias de Álava</a> y <a href="https://cronicavasca.elespanol.com/empresas/20260326/plataformas-presentan-alegaciones-proyectos-solaria-alava/1003742745624_0.html" target="_blank" rel="noopener">Crónica Vasca</a>. Las objeciones sobre la compatibilidad con el PTS Agroforestal y las tierras de alto valor estratégico constan también en un <a href="https://www.euskadi.eus/bopv2/datos/2025/02/2500887a.shtml" target="_blank" rel="noopener">expediente del Gobierno Vasco</a>.</p>
       <p>La controversia no enfrenta de forma simple agricultura y energía renovable. Depende de la escala, la ubicación, la propiedad, la participación local, las infraestructuras asociadas y la posibilidad real de mantener usos agrarios compatibles. La comparación siguiente reúne órdenes de magnitud y casos concretos para distinguir esos factores; no declara de antemano que todo proyecto solar sobre suelo sea inadecuado ni que toda actividad agraria tenga el mismo valor territorial.</p>
     </div>
+    <figure class="solar-land-viz" data-solar-land-viz aria-labelledby="solar-land-viz-title">
+      <header class="solar-land-viz-header">
+        <div><h5 id="solar-land-viz-title">¿Cuánta tierra agraria podría ocupar la energía solar?</h5><p>Activa y combina capas sobre una única representación de las 177.011 hectáreas de superficie agraria útil de Euskadi.</p></div>
+        <span class="solar-land-viz-tag">Energía · territorio</span>
+      </header>
+      <div class="solar-land-layer-controls" role="group" aria-label="Capas de ocupación solar sobre el suelo agrario">
+        <button type="button" data-solar-land-layer="existing" aria-pressed="true"><i style="--layer-color:#183f37"></i><span>Existentes</span><strong>0,06 %</strong></button>
+        <button type="button" data-solar-land-layer="approved" aria-pressed="true"><i style="--layer-color:#2d7792"></i><span>Existentes + aprobadas</span><strong>0,22 %</strong></button>
+        <button type="button" data-solar-land-layer="pts" aria-pressed="true"><i style="--layer-color:#d6a51a"></i><span>Potencial solar del PTS</span><strong>1,43 %</strong></button>
+      </div>
+      <div class="solar-land-single-stage">
+        <div class="solar-land-single-heading"><div><span>Superficie agraria útil de Euskadi</span><strong>177.011 ha</strong></div><div><span>Ocupación mostrada</span><strong data-solar-land-total>1,43 %</strong></div></div>
+        <div class="solar-land-single-grid" data-solar-land-grid aria-label="Cuadrícula de la superficie agraria útil de Euskadi con las tres capas solares activas"></div>
+        <div class="solar-land-single-scale"><span>100 casillas = 100 % de la SAU</span><span data-solar-land-active-summary>Existente + aprobada + potencial PTS</span></div>
+      </div>
+      <div class="solar-land-detail" aria-live="polite">
+        <span class="solar-land-detail-badge" data-solar-land-detail-badge>×25</span>
+        <div><strong data-solar-land-detail-title>Tres capas activas</strong><p data-solar-land-detail-copy>La franja oscura representa la ocupación existente; la azul, el aumento hasta incluir lo aprobado; y la amarilla, el aumento adicional hasta el potencial solar completo del PTS. No se suman dos veces las superficies acumuladas.</p></div>
+      </div>
+      <figcaption>
+        <p><strong>Método.</strong> Porcentaje = superficie agraria estimada ÷ 177.011 ha × 100. Existentes: 116,9 ha equivalentes × 88 % agrario ≈ 103 ha. Existentes + aprobadas: 457,9 ha × 86 % agrario ≈ 394 ha. En las superficies de los proyectos con uso previo comprobado, el 86,3 % era terreno agrario; aplicado como referencia a las 2.930,9 ha de ZLS solares del PTS, resultan unas 2.528 ha, equivalentes al 1,43 % de la SAU vasca. Es una extrapolación orientativa, no una medición parcela a parcela de las ZLS. El límite máximo teórico sería el 1,66 % si toda la superficie de las ZLS fuese agraria y llegara a ocuparse.</p>
+        <p><strong>Fuentes.</strong> <a href="https://www.eustat.eus/elementos/ele0024500/mayor-concentracion-en-las-explotaciones-agrarias-de-la-ca/not0024501_c.html" target="_blank" rel="noopener">Eustat, Encuesta sobre la estructura de las explotaciones agrarias 2023</a>; <a href="https://www.euskadi.eus/contenidos/informacion/pts_fase_ap_defi/es_def/adjuntos/DEFINITIVA-DOC-I-MEMORIA.pdf" target="_blank" rel="noopener">Gobierno Vasco, PTS de Energías Renovables, memoria para aprobación definitiva</a>; <a href="comparacion_escenarios_euskadi.html#solar-map-title">mapa de instalaciones y expedientes asociados</a>. Las ZLS son potencial territorial, no proyectos comprometidos.</p>
+      </figcaption>
+    </figure>
     <section class="land-comparison" aria-labelledby="land-comparison-title">
       <h5 id="land-comparison-title">¿Qué aporta cada uso del terreno?</h5>
       <p>La comparación no pretende valorar proyectos o parcelas uno por uno. Ofrece criterios generales para debatir qué orientación territorial conviene a Euskadi y cómo equilibrar la producción agraria, la generación de energía y la conservación del suelo.</p>
@@ -1316,6 +1377,7 @@ nav a[href="relato.html"]{margin-left:auto}
     <div class="reference-columns">
       <section><h4>Planificación y evaluación pública</h4><ol>
         <li>Gobierno Vasco (2026a). <a href="https://www.euskadi.eus/bopv2/datos/2026/03/2601215a.shtml">PTS de Energías Renovables: evaluación y respuesta a alegaciones</a>.</li>
+        <li>Gobierno Vasco (2026c). <a href="https://www.euskadi.eus/contenidos/informacion/pts_fase_ap_defi/es_def/adjuntos/DEFINITIVA-DOC-I-MEMORIA.pdf">PTS de Energías Renovables: memoria para aprobación definitiva</a>. Superficie, número de ZLS y potencial agregado de las zonas solares; cartografía oficial asociada.</li>
         <li>Gobierno Vasco (2026b). <a href="https://www.euskadi.eus/documentacion/2026/directrices-para-los-estudios-de-avifauna-y-quiropterofauna-en-los-proyectos-de-plantas-fotovoltaivas-sometidas-a-evaluacion-de-impacto-ambiental-simplificada/web01-a2inginp/es/">Directrices de avifauna y quirópteros para plantas fotovoltaicas</a>.</li>
         <li>Gobierno Vasco (2025). <a href="https://www.euskadi.eus/bopv2/datos/2025/02/2500887a.shtml">Expediente solar y alegaciones territoriales y agrarias</a>.</li>
         <li>Lasagabaster Herrarte, I. & Sáenz de Olazagoitia Blanco, A. (2026). <i>Transición energética y ordenación del territorio</i>, figura 5 y pp. 136–138. Cálculo cartográfico propio de la superficie de las ZLS y de su distribución por territorio histórico.</li>
@@ -1962,6 +2024,83 @@ nav a[href="relato.html"]{margin-left:auto}
   });
   window.addEventListener("hashchange", revealTarget);
   revealTarget();
+})();
+</script>
+<script>
+(() => {
+  const root = document.querySelector("[data-solar-land-viz]");
+  if (!root) return;
+  const layers = {
+    existing: { threshold: 0.058, color: "#183f37", label: "Existentes", shortLabel: "existentes", display: "0,06 %", copy: "116,9 ha equivalentes × una proporción agraria central estimada del 88 % ≈ 103 ha; 103 ÷ 177.011 × 100 = 0,058 %, redondeado a 0,06 %." },
+    approved: { threshold: 0.223, color: "#2d7792", label: "Existentes + aprobadas", shortLabel: "aprobadas", display: "0,22 %", copy: "457,9 ha mapeadas × una proporción agraria documentada y estimada del 86 % ≈ 394 ha; 394 ÷ 177.011 × 100 = 0,223 %, redondeado a 0,22 %." },
+    pts: { threshold: 1.428, color: "#d6a51a", label: "Potencial solar del PTS", shortLabel: "potencial PTS", display: "1,43 %", copy: "En las superficies de los proyectos con uso previo comprobado, el 86,3 % era terreno agrario. Aplicado como referencia a 2.930,9 ha de ZLS solares, equivale a unas 2.528 ha, el 1,43 % de la SAU vasca y cerca de 25 veces la ocupación agraria estimada actual. Es una extrapolación orientativa; el máximo teórico, si todas las ZLS fueran agrarias y se ocupasen, sería el 1,66 %." },
+  };
+  const active = new Set(["existing", "approved", "pts"]);
+  const layerButtons = Array.from(root.querySelectorAll("[data-solar-land-layer]"));
+  const grid = root.querySelector("[data-solar-land-grid]");
+  const total = root.querySelector("[data-solar-land-total]");
+  const activeSummary = root.querySelector("[data-solar-land-active-summary]");
+  const detailBadge = root.querySelector("[data-solar-land-detail-badge]");
+  const detailTitle = root.querySelector("[data-solar-land-detail-title]");
+  const detailCopy = root.querySelector("[data-solar-land-detail-copy]");
+  const orderedActive = () => Object.entries(layers).filter(([id]) => active.has(id)).sort((a, b) => a[1].threshold - b[1].threshold);
+  const displayTotal = (threshold) => threshold === 0 ? "0 %" : threshold >= 1.4 ? "1,43 %" : threshold >= .22 ? "0,22 %" : "0,06 %";
+  const renderGrid = () => {
+    const selectedLayers = orderedActive();
+    const segments = [];
+    let previous = 0;
+    selectedLayers.forEach(([id, layer]) => {
+      segments.push({ id, start: previous, end: layer.threshold, color: layer.color });
+      previous = layer.threshold;
+    });
+    grid.replaceChildren();
+    for (let index = 0; index < 100; index += 1) {
+      const cell = document.createElement("span");
+      cell.className = "solar-land-cell";
+      const stops = [];
+      let cursor = 0;
+      segments.forEach((segment) => {
+        const start = Math.max(segment.start, index);
+        const end = Math.min(segment.end, index + 1);
+        if (end <= start) return;
+        const localStart = (start - index) * 100;
+        const localEnd = (end - index) * 100;
+        if (localStart > cursor) stops.push(`#fbfdfc ${cursor}%`, `#fbfdfc ${localStart}%`);
+        stops.push(`${segment.color} ${localStart}%`, `${segment.color} ${localEnd}%`);
+        cursor = localEnd;
+      });
+      if (stops.length) {
+        if (cursor < 100) stops.push(`#fbfdfc ${cursor}%`, "#fbfdfc 100%");
+        cell.style.background = `linear-gradient(90deg,${stops.join(",")})`;
+      }
+      grid.append(cell);
+    }
+    const threshold = selectedLayers.length ? selectedLayers.at(-1)[1].threshold : 0;
+    const summary = selectedLayers.map(([, layer]) => layer.shortLabel).join(" + ") || "Ninguna capa activa";
+    total.textContent = displayTotal(threshold);
+    activeSummary.textContent = summary;
+    grid.setAttribute("aria-label", `${summary}. Ocupación total mostrada: ${displayTotal(threshold)} de la superficie agraria útil.`);
+    detailBadge.textContent = displayTotal(threshold);
+    detailTitle.textContent = selectedLayers.length === 1 ? selectedLayers[0][1].label : `${selectedLayers.length} capas activas`;
+    detailCopy.textContent = selectedLayers.length ? "Los colores representan tramos acumulativos: cada nueva capa amplía la superficie hasta su umbral y no vuelve a sumar la ocupación incluida en las capas anteriores." : "Activa una o varias capas para comparar su magnitud sobre la misma superficie agraria de referencia.";
+  };
+  const showLayerDetail = (id) => {
+    const layer = layers[id];
+    detailBadge.textContent = layer.display;
+    detailTitle.textContent = layer.label;
+    detailCopy.textContent = layer.copy;
+  };
+  layerButtons.forEach((button) => {
+    const id = button.dataset.solarLandLayer;
+    button.addEventListener("pointerenter", () => showLayerDetail(id));
+    button.addEventListener("focus", () => showLayerDetail(id));
+    button.addEventListener("click", () => {
+      if (active.has(id)) active.delete(id); else active.add(id);
+      button.setAttribute("aria-pressed", String(active.has(id)));
+      renderGrid();
+    });
+  });
+  renderGrid();
 })();
 </script>
 <script src="assets/scripts/actecc-section-directory.js"></script>
