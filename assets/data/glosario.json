@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-11",
+  "audience": "Personas sin conocimientos técnicos previos",
+  "source_of_truth": {
+    "relato": "RELATO_OTECC — Ihobe y EVE",
+    "libro_blanco": "09_CHATBOT/corpus/pasajes.json"
+  },
+  "sections": [
+    {
+      "id": "relato",
+      "title": "Conceptos del relato",
+      "description": "Son las palabras necesarias para entender el motivo de la deliberación y la decisión que se pide a la Asamblea.",
+      "terms": [
+        {
+          "id": "autonomia-energetica",
+          "term": "Autonomía energética",
+          "definition": "Capacidad de un territorio para cubrir una parte mayor de la energía que necesita con energía producida dentro de ese territorio. No significa quedarse aislado ni dejar de intercambiar energía con otros lugares.",
+          "example": "Euskadi aumenta su autonomía energética si produce aquí una parte mayor de la electricidad que consume.",
+          "source": "relato"
+        },
+        {
+          "id": "biodiversidad",
+          "term": "Biodiversidad",
+          "definition": "Variedad de seres vivos, como plantas, animales y microorganismos, y de los lugares donde viven.",
+          "example": "Una instalación puede afectar a la biodiversidad si altera un hábitat importante para aves o murciélagos.",
+          "source": "relato"
+        },
+        {
+          "id": "cambio-climatico",
+          "term": "Cambio climático",
+          "definition": "Cambio duradero del clima del planeta. El calentamiento actual se debe principalmente a gases que emitimos al quemar carbón, petróleo y gas.",
+          "example": "El aumento de las olas de calor es una consecuencia del cambio climático.",
+          "source": "relato"
+        },
+        {
+          "id": "combustibles-fosiles",
+          "term": "Combustibles fósiles",
+          "definition": "Carbón, petróleo y gas natural. Al quemarlos para obtener energía se libera dióxido de carbono, un gas que contribuye al cambio climático.",
+          "example": "La gasolina y el gasóleo proceden del petróleo y son combustibles fósiles.",
+          "source": "relato"
+        },
+        {
+          "id": "consumo-electrico",
+          "term": "Consumo eléctrico",
+          "definition": "Cantidad de electricidad que utilizan los hogares, las empresas, los servicios y la industria. Es solo una parte de todo el consumo de energía.",
+          "example": "La luz, una lavadora o una máquina industrial aumentan el consumo eléctrico cuando están funcionando.",
+          "source": "relato"
+        },
+        {
+          "id": "consumo-energetico",
+          "term": "Consumo energético",
+          "definition": "Toda la energía que utilizamos. Incluye la electricidad y también los combustibles, el gas y el calor.",
+          "example": "El combustible de un coche y la electricidad de una vivienda forman parte del consumo energético.",
+          "source": "relato"
+        },
+        {
+          "id": "descarbonizacion",
+          "term": "Descarbonización",
+          "definition": "Proceso de reducir y, cuando sea posible, eliminar el uso de combustibles fósiles y las emisiones que provocan el cambio climático.",
+          "example": "Cambiar una caldera de gas por una bomba de calor alimentada con electricidad renovable ayuda a descarbonizar.",
+          "source": "relato"
+        },
+        {
+          "id": "eficiencia-energetica",
+          "term": "Eficiencia energética",
+          "definition": "Conseguir el mismo servicio utilizando menos energía.",
+          "example": "Aislar una vivienda permite mantenerla caliente gastando menos energía.",
+          "source": "relato"
+        },
+        {
+          "id": "electrificacion",
+          "term": "Electrificación",
+          "definition": "Sustituir usos que funcionan con petróleo o gas por otros que funcionan con electricidad.",
+          "example": "Usar un vehículo eléctrico en vez de uno de gasolina es electrificar el transporte.",
+          "source": "relato"
+        },
+        {
+          "id": "emisiones-netas-cero",
+          "term": "Emisiones netas cero",
+          "definition": "Situación en la que se emiten muy pocos gases de efecto invernadero y las emisiones que quedan se compensan retirando la misma cantidad de la atmósfera.",
+          "example": "Primero hay que reducir casi todas las emisiones; compensar no sustituye esa reducción.",
+          "source": "relato"
+        },
+        {
+          "id": "energia-renovable",
+          "term": "Energía renovable",
+          "definition": "Energía obtenida de fuentes que se renuevan de forma natural, como el sol, el viento o el agua.",
+          "example": "La electricidad de un panel solar es energía renovable.",
+          "source": "relato"
+        },
+        {
+          "id": "generacion-renovable-propia",
+          "term": "Generación eléctrica renovable propia",
+          "definition": "Electricidad renovable que se produce dentro de Euskadi. Puede proceder, por ejemplo, de instalaciones solares, eólicas o hidráulicas situadas aquí.",
+          "example": "Una planta solar situada en Euskadi aumenta la generación renovable propia.",
+          "source": "relato"
+        },
+        {
+          "id": "impacto",
+          "term": "Impacto",
+          "definition": "Efecto que una decisión o un proyecto produce sobre el medio ambiente, la sociedad, la economía o el territorio. Puede ser positivo o negativo.",
+          "example": "Crear empleo puede ser un impacto positivo; ocupar suelo agrario puede ser un impacto negativo.",
+          "source": "relato"
+        },
+        {
+          "id": "importacion-de-electricidad",
+          "term": "Importación de electricidad",
+          "definition": "Electricidad producida fuera de Euskadi que llega a través de la red eléctrica. No significa necesariamente que proceda de otro país.",
+          "example": "La electricidad que llega desde otras comunidades del sistema peninsular cuenta como importada por Euskadi.",
+          "source": "relato"
+        },
+        {
+          "id": "neutralidad-climatica",
+          "term": "Neutralidad climática",
+          "definition": "Objetivo de no añadir, en conjunto, más gases de efecto invernadero a la atmósfera. Para lograrlo hay que reducir mucho las emisiones y compensar solo las que no se puedan evitar.",
+          "example": "La ley vasca fija como objetivo alcanzar la neutralidad climática como muy tarde en 2050.",
+          "source": "relato"
+        },
+        {
+          "id": "transicion-energetica",
+          "term": "Transición energética",
+          "definition": "Cambio desde un sistema basado en combustibles fósiles hacia otro que usa menos energía, la aprovecha mejor y utiliza más fuentes renovables.",
+          "example": "Ahorrar energía, electrificar usos y producir electricidad renovable forman parte de la transición energética.",
+          "source": "relato"
+        }
+      ]
+    },
+    {
+      "id": "libro-blanco",
+      "title": "Conceptos adicionales del Libro Blanco",
+      "description": "Son términos que aparecen en mapas, gráficas, tablas y explicaciones del Libro Blanco. Aquí no se repiten los que ya están en el glosario del relato.",
+      "terms": [
+        {
+          "id": "almacenamiento-energetico",
+          "term": "Almacenamiento energético",
+          "definition": "Guardar energía para utilizarla más tarde. Puede hacerse, por ejemplo, con baterías o con agua almacenada en una central de bombeo.",
+          "example": "Una batería puede guardar electricidad solar del mediodía para usarla por la noche.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "autoconsumo",
+          "term": "Autoconsumo",
+          "definition": "Producción de electricidad en el mismo lugar o cerca del lugar donde se utiliza, normalmente mediante paneles solares.",
+          "example": "Una fábrica que usa la electricidad de sus propios paneles está autoconsumiendo.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "balance-energetico",
+          "term": "Balance energético",
+          "definition": "Resumen de toda la energía que entra, se transforma y se utiliza en un territorio durante un periodo.",
+          "example": "El balance permite saber cuánta energía usa Euskadi y de qué fuentes procede.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "biomasa",
+          "term": "Biomasa",
+          "definition": "Materia de origen vegetal o animal que se utiliza como fuente de energía, como restos forestales o ciertos residuos orgánicos.",
+          "example": "Una caldera puede producir calor quemando astillas de madera.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "capacidad-instalada",
+          "term": "Capacidad o potencia instalada",
+          "definition": "Máxima potencia que puede entregar una instalación en condiciones adecuadas. No indica cuánta energía producirá a lo largo de un año.",
+          "example": "Dos plantas con la misma potencia pueden producir distinta energía si una recibe más sol o viento.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "capex",
+          "term": "CAPEX o inversión inicial",
+          "definition": "Dinero necesario para construir y poner en marcha una instalación antes de que empiece a funcionar.",
+          "example": "En una planta solar incluye, entre otros costes, los paneles, la obra y la conexión.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "ciclo-combinado",
+          "term": "Central de ciclo combinado",
+          "definition": "Central que produce electricidad quemando gas natural y aprovechando el calor en dos etapas. Puede responder con rapidez cuando falta otra generación, pero emite gases de efecto invernadero.",
+          "example": "Puede actuar como respaldo cuando hay poca producción solar y eólica.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "demanda-electrica",
+          "term": "Demanda eléctrica",
+          "definition": "Electricidad que los usuarios piden a la red en cada momento. Cambia a lo largo del día y del año.",
+          "example": "La demanda suele aumentar cuando muchas viviendas y empresas usan electricidad a la vez.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "energia-gwh",
+          "term": "Energía: MWh y GWh",
+          "definition": "Cantidad de electricidad producida o utilizada durante un tiempo. Un gigavatio hora (GWh) equivale a 1.000 megavatios hora (MWh).",
+          "example": "Los GWh sirven para expresar la producción de una planta durante un año.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "escenario-normativo",
+          "term": "Escenario normativo",
+          "definition": "Proyección que representa qué podría ocurrir si se cumplen los objetivos aprobados en leyes y planes.",
+          "example": "No es una predicción segura: muestra un futuro condicionado al cumplimiento de esos objetivos.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "escenario-tendencial",
+          "term": "Escenario tendencial",
+          "definition": "Proyección de futuro que prolonga las tendencias observadas y los proyectos ya conocidos.",
+          "example": "Sirve como referencia para comparar qué cambia cuando se aplican objetivos más ambiciosos.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "excedente-autoconsumo",
+          "term": "Excedente de autoconsumo",
+          "definition": "Electricidad que una instalación de autoconsumo produce pero no utiliza en ese momento. Puede enviarse a la red si la instalación está preparada para ello.",
+          "example": "Una vivienda puede tener excedente solar al mediodía si produce más electricidad de la que está usando.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "factor-de-capacidad",
+          "term": "Factor de capacidad",
+          "definition": "Relación entre la energía que una instalación produce realmente y la que produciría si funcionara todo el tiempo a máxima potencia.",
+          "example": "Depende del recurso disponible, como las horas de sol o la fuerza del viento.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "flexibilidad-del-sistema",
+          "term": "Flexibilidad del sistema eléctrico",
+          "definition": "Capacidad del sistema para adaptarse cuando cambian el consumo o la producción y mantener el equilibrio en todo momento.",
+          "example": "El almacenamiento y ajustar algunos consumos aportan flexibilidad.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "hidrogeno-verde",
+          "term": "Hidrógeno verde",
+          "definition": "Hidrógeno producido usando electricidad renovable para separar el agua. Puede almacenar energía o sustituir combustibles fósiles en algunos usos difíciles de electrificar.",
+          "example": "Podría utilizarse en parte de la industria o como reserva energética de larga duración.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "interconexion-electrica",
+          "term": "Interconexión eléctrica",
+          "definition": "Línea que conecta dos zonas del sistema eléctrico y permite transportar electricidad entre ellas.",
+          "example": "Una interconexión permite recibir electricidad cuando en otro territorio hay producción disponible.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "lcoe",
+          "term": "LCOE o coste medio de generación",
+          "definition": "Estimación del coste de producir una unidad de electricidad durante toda la vida de una instalación. Incluye inversión, funcionamiento y producción esperada.",
+          "example": "Permite comparar tecnologías, aunque no equivale al precio final de la factura.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "mix-energetico",
+          "term": "Mix energético",
+          "definition": "Combinación de fuentes de energía que utiliza un territorio, como petróleo, gas, electricidad renovable o biomasa.",
+          "example": "El mix cambia cuando baja el uso de petróleo y aumenta la electricidad renovable.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "potencia-mw",
+          "term": "Potencia: kW y MW",
+          "definition": "Capacidad de producir o utilizar energía en un momento concreto. Un megavatio (MW) equivale a 1.000 kilovatios (kW).",
+          "example": "Los MW indican el tamaño de una instalación, no su producción anual.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "pts-energias-renovables",
+          "term": "PTS de Energías Renovables",
+          "definition": "Plan Territorial Sectorial que ordena dónde podrían estudiarse instalaciones renovables en Euskadi y qué condiciones territoriales deben respetar. No aprueba por sí solo ningún proyecto.",
+          "example": "Una zona incluida en el PTS sigue necesitando estudios y autorizaciones antes de poder acoger una instalación.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "punto-de-conexion",
+          "term": "Punto de conexión",
+          "definition": "Lugar concreto de la red eléctrica donde una instalación puede conectarse para entregar o recibir electricidad.",
+          "example": "Un buen recurso solar no basta si no existe una conexión viable a la red.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "red-de-distribucion",
+          "term": "Red de distribución",
+          "definition": "Parte de la red que lleva la electricidad desde las subestaciones hasta hogares y empresas y que también puede recoger producción cercana.",
+          "example": "La mayoría de las viviendas y pequeñas instalaciones se conectan a la red de distribución.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "red-de-transporte",
+          "term": "Red de transporte",
+          "definition": "Conjunto de líneas de muy alta tensión que mueve grandes cantidades de electricidad a largas distancias.",
+          "example": "Conecta grandes centrales, zonas de consumo e interconexiones entre territorios.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "repotenciacion",
+          "term": "Repotenciación",
+          "definition": "Sustituir equipos antiguos de una instalación por otros más modernos para producir más o aprovechar mejor el mismo emplazamiento.",
+          "example": "Un parque eólico puede cambiar varios aerogeneradores antiguos por menos máquinas de mayor potencia.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "respaldo-electrico",
+          "term": "Respaldo eléctrico",
+          "definition": "Recursos que pueden producir electricidad o reducir consumo cuando otras fuentes no cubren la demanda.",
+          "example": "El almacenamiento, las interconexiones o una central gestionable pueden aportar respaldo.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "vertido-a-la-red",
+          "term": "Vertido a la red",
+          "definition": "Electricidad que una instalación entrega a la red para que pueda ser utilizada por otros consumidores.",
+          "example": "El excedente de una instalación solar puede verterse a la red.",
+          "source": "libro_blanco"
+        },
+        {
+          "id": "zls",
+          "term": "Zona de Localización Seleccionada (ZLS)",
+          "definition": "Área que el PTS considera con potencial para estudiar instalaciones eólicas o solares. Es una posibilidad territorial, no un proyecto aprobado ni una obligación de construir.",
+          "example": "Los MW asociados a una ZLS son una estimación orientativa de su potencial.",
+          "source": "libro_blanco"
+        }
+      ]
+    }
+  ]
+}

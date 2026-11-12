@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Glosario · Libro Blanco de la ACTECC</title>
+<style>
+:root{--ink:#183f37;--sub:#557169;--border:#cfe3dc;--soft:#f7faf8;--green:#009b7a;--lime:#cddd23;--paper:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:Arial,"Helvetica Neue",sans-serif;line-height:1.6}
+.hero{padding:1.2rem clamp(1.25rem,7vw,6rem) 1.05rem;color:#fff;background:linear-gradient(112deg,#009b7a,#23aa68 48%,#d3df20)}
+.hero-kicker{margin:0 0 .3rem;color:rgba(255,255,255,.9);font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{max-width:30ch;margin:0;font-size:clamp(1.7rem,3.2vw,2.85rem);line-height:1.06}
+.hero>p:last-of-type{max-width:88ch;margin:.32rem 0 0;font-size:.82rem;line-height:1.42}
+.hero-about{max-width:94ch;margin:.45rem 0 0}
+.hero-about summary{display:inline-flex;align-items:center;gap:.42rem;padding:.25rem .55rem;border:1px solid rgba(255,255,255,.58);border-radius:999px;color:#fff;background:rgba(17,68,57,.14);font-size:.67rem;font-weight:800;line-height:1.2;cursor:pointer;list-style:none}
+.hero-about summary::-webkit-details-marker{display:none}.hero-about summary::after{content:"+";font-size:.88rem}.hero-about[open] summary::after{content:"−"}
+.hero .hero-about p{max-width:94ch;margin:.42rem 0 0;padding:.5rem .65rem;border-left:3px solid rgba(255,255,255,.72);color:#fff;background:rgba(14,72,59,.17);font-size:.73rem;line-height:1.46}
+nav{display:flex;gap:1.3rem;flex-wrap:wrap;padding:1rem clamp(1.25rem,6vw,4.5rem);background:var(--soft);border-bottom:1px solid var(--border)}
+nav a{color:var(--sub);text-decoration:none}nav a[href="relato.html"]{margin-left:auto}.active{color:#007b65;font-weight:700;border-bottom:3px solid var(--lime);padding-bottom:.3rem}
+main{max-width:1120px;margin:auto;padding:2.3rem clamp(1.2rem,4vw,3.2rem) 6rem}
+.lead{max-width:900px;margin:0;color:#355a50;font-size:1.03rem;line-height:1.7}
+.plain-note{margin:1.2rem 0;padding:1rem 1.1rem;border-left:5px solid var(--lime);background:#f5f8e9;color:#405e56}
+.tools{position:sticky;top:0;z-index:4;display:flex;gap:.7rem;align-items:center;margin:1.6rem 0 2rem;padding:.8rem;background:rgba(247,250,248,.97);border:1px solid var(--border);backdrop-filter:blur(8px)}
+.tools label{font-size:.78rem;font-weight:800}.tools input{flex:1;min-width:0;padding:.68rem .75rem;color:var(--ink);background:#fff;border:1px solid #afcbc2;border-radius:.35rem;font:inherit}.tools output{white-space:nowrap;color:var(--sub);font-size:.75rem;font-weight:700}
+.glossary-section{margin:2.3rem 0 3.4rem}.glossary-section-heading{max-width:900px;margin-bottom:1.2rem}.glossary-section-heading h2{margin:.1rem 0 .35rem;color:#007b65;font-size:clamp(1.35rem,2.4vw,2rem)}.glossary-section-heading>p:last-child{margin:0;color:var(--sub)}
+.section-introduction-kicker{margin:0;color:#6f8410;font-size:.68rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.glossary-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem;margin:0}.glossary-entry{padding:1rem 1.05rem;border:1px solid var(--border);border-top:4px solid var(--green);background:#fff}.glossary-entry dt{font-size:1rem;font-weight:800;line-height:1.3}.glossary-entry dd{margin:.45rem 0 0;color:#3f5d55;font-size:.88rem}.glossary-entry p{margin:.38rem 0}.glossary-example{padding-top:.35rem;border-top:1px solid #e4eeea;color:#5b706a;font-size:.8rem}.glossary-error,.empty{padding:1rem;border-left:5px solid #d7aa25;background:#fff8e8;color:#725c2d}
+footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gradient(90deg,#009b7a,#cddd23)}
+@media(max-width:760px){nav a[href="relato.html"]{margin-left:0}.tools{align-items:stretch;flex-direction:column}.tools label,.tools input,.tools output{width:100%}.glossary-list{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="assets/styles/actecc-shell.css">
+</head>
+<body class="actecc-shell">
+<header class="hero">
+  <p class="hero-kicker">Libro Blanco de la Asamblea Ciudadana de Transición Energética y Cambio Climático de Euskadi · ACTECC</p>
+  <h1>Glosario</h1>
+  <p>Definiciones sencillas de las palabras técnicas que aparecen en el relato y en el Libro Blanco.</p>
+  <details class="hero-about"><summary>Sobre este Libro Blanco</summary><p>Este documento ofrece una base común de información para la deliberación de la Asamblea Ciudadana. Distingue los datos observados de las estimaciones y de los escenarios de futuro, explicita los principales supuestos y reúne las fuentes utilizadas. Su finalidad no es prescribir una única respuesta, sino facilitar una decisión informada, comprensible y contrastable.</p></details>
+</header>
+<nav aria-label="Navegación principal">
+  <a href="comparacion_escenarios_euskadi.html">Energía, clima y futuros de Euskadi</a>
+  <a href="comparativa_impactos.html">Dilema y comparativa de impactos</a>
+  <a href="que_es_actecc.html">Asamblea Ciudadana</a>
+  <a href="modelo_coherencia_energetica.html">Modelo y metodología</a>
+  <a href="relato.html">Relato</a>
+  <a class="active" href="glosario.html" aria-current="page">Glosario</a>
+  <a href="referencias.html">Referencias</a>
+</nav>
+<main>
+  <p class="lead">No hace falta conocer estas palabras de memoria. Consulta una definición cuando la necesites. Cada explicación utiliza frases cortas y añade un ejemplo.</p>
+  <aside class="plain-note"><strong>Dos partes, sin repeticiones.</strong> La primera reúne los conceptos esenciales del relato. La segunda añade solo los términos técnicos que aparecen en las gráficas, mapas y explicaciones del Libro Blanco.</aside>
+  <div class="tools" role="search">
+    <label for="glossary-search">Buscar una palabra</label>
+    <input id="glossary-search" type="search" placeholder="Por ejemplo: autoconsumo, potencia o PTS" autocomplete="off">
+    <output id="glossary-count" aria-live="polite">Cargando conceptos…</output>
+  </div>
+  <div id="glossary-root"></div>
+  <p class="empty" id="glossary-empty" hidden>No se ha encontrado ningún concepto. Prueba con una palabra más corta.</p>
+</main>
+<footer>ACTECC · Documento ciudadano sobre energía, clima y futuros de Euskadi</footer>
+<script src="assets/scripts/glosario.js"></script>
+</body>
+</html>

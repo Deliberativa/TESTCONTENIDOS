@@ -1,5 +1,5 @@
 window.energyMapGenerationPipeline={
-  updated:"24 de septiembre de 2026",
+  updated:"11 de noviembre de 2026",
   methodology:"Inventario de expedientes de generación renovable situados en Euskadi que conservan una tramitación pública activa y para los que no se ha localizado una autorización administrativa previa firme. Incluye información pública de la autorización y la evaluación ambiental, informes ambientales y solicitudes iniciales sometidas a competencia. Excluye anuncios empresariales sin expediente oficial, proyectos autorizados, plantas operativas y expedientes denegados, archivados o desistidos. Al activar la capa, su producción anual estimada se incorpora de forma exploratoria a la electricidad propia solar o eólica y reduce importación; no modifica las proyecciones tendencial o normativa.",
   projects:[
     {
@@ -109,6 +109,29 @@ window.energyMapGenerationPipeline={
       note:"Expediente 20-GE-Y-2024-00006. Incluye cinco máquinas de 4,99 MW y una línea de evacuación de 7,425 km.",
       sources:[
         {label:"Gobierno Vasco · información pública de Ikatz Gane",url:"https://www.euskadi.eus/bopv2/datos/2026/02/2600808a.pdf"}
+      ]
+    },
+    {
+      id:"aitz-andatz",name:"Clúster eólico Aitz y Andatz",technology:"wind",mw:9.9,annualGWhEstimate:19.739036,annualGWhMethod:"Factor genérico documentado del inventario eólico vasco: 1,993842 GWh/MW·año",annualGWhUncertainty:"Estimación de último recurso para una solicitud en fase inicial; todavía no se ha publicado un estudio de producción del proyecto",
+      stage:"competition",stageLabel:"Solicitud inicial sometida a competencia",stageDate:"5 de noviembre de 2026",
+      municipalities:["Aia","Usurbil","Zizurkil"],coordinate:[-2.081141,43.235996],area:"2 aerogeneradores · poligonal oficial de 244,24 ha",
+      locationNote:"La superficie mostrada es la poligonal administrativa oficial del ámbito propuesto; no equivale a la ocupación física de los aerogeneradores ni de las obras.",
+      note:"Alerion Spain solicita 9,9 MW repartidos en dos aerogeneradores. La poligonal oficial no intersecta ninguna ZLS eólica del PTS. El anuncio se encuentra en una fase anterior a la información pública ambiental y no equivale a una autorización. El cuerpo del anuncio denomina «Ikatz Gane» al parque solicitado, pero no debe confundirse con el proyecto de 24,95 MW y cinco aerogeneradores localizado en Hernani, que figura por separado en el mapa.",
+      sources:[
+        {label:"Gobierno Vasco · solicitud a competencia del clúster Aitz y Andatz · BOPV 05-11-2026",url:"https://www.euskadi.eus/bopv2/datos/2026/11/2604683a.shtml"},
+        {label:"Diario Vasco · proyectos de Alerion en Aia–Usurbil–Zizurkil y Debagoiena",url:"https://www.diariovasco.com/economia/promotora-proyecta-parque-eolico-aia-usurbil-zizurkil-promueve-otro-debagoiena-20261110114802-nt.html"}
+      ]
+    },
+    {
+      id:"subero-durakogain",name:"Clúster eólico Subero y Durakogain",technology:"wind",mw:9.9,annualGWhEstimate:35.2863,annualGWhMethod:"Producción anual publicada en el estudio eólico del proyecto: resultado windPRO con reducción del 10 %",annualGWhUncertainty:"Estimación del promotor basada en windPRO; el estudio publica 35.286,3 MWh/año como resultado de referencia con reducción del 10 %",
+      stage:"public-information-eia",stageLabel:"Autorización previa y evaluación ambiental en información pública",stageDate:"10 de noviembre de 2026",
+      municipalities:["Aramaio","Eskoriatza"],coordinate:[-2.550254,43.026151],area:"2 aerogeneradores · envolvente territorial comparable de 16,78 ha",
+      locationNote:"La envolvente se construye con las dos posiciones oficiales y un margen común de 125 m; permite comparar la extensión territorial del parque, pero no equivale a su ocupación física directa.",
+      note:"Alerion Spain proyecta dos aerogeneradores Goldwind de 4,95 MW, 110 m de altura de buje y 170 m de diámetro de rotor. Ninguno de los dos aerogeneradores cae dentro de una ZLS eólica del PTS. La poligonal administrativa más amplia del expediente sí se solapa aproximadamente un 26,2 % con una ZLS, por lo que la coincidencia del ámbito no debe interpretarse como inclusión de las máquinas. El trámite no equivale todavía a una autorización administrativa previa ni a una declaración de impacto ambiental favorable.",
+      sources:[
+        {label:"Gobierno Vasco · información pública de Subero y Durakogain",url:"https://www.euskadi.eus/anuncio-de-27-de-octubre-de-2026-del-director-de-descarbonizacion-por-el-que-se-someten-a-informacion-publica-el-proyecto-y-el-estudio-de-impacto-ambiental-del-cluster-de-parques-eolicos-subero-y-durakogain-9-9-mw-asi-como-sus-infraestructuras-asociadas/web01-a2energi/es/"},
+        {label:"BOPV · proyecto y estudio de impacto ambiental en información pública · 10-11-2026",url:"https://www.euskadi.eus/bopv2/datos/2026/11/2604758a.shtml"},
+        {label:"Gobierno Vasco · estudio de producción eólica de Subero y Durakogain",url:"https://www.euskadi.eus/contenidos/informacion/anun_cluster_subero_durakogain/es_def/adjuntos/Proyecto/SUB-y-DUR-Estudio-de-produccion-eolica.pdf"}
       ]
     },
     {
