@@ -37,6 +37,8 @@ h2.section-title{margin:2.7rem 0 .75rem;color:#007b65;font-size:1.55rem}
 .process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem;margin:1.1rem 0 2rem;padding:0;list-style:none;counter-reset:steps}
 .process li{position:relative;padding:2.8rem 1rem 1rem;background:var(--soft);border:1px solid var(--border);font-size:.84rem}
 .process li::before{counter-increment:steps;content:counter(steps);position:absolute;top:.8rem;left:1rem;width:1.45rem;height:1.45rem;display:grid;place-items:center;color:#fff;background:var(--green);border-radius:50%;font-size:.72rem;font-weight:900}
+.session-agenda{margin:1.7rem 0 2.5rem;padding:1.2rem 1.25rem 1.3rem;background:linear-gradient(135deg,#f1f8f5,#fff);border:1px solid var(--border);border-top:5px solid var(--green)}
+.session-agenda h3{margin:0;color:#075f52;font-size:1.2rem}.session-agenda-intro{max-width:86ch;margin:.4rem 0 1rem;color:#45665d;font-size:.86rem}.session-agenda-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:0;padding:0;list-style:none;counter-reset:sessions}.session-agenda-list li{position:relative;min-height:9.5rem;padding:1rem 1rem 1rem 3.2rem;background:#fff;border:1px solid #d8e5e0}.session-agenda-list li::before{counter-increment:sessions;content:counter(sessions);position:absolute;top:1rem;left:1rem;width:1.55rem;height:1.55rem;display:grid;place-items:center;color:#fff;background:#087a68;border-radius:50%;font-size:.72rem;font-weight:900}.session-agenda-list li:last-child{grid-column:1/-1;min-height:0}.session-agenda-list h4{margin:0 0 .35rem;color:#183f37;font-size:.94rem}.session-agenda-list p{margin:0;color:#48655e;font-size:.78rem;line-height:1.55}.session-agenda-data{display:block;margin-top:.5rem;padding:.55rem .65rem;background:#fff8e8;border-left:4px solid #d7aa25;color:#665523;font-size:.73rem;line-height:1.5}
 .guarantees{columns:2;column-gap:2.5rem;margin:1rem 0;padding-left:1.2rem}
 .guarantees li{break-inside:avoid;margin:0 0 .75rem}
 .note{margin-top:2.2rem;padding:1rem 1.15rem;color:#665523;background:var(--warm);border-left:5px solid #d7aa25;font-size:.86rem}
@@ -48,7 +50,7 @@ h2.section-title{margin:2.7rem 0 .75rem;color:#007b65;font-size:1.55rem}
 .ovtecc-panel a{display:inline-block;margin-top:.35rem;color:#007f6b;font-size:.72rem;font-weight:800}
 footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gradient(90deg,#009b7a,#cddd23)}
 @media(max-width:850px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}.source-card{grid-template-columns:1fr}.source-card a{justify-self:start}.content-committee-grid{grid-template-columns:1fr}}
-@media(max-width:650px){nav a[href="relato.html"]{margin-left:0}.summary-grid,.process{grid-template-columns:1fr}.guarantees{columns:1}}
+@media(max-width:650px){nav a[href="relato.html"]{margin-left:0}.summary-grid,.process,.session-agenda-list{grid-template-columns:1fr}.session-agenda-list li:last-child{grid-column:auto}.guarantees{columns:1}}
 </style>
 <link rel="stylesheet" href="assets/styles/actecc-shell.css">
 </head>
@@ -80,7 +82,7 @@ footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gra
     </div>
     <div class="section-directory-subgroups" style="--directory-group-columns:2">
       <section class="section-directory-group"><h3>Qué ofrece</h3><div class="section-directory-sublinks"><a href="#grupo-diverso">Grupo diverso</a><a href="#informacion-previa">Información</a><a href="#deliberacion-ciudadana">Deliberación</a><a href="#respuesta-institucional">Respuesta</a></div></section>
-      <section class="section-directory-group"><h3>Cómo participar</h3><div class="section-directory-sublinks"><a href="#como-trabaja">Selección y sesiones</a><a href="#garantias-participacion">Apoyos y garantías</a></div></section>
+      <section class="section-directory-group"><h3>Cómo participar</h3><div class="section-directory-sublinks"><a href="#como-trabaja">Selección</a><a href="#agenda-sesiones">Agenda de las sesiones</a><a href="#garantias-participacion">Apoyos y garantías</a></div></section>
     </div>
   </aside>
   <section class="section-introduction" aria-labelledby="assembly-page-introduction-title">
@@ -204,6 +206,34 @@ footer{padding:1.4rem clamp(1.25rem,6vw,4.5rem);color:#fff;background:linear-gra
     <li><strong>Segundo sorteo.</strong><br>Entre quienes se inscriben se eligen 32 integrantes con equilibrio de edades, territorios y perfiles socioculturales.</li>
     <li><strong>Cinco sesiones.</strong><br>Entre enero y marzo de 2027, el grupo se informará, deliberará y formulará recomendaciones. El informe final se publicará en junio de 2027.</li>
   </ol>
+
+  <section class="session-agenda" id="agenda-sesiones" aria-labelledby="agenda-sesiones-title">
+    <h3 id="agenda-sesiones-title">Borrador de agenda de las cinco sesiones</h3>
+    <p class="session-agenda-intro">La secuencia de trabajo propuesta combina aprendizaje, deliberación y redacción de recomendaciones. El proceso permitirá abordar primero el contexto y los impactos, concretar después las condiciones para el despliegue renovable y cerrar finalmente una recomendación conjunta.</p>
+    <ol class="session-agenda-list">
+      <li>
+        <h4>Primera sesión · Construcción de una base común</h4>
+        <p>La sesión se dedicará a comprender el contexto energético y climático de Euskadi a partir de los contenidos del kit informativo. La presentación podrá correr a cargo del Grupo de Contenidos, con el apoyo de los equipos técnicos de la OVTECC. Si el desarrollo de la jornada lo permite, se realizará también una primera aproximación al dilema que orientará la deliberación.</p>
+      </li>
+      <li>
+        <h4>Segunda sesión · Dilema, impactos y primera orientación</h4>
+        <p>Las personas participantes analizarán los efectos positivos y negativos de aumentar la generación renovable propia, mantener un nivel de ambición menor o adoptar posiciones intermedias. Tras deliberar sobre estos impactos, formularán una primera orientación acerca de hasta dónde debería avanzar Euskadi.</p>
+        <span class="session-agenda-data">El límite superior considerado en el modelo es el desarrollo completo del potencial eólico y solar de las ZLS del PTS. Sumado a la generación renovable propia existente, representaría aproximadamente el 44 % de la demanda eléctrica de red prevista para 2050 en el escenario del 52 % de electrificación, antes de las pérdidas de entrega. Por tanto, permitiría aumentar de forma sustancial la autonomía eléctrica, pero no alcanzar una autosuficiencia total.</span>
+      </li>
+      <li>
+        <h4>Tercera sesión · Criterios y condiciones</h4>
+        <p>La Asamblea comenzará a concretar los criterios que deberían orientar el desarrollo de nuevas instalaciones, especialmente de grandes parques eólicos y solares. Se abordarán condiciones territoriales, ambientales, sociales y económicas, así como la participación local y la distribución de beneficios. El objetivo será precisar qué significa, en la práctica, avanzar bajo el principio «renovables sí, pero así sí».</p>
+      </li>
+      <li>
+        <h4>Cuarta sesión · Priorización y posicionamiento final</h4>
+        <p>Se completará y priorizará el trabajo sobre los criterios, analizando cómo se relacionan entre sí y qué compromisos implican. Una vez definidas las condiciones, la Asamblea volverá a valorar el alcance del despliegue renovable: teniendo en cuenta esos requisitos, ¿hasta dónde considera adecuado avanzar? El resultado podrá combinar recomendaciones sobre criterios concretos con una orientación general sobre el nivel de ambición.</p>
+      </li>
+      <li>
+        <h4>Quinta sesión · Redacción y aprobación de recomendaciones</h4>
+        <p>La última sesión tendrá un carácter principalmente instrumental. Los grupos de trabajo redactarán, revisarán y precisarán las recomendaciones, respetando las decisiones de fondo alcanzadas en las sesiones anteriores. El proceso concluirá con una aprobación general de los textos que integrarán el informe de la Asamblea.</p>
+      </li>
+    </ol>
+  </section>
 
   <h2 class="section-title" id="garantias-participacion">Garantías para una participación real</h2>
   <ul class="guarantees">

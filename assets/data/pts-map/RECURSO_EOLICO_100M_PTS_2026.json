@@ -1,0 +1,32 @@
+{
+  "title": "Recurso eólico medio a 100 m",
+  "source": "Plan Territorial Sectorial de las Energías Renovables en Euskadi. Documento I. Memoria, figura 2",
+  "source_url": "https://www.euskadi.eus/contenidos/informacion/pts_fase_ap_defi/es_def/adjuntos/DEFINITIVA-DOC-I-MEMORIA.pdf",
+  "model": "Simulación WRF; periodo representativo de 10 años; resolución de 1 km",
+  "height_m": 100,
+  "units": "m/s",
+  "classes": [
+    "<3,5",
+    "3,5–4",
+    "4–4,5",
+    "4,5–5",
+    "5–5,5",
+    "5,5–6",
+    "6–6,5",
+    "6,5–7",
+    "7–7,5",
+    "7,5–8",
+    "8–8,5",
+    "8,5–9",
+    ">9"
+  ],
+  "favourable_threshold_ms": 6.22,
+  "bounds_wgs84_approx": {
+    "west": -3.79,
+    "south": 42.15,
+    "east": -1.62,
+    "north": 43.57
+  },
+  "georeferencing": "Ajuste visual aproximado de una figura raster publicada sin fichero GIS asociado",
+  "use_limitation": "Capa de contexto. No utilizar para medir parcelas ni sustituir la cartografía técnica del PTS."
+}
