@@ -515,8 +515,9 @@
         slider.max='100';
         if(activeTerritorialConstraint==='maximum'){
           slider.disabled=false;
-          slider.value='100';
-          slider.setAttribute('value','100');
+          const current=Math.max(0,Math.min(100,Number(slider.value||0)));
+          slider.value=current.toFixed(1);
+          slider.setAttribute('value',current.toFixed(1));
         }else{
           slider.value=maximum.toFixed(1);
           slider.setAttribute('value',maximum.toFixed(1));
@@ -527,7 +528,7 @@
       if(!status)return;
       const combinedShare=100*(profiles.wind.maxTotal+profiles.solar.maxTotal)/(zlsGeneration.wind+zlsGeneration.solar);
       status.innerHTML=activeTerritorialConstraint==='maximum'
-        ?'Sin límite adicional: ambos controles se sitúan en el <strong>100 %</strong> de sus ZLS y pueden reducirse manualmente.'
+        ?'Sin límite adicional: ambos controles parten del <strong>0 %</strong> y pueden aumentarse manualmente hasta el 100 % de sus ZLS.'
         :`Diales fijados automáticamente en el máximo compatible: <strong>eólica ${formatNumber(profiles.wind.maxShare*100,1)} %</strong>, <strong>solar ${formatNumber(profiles.solar.maxShare*100,1)} %</strong> y <strong>despliegue conjunto ${formatNumber(combinedShare,1)} %</strong> del potencial ZLS sin restricciones.`;
     };
     const updateTerritoryChart=(active,zlsAllocations)=>{
