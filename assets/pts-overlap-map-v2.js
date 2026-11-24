@@ -51,6 +51,8 @@
     {id:'existing-solar',kind:'generation-area',stage:'existing',tech:'Fotovoltaica',color:'#7a5c00'},
     {id:'approved-solar',kind:'generation-area',stage:'approved',tech:'Fotovoltaica',color:'#c07600'},
     {id:'pipeline-solar',kind:'generation-area',stage:'pipeline',tech:'Fotovoltaica',color:'#d95721'},
+    {id:'rejected-solar',kind:'generation-area',stage:'rejected',tech:'Fotovoltaica',color:'#8d3d4b'},
+    {id:'artificialized',file:'udalplan-artificialized-2024.geojson',kind:'artificialized',tech:'Suelo artificializado'},
     {id:'urban',file:'udalplan-urban-2024.geojson',kind:'urban',tech:'Suelo urbano'},
     {id:'roads',file:'bta-main-roads-2025.geojson',kind:'roads',tech:'Carreteras principales'},
   ];
@@ -98,10 +100,10 @@
     const peakPower=Number(project.mwp);
     const annual=Number(project.annualGWhEstimate);
     const municipalities=(project.municipalities||properties.municipalities||[]).map(cleanMunicipality).join(', ')||'No indicados';
-    const stageLead=layer.stage==='existing'?'Instalación en servicio representada mediante una superficie territorial comparable.':layer.stage==='pipeline'?'Expediente oficial en tramitación; todavía no es una instalación autorizada.':'Proyecto autorizado o en construcción; todavía no se contabiliza como generación en servicio.';
+    const stageLead=layer.stage==='existing'?'Instalación en servicio representada mediante una superficie territorial comparable.':layer.stage==='pipeline'?'Expediente oficial en tramitación; todavía no es una instalación autorizada.':layer.stage==='rejected'?'Expediente desistido o archivado; se conserva solo como antecedente y no representa un proyecto activo.':'Proyecto autorizado o en construcción; todavía no se contabiliza como generación en servicio.';
     const powerMarkup=Number.isFinite(power)?`${formatNumber(power,power<10?3:1)} MW${Number.isFinite(peakPower)&&Math.abs(peakPower-power)>.05?` nominales · ${formatNumber(peakPower,peakPower<10?3:1)} MWp`:''}`:'No publicada';
     const productionMarkup=annual>0?`<dt>Producción anual estimada</dt><dd>${formatNumber(annual,1)} GWh/año</dd>${project.annualGWhMethod?`<dt>Método de estimación</dt><dd>${escapeHtml(project.annualGWhMethod)}</dd>`:''}`:'';
-    const modelMarkup=Number(project.modelFirstYear)>0?`<dt>Entrada en el modelo</dt><dd>50 % en ${formatNumber(project.modelFirstYear,0)} · 100 % desde ${formatNumber(project.modelFullYear,0)}</dd>`:layer.stage==='pipeline'?'<dt>Entrada en el modelo</dt><dd>Solo se suma de forma exploratoria cuando se activa la capa; no modifica las proyecciones publicadas.</dd>':'';
+    const modelMarkup=Number(project.modelFirstYear)>0?`<dt>Entrada en el modelo</dt><dd>50 % en ${formatNumber(project.modelFirstYear,0)} · 100 % desde ${formatNumber(project.modelFullYear,0)}</dd>`:layer.stage==='pipeline'?'<dt>Entrada en el modelo</dt><dd>Solo se suma de forma exploratoria cuando se activa la capa; no modifica las proyecciones publicadas.</dd>':layer.stage==='rejected'?'<dt>Contribución al modelo</dt><dd>0 MW y 0 GWh/año. No se contabiliza en generación, superficie activa ni impactos.</dd>':'';
     const financeMarkup=Number(project.totalInvestmentMEur)>0?`<dt>Inversión y financiación</dt><dd>${formatNumber(project.totalInvestmentMEur,0)} M€ de inversión total${Number(project.greenLoanMEur)>0?` · ${formatNumber(project.greenLoanMEur,0)} M€ de préstamo verde del BEI`:''}</dd>`:'';
     const localMarkup=Number(project.constructionJobs)>0?`<dt>Impacto local anunciado</dt><dd>Hasta ${formatNumber(project.constructionJobs,0)} empleos durante la construcción.${project.citizenParticipation?` ${escapeHtml(project.citizenParticipation)}`:''}${project.localEnergyContracts?` ${escapeHtml(project.localEnergyContracts)}`:''}</dd>`:'';
     const eveMarkup=Number(project.eveAnnualGWh)>0?`<dt>Indicadores publicados por EVE</dt><dd>${formatNumber(project.eveAnnualGWh,0)} GWh/año${Number(project.peopleEquivalent)>0?` · electricidad equivalente para unas ${formatNumber(project.peopleEquivalent,0)} personas`:''}${Number(project.avoidedCO2Tonnes)>0?` · ${formatNumber(project.avoidedCO2Tonnes,0)} t de CO₂ evitadas al año`:''}</dd>`:'';
@@ -189,6 +191,14 @@
     },
   });
   const generatedAreaCollection=layer=>{
+    if(layer.id==='rejected-solar'){
+      const projects=(window.energyMapGenerationPipeline?.excluded||[]).filter(project=>project.technology==='solar'&&Array.isArray(project.coordinate));
+      return {type:'FeatureCollection',features:projects.map(project=>{
+        const published=parseAreaHa(project.area);
+        const areaHa=published||Number(project.mw)*SOLAR_EQUIVALENT_HA_PER_MW;
+        return areaFeature(project,areaHa,published?'Superficie publicada del proyecto archivado; se dibuja como círculo de igual área alrededor de la localización de referencia.':'Estimación comparable: potencia × 1,35 ha/MW.',{technology:'solar',statusLabel:project.statusLabel||'Expediente archivado',uncertaintyLabel:'La geometría se conserva únicamente como antecedente histórico; no representa un proyecto activo ni suma al modelo.'});
+      })};
+    }
     if(layer.id==='pipeline-solar'){
       const projects=(window.energyMapGenerationPipeline?.projects||[]).filter(project=>project.technology==='solar'&&Array.isArray(project.coordinate));
       return {type:'FeatureCollection',features:projects.map(project=>{
@@ -226,6 +236,7 @@
     const impactMode=story.hasAttribute('data-pts-impact-model');
     const impactWindSlider=story.querySelector('[data-pts-impact-wind-slider]');
     const impactSolarSlider=story.querySelector('[data-pts-impact-solar-slider]');
+    const impactSelfConsumptionSlider=story.querySelector('[data-pts-impact-self-consumption-slider]');
     const territorialConstraintControl=story.querySelector('[data-pts-territorial-constraint]');
     let activeTerritorialConstraint='maximum';
     const instancePrefix=`pts-map-${++mapInstanceSequence}`;
@@ -281,7 +292,7 @@
     energyShare.className='pts-energy-share';
     energyShare.dataset.ptsEnergyShare='';
     energyShare.setAttribute('aria-live','polite');
-    energyShare.innerHTML=`<h5>${impactMode?'Porcentaje de la demanda eléctrica anual de 2050 cubierto':'Potencial físico-técnico de las capas activadas'}</h5>${impactMode?'<div class="pts-electrification-fixed"><span>Nivel de electrificación fijo</span><strong>52 % · 2050</strong></div>':'<div class="pts-electrification-switch"><span>Nivel de electrificación del consumo final</span><div role="group" aria-label="Nivel de electrificación"><button type="button" data-pts-electrification="current" aria-pressed="false">Actual · 24,8 %</button><button type="button" data-pts-electrification="reference" aria-pressed="true">52 %</button><button type="button" data-pts-electrification="high" aria-pressed="false">66,7 %</button><button type="button" data-pts-electrification="full" aria-pressed="false">100 %</button></div></div>'}<p class="pts-energy-share-intro" data-pts-energy-intro></p><div class="pts-energy-track" data-pts-energy-track><div class="pts-energy-potential-fill" data-pts-potential-fill hidden></div></div><div class="pts-energy-scale"><span>0 %</span><span>100 %</span></div><p class="pts-energy-total" data-pts-energy-total><strong>0 GWh/año · 0 %</strong>Activa capas para calcular su generación.</p><div class="pts-energy-legend" data-pts-energy-legend></div><p class="pts-energy-caveat" data-pts-energy-caveat>Las ZLS y las aptitudes representan potencial territorial, no proyectos autorizados.</p>`;
+    energyShare.innerHTML=`<h5>${impactMode?'Porcentaje de la demanda restante de red en 2050 cubierto':'Potencial físico-técnico de las capas activadas'}</h5>${impactMode?'<div class="pts-electrification-fixed"><span>Nivel de electrificación fijo</span><strong>52 % · 2050</strong></div>':'<div class="pts-electrification-switch"><span>Nivel de electrificación del consumo final</span><div role="group" aria-label="Nivel de electrificación"><button type="button" data-pts-electrification="current" aria-pressed="false">Actual · 24,8 %</button><button type="button" data-pts-electrification="reference" aria-pressed="true">52 %</button><button type="button" data-pts-electrification="high" aria-pressed="false">66,7 %</button><button type="button" data-pts-electrification="full" aria-pressed="false">100 %</button></div></div>'}<p class="pts-energy-share-intro" data-pts-energy-intro></p><div class="pts-energy-track" data-pts-energy-track><div class="pts-energy-potential-fill" data-pts-potential-fill hidden></div></div><div class="pts-energy-scale"><span>0 %</span><span>100 %</span></div><p class="pts-energy-total" data-pts-energy-total><strong>0 GWh/año · 0 %</strong>Activa capas para calcular su generación.</p><div class="pts-energy-legend" data-pts-energy-legend></div><p class="pts-energy-caveat" data-pts-energy-caveat>Las ZLS y las aptitudes representan potencial territorial, no proyectos autorizados.</p>`;
     let birdImpactCard=null;
     let landImpactCard=null;
     let employmentImpactCard=null;
@@ -375,7 +386,7 @@
     const BASE_WIND_AREA_HA=CURRENT_WIND_AREA_HA+APPROVED_WIND_AREA_HA+PIPELINE_WIND_AREA_HA;
     const ZLS_WIND_AREA_HA=Number(ptsTotals.wind?.areaHa)||6258.635;
     const CURRENT_SOLAR_TOTAL_HA=116.9;
-    const APPROVED_SOLAR_TOTAL_HA=457.9;
+    const APPROVED_SOLAR_TOTAL_HA=452.68;
     const PIPELINE_SOLAR_TOTAL_HA=45.209;
     const DOCUMENTED_CROPLAND_SHARE=.85;
     const DOCUMENTED_PASTURE_SHARE=.013;
@@ -577,10 +588,14 @@
       const zlsWindDeploymentShare=selectedDeploymentShare('wind');
       const zlsSolarDeploymentShare=selectedDeploymentShare('solar');
       const zlsAllocations=impactMode?currentZlsAllocations():null;
-      const electricityGridDemand=activeElectrificationScenario.grid;
+      const selfConsumptionDeploymentShare=impactMode?Math.max(0,Math.min(1,Number(impactSelfConsumptionSlider?.value||0)/100)):1;
+      const selectedSelfConsumptionGWh=impactMode?SELF_CONSUMPTION_DIRECT_2050_GWH*selfConsumptionDeploymentShare:activeElectrificationScenario.selfConsumption;
+      const electricityGridDemand=impactMode?activeElectrificationScenario.service-selectedSelfConsumptionGWh:activeElectrificationScenario.grid;
       const registeredElectricShare=100*electricityGridDemand/activeElectrificationScenario.registeredFinal;
       const sourceMarkup=activeElectrificationScenario.sourceUrl?`<a href="${activeElectrificationScenario.sourceUrl}" target="_blank" rel="noopener">${activeElectrificationScenario.sourceLabel}</a>`:activeElectrificationScenario.sourceLabel;
-      energyShare.querySelector('[data-pts-energy-intro]').innerHTML=activeElectrificationScenario.id==='current'
+      energyShare.querySelector('[data-pts-energy-intro]').innerHTML=impactMode
+        ?`El servicio eléctrico total se mantiene en <strong>${formatNumber(activeElectrificationScenario.service,0)} GWh/año</strong> (electrificación física del 52 %). El dial cubre directamente <strong>${formatNumber(selectedSelfConsumptionGWh,0)} GWh/año</strong> mediante autoconsumo y deja <strong>${formatNumber(electricityGridDemand,0)} GWh/año</strong> por abastecer desde la red. ${sourceMarkup}.`
+        :activeElectrificationScenario.id==='current'
         ?`<strong>100 % = ${formatNumber(electricityGridDemand,0)} GWh/año</strong> de consumo final eléctrico en 2024, equivalente al <strong>${formatNumber(activeElectrificationScenario.share,1)} %</strong> de los ${formatNumber(activeElectrificationScenario.registeredFinal,0)} GWh de consumo final. ${sourceMarkup}.`
         :`<strong>100 % = ${formatNumber(electricityGridDemand,0)} GWh/año</strong> de demanda abastecida por la red en 2050 <strong>(electrificación física del ${formatNumber(activeElectrificationScenario.share,1)} %; ${formatNumber(registeredElectricShare,1)} % en el balance registrado tras descontar el autoconsumo)</strong>. El servicio eléctrico total alcanza ${formatNumber(activeElectrificationScenario.service,0)} GWh/año al incluir ${formatNumber(activeElectrificationScenario.selfConsumption,0)} GWh de autoconsumo directo. ${sourceMarkup}.`;
       const active=new Set([...story.querySelectorAll('[data-pts-layer][aria-pressed="true"]')].map(button=>button.dataset.ptsLayer));
@@ -628,10 +643,10 @@
       const zlsDetail=impactMode?[zlsWindGWh?`ZLS eólicas al ${formatNumber(100*zlsWindDeploymentShare,0)} %: ${formatNumber(zlsWindGWh,0)} GWh/año.`:'',zlsSolarGWh?`ZLS solares al ${formatNumber(100*zlsSolarDeploymentShare,0)} %: ${formatNumber(zlsSolarGWh,0)} GWh/año.`:''].filter(Boolean).join(' '):(zlsGWh?`ZLS activas: ${formatNumber(zlsGWh,0)} GWh/año.`:'');
       const detailParts=[selectedGWh?`Instalaciones de base: ${formatNumber(selectedGWh,0)} GWh/año.`:'',zlsDetail,aptitudeGWh?`Aptitud activa sin duplicar ZLS: ${formatNumber(aptitudeGWh,0)} GWh/año${Math.abs(aptitudeHigh-aptitudeLow)>.5?` (intervalo ${formatNumber(aptitudeLow,0)}–${formatNumber(aptitudeHigh,0)})`:''}.`:'',discountedOverlapHa?`Solapamiento descontado: ${formatNumber(discountedOverlapHa,0)} ha.`:''].filter(Boolean).join(' ');
       energyShare.querySelector('[data-pts-energy-total]').innerHTML=`<strong>${formatNumber(totalActiveGWh,1)} GWh/año · ${formatNumber(totalActivePct,2)} %</strong><span class="pts-result-explanation">${totalActiveGWh?`Potencial de generación de todas las capas activadas. ${detailParts}${totalActivePct>100?' El potencial supera la demanda anual de referencia; no implica que pueda instalarse ni aprovecharse íntegramente.':''}`:'Activa capas para calcular su generación.'}</span>`;
-      energyShare.querySelector('[data-pts-energy-legend]').innerHTML=['wind','solar'].filter(technology=>generationByTechnology[technology]>0).map(technology=>`<span><i style="--legend-color:${technologyStyles[technology].color}"></i>${technologyStyles[technology].label} · ${formatNumber(generationByTechnology[technology],1)} GWh · ${formatNumber(100*generationByTechnology[technology]/electricityGridDemand,2)} %</span>`).join('');
+      energyShare.querySelector('[data-pts-energy-legend]').innerHTML=[...['wind','solar'].filter(technology=>generationByTechnology[technology]>0).map(technology=>`<span><i style="--legend-color:${technologyStyles[technology].color}"></i>${technologyStyles[technology].label} · ${formatNumber(generationByTechnology[technology],1)} GWh · ${formatNumber(100*generationByTechnology[technology]/electricityGridDemand,2)} %</span>`),...(impactMode?[`<span><i style="--legend-color:#168c73"></i>Autoconsumo directo · ${formatNumber(selectedSelfConsumptionGWh,1)} GWh · reduce un ${formatNumber(100*selectedSelfConsumptionGWh/activeElectrificationScenario.service,2)} % la demanda de red</span>`]:[])].join('');
       const unquantifiedAptitude=[...active].some(id=>id.startsWith('aptitude-')&&!aptitudePotential[id]);
       energyShare.querySelector('[data-pts-energy-caveat]').textContent=impactMode
-        ?`Simulación lineal para comparar magnitudes con el criterio «${territorialConstraintLabels[activeTerritorialConstraint]}». Los criterios de igualdad se aplican por separado a la nueva generación ZLS eólica y solar; no redistribuyen las instalaciones de base. El deslizador no representa proyectos autorizados. La solar actual usa los 66,6 GWh totales vertidos a red; el mapa solo localiza las plantas de 0,7 MW o más.`
+        ?`Simulación lineal para comparar magnitudes con el criterio «${territorialConstraintLabels[activeTerritorialConstraint]}». Los criterios de igualdad se aplican por separado a la nueva generación ZLS eólica y solar; no redistribuyen las instalaciones de base. El dial de autoconsumo no reduce el servicio eléctrico: descuenta de la demanda de red entre 0 y 1.427 GWh/año cubiertos directamente. Los deslizadores no representan proyectos autorizados. La solar actual usa los 66,6 GWh totales vertidos a red; el mapa solo localiza las plantas de 0,7 MW o más.`
         :`El PTS y su PDF todavía son provisionales: sus geometrías pueden ampliarse o modificarse. Las ZLS y aptitudes se usan aquí como áreas de exploración, no como proyectos ni límites definitivos.${activeAptitudeEntries.length?' Alta, media, baja y muy baja muestran un máximo físico-técnico orientativo, calculado con rendimiento continuo y densidad máxima, sin limitarse al umbral de recurso favorable ni al régimen de usos propuesto por el PTS. Si la ZLS de una tecnología está activa, su coincidencia se descuenta de la aptitud; si está desactivada, la aptitud computa toda su superficie. No es producción asegurada, superficie autorizable ni escenario probable.':''}${unquantifiedAptitude?' Existe una capa activa sin estimación energética disponible.':''}${active.has('existing-solar')?' La solar actual usa los 66,6 GWh totales vertidos a red; el mapa solo localiza las plantas de 0,7 MW o más.':''}`;
       updateTerritoryChart(active,zlsAllocations||{wind:zlsAllocation('wind',1),solar:zlsAllocation('solar',1)});
       if(impactMode&&birdImpactCard&&landImpactCard){
@@ -819,6 +834,8 @@
       rendered=true;
       const host=story.querySelector('[data-pts-map-canvas]');
       const detail=story.querySelector('[data-pts-map-detail]');
+      const legend=detail?.querySelector('.pts-map-legend');
+      if(legend&&!legend.querySelector('[data-pts-artificialized-legend]'))legend.insertAdjacentHTML('beforeend','<span data-pts-artificialized-legend><i style="background:#66517a;border:0"></i>Suelo artificializado</span>');
       try{
         const sets=await Promise.all(layers.filter(layer=>!['contours','wind-resource'].includes(layer.kind)).map(async layer=>{
           if(layer.kind==='generation-area'&&layer.file){
@@ -848,7 +865,7 @@
           }
           if(layer.kind==='generation-area')return {...layer,data:generatedAreaCollection(layer)};
           const data=await loadGeoJson(layer.file,'20261112b');
-          const mapped=['urban','existing-wind'].includes(layer.kind)?data:windCollection(data);
+          const mapped=['urban','artificialized','existing-wind'].includes(layer.kind)?data:windCollection(data);
           return {...layer,data:layer.kind==='existing-wind'
             ? {...mapped,features:mapped.features.filter(feature=>feature.properties?.representation==='repowering_max_envelope')}
             : layer.kind==='aptitude'
@@ -863,7 +880,7 @@
         const svg=d3.select(host).append('svg')
           .attr('viewBox',`0 0 ${W} ${H}`)
           .attr('role','img')
-          .attr('aria-label','Mapa del PTS con exclusiones, aptitudes, Zonas de Localización Seleccionada, curvas de nivel, suelo urbano y áreas de instalaciones renovables');
+          .attr('aria-label','Mapa del PTS con exclusiones, aptitudes, Zonas de Localización Seleccionada, curvas de nivel, suelo artificializado y áreas de instalaciones renovables');
         const defs=svg.append('defs');
         const pattern=defs.append('pattern').attr('id',svgId('exclusion-hatch')).attr('patternUnits','userSpaceOnUse').attr('width',8).attr('height',8).attr('patternTransform','rotate(35)');
         pattern.append('rect').attr('width',8).attr('height',8).attr('fill','#ad2430');
@@ -880,6 +897,8 @@
         solarApprovedPattern.append('circle').attr('cx',.8).attr('cy',.8).attr('r',.34).attr('fill','#bd6500');
         const solarExistingPattern=defs.append('pattern').attr('id',svgId('solar-existing-crosshatch')).attr('patternUnits','userSpaceOnUse').attr('width',2.8).attr('height',2.8);
         solarExistingPattern.append('path').attr('d','M0,0 L2.8,2.8 M2.8,0 L0,2.8').attr('fill','none').attr('stroke','#874700').attr('stroke-width',.6);
+        const solarRejectedPattern=defs.append('pattern').attr('id',svgId('solar-rejected-crosshatch')).attr('patternUnits','userSpaceOnUse').attr('width',3.2).attr('height',3.2);
+        solarRejectedPattern.append('path').attr('d','M0,0 L3.2,3.2 M3.2,0 L0,3.2').attr('fill','none').attr('stroke','#8d3d4b').attr('stroke-width',.65);
         const viewport=svg.append('g').attr('class','pts-map-viewport');
         viewport.append('path').datum(territory).attr('d',path).attr('fill','#eef4f1').attr('stroke','#6d8d83').attr('stroke-width',.28).attr('stroke-opacity',.34);
         const groups=new Map();
@@ -932,7 +951,7 @@
         sets.forEach(layer=>{
           const group=viewport.append('g').attr('class','pts-map-layer').attr('data-layer',layer.id);
           groups.set(layer.id,group);
-          if(['existing-wind','approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar'].includes(layer.id)){
+          if(['existing-wind','approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar','rejected-solar'].includes(layer.id)){
             layer.data.features.forEach((feature,index)=>{
               defs.append('clipPath')
                 .attr('id',svgId(`${layer.id}-clip-${index}`))
@@ -945,7 +964,7 @@
             });
           }
           group.selectAll('path').data(layer.data.features).join('path')
-            .attr('class',layer.kind==='urban'?'pts-map-feature pts-urban-feature':'pts-map-feature')
+            .attr('class',layer.kind==='urban'?'pts-map-feature pts-urban-feature':layer.kind==='artificialized'?'pts-map-feature pts-artificialized-feature':'pts-map-feature')
             .attr('d',path)
             .attr('transform',feature=>featureTransform(layer,feature))
             .attr('fill-rule','evenodd')
@@ -958,6 +977,8 @@
                     ? `url(#${svgId('solar-pipeline-hatch')})`
                     : layer.id==='approved-solar'
                       ? `url(#${svgId('solar-approved-dots')})`
+                      : layer.id==='rejected-solar'
+                        ? `url(#${svgId('solar-rejected-crosshatch')})`
                       : layer.id==='existing-solar'
                         ? `url(#${svgId('solar-existing-crosshatch')})`
                   : layer.color
@@ -971,12 +992,14 @@
                 ? aptitudeColor(feature.properties?.APTITUD,layer.tech)
                 : layer.kind==='urban'
                   ? '#17211e'
+                  : layer.kind==='artificialized'
+                    ? '#66517a'
                   : layer.tech==='Eólica'?'#2988ba':'#c58b00')
             .attr('fill-opacity',feature=>layer.kind==='generation-area'
               ? 1
               : layer.kind==='existing-wind'
               ? 1
-              : layer.kind==='urban'?.72:layer.kind==='zls'?1:.58)
+              : layer.kind==='urban'?.72:layer.kind==='artificialized'?.34:layer.kind==='zls'?1:.58)
             .attr('stroke',feature=>layer.kind==='generation-area'
               ? layer.id==='pipeline-wind'
                 ? '#0c5f8d'
@@ -986,6 +1009,8 @@
                     ? '#a94916'
                     : layer.id==='approved-solar'
                       ? '#9f5400'
+                      : layer.id==='rejected-solar'
+                        ? '#6f2534'
                       : layer.id==='existing-solar'
                         ? '#703a00'
                   : 'none'
@@ -995,19 +1020,22 @@
                 ? '#8b9692'
                 : layer.kind==='urban'
                   ? '#8b9692'
+                  : layer.kind==='artificialized'
+                    ? 'none'
                   : layer.kind==='zls'
                     ? 'none'
                     : layer.kind==='aptitude'
                       ? aptitudeColor(feature.properties?.APTITUD,layer.tech)
                       : '#fff')
             .attr('stroke-width',feature=>layer.kind==='generation-area'
-              ? ['approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar'].includes(layer.id)?1.4:0
+              ? ['approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar','rejected-solar'].includes(layer.id)?1.4:0
               : layer.kind==='existing-wind'
               ? 1.4
-              : layer.kind==='roads'?.68:layer.kind==='urban'?.18:['zls','aptitude'].includes(layer.kind)?0:.2)
+              : layer.kind==='roads'?.68:layer.kind==='urban'?.18:layer.kind==='artificialized'?0:['zls','aptitude'].includes(layer.kind)?0:.2)
+            .attr('stroke-opacity',1)
             .attr('stroke-linecap',layer.kind==='roads'?'round':null)
-            .attr('clip-path',(feature,index)=>['existing-wind','approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar'].includes(layer.id)?`url(#${svgId(`${layer.id}-clip-${index}`)})`:null)
-            .attr('vector-effect',['existing-wind','approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar'].includes(layer.id)?'non-scaling-stroke':null)
+            .attr('clip-path',(feature,index)=>['existing-wind','approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar','rejected-solar'].includes(layer.id)?`url(#${svgId(`${layer.id}-clip-${index}`)})`:null)
+            .attr('vector-effect',['existing-wind','approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar','rejected-solar'].includes(layer.id)?'non-scaling-stroke':null)
             .on('mouseenter click',(event,feature)=>{
               const properties=feature.properties||{};
               if(layer.kind==='roads'){
@@ -1017,6 +1045,13 @@
               if(layer.kind==='urban'){
                 const area=Number(properties.superficie_ha);
                 detail.innerHTML=`<h5>Suelo urbano · ${properties.municipio||'Municipio'}</h5><p><strong>Superficie representada:</strong> ${area.toLocaleString('es-ES',{maximumFractionDigits:1})} ha.</p><p>Incluye suelo urbano consolidado y no consolidado de uso residencial y de actividades económicas. No incluye suelo urbanizable futuro ni sistemas generales aislados.</p>`;
+                return;
+              }
+              if(layer.kind==='artificialized'){
+                const area=Number(properties.superficie_ha);
+                const analysis=layer.data.metadata?.analysis||{};
+                const zlsSolar=analysis.solapes_pts?.['ZLS solar'];
+                detail.innerHTML=`<h5>Suelo artificializado · ${properties.municipio||'Municipio'}</h5><p><strong>Categoría:</strong> ${properties.categoria||'No indicada'}.</p><p><strong>Superficie representada:</strong> ${area.toLocaleString('es-ES',{maximumFractionDigits:1})} ha.</p><p>La capa reconstruye la definición estadística de Eustat con UDALPLAN: residencial, actividades económicas y sistemas generales sin zonas verdes. <strong>No equivale a suelo libre ni a potencial fotovoltaico.</strong></p>${zlsSolar?`<p class="map-data-note">En el conjunto de Euskadi solo ${formatNumber(zlsSolar.solape_ha,1)} ha coinciden con ZLS solares (${formatNumber(zlsSolar.porcentaje_capa_pts,2)} % de su superficie). La mayor parte del potencial sobre cubiertas y aparcamientos queda fuera de la lógica territorial de las grandes plantas sobre suelo.</p>`:''}<span class="map-source-badge"><a href="https://www.eustat.eus/elementos/tbl0014152_c.html" target="_blank" rel="noopener">Eustat · suelo artificializado 2024</a> · <a href="https://www.geo.euskadi.eus/udalplan-cartografia-del-planeamiento-municipal-en-el-pais-vasco/webgeo00-catalog/es/" target="_blank" rel="noopener">UDALPLAN 2024</a></span>`;
                 return;
               }
               if(layer.kind==='existing-wind'){
@@ -1072,7 +1107,7 @@
           story.querySelectorAll('[data-pts-layer]').forEach(button=>{
             const active=button.getAttribute('aria-pressed')==='true';
             const group=groups.get(button.dataset.ptsLayer);
-            group?.style('display',active?null:'none').style('opacity',['urban','roads','contours','existing-wind','approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar'].includes(button.dataset.ptsLayer)?1:opacity);
+            group?.style('display',active?null:'none').style('opacity',['urban','artificialized','roads','contours','existing-wind','approved-wind','pipeline-wind','existing-solar','approved-solar','pipeline-solar','rejected-solar'].includes(button.dataset.ptsLayer)?1:opacity);
             if(impactMode&&group&&['zls-wind','zls-solar'].includes(button.dataset.ptsLayer)){
               const technology=button.dataset.ptsLayer==='zls-wind'?'wind':'solar';
               const allocation=zlsAllocations[technology];
@@ -1112,10 +1147,15 @@
           if(impactMode){
             const windOutput=story.querySelector('[data-pts-impact-wind-output]');
             const solarOutput=story.querySelector('[data-pts-impact-solar-output]');
+            const selfConsumptionOutput=story.querySelector('[data-pts-impact-self-consumption-output]');
             const windLimit=territorialConstraintProfile('wind').maxShare*100;
             const solarLimit=territorialConstraintProfile('solar').maxShare*100;
             if(windOutput)windOutput.textContent=`${formatNumber(zlsWindDeploymentShare*100,1)} % eólico${windLimit<99.95?` · tope ${formatNumber(windLimit,1)} %`:''}`;
             if(solarOutput)solarOutput.textContent=`${formatNumber(zlsSolarDeploymentShare*100,1)} % solar${solarLimit<99.95?` · tope ${formatNumber(solarLimit,1)} %`:''}`;
+            if(selfConsumptionOutput){
+              const share=Math.max(0,Math.min(1,Number(impactSelfConsumptionSlider?.value||0)/100));
+              selfConsumptionOutput.textContent=`${formatNumber(share*100,1)} % · ${formatNumber(SELF_CONSUMPTION_DIRECT_2050_GWH*share,0)} GWh/año`;
+            }
           }
           const windAptitudeActive=[...story.querySelectorAll('[data-pts-layer^="aptitude-wind-"]')].some(button=>button.getAttribute('aria-pressed')==='true');
           const solarAptitudeActive=[...story.querySelectorAll('[data-pts-layer^="aptitude-solar-"]')].some(button=>button.getAttribute('aria-pressed')==='true');
@@ -1164,6 +1204,7 @@
         }));
         impactWindSlider?.addEventListener('input',update);
         impactSolarSlider?.addEventListener('input',update);
+        impactSelfConsumptionSlider?.addEventListener('input',update);
         updateSliderConstraints();
         update();
       }catch(error){

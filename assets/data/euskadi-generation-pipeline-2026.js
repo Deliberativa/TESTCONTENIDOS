@@ -1,5 +1,5 @@
 window.energyMapGenerationPipeline={
-  updated:"11 de noviembre de 2026",
+  updated:"23 de noviembre de 2026",
   methodology:"Inventario de expedientes de generación renovable situados en Euskadi que conservan una tramitación pública activa y para los que no se ha localizado una autorización administrativa previa firme. Incluye información pública de la autorización y la evaluación ambiental, informes ambientales y solicitudes iniciales sometidas a competencia. Excluye anuncios empresariales sin expediente oficial, proyectos autorizados, plantas operativas y expedientes denegados, archivados o desistidos. Al activar la capa, su producción anual estimada se incorpora de forma exploratoria a la electricidad propia solar o eólica y reduce importación; no modifica las proyecciones tendencial o normativa.",
   projects:[
     {
@@ -200,6 +200,19 @@ window.energyMapGenerationPipeline={
     {name:"Cantoblanco",reason:"Autorización denegada.",url:"https://www.euskadi.eus/bopv2/datos/2024/10/2404986a.shtml"},
     {name:"Mendia 4",reason:"Desistimiento del promotor.",url:"https://www.euskadi.eus/bopv2/datos/2025/09/2503895a.pdf"},
     {name:"Eki Bat, Eki Bi y FV Arratzua",reason:"Desistimiento y archivo del planeamiento.",url:"https://www.euskadi.eus/bopv2/datos/2026/06/s26_0105.shtml"},
-    {name:"Solaria Zierbena Solar 3",reason:"Expediente archivado.",url:"https://www.euskadi.eus/bopv2/datos/2026/05/2601906a.shtml"}
+    {name:"Solaria Zierbena Solar 3",reason:"Expediente archivado.",url:"https://www.euskadi.eus/bopv2/datos/2026/05/2601906a.shtml"},
+    {
+      id:"fv-asparrena",name:"FV Asparrena",technology:"solar",mw:4,annualGWhEstimate:4.85696,
+      statusLabel:"Expediente archivado tras desistimiento",stageLabel:"Autorizada en 2025 · archivada en 2026",stageDate:"3 de noviembre de 2026",
+      municipalities:["Asparrena"],coordinate:[-2.312073,42.880715],area:"5,22 ha",
+      locationNote:"Centro oficial de la planta en Albéniz, ETRS89/UTM 30N transformado a WGS84.",
+      reason:"La promotora solicitó el archivo por inviabilidad territorial sobrevenida tras un informe que señalaba incompatibilidades con el planeamiento urbanístico municipal y la ordenación territorial.",
+      note:"Proyecto no activo. Se conserva únicamente como caso histórico y cartográfico; no suma potencia, producción, superficie ni impactos en ningún cálculo del modelo.",
+      sources:[
+        {label:"Gobierno Vasco · archivo del expediente FV Asparrena",url:"https://www.euskadi.eus/bopv2/datos/2026/11/2604914a.shtml"},
+        {label:"Gobierno Vasco · autorización previa y de construcción",url:"https://www.euskadi.eus/bopv2/datos/2026/01/2600197a.pdf"}
+      ],
+      url:"https://www.euskadi.eus/bopv2/datos/2026/11/2604914a.shtml"
+    }
   ]
 };

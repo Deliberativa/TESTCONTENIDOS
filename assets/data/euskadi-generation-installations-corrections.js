@@ -3,6 +3,13 @@
   if(!inventory||!Array.isArray(inventory.features))return;
 
   const eveSource='Datos proporcionados por EVE';
+  const solarTerritoryHours=territory=>{
+    const name=String(territory||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
+    if(/ARABA|ALAVA/.test(name))return 1400;
+    if(/BIZKAIA|VIZCAYA|GIPUZKOA|GUIPUZCOA/.test(name))return 1000;
+    return null;
+  };
+  window.solarTerritoryEquivalentHours=solarTerritoryHours;
   const duplicatedInEve=new Set([
     2539, // Ekiola Mendialdea: 1 MW nominal en ESIOS; 1,50 MWp en EVE.
     8726, // Leintz Bailarako Ekiola: 1 MW nominal en ESIOS; 1,256 MWp en EVE.
@@ -19,6 +26,27 @@
     return !isMisclassifiedElgeaStorage&&!duplicatedInEve.has(id);
   });
 
+  // Elgea y Urkilla son dos parques contiguos, pero para la lectura territorial
+  // del mapa se presentan como un único complejo, sin duplicar potencia.
+  // Elgea aporta 26,97 MW y Urkilla 32,3 MW: 59,27 MW en total.
+  const urkilla=inventory.features.find(feature=>Number(feature&&feature.id)===2557);
+  const elgea=inventory.features.find(feature=>Number(feature&&feature.id)===2672);
+  if(elgea&&elgea.properties&&urkilla&&urkilla.properties){
+    Object.assign(elgea.properties,{
+      descripcion:'PARQUE EÓLICO ELGEA-URKILLA',
+      numero:Number(elgea.properties.numero||0)+Number(urkilla.properties.numero||0),
+      mw:Number(elgea.properties.mw||0)+Number(urkilla.properties.mw||0),
+      minetur:'RE-001474 y 3 más · RE-003932',
+      detailConnectionNote:'El punto unifica territorialmente los parques contiguos de Elgea (26,97 MW) y Urkilla (32,3 MW). La potencia mostrada, 59,27 MW, es la suma de ambos parques sin doble contabilización.',
+      detailSourceLabel:'EVE · memoria 2003'
+    });
+    elgea.geometry={...elgea.geometry,coordinates:[
+      (Number(elgea.geometry.coordinates[0])+Number(urkilla.geometry.coordinates[0]))/2,
+      (Number(elgea.geometry.coordinates[1])+Number(urkilla.geometry.coordinates[1]))/2
+    ]};
+    inventory.features=inventory.features.filter(feature=>Number(feature&&feature.id)!==2557);
+  }
+
   // Arasur 1 y 2 ya figuraba en ESIOS como un único registro agregado de
   // 24 MW. Se conserva una sola vez y se asigna al listado declarado por EVE.
   const arasur=inventory.features.find(feature=>Number(feature&&feature.id)===2582);
@@ -28,8 +56,72 @@
       fuente:eveSource,
       eveTipo:'Fotovoltaica a red',
       eveComarca:'Arabako Ibarrak / Valles Alaveses',
-      annualGWhEstimate:33.596,
-      annualGWhMethod:'Factor medio del inventario solar 2024 (81,7 GWh / 58,36 MW)'
+      annualGWhEstimate:33.6,
+      annualEquivalentHours:1400,
+      annualGWhMethod:'Aproximación territorial EVE: Araba 1.400 h/año; Bizkaia y Gipuzkoa 1.000 h/año (comunicación personal, septiembre de 2026)'
+    });
+  }
+
+  // ESIOS clasifica Uriarte SafyBox como instalación eólica de producción.
+  // La fuente empresarial documenta que sus dos aerogeneradores de 5 kW
+  // abastecen directamente procesos productivos: se mantiene la tecnología
+  // minieólica, pero el punto se muestra en la capa de autoconsumo.
+  const uriarteSafybox=inventory.features.find(feature=>Number(feature&&feature.id)===5693);
+  if(uriarteSafybox&&uriarteSafybox.properties){
+    Object.assign(uriarteSafybox.properties,{
+      descripcion:'URIARTE SAFYBOX, S.A.',
+      mapLayerKey:'solar',
+      documentedSelfConsumption:true,
+      selfConsumptionLabel:'Autoconsumo minieólico directo',
+      annualGWhEstimate:0.025,
+      annualGWhMethod:'Producción prevista publicada: 25.000 kWh/año',
+      detailSourceLabel:'Interempresas / Futurenergy (2014)',
+      detailSourceUrl:'https://www.interempresas.net/Energia/461265-Uriarte-SafyBox-inaugurara-una-pionera-instalacion-minieolica-de-autoconsumo.html'
+    });
+  }
+
+  // El inventario ESIOS contiene un registro antiguo de 10 kW a unos 14 m
+  // del polideportivo Antzizar (id 8782, alta en 2007). La instalación
+  // municipal de autoconsumo terminada en 2022 es otra actuación, de 300 kW,
+  // documentada por el Ayuntamiento de Beasain. Se conserva el registro
+  // antiguo y se incorpora la instalación nueva como punto independiente.
+  // Al no haberse identificado su ficha ESIOS individual, queda fuera del
+  // cálculo agregado del vertido estimado de los registros ESIOS.
+  const antzizarId=990001;
+  if(!inventory.features.some(feature=>Number(feature&&feature.id)===antzizarId)){
+    inventory.features.push({
+      type:'Feature',
+      id:antzizarId,
+      geometry:{type:'Point',coordinates:[-2.214064,43.0460007]},
+      properties:{
+        descripcion:'POLIDEPORTIVO ANTZIZAR · AUTOCONSUMO FOTOVOLTAICO',
+        numero:1,
+        municipio:'GIPUZKOA Beasain',
+        cuenca:'ORIA IBAIA',
+        mw:0.3,
+        provincia:'GIPUZKOA',
+        municipio_ine:'No indicado',
+        minetur:'Registro individual no identificado',
+        tecnologia:'Fotovoltaica',
+        alta:1667260800000,
+        baja:64060588800000,
+        objectid:antzizarId,
+        fecha_mod:1680480000000,
+        fuente:'Ayuntamiento de Beasain',
+        mapLayerKey:'solar',
+        documentedSelfConsumption:true,
+        selfConsumptionLabel:'Autoconsumo fotovoltaico municipal',
+        // La coordenada original se conserva en geometry. En el mapa regional
+        // el símbolo se ancla visualmente a la derecha de «Beasain» para evitar
+        // su solapamiento con el registro ESIOS antiguo.
+        mapDisplayAnchorMunicipality:'Beasain',
+        excludeFromEsiosExportEstimate:true,
+        annualGWhEstimate:0.42,
+        annualGWhMethod:'Aproximación del modelo: 0,300 MW × 1.400 horas equivalentes = 0,420 GWh/año',
+        detailSourceLabel:'Ayuntamiento de Beasain (2023)',
+        detailSourceUrl:'https://www.beasain.eus/es/noticias-es/181-infraestructuras-y-servicios/5013-las-actuaciones-a-favor-de-la-sostenibilidad-y-el-medio-ambiente-del-polideportivo-cumplen-las-expectativas',
+        detailConnectionNote:'La instalación está documentada como autoconsumo del polideportivo. La información pública consultada no indica si dispone de excedentes ni cuánto podría verter a la red; por eso sus 300 kW no se incorporan al cálculo agregado de vertido de ESIOS.'
+      }
     });
   }
 
@@ -75,7 +167,7 @@
     [900035,-2.411965,43.01433,0.702,'GIPUZKOA Oñati','GIPUZKOA','Debagoiena / Alto Deba',1672531200000]
   ];
   const existingIds=new Set(inventory.features.map(feature=>Number(feature&&feature.id)));
-  const factor=81.7/58.36;
+  // Canonical estimates retain full precision before aggregation.
   eveRows.forEach(([id,longitude,latitude,mw,municipio,provincia,comarca,alta])=>{
     if(existingIds.has(id))return;
     inventory.features.push({
@@ -100,9 +192,24 @@
         ubicacion_aproximada:true,
         eveTipo:'Fotovoltaica a red',
         eveComarca:comarca,
-        annualGWhEstimate:Math.round(mw*factor*1000)/1000,
-        annualGWhMethod:'Factor medio del inventario solar 2024 (81,7 GWh / 58,36 MW)'
+        annualGWhEstimate:mw*solarTerritoryHours(provincia)/1000,
+        annualEquivalentHours:solarTerritoryHours(provincia),
+        annualGWhUncertainty:"Aproximación orientativa, posiblemente optimista según EVE; sin intervalo cuantificado. Año completo teórico, no producción medida.",
+        annualGWhSourceDate:"2026-09-07",
+        annualGWhMethod:'Potencia × horas territoriales EVE / 1.000; Araba 1.400, Bizkaia y Gipuzkoa 1.000 h/año'
       }
     });
+  });
+  // Recalculate existing records too: the embedded base may already contain EVE rows.
+  inventory.features.forEach(feature=>{
+    const p=feature.properties||{};
+    if(p.fuente!==eveSource||p.tecnologia!=='Fotovoltaica')return;
+    const h=solarTerritoryHours((p.provincia||"")+" "+(p.municipio||""));
+    if(!h)throw new Error('Territorio solar EVE no identificado: '+feature.id);
+    p.annualGWhEstimate=Number(p.mw)*h/1000;
+    p.annualEquivalentHours=h;
+    p.annualGWhMethod='Potencia × '+h+' horas equivalentes territoriales EVE / 1.000 (septiembre de 2026)';
+    p.annualGWhSourceDate='2026-09-07';
+    p.annualGWhUncertainty='Aproximación orientativa posiblemente optimista; sin intervalo cuantificado. Año completo teórico.';
   });
 })();
